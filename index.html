@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>موقعي الشخصي الأول</title>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <style>
 body{
     font-family: "Segoe UI", Tahoma, sans-serif;
@@ -94,7 +94,47 @@ li{
 </head>
 
 <body>
+<nav class="navbar">
+    <h2 class="logo">Portfolio</h2>
 
+    <ul class="menu">
+        <li><a href="#home">الرئيسية</a></li>
+        <li><a href="#about">نبذة عني</a></li>
+        <li><a href="#skills">المهارات</a></li>
+        <li><a href="#projects">المشاريع</a></li>
+        <li><a href="#contact">تواصل</a></li>
+    </ul>
+</nav>
+ .navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#0f172a;
+    padding:15px 30px;
+    border-radius:12px;
+    margin-bottom:30px;
+}
+
+.logo{
+    color:white;
+}
+
+.menu{
+    display:flex;
+    list-style:none;
+    gap:20px;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:#38bdf8;
+}   
 <div class="container">
 <img src="téléchargement.jfif" alt="صورة">
 
