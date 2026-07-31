@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقعي الشخصي</title>
+
+    <title>نجاح | Portfolio</title>
+
+    <meta name="description" content="الموقع الشخصي للمطورة نجاح">
 
     <link rel="stylesheet" href="style.css">
 
@@ -14,19 +17,19 @@
 
 <body>
 
-<!-- =========================
-     شريط التنقل
-========================= -->
+<!-- ================= NAVBAR ================= -->
 
 <header>
 
-<nav>
+<nav class="navbar">
 
 <div class="logo">
-نجاح
+
+<h2>نجاح</h2>
+
 </div>
 
-<ul>
+<ul class="nav-links">
 
 <li><a href="#home">الرئيسية</a></li>
 
@@ -40,31 +43,55 @@
 
 </ul>
 
+<div class="nav-buttons">
+
 <button id="theme-btn">
+
 <i class="fas fa-moon"></i>
+
 </button>
+
+</div>
 
 </nav>
 
 </header>
 
-<!-- =========================
-     الصفحة الرئيسية
-========================= -->
+<!-- ================= HERO ================= -->
 
 <section id="home" class="hero">
 
-<img src="images/profile.jpg" alt="صورتي">
+<div class="hero-image">
 
-<h1>مرحبًا، أنا نجاح</h1>
+<img src="téléchargement.jfif" alt="صورتي">
 
-<h2>Front-End Web Developer</h2>
+</div>
+
+<div class="hero-content">
+
+<h1>
+
+مرحباً 👋
+
+</h1>
+
+<h2>
+
+أنا نجاح
+
+</h2>
+
+<h3>
+
+<span id="typing"></span>
+
+</h3>
 
 <p>
 
-أطور مواقع ويب حديثة باستخدام
-HTML و CSS و JavaScript
-وأهتم بتصميم مواقع جميلة ومتجاوبة.
+أقوم بتصميم وتطوير مواقع ويب احترافية
+باستخدام HTML وCSS وJavaScript
+مع الاهتمام بسرعة الموقع وتجربة المستخدم.
 
 </p>
 
@@ -76,7 +103,11 @@ HTML و CSS و JavaScript
 
 </a>
 
-<a href="cv.pdf" download class="btn">
+<a href="cv.pdf"
+
+download
+
+class="btn secondary">
 
 تحميل السيرة الذاتية
 
@@ -84,53 +115,60 @@ HTML و CSS و JavaScript
 
 </div>
 
+</div>
+
 </section>
 
-<!-- =========================
-     نبذة عني
-========================= -->
+<!-- ================= ABOUT ================= -->
 
 <section id="about">
 
-<h3>نبذة عني</h3>
+<div class="container">
 
-<p class="about-text">
+<h2 class="section-title">
 
-أنا مطورة مواقع ويب وأسعى إلى تطوير مهاراتي
-في HTML وCSS وJavaScript وإنشاء مواقع
-احترافية وسريعة ومتجاوبة مع جميع الأجهزة.
+نبذة عني
+
+</h2>
+
+<p>
+
+أنا مطورة ويب مبتدئة وأسعى إلى تطوير مهاراتي
+في تصميم المواقع الاحترافية باستخدام أحدث
+تقنيات Front-End.
+
+أحب التعلم المستمر وإنشاء مواقع جميلة وسريعة
+ومتجاوبة مع جميع الأجهزة.
 
 </p>
 
+</div>
+
 </section>
 
-<!-- =========================
-     المهارات
-========================= -->
+<!-- ================= SKILLS ================= -->
 
-<section id="skills" class="skills">
+<section id="skills">
 
-<h3>مهاراتي</h3>
+<div class="container">
+
+<h2 class="section-title">
+
+المهارات
+
+</h2>
 
 <div class="skill">
 
-<p>HTML</p>
+<span>HTML</span>
 
-<div class="bar">
+<div class="progress">
 
-<div class="fill" style="width:90%;"></div>
+<div class="progress-bar html">
+
+90%
 
 </div>
-
-</div>
-
-<div class="skill">
-
-<p>CSS</p>
-
-<div class="bar">
-
-<div class="fill" style="width:85%;"></div>
 
 </div>
 
@@ -138,131 +176,36 @@ HTML و CSS و JavaScript
 
 <div class="skill">
 
-<p>JavaScript</p>
+<span>CSS</span>
 
-<div class="bar">
+<div class="progress">
 
-<div class="fill" style="width:70%;"></div>
+<div class="progress-bar css">
+
+85%
+
+</div>
+
+</div>
+
+</div>
+
+<div class="skill">
+
+<span>JavaScript</span>
+
+<div class="progress">
+
+<div class="progress-bar js">
+
+75%
+
+</div>
+
+</div>
 
 </div>
 
 </div>
 
 </section>
-<!-- =========================
-     المشاريع
-========================= -->
-
-<section id="projects">
-
-    <h3>مشاريعي</h3>
-
-    <div class="projects">
-
-        <div class="card">
-            <h4>موقعي الشخصي</h4>
-            <p>
-                موقع شخصي احترافي باستخدام HTML وCSS وJavaScript.
-            </p>
-        </div>
-
-        <div class="card">
-            <h4>Landing Page</h4>
-            <p>
-                صفحة هبوط حديثة ومتجاوبة مع جميع الأجهزة.
-            </p>
-        </div>
-
-        <div class="card">
-            <h4>آلة حاسبة</h4>
-            <p>
-                مشروع JavaScript لتنفيذ العمليات الحسابية الأساسية.
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- =========================
-     التواصل
-========================= -->
-
-<section id="contact">
-
-    <h3>تواصل معي</h3>
-
-    <form class="contact-form">
-
-        <input
-            type="text"
-            placeholder="الاسم الكامل"
-            required>
-
-        <input
-            type="email"
-            placeholder="البريد الإلكتروني"
-            required>
-
-        <textarea
-            rows="6"
-            placeholder="اكتب رسالتك هنا..."
-            required></textarea>
-
-        <button type="submit">
-            إرسال الرسالة
-        </button>
-
-    </form>
-
-    <div class="social">
-
-        <!-- البريد الإلكتروني -->
-        <a href="mailto:sbahibtihal@gmail.com" title="البريد الإلكتروني">
-            <i class="fas fa-envelope"></i>
-        </a>
-
-        <!-- واتساب -->
-        <a href="https://wa.me/212703166572" target="_blank" title="WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-
-        <!-- GitHub -->
-        <a href="https://github.com/sbahibtihal-spec" target="_blank" title="GitHub">
-            <i class="fab fa-github"></i>
-        </a>
-
-        <!-- Facebook -->
-        <a href="https://facebook.com/اسم_حسابك" target="_blank" title="Facebook">
-            <i class="fab fa-facebook"></i>
-        </a>
-
-    </div>
-
-</section>
-
-<!-- =========================
-     التذييل
-========================= -->
-
-<footer>
-
-    <p>
-        © 2026 نجاح | جميع الحقوق محفوظة
-    </p>
-
-</footer>
-
-<!-- ملف JavaScript -->
-
-<script src="script.js"></script>
- <!-- =========================
-     المشاريع
-========================= -->
-
-<section id="projects">
-
-    <h3>مشاريعي</h3>
-
-</body>
-</html>
