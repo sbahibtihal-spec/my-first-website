@@ -1,357 +1,220 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقعي الشخصي</title>
 
-<title>موقعي الشخصي | ابتهاج</title>
+    <!-- ملف CSS -->
+    <link rel="stylesheet" href="style.css">
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
-}
-
-body{
-font-family:Tahoma,sans-serif;
-background:#f4f7fb;
-color:#333;
-}
-
-header{
-background:#0d6efd;
-padding:20px;
-position:sticky;
-top:0;
-}
-
-nav{
-display:flex;
-justify-content:center;
-gap:25px;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-font-size:18px;
-font-weight:bold;
-}
-
-nav a:hover{
-color:#ffd43b;
-}
-
-.hero{
-text-align:center;
-padding:60px 20px;
-background:white;
-}
-
-.hero img{
-width:180px;
-height:180px;
-border-radius:50%;
-border:5px solid #0d6efd;
-object-fit:cover;
-}
-
-.hero h1{
-margin-top:20px;
-font-size:38px;
-color:#0d6efd;
-}
-
-.hero h2{
-margin:15px;
-color:#555;
-}
-
-.btn{
-display:inline-block;
-margin:10px;
-padding:12px 25px;
-background:#0d6efd;
-color:white;
-text-decoration:none;
-border-radius:8px;
-}
-
-.btn:hover{
-background:#0a58ca;
-}
-
-section{
-max-width:1000px;
-margin:50px auto;
-padding:20px;
-}
-
-h3{
-text-align:center;
-margin-bottom:30px;
-color:#0d6efd;
-font-size:30px;
-}
-
-.skills .skill{
-margin:20px 0;
-}
-
-.bar{
-background:#ddd;
-height:12px;
-border-radius:20px;
-overflow:hidden;
-}
-
-.fill{
-height:100%;
-background:#0d6efd;
-}
-
-.projects{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.card{
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
-text-align:center;
-}
-
-.card:hover{
-transform:translateY(-5px);
-transition:.3s;
-}
-
-.contact{
-text-align:center;
-}
-
-.contact a{
-display:inline-block;
-margin:10px;
-text-decoration:none;
-font-size:20px;
-color:#0d6efd;
-}
-
-footer{
-background:#0d6efd;
-color:white;
-text-align:center;
-padding:20px;
-margin-top:50px;
-}
-
- 0
- .hero img{
-    width:200px;
-    height:200px;
-    border-radius:50%;
-    border:6px solid #0d6efd;
-    object-fit:cover;
-    box-shadow:0 0 20px  rgba(0,0,0,.2);
-    margin-bottom:20px;
-}
- <script>
-const btn = document.getElementById("theme-btn");
-
-btn.onclick = () => {
-    document.body.classList.toggle("dark");
-};
-</script>
- <script>
-const btn = document.getElementById("theme-btn");
-
-btn.onclick = () => {
-    document.body.classList.toggle("dark");
-};
-</script>
-.dark{
-    background:#121212;
-    color:white;
-}
-
-.dark section,
-.dark .card{
-    background:#1f1f1f;
-    color:white;
-}
-.contact-form{
-    max-width:500px;
-    margin:auto;
-}
-
-.contact-form input,
-.contact-form textarea{
-    width:100%;
-    padding:12px;
-    margin:10px 0;
-    border:1px solid #ddd;
-    border-radius:8px;
-}
-
-.contact-form button{
-    width:100%;
-    padding:12px;
-    background:#0d6efd;
-    color:white;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-}
-
-.contact-form button:hover{
-    background:#084298;
-}
-</style>
-
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 <body>
 
+<!-- شريط التنقل -->
 <header>
+    <nav>
+        <h2 class="logo">نجاح</h2>
 
-<nav>
-<a href="#home">الرئيسية</a>
-<a href="#about">نبذة</a>
-<a href="#skills">المهارات</a>
-<a href="#projects">المشاريع</a>
-<a href="#contact">تواصل</a>
-<button id="theme-btn"> H</button>
- </nav>
+        <ul>
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#about">نبذة</a></li>
+            <li><a href="#skills">المهارات</a></li>
+            <li><a href="#projects">المشاريع</a></li>
+            <li><a href="#contact">تواصل</a></li>
+        </ul>
+
+        <button id="theme-btn">
+            <i class="fas fa-moon"></i>
+        </button>
+
+    </nav>
 </header>
 
-<section class="hero"id="home">
+<!-- الصفحة الرئيسية -->
+<section class="hero" id="home">
 
-<img src="téléchargement.jfif" alt="صورتي">
+    <img src="images/profile.jpg" alt="صورتي">
 
-<h1>ابتهاج</h1>
+    <h1>نجاح</h1>
 
-<h2>Front-End Web Developer</h2>
+    <h2>Front-End Web Developer</h2>
 
-<p>
-أقوم بتطوير مواقع ويب حديثة باستخدام HTML و CSS و JavaScript.
-</p>
+    <p>
+        أطور مواقع ويب احترافية باستخدام
+        HTML و CSS و JavaScript.
+    </p>
 
-<br>
+    <a href="#contact" class="btn">
+        تواصل معي
+    </a>
 
-<a href="#contact" class="btn">تواصل معي</a>
-
-<a href="#" class="btn">تحميل CV</a>
+    <a href="cv.pdf" class="btn" download>
+        تحميل CV
+    </a>
 
 </section>
 
+<!-- نبذة -->
 <section id="about">
 
-<h3>نبذة عني</h3>
+    <h3>نبذة عني</h3>
 
-<p style="text-align:center;font-size:18px;">
-أنا مطورة مواقع ويب مبتدئة وأسعى لتطوير مهاراتي وإنشاء مواقع احترافية ومتجاوبة مع جميع الأجهزة.
-</p>
+    <p class="about-text">
+
+        أنا مطورة مواقع ويب مبتدئة وأسعى إلى تطوير
+        مهاراتي وإنشاء مواقع احترافية ومتجاوبة مع جميع
+        الأجهزة باستخدام HTML و CSS و JavaScript.
+
+    </p>
 
 </section>
 
+<!-- المهارات -->
 <section id="skills" class="skills">
 
-<h3>مهاراتي</h3>
+    <h3>مهاراتي</h3>
 
-<div class="skill">
-HTML 90%
-<div class="bar">
-<div class="fill" style="width:90%"></div>
-</div>
-</div>
+    <div class="skill">
 
-<div class="skill">
-CSS 85%
-<div class="bar">
-<div class="fill" style="width:85%"></div>
-</div>
-</div>
+        HTML 90%
 
-<div class="skill">
-JavaScript 90%
-<div class="bar">
-<div class="fill" style="width:90%"></div>
-</div>
-</div>
+        <div class="bar">
+            <div class="fill" style="width:90%;"></div>
+        </div>
+
+    </div>
+
+    <div class="skill">
+
+        CSS 85%
+
+        <div class="bar">
+            <div class="fill" style="width:85%;"></div>
+        </div>
+
+    </div>
+
+    <div class="skill">
+
+        JavaScript 70%
+
+        <div class="bar">
+            <div class="fill" style="width:70%;"></div>
+        </div>
+
+    </div>
 
 </section>
 
+<!-- المشاريع -->
 <section id="projects">
 
-<h3>مشاريعي</h3>
+    <h3>مشاريعي</h3>
 
-<div class="projects">
+    <div class="projects">
 
-<div class="card">
-<h4>موقعي الشخصي</h4>
-<p>موقع احترافي باستخدام HTML و CSS.</p>
-</div>
+        <div class="card">
 
-<div class="card">
-<h4>حاسبة بسيطة</h4>
-<p>مشروع باستخدام JavaScript.</p>
-</div>
+            <h4>موقعي الشخصي</h4>
 
-<div class="card">
-<h4>صفحة هبوط</h4>
-<p>تصميم Landing Page متجاوب.</p>
-</div>
+            <p>
+                موقع شخصي احترافي باستخدام HTML و CSS.
+            </p>
 
-</div>
+        </div>
 
-</section>
+        <div class="card">
 
-<section id="contact" class="contact">
+            <h4>حاسبة بسيطة</h4>
 
-<h3>تواصل معي</h3>
-  <p>
-  
-  </a>
-</p>
+            <p>
+                مشروع باستخدام JavaScript.
+            </p>
 
-<p>
-<p>
- <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sbahibtihal@gmail.com" target="_blank">
-        Click here for Email contact    </a> 
-</p>
-<p>
-</p>
-  
- <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> 
-</p>
+        </div>
 
-<a href="https://wa.me/212703166572" target="_blank">
-    <i class="fab fa-whatsapp"></i> WhatsApp
-</a>
+        <div class="card">
 
-<a href="https://github.com/sbahibtihal-spec" target="_blank">
-    <i class="fab fa-github"></i> GitHub
-</a>
+            <h4>Landing Page</h4>
 
-<a href="https://facebook.com/" target="_blank">
-    <i class="fab fa-facebook"></i> Facebook
-</a>
+            <p>
+                صفحة هبوط متجاوبة لجميع الأجهزة.
+            </p>
+
+        </div>
+
+    </div>
 
 </section>
 
+<!-- التواصل -->
+<section id="contact">
+
+    <h3>تواصل معي</h3>
+
+    <form class="contact-form">
+
+        <input
+            type="text"
+            placeholder="الاسم"
+            required>
+
+        <input
+            type="email"
+            placeholder="البريد الإلكتروني"
+            required>
+
+        <textarea
+            rows="6"
+            placeholder="اكتب رسالتك..."
+            required></textarea>
+
+        <button type="submit">
+            إرسال
+        </button>
+
+    </form>
+
+    <div class="social">
+
+        <a href="mailto:sbahibtihal@gmail.com">
+            <i class="fas fa-envelope"></i>
+        </a>
+
+        <a href="https://wa.me/212703166572" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+        <a href="https://github.com/sbahibtihal-spec" target="_blank">
+            <i class="fab fa-github"></i>
+        </a>
+
+        <!-- ضع رابط حسابك الحقيقي على فيسبوك -->
+        <a href="https://facebook.com/" target="_blank">
+            <i class="fab fa-facebook"></i>
+        </a>
+
+    </div>
+
+</section>
+
+<!-- التذييل -->
 <footer>
 
-© 2026 جميع الحقوق محفوظة | ابتهاج
+    <p>
+        © 2026 نجاح | جميع الحقوق محفوظة
+    </p>
 
 </footer>
+
+<!-- ملف JavaScript -->
+<script src="script.js"></script>
 
 </body>
 </html>
