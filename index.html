@@ -1,215 +1,139 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقعي الشخصي</title>
-
-    <!-- ملف CSS -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>موقعي الشخصي</title>
+<!-- ملف CSS -->
+ <link rel="stylesheet" href="style.css">
+ <!-- Font Awesome -->
+ <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
-
 <body>
-
 <!-- شريط التنقل -->
 <header>
-    <nav>
-        <h2 class="logo">نجاح</h2>
+ <nav>
+ <h2 class="logo">نجاح</h2>
+ <ul>
+  <li><a href="#home">الرئيسية</a></li>
+     <li><a href="#about">نبذة</a></li>
+   <li><a href="#skills">المهارات</a></li>
+   <li><a href="#projects">المشاريع</a></li>
+   <li><a href="#contact">تواصل</a></li>
+</ul>
+ <button id="theme-btn">
+  <i class="fas fa-moon"></i>
+ </button>
 
-        <ul>
-            <li><a href="#home">الرئيسية</a></li>
-            <li><a href="#about">نبذة</a></li>
-            <li><a href="#skills">المهارات</a></li>
-            <li><a href="#projects">المشاريع</a></li>
-            <li><a href="#contact">تواصل</a></li>
-        </ul>
-
-        <button id="theme-btn">
-            <i class="fas fa-moon"></i>
-        </button>
-
-    </nav>
+ </nav>
 </header>
-
 <!-- الصفحة الرئيسية -->
 <section class="hero" id="home">
-
-    <img src="images/profile.jpg" alt="صورتي">
-
-    <h1>نجاح</h1>
-
-    <h2>Front-End Web Developer</h2>
-
-    <p>
-        أطور مواقع ويب احترافية باستخدام
-        HTML و CSS و JavaScript.
-    </p>
-
-    <a href="#contact" class="btn">
-        تواصل معي
-    </a>
-
-    <a href="cv.pdf" class="btn" download>
-        تحميل CV
-    </a>
-
+ <img src="images/profile.jpg" alt="صورتي">
+<h1>نجاح</h1>
+ <h2>Front-End Web Developer</h2>
+  <p>
+  أطور مواقع ويب احترافية باستخدام
+ HTML و CSS و JavaScript.
+ </p>
+ <a href="#contact" class="btn">
+ تواصل معي </a>
+ <a href="cv.pdf" class="btn" download>
+        تحميل CV  </a>
 </section>
-
 <!-- نبذة -->
 <section id="about">
+<h3>نبذة عني</h3>
+ <p class="about-text">
 
-    <h3>نبذة عني</h3>
-
-    <p class="about-text">
-
-        أنا مطورة مواقع ويب مبتدئة وأسعى إلى تطوير
-        مهاراتي وإنشاء مواقع احترافية ومتجاوبة مع جميع
-        الأجهزة باستخدام HTML و CSS و JavaScript.
-
-    </p>
-
+ أنا مطورة مواقع ويب مبتدئة وأسعى إلى تطوير
+ مهاراتي وإنشاء مواقع احترافية ومتجاوبة مع جميع
+  الأجهزة باستخدام HTML و CSS و JavaScript.
+</p>
 </section>
-
 <!-- المهارات -->
 <section id="skills" class="skills">
-
-    <h3>مهاراتي</h3>
-
-    <div class="skill">
-
-        HTML 90%
-
-        <div class="bar">
-            <div class="fill" style="width:90%;"></div>
-        </div>
-
-    </div>
-
-    <div class="skill">
-
-        CSS 85%
-
-        <div class="bar">
-            <div class="fill" style="width:85%;"></div>
-        </div>
-
-    </div>
-
-    <div class="skill">
-
-        JavaScript 70%
-
-        <div class="bar">
-            <div class="fill" style="width:70%;"></div>
-        </div>
-
-    </div>
-
+<h3>مهاراتي</h3>
+<div class="skill">
+HTML 90%
+<div class="bar">
+<div class="fill" style="width:90%;"></div>
+</div>
+<div class="skill">
+CSS 85%
+<div class="bar">
+<div class="fill" style="width:85%;"></div>
+</div>
+<div class="skill">
+JavaScript 70%
+<div class="bar">
+<div class="fill" style="width:70%;"></div>
+</div>
 </section>
-
 <!-- المشاريع -->
 <section id="projects">
-
-    <h3>مشاريعي</h3>
-
-    <div class="projects">
-
-        <div class="card">
-
-            <h4>موقعي الشخصي</h4>
-
-            <p>
-                موقع شخصي احترافي باستخدام HTML و CSS.
-            </p>
-
-        </div>
-
-        <div class="card">
-
-            <h4>حاسبة بسيطة</h4>
-
-            <p>
-                مشروع باستخدام JavaScript.
-            </p>
-
-        </div>
-
-        <div class="card">
-
-            <h4>Landing Page</h4>
-
-            <p>
-                صفحة هبوط متجاوبة لجميع الأجهزة.
-            </p>
-
-        </div>
-
-    </div>
-
+ <h3>مشاريعي</h3>
+ <div class="projects">
+<div class="card">
+<h4>موقعي الشخصي</h4>
+<p>
+ موقع شخصي احترافي باستخدام HTML و CSS.
+</p>
+</div>
+<div class="card">
+<h4>حاسبة بسيطة</h4>
+<p>
+ مشروع باستخدام JavaScript.
+</p>
+</div>
+<div class="card">
+<h4>Landing Page</h4>
+<p>
+ صفحة هبوط متجاوبة لجميع الأجهزة.
+ </p>
+</div>
+ </div>
 </section>
-
 <!-- التواصل -->
 <section id="contact">
+ <h3>تواصل معي</h3>
+ <form class="contact-form">
+<input
+ type="text"
+ placeholder="الاسم"
+ required>
 
-    <h3>تواصل معي</h3>
+<inputtype="email" placeholder="البريد الإلكتروني"  required>
 
-    <form class="contact-form">
+<textarea rows="6"placeholder="اكتب رسالتك..." required></textarea> <button type="submit"> إرسال
+ </button>
+ </form>
+ <div class="social">
 
-        <input
-            type="text"
-            placeholder="الاسم"
-            required>
+ <a href="mailto:sbahibtihal@gmail.com">
+<i class="fas fa-envelope"></i>
+</a>
 
-        <input
-            type="email"
-            placeholder="البريد الإلكتروني"
-            required>
+ <a href="https://wa.me/212703166572" target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
 
-        <textarea
-            rows="6"
-            placeholder="اكتب رسالتك..."
-            required></textarea>
+<a href="https://github.com/sbahibtihal-spec" target="_blank">
+<i class="fab fa-github"></i>
+</a>
 
-        <button type="submit">
-            إرسال
-        </button>
-
-    </form>
-
-    <div class="social">
-
-        <a href="mailto:sbahibtihal@gmail.com">
-            <i class="fas fa-envelope"></i>
-        </a>
-
-        <a href="https://wa.me/212703166572" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-
-        <a href="https://github.com/sbahibtihal-spec" target="_blank">
-            <i class="fab fa-github"></i>
-        </a>
-
-        <!-- ضع رابط حسابك الحقيقي على فيسبوك -->
-        <a href="https://facebook.com/" target="_blank">
-            <i class="fab fa-facebook"></i>
-        </a>
-
-    </div>
-
+<!-- ضع رابط حسابك الحقيقي على فيسبوك -->
+<a href="https://facebook.com/" target="_blank">
+<i class="fab fa-facebook"></i>
+</a>
+</div>
 </section>
-
 <!-- التذييل -->
 <footer>
-
-    <p>
+<p>
         © 2026 نجاح | جميع الحقوق محفوظة
-    </p>
+</p>
 
 </footer>
 
