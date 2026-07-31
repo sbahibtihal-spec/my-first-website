@@ -4,12 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>نجاح | Portfolio</title>
-
-    <meta name="description" content="الموقع الشخصي للمطورة نجاح">
+    <title>موقعي الشخصي</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -17,272 +19,168 @@
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
-
 <header>
 
-<nav class="navbar">
+<nav>
 
-<div class="logo">
+<h2 class="logo">موقعي</h2>
 
-<h2>نجاح</h2>
-
-</div>
-
-<ul class="nav-links">
+<ul>
 
 <li><a href="#home">الرئيسية</a></li>
-
-<li><a href="#about">نبذة عني</a></li>
-
+<li><a href="#about">من أنا</a></li>
 <li><a href="#skills">المهارات</a></li>
-
 <li><a href="#projects">المشاريع</a></li>
-
 <li><a href="#contact">تواصل</a></li>
 
 </ul>
 
-<div class="nav-buttons">
-
-<button id="theme-btn">
-
+<button id="darkMode">
 <i class="fas fa-moon"></i>
-
 </button>
-
-</div>
 
 </nav>
 
 </header>
 
-<!-- ================= HERO ================= -->
-
 <section id="home" class="hero">
+
+<div class="hero-text">
+
+<h1>مرحباً بك</h1>
+
+<h2>أنا مطور مواقع ويب</h2>
+
+<p>
+أصمم مواقع عصرية وسريعة ومتجاوبة مع جميع الأجهزة.
+</p>
+
+<a href="#contact" class="btn">
+تواصل معي
+</a>
+
+</div>
 
 <div class="hero-image">
 
-<img src="téléchargement.jfif" alt="صورتي">
-
-</div>
-
-<div class="hero-content">
-
-<h1>
-
-مرحباً 👋
-
-</h1>
-
-<h2>
-
-أنا نجاح
-
-</h2>
-
-<h3>
-
-<span id="typing"></span>
-
-</h3>
-
-<p>
-
-أقوم بتصميم وتطوير مواقع ويب احترافية
-باستخدام HTML وCSS وJavaScript
-مع الاهتمام بسرعة الموقع وتجربة المستخدم.
-
-</p>
-
-<div class="hero-buttons">
-
-<a href="#contact" class="btn">
-
-تواصل معي
-
-</a>
-
-<a href="cv.pdf"
-
-download
-
-class="btn secondary">
-
-تحميل السيرة الذاتية
-
-</a>
-
-</div>
+<img src="images/profile.png" alt="صورة شخصية">
 
 </div>
 
 </section>
-
-<!-- ================= ABOUT ================= -->
 
 <section id="about">
 
-<div class="container">
-
-<h2 class="section-title">
-
-نبذة عني
-
-</h2>
+<h2>من أنا</h2>
 
 <p>
 
-أنا مطورة ويب مبتدئة وأسعى إلى تطوير مهاراتي
-في تصميم المواقع الاحترافية باستخدام أحدث
-تقنيات Front-End.
-
-أحب التعلم المستمر وإنشاء مواقع جميلة وسريعة
-ومتجاوبة مع جميع الأجهزة.
+أنا مطور مواقع باستخدام HTML وCSS وJavaScript وأسعى إلى إنشاء مواقع جميلة وسريعة.
 
 </p>
 
-</div>
-
 </section>
-
-<!-- ================= SKILLS ================= -->
 
 <section id="skills">
 
-<div class="container">
+<h2>المهارات</h2>
 
-<h2 class="section-title">
+<div class="cards">
 
-المهارات
-
-</h2>
-
-<div class="skill">
-
-<span>HTML</span>
-
-<div class="progress">
-
-<div class="progress-bar html">
-
-90%
-
+<div class="card">
+<i class="fab fa-html5"></i>
+<h3>HTML</h3>
 </div>
 
+<div class="card">
+<i class="fab fa-css3-alt"></i>
+<h3>CSS</h3>
 </div>
 
-</div>
-
-<div class="skill">
-
-<span>CSS</span>
-
-<div class="progress">
-
-<div class="progress-bar css">
-
-85%
-
-</div>
-
-</div>
-
-</div>
-
-<div class="skill">
-
-<span>JavaScript</span>
-
-<div class="progress">
-
-<div class="progress-bar js">
-
-75%
-
-</div>
-
-</div>
-
+<div class="card">
+<i class="fab fa-js"></i>
+<h3>JavaScript</h3>
 </div>
 
 </div>
 
 </section>
-   <!-- ================= PROJECTS ================= -->
 
 <section id="projects">
 
-<div class="container">
+<h2>المشاريع</h2>
 
-<h2 class="section-title">
-مشاريعي
-</h2>
+<div class="cards">
 
-<div class="projects-grid">
-
-<div class="project-card">
-
-<i class="fas fa-laptop-code"></i>
-
-<h3>موقعي الشخصي</h3>
-
-<p>
-موقع شخصي احترافي باستخدام HTML وCSS وJavaScript.
-</p>
-
-<a href="#" class="project-btn">
-عرض المشروع
-</a>
-
+<div class="card">
+<h3>مشروع 1</h3>
+<p>وصف المشروع.</p>
 </div>
 
-<div class="project-card">
-
-<i class="fas fa-calculator"></i>
-
-<h3>آلة حاسبة</h3>
-
-<p>
-مشروع JavaScript لإجراء العمليات الحسابية.
-</p>
-
-<a href="#" class="project-btn">
-عرض المشروع
-</a>
-
+<div class="card">
+<h3>مشروع 2</h3>
+<p>وصف المشروع.</p>
 </div>
 
-<div class="project-card">
-
-<i class="fas fa-globe"></i>
-
-<h3>Landing Page</h3>
-
-<p>
-صفحة هبوط حديثة ومتجاوبة مع جميع الأجهزة.
-</p>
-
-<a href="#" class="project-btn">
-عرض المشروع
-</a>
-
-</div>
-
+<div class="card">
+<h3>مشروع 3</h3>
+<p>وصف المشروع.</p>
 </div>
 
 </div>
 
 </section>
 
-<!-- ================= CONTACT ================= -->
-
 <section id="contact">
 
-<div class="container">
+<h2>تواصل معي</h2>
 
-<h2 class="section-title">
+<form>
+
+<input type="text" placeholder="الاسم">
+
+<input type="email" placeholder="البريد الإلكتروني">
+
+<textarea placeholder="اكتب رسالتك"></textarea>
+
+<button type="submit">
+إرسال
+</button>
+
+</form>
+
+<div class="social">
+
+<a href="#"><i class="fab fa-whatsapp"></i></a>
+
+<a href="#"><i class="fab fa-facebook"></i></a>
+
+<a href="#"><i class="fas fa-envelope"></i></a>
+
+<a href="#"><i class="fab fa-github"></i></a>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 جميع الحقوق محفوظة
+
+</p>
+
+</footer>
+
+<button id="topBtn">
+
+<i class="fas fa-arrow-up"></i>
+
+</button>
+
+<script src="script.js"></script>
 
 </body>
 
-</html> 
+</html>
