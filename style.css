@@ -27,7 +27,19 @@ body{
     line-height:1.7;
     overflow-x:hidden;
 }
+.btn{
+    display:inline-block;
+    padding:12px 25px;
+    background:var(--main);
+    color:#fff;
+    text-decoration:none;
+    border-radius:8px;
+    transition:.3s;
+}
 
+.btn:hover{
+    background:var(--main-light);
+}
 /* شريط التنقل */
 
 nav{
