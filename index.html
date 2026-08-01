@@ -1,894 +1,142 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>موقعي الشخصي</title>
-<!-- ملف CSS -->
- <link rel="stylesheet" href="style.css">
- <!-- Font Awesome -->
- <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>نجاح | مطور ويب</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- ملف CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<!-- شريط التنقل -->
-<header>
- <nav>
- <h2 class="logo">نجاح</h2>
- <ul>
-  <li><a href="#home">الرئيسية</a></li>
-     <li><a href="#about">نبذة</a></li>
-   <li><a href="#skills">المهارات</a></li>
-   <li><a href="#projects">المشاريع</a></li>
-   <li><a href="#contact">تواصل</a></li>
-</ul>
- <button id="theme-btn">
-  <i class="fas fa-moon"></i>
- </button>
-
- </nav>
-</header>
-<!-- الصفحة الرئيسية -->
-<section class="hero" id="home">
- <img src="images/profile.jpg" alt="صورتي">
-<h1>نجاح</h1>
- <h2>Front-End Web Developer</h2>
-  <p>
-  أطور مواقع ويب احترافية باستخدام
- HTML و CSS و JavaScript.
- </p>
- <a href="#contact" class="btn">
- تواصل معي </a>
- <a href="cv.pdf" class="btn" download>
-        تحميل CV  </a>
-</section>
-<!-- نبذة -->
-<section id="about">
-<h3>نبذة عني</h3>
- <p class="about-text">
-
- أنا مطورة مواقع ويب مبتدئة وأسعى إلى تطوير
- مهاراتي وإنشاء مواقع احترافية ومتجاوبة مع جميع
-  الأجهزة باستخدام HTML و CSS و JavaScript.
-</p>
-</section>
-<!-- المهارات -->
-<section id="skills" class="skills">
-<h3>مهاراتي</h3>
-<div class="skill">
-HTML 90%
-<div class="bar">
-<div class="fill" style="width:90%;"></div>
-</div>
-<div class="skill">
-CSS 85%
-<div class="bar">
-<div class="fill" style="width:85%;"></div>
-</div>
-<div class="skill">
-JavaScript 70%
-<div class="bar">
-<div class="fill" style="width:70%;"></div>
-</div>
-</section>
-<!-- المشاريع -->
-<section id="projects">
- <h3>مشاريعي</h3>
- <div class="projects">
-<div class="card">
-<h4>موقعي الشخصي</h4>
-<p>
- موقع شخصي احترافي باستخدام HTML و CSS.
-</p>
-</div>
-<div class="card">
-<h4>حاسبة بسيطة</h4>
-<p>
- مشروع باستخدام JavaScript.
-</p>
-</div>
-<div class="card">
-<h4>Landing Page</h4>
-<p>
- صفحة هبوط متجاوبة لجميع الأجهزة.
- </p>
-</div>
- </div>
-</section>
-<!-- التواصل -->
-<section id="contact">
- <h3>تواصل معي</h3>
- <form class="contact-form">
-<input
- type="text"
- placeholder="الاسم"
- required>
-
-<inputtype="email" placeholder="البريد الإلكتروني"  required>
-
-<textarea rows="6"placeholder="اكتب رسالتك..." required></textarea> <button type="submit"> إرسال
- </button>
- </form>
- <div class="social">
-
- <a href="mailto:sbahibtihal@gmail.com">
-<i class="fas fa-envelope"></i>
-</a>
-
- <a href="https://wa.me/212703166572" target="_blank">
-<i class="fab fa-whatsapp"></i>
-</a>
-
-<a href="https://github.com/sbahibtihal-spec" target="_blank">
-<i class="fab fa-github"></i>
-</a>
-
-<!-- ضع رابط حسابك الحقيقي على فيسبوك -->
-<a href="https://facebook.com/" target="_blank">
-<i class="fab fa-facebook"></i>
-</a>
-</div>
-</section>
-<!-- التذييل -->
-<footer>
-<p>
-        © 2026 نجاح | جميع الحقوق محفوظة
-</p>
-
-</footer>
-
-<!-- ملف JavaScript -->
-<script src="script.js"></script>
-
-</body>
-</html>
-/* ==========================
-   إعدادات عامة
-========================== */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:Arial, sans-serif;
-    background:#f5f5f5;
-    color:#333;
-    line-height:1.8;
-    transition:.4s;
-}
-
-/* ==========================
-   شريط التنقل
-========================== */
-
-header{
-    position:fixed;
-    width:100%;
-    top:0;
-    left:0;
-    background:#0d6efd;
-    z-index:1000;
-    box-shadow:0 2px 10px rgba(0,0,0,.2);
-}
-
-nav{
-    max-width:1200px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 30px;
-}
-
-.logo{
-    color:white;
-    font-size:28px;
-    font-weight:bold;
-}
-
-nav ul{
-    display:flex;
-    list-style:none;
-}
-
-nav ul li{
-    margin:0 10px;
-}
-
-nav ul li a{
-    color:white;
-    text-decoration:none;
-    transition:.3s;
-}
-
-nav ul li a:hover{
-    color:#ffd43b;
-}
-
-#theme-btn{
-    background:white;
-    color:#0d6efd;
-    border:none;
-    padding:10px 15px;
-    border-radius:8px;
-    cursor:pointer;
-    transition:.3s;
-}
-
-#theme-btn:hover{
-    transform:scale(1.08);
-}
-
-/* ==========================
-   الصفحة الرئيسية
-========================== */
-
-.hero{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:120px 20px 60px;
-}
-
-.hero img{
-    width:220px;
-    height:220px;
-    border-radius:50%;
-    object-fit:cover;
-    border:6px solid #0d6efd;
-    box-shadow:0 0 20px rgba(0,0,0,.2);
-    margin-bottom:20px;
-}
-
-.hero h1{
-    font-size:45px;
-    color:#0d6efd;
-}
-
-.hero h2{
-    margin-top:10px;
-    color:#555;
-}
-
-.hero p{
-    margin:20px auto;
-    max-width:700px;
-    font-size:18px;
-}
-
-.btn{
-    display:inline-block;
-    margin:10px;
-    padding:12px 30px;
-    background:#0d6efd;
-    color:white;
-    text-decoration:none;
-    border-radius:8px;
-    transition:.3s;
-}
-
-.btn:hover{
-    background:#084298;
-    transform:translateY(-4px);
-}
-
-/* ==========================
-   الأقسام
-========================== */
-
-section{
-    padding:80px 10%;
-}
-
-h3{
-    text-align:center;
-    font-size:34px;
-    color:#0d6efd;
-    margin-bottom:40px;
-}
-
-.about-text{
-    max-width:900px;
-    margin:auto;
-    text-align:center;
-    font-size:19px;
-}/* ==========================
-   المهارات
-========================== */
-
-.skills{
-    background:#ffffff;
-}
-
-.skill{
-    margin:25px 0;
-    font-size:18px;
-    font-weight:bold;
-}
-
-.bar{
-    width:100%;
-    height:14px;
-    background:#ddd;
-    border-radius:10px;
-    overflow:hidden;
-    margin-top:10px;
-}
-
-.fill{
-    height:100%;
-    background:linear-gradient(90deg,#0d6efd,#00c6ff);
-    border-radius:10px;
-    animation:progress 2s ease;
-}
-
-@keyframes progress{
-    from{
-        width:0;
-    }
-}
-
-/* ==========================
-   المشاريع
-========================== */
-
-.projects{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-    margin-top:30px;
-}
-
-.card{
-    background:#fff;
-    border-radius:15px;
-    padding:25px;
-    text-align:center;
-    box-shadow:0 8px 20px rgba(0,0,0,.1);
-    transition:.4s;
-    cursor:pointer;
-}
-
-.card:hover{
-    transform:translateY(-10px) scale(1.03);
-    box-shadow:0 15px 30px rgba(0,0,0,.2);
-}
-
-.card h4{
-    color:#0d6efd;
-    margin-bottom:15px;
-    font-size:24px;
-}
-
-.card p{
-    color:#666;
-    font-size:17px;
-}
-
-/* ==========================
-   تأثير ظهور البطاقات
-========================== */
-
-.card{
-    opacity:0;
-    transform:translateY(40px);
-    animation:fadeUp .8s forwards;
-}
-
-.card:nth-child(1){
-    animation-delay:.2s;
-}
-
-.card:nth-child(2){
-    animation-delay:.5s;
-}
-
-.card:nth-child(3){
-    animation-delay:.8s;
-}
-
-@keyframes fadeUp{
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-
-}
-
-/* ==========================
-   تأثير العناوين
-========================== */
-
-h3{
-
-    position:relative;
-
-}
-
-h3::after{
-
-    content:"";
-
-    width:80px;
-
-    height:4px;
-
-    background:#0d6efd;
-
-    display:block;
-
-    margin:10px auto;
-
-    border-radius:10px;
-
-}
-/* ==========================
-   قسم التواصل
-========================== */
-
-#contact{
-    background:#f8f9fa;
-}
-
-.contact-form{
-    max-width:700px;
-    margin:auto;
-    display:flex;
-    flex-direction:column;
-    gap:20px;
-}
-
-.contact-form input,
-.contact-form textarea{
-
-    width:100%;
-    padding:15px;
-    border:1px solid #ccc;
-    border-radius:10px;
-    outline:none;
-    font-size:16px;
-    transition:.3s;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus{
-
-    border-color:#0d6efd;
-    box-shadow:0 0 10px rgba(13,110,253,.2);
-
-}
-
-.contact-form button{
-
-    background:#0d6efd;
-    color:white;
-    border:none;
-    padding:15px;
-    border-radius:10px;
-    cursor:pointer;
-    font-size:18px;
-    transition:.3s;
-
-}
-
-.contact-form button:hover{
-
-    background:#084298;
-    transform:translateY(-3px);
-
-}
-
-/* ==========================
-   أيقونات التواصل
-========================== */
-
-.social{
-
-    margin-top:40px;
-    text-align:center;
-
-}
-
-.social a{
-
-    display:inline-flex;
-    justify-content:center;
-    align-items:center;
-    width:55px;
-    height:55px;
-    margin:10px;
-    border-radius:50%;
-    background:#0d6efd;
-    color:white;
-    text-decoration:none;
-    font-size:24px;
-    transition:.3s;
-
-}
-
-.social a:hover{
-
-    background:#084298;
-    transform:scale(1.15) rotate(8deg);
-
-}
-
-/* ==========================
-   Footer
-========================== */
 
-footer{
+    <!-- زر الوضع الليلي -->
+    <button id="theme-toggle" title="تغيير الوضع">
+        <i class="fas fa-moon"></i>
+    </button>
 
-    background:#0d6efd;
-    color:white;
-    text-align:center;
-    padding:20px;
-    margin-top:60px;
+    <!-- رأس الموقع -->
+    <header>
 
-}
+        <nav class="navbar">
 
-/* ==========================
-   الوضع الليلي
-========================== */
+            <div class="container">
 
-body.dark{
+                <a href="#home" class="logo">نجاح</a>
 
-    background:#121212;
-    color:#f1f1f1;
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">الرئيسية</a></li>
+                    <li><a href="#about">نبذة عني</a></li>
+                    <li><a href="#skills">المهارات</a></li>
+                    <li><a href="#projects">المشاريع</a></li>
+                    <li><a href="#contact">تواصل معي</a></li>
+                </ul>
 
-}
+                <div class="nav-icons">
+                    <i class="fas fa-bars" id="menu-btn"></i>
+                </div>
 
-body.dark header{
+            </div>
 
-    background:#1f1f1f;
+        </nav>
 
-}
+    </header>
 
-body.dark .logo,
-body.dark nav a{
+    <!-- الصفحة الرئيسية -->
+    <section id="home" class="home">
 
-    color:white;
+        <div class="container home-content">
 
-}
+            <div class="home-text">
 
-body.dark .card,
-body.dark .contact-form input,
-body.dark .contact-form textarea{
+                <h1>أنا <span>نجاح</span></h1>
 
-    background:#1e1e1e;
-    color:white;
-    border:1px solid #444;
+                <h2>مطور ويب</h2>
 
-}
+                <p>
+                    أصمم وأطور مواقع ويب احترافية ومتجاوبة
+                    باستخدام HTML وCSS وJavaScript.
+                </p>
 
-body.dark .skills,
-body.dark #contact{
+                <a href="#projects" class="btn">مشاريعي</a>
 
-    background:#181818;
+                <a href="#contact" class="btn btn-outline">تواصل معي</a>
 
-}
+            </div>
+            <!-- الصورة الشخصية -->
+            <div class="home-image">
+                <img src="images/profile.jpg" alt="الصورة الشخصية">
+            </div>
 
-body.dark footer{
+        </div>
+    </section>
 
-    background:#000;
+    <!-- نبذة عني -->
+    <section id="about" class="about">
 
-}
+        <div class="container">
 
-body.dark .btn,
-body.dark .contact-form button,
-body.dark .social a{
+            <div class="section-title">
+                <h2>نبذة عني</h2>
+                <span></span>
+            </div>
 
-    background:#2563eb;
+            <div class="about-content">
 
-}
+                <div class="about-text">
 
-body.dark .btn:hover,
-body.dark .contact-form button:hover,
-body.dark .social a:hover{
+                    <p>
+                        أنا مطور ويب شغوف بتصميم وإنشاء مواقع ويب حديثة
+                        وسريعة ومتجاوبة باستخدام
+                        HTML وCSS وJavaScript.
+                        أحرص على كتابة كود نظيف
+                        وتقديم تجربة استخدام مميزة.
+                    </p>
 
-    background:#1d4ed8;
+                    <ul>
 
-}
+                        <li>
+                            <i class="fas fa-check"></i>
+                            تصميم واجهات احترافية
+                        </li>
 
-/* ==========================
-   تأثير ظهور الأقسام
-========================== */
+                        <li>
+                            <i class="fas fa-check"></i>
+                            تطوير مواقع متجاوبة
+                        </li>
 
-section{
+                        <li>
+                            <i class="fas fa-check"></i>
+                            تحسين سرعة الموقع وSEO
+                        </li>
 
-    animation:fadeSection .8s ease;
+                        <li>
+                            <i class="fas fa-check"></i>
+                            كتابة كود منظم وسهل الصيانة
+                        </li>
 
-}
+                        <li>
+                            <i class="fas fa-check"></i>
+                            حل المشكلات البرمجية
+                        </li>
 
-@keyframes fadeSection{
+                    </ul>
 
-    from{
+                    <a href="#contact" class="btn">
+                        تواصل معي
+                    </a>
 
-        opacity:0;
-        transform:translateY(40px);
+                </div>
 
-    }
+            </div>
 
-    to{
+        </div>
 
-        opacity:1;
-        transform:translateY(0);
-
-    }
-
-}
-
-/* ==========================
-   متجاوب مع الهاتف
-========================== */
-
-@media (max-width:768px){
-
-nav{
-
-    flex-direction:column;
-
-}
-
-nav ul{
-
-    flex-direction:column;
-    margin-top:15px;
-
-}
-
-nav ul li{
-
-    margin:8px 0;
-
-}
-
-.hero h1{
-
-    font-size:32px;
-
-}
-
-.hero h2{
-
-    font-size:22px;
-
-}
-
-.hero img{
-
-    width:170px;
-    height:170px;
-
-}
-
-section{
-
-    padding:70px 20px;
-
-}
-
-.projects{
-
-    grid-template-columns:1fr;
-
-}
-
-.contact-form{
-
-    width:100%;
-
-}
-
-.social a{
-
-    width:50px;
-    height:50px;
-    font-size:22px;
-
-}
-
-}
-// ===============================
-// الوضع الليلي (Dark Mode)
-// ===============================
-
-const themeBtn = document.getElementById("theme-btn");
-
-themeBtn.addEventListener("click", () => {
-
-    document.body.classList.toggle("dark");
-
-    const icon = themeBtn.querySelector("i");
-
-    if (document.body.classList.contains("dark")) {
-
-        icon.classList.remove("fa-moon");
-        icon.classList.add("fa-sun");
-
-    } else {
-
-        icon.classList.remove("fa-sun");
-        icon.classList.add("fa-moon");
-
-    }
-
-});
-
-// ===============================
-// ظهور الأقسام عند التمرير
-// ===============================
-
-const sections = document.querySelectorAll("section");
-
-const observer = new IntersectionObserver((entries) => {
-
-    entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-            entry.target.classList.add("show");
-
-        }
-
-    });
-
-}, {
-
-    threshold: 0.2
-
-});
-
-sections.forEach(section => {
-
-    section.classList.add("hidden");
-
-    observer.observe(section);
-
-});
-
-// ===============================
-// زر العودة إلى أعلى الصفحة
-// ===============================
-
-const topButton = document.createElement("button");
-
-topButton.innerHTML = "↑";
-
-topButton.id = "topBtn";
-
-document.body.appendChild(topButton);
-
-window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 300) {
-
-        topButton.style.display = "block";
-
-    } else {
-
-        topButton.style.display = "none";
-
-    }
-
-});
-
-topButton.addEventListener("click", () => {
-
-    window.scrollTo({
-
-        top: 0,
-
-        behavior: "smooth"
-
-    });
-
-});
-
-// ===============================
-// تأثير تكبير الأزرار
-// ===============================
-
-const buttons = document.querySelectorAll(".btn");
-
-buttons.forEach(button => {
-
-    button.addEventListener("mouseenter", () => {
-
-        button.style.transform = "scale(1.08)";
-
-    });
-
-    button.addEventListener("mouseleave", () => {
-
-        button.style.transform = "scale(1)";
-
-    });
-
-});
-
-// ===============================
-// تأثير بطاقات المشاريع
-// ===============================
-
-const cards = document.querySelectorAll(".card");
-
-cards.forEach(card => {
-
-    card.addEventListener("mouseenter", () => {
-
-        card.style.transform = "translateY(-10px)";
-
-    });
-
-    card.addEventListener("mouseleave", () => {
-
-        card.style.transform = "translateY(0)";
-
-    });
-
-});
-
-// ===============================
-// رسالة عند إرسال النموذج
-// ===============================
-
-const form = document.querySelector(".contact-form");
-
-if (form) {
-
-    form.addEventListener("submit", function (e) {
-
-        e.preventDefault();
-
-        alert("✅ تم إرسال رسالتك بنجاح.");
-
-        form.reset();
-
-    });
-
-}
-.hidden{
-    opacity:0;
-    transform:translateY(50px);
-    transition:all .8s ease;
-}
-
-.show{
-    opacity:1;
-    transform:translateY(0);
-}
-
-#topBtn{
-    position:fixed;
-    bottom:25px;
-    right:25px;
-    width:50px;
-    height:50px;
-    border:none;
-    border-radius:50%;
-    background:#0d6efd;
-    color:#fff;
-    font-size:22px;
-    cursor:pointer;
-    display:none;
-    box-shadow:0 5px 15px rgba(0,0,0,.3);
-    transition:.3s;
-    z-index:1000;
-}
-
-#topBtn:hover{
-    background:#084298;
-    transform:scale(1.1);
-}
+    </section>
