@@ -220,4 +220,46 @@ section{
 .project-links a:hover{
     background: var(--secondary);
 }
+.home-content{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:50px;
+    flex-wrap:wrap;
+}
+
+.home-text{
+    flex:1;
+    min-width:300px;
+}
+
+.home-image{
+    flex:1;
+    text-align:center;
+}
+
+.home-image img{
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #0077ff;
+    box-shadow:0 0 30px rgba(0,119,255,.4);
+}
+.projects-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.project-box{
+    background:#1b1b1b;
+    padding:20px;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.project-box:hover{
+    transform:translateY(-10px);
+}
 
