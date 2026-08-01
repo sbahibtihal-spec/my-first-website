@@ -81,7 +81,7 @@ section{
 }
 
 .section-title h2{
-    color: var(--primary);
+    color: var(--main);
     font-size: 2.2rem;
     position: relative;
     display: inline-block;
@@ -94,7 +94,7 @@ section{
     width: 60px;
     height: 3px;
     margin: 10px auto 0;
-    background: var(--primary);
+    background: var(--main);
     border-radius: 5px;
 }
 
@@ -120,7 +120,7 @@ section{
 .about-text p{
     line-height: 1.8;
     margin-bottom: 15px;
-    color: var(--light);
+    color: var(--gray);
 }
 
 .about-image{
@@ -132,7 +132,7 @@ section{
     height: 250px;
     object-fit: cover;
     border-radius: 50%;
-    border: 5px solid var(--primary);
+    border: 5px solid var(--main);
     box-shadow: 0 0 20px rgba(0,119,255,.4);
 }
 
@@ -144,10 +144,10 @@ section{
 }
 
 .skill{
-    background: var(--card-bg);
+    background: var(--card);
     padding: 20px;
     border-radius: 12px;
-    box-shadow: var(--shadow);
+    box-shadow: 0 5px 15px rgba(0,0,0,.3);
     transition: .3s;
 }
 
@@ -165,7 +165,7 @@ section{
 
 .skill-bar{
     height: 10px;
-    background: var(--gray);
+    background: var (--gray);
     border-radius: 10px;
     overflow: hidden;
 }
@@ -173,7 +173,7 @@ section{
 .skill-bar span{
     display: block;
     height: 100%;
-    background: linear-gradient(90deg,var(--primary),var(--secondary));
+    background: linear-gradient(90deg,var(--main),var(--main-light));
     border-radius: 10px;
 }
 
@@ -187,8 +187,8 @@ section{
 .project-box{
     overflow: hidden;
     border-radius: 12px;
-    background: var(--card-bg);
-    box-shadow: var(--shadow);
+    background: var(--card);
+    box-shadow: O 10px 20px rgba(0,0,0.3);
     transition: .3s;
 }
 
@@ -211,14 +211,14 @@ section{
     margin: 10px 10px 0 0;
     padding: 8px 15px;
     border-radius: 6px;
-    background: var(--primary);
+    background: var(--main);
     color: #fff;
     text-decoration: none;
     transition: .3s;
 }
 
 .project-links a:hover{
-    background: var(--secondary);
+    background: var(--main-light);
 }
 .home-content{
     display:flex;
