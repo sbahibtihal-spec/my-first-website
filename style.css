@@ -41,6 +41,39 @@ body{
     background:var(--main-light);
 }
 /* شريط التنقل */
+#menu-btn{
+    display:none;
+}
+
+@media (max-width:768px){
+    #menu-btn{
+        display:block;
+        font-size:28px;
+        cursor:pointer;
+    }
+
+    .nav-links{
+        display:none;
+    }
+}
+.home-content{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:60px;
+}
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.btn{
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+}
 
 nav{
     position:fixed;
