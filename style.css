@@ -189,3 +189,227 @@ nav{
         transform:translateY(0);
     }
 }
+/* ==========================
+   نبذة عني
+========================== */
+
+#about{
+    max-width:1100px;
+    margin:auto;
+    padding:100px 20px;
+    text-align:center;
+}
+
+#about h2{
+    font-size:38px;
+    color:var(--main);
+    margin-bottom:25px;
+}
+
+#about h3{
+    font-size:28px;
+    color:var(--main-light);
+    margin-top:40px;
+    margin-bottom:20px;
+}
+
+#about p{
+    color:var(--gray);
+    font-size:18px;
+    max-width:900px;
+    margin:auto;
+    line-height:2;
+}
+
+/* ==========================
+   المهارات
+========================== */
+
+#skills{
+    max-width:1100px;
+    margin:auto;
+    padding:100px 20px;
+}
+
+#skills h2{
+    text-align:center;
+    color:var(--main);
+    font-size:38px;
+    margin-bottom:50px;
+}
+
+.skill{
+    background:var(--card);
+    margin:20px 0;
+    padding:18px 25px;
+    border-radius:12px;
+    border-right:6px solid var(--main);
+    transition:.3s;
+    font-size:20px;
+}
+
+.skill:hover{
+    transform:translateX(-10px);
+    box-shadow:0 12px 25px rgba(0,119,255,.25);
+}
+
+/* ==========================
+   المشاريع
+========================== */
+
+#projects{
+    max-width:1200px;
+    margin:auto;
+    padding:100px 20px;
+}
+
+#projects h2{
+    text-align:center;
+    color:var(--main);
+    font-size:38px;
+    margin-bottom:50px;
+}
+
+.projects-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.project-card{
+    background:var(--card);
+    border-radius:15px;
+    overflow:hidden;
+    transition:.4s;
+}
+
+.project-card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 20px 35px rgba(0,119,255,.25);
+}
+
+.project-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.project-card h3{
+    padding:20px 20px 10px;
+    color:var(--main);
+}
+
+.project-card p{
+    padding:0 20px 20px;
+    color:var(--gray);
+}
+
+.project-card a{
+    display:inline-block;
+    margin:10px 20px 20px;
+    padding:10px 18px;
+    border-radius:8px;
+    background:var(--main);
+    color:#fff;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.project-card a:hover{
+    background:var(--main-light);
+}
+
+/* ==========================
+   الشهادات
+========================== */
+
+#certificates{
+    max-width:1100px;
+    margin:auto;
+    padding:100px 20px;
+}
+
+#certificates h2{
+    text-align:center;
+    color:var(--main);
+    font-size:38px;
+    margin-bottom:40px;
+}
+
+.certificate{
+    background:var(--card);
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    transition:.3s;
+}
+
+.certificate:hover{
+    transform:scale(1.03);
+    box-shadow:0 15px 30px rgba(0,119,255,.25);
+}
+
+.certificate h3{
+    color:var(--main);
+    margin-bottom:15px;
+}
+
+.certificate p{
+    color:var(--gray);
+}
+/* ==========================
+   التواصل
+========================== */
+
+#contact{
+    max-width:1000px;
+    margin:auto;
+    padding:100px 20px;
+    text-align:center;
+}
+
+#contact h2{
+    color:var(--main);
+    font-size:38px;
+    margin-bottom:30px;
+}
+
+#contact p{
+    font-size:20px;
+    margin:15px 0;
+    color:var(--gray);
+}
+
+#contact i{
+    color:var(--main);
+    margin-left:10px;
+    font-size:22px;
+}
+
+/* ==========================
+   الفوتر
+========================== */
+
+footer{
+    background:#090d12;
+    padding:25px;
+    text-align:center;
+    color:var(--gray);
+    margin-top:50px;
+}
+
+/* ==========================
+   الخلفية المتحركة
+========================== */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:rgba(0,119,255,.15);
+    border-radius:50%;
+    top:-150px;
+    right:-150px;
+    filter:blur(120px);
+    animation:move1
