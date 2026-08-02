@@ -1,81 +1,191 @@
-/* الصفحة الرئيسية */
-.home{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    padding-top:100px;
+/* ==========================
+   إعدادات عامة
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Tajawal",sans-serif;
 }
 
-.home-content{
-    width:100%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:60px;
+html{
+    scroll-behavior:smooth;
 }
 
-.home-text{
-    flex:1;
+:root{
+    --main:#0077ff;
+    --main-light:#00b4ff;
+    --bg:#0d1117;
+    --card:#161b22;
+    --text:#ffffff;
+    --gray:#9ca3af;
 }
 
-.home-text h1{
-    font-size:64px;
-    margin-bottom:10px;
-}
-
-.home-text h1 span{
-    color:#00bfff;
-}
-
-.home-text h2{
-    font-size:35px;
-    color:#00bfff;
-    margin-bottom:20px;
-}
-
-.home-text p{
-    font-size:20px;
-    color:#cfcfcf;
-    margin-bottom:30px;
+body{
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
     line-height:1.8;
 }
 
-.home-image{
-    flex:1;
-    display:flex;
-    justify-content:center;
+/* ==========================
+   شريط التنقل
+========================== */
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    background:rgba(13,17,23,.90);
+    backdrop-filter:blur(10px);
 }
 
-.home-image img{
-    width:320px;
-    height:320px;
-    object-fit:cover;
+nav{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 25px;
+}
+
+.logo{
+    color:var(--main);
+    font-size:30px;
+    font-weight:bold;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+.nav-links a{
+    color:#fff;
+    text-decoration:none;
+    transition:.3s;
+    font-size:17px;
+}
+
+.nav-links a:hover{
+    color:var(--main);
+}
+
+#theme-toggle{
+    width:45px;
+    height:45px;
+    border:none;
     border-radius:50%;
-    border:6px solid #00bfff;
-    box-shadow:0 0 35px rgba(0,191,255,.5);
+    background:var(--main);
+    color:#fff;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#theme-toggle:hover{
+    transform:rotate(180deg);
+}
+
+/* ==========================
+   الصفحة الرئيسية
+========================== */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    max-width:1200px;
+    margin:auto;
+    padding:120px 20px 50px;
+    gap:60px;
+}
+
+.hero-text{
+    flex:1;
+}
+
+.hero-text h1{
+    font-size:55px;
+    margin-bottom:15px;
+}
+
+.hero-text span{
+    color:var(--main);
+}
+
+.hero-text h2{
+    color:var(--main-light);
+    margin-bottom:20px;
+    font-size:32px;
+}
+
+.hero-text p{
+    color:var(--gray);
+    font-size:19px;
+    margin-bottom:35px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
 }
 
 .btn{
     display:inline-block;
-    padding:14px 32px;
-    margin:10px;
-    background:#00bfff;
+    padding:14px 28px;
+    border-radius:10px;
+    background:var(--main);
     color:#fff;
     text-decoration:none;
-    border-radius:10px;
     transition:.3s;
 }
 
 .btn:hover{
-    background:#0099dd;
-    transform:translateY(-3px);
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,119,255,.4);
 }
 
-.btn-outline{
+.secondary{
     background:transparent;
-    border:2px solid #00bfff;
+    border:2px solid var(--main);
 }
 
-.btn-outline:hover{
-    background:#00bfff;
+.secondary:hover{
+    background:var(--main);
+}
+
+/* ==========================
+   الصورة الشخصية
+========================== */
+
+.hero-image{
+    flex:1;
+    text-align:center;
+}
+
+.hero-image img{
+    width:350px;
+    height:350px;
+    border-radius:50%;
+    object-fit:cover;
+    border:6px solid var(--main);
+    box-shadow:0 0 40px rgba(0,119,255,.5);
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-15px);
+    }
+    100%{
+        transform:translateY(0);
+    }
 }
