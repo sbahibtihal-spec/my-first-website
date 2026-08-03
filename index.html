@@ -1,178 +1,42 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>ابتهاج | Front-End Developer</title>
 
     <link rel="stylesheet" href="style.css">
 
     <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 
 <body>
 
 <header>
+    <nav>
 
-<nav>
+        <h2 class="logo">ابتهاج</h2>
 
-<h2 class="logo">ابتهاج</h2>
+        <ul class="nav-links">
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#about">نبذة</a></li>
+            <li><a href="#skills">المهارات</a></li>
+            <li><a href="#projects">المشاريع</a></li>
+            <li><a href="#certificates">الشهادات</a></li>
+            <li><a href="#contact">تواصل</a></li>
+        </ul>
 
-<ul class="nav-links">
+        <button id="theme-toggle">
+            <i class="fas fa-moon"></i>
+        </button>
 
-<li><a href="#home">الرئيسية</a></li>
-<li><a href="#about">نبذة</a></li>
-<li><a href="#skills">المهارات</a></li>
-<li><a href="#projects">المشاريع</a></li>
-<li><a href="#certificates">الشهادات</a></li>
-<li><a href="#contact">تواصل</a></li>
-
-</ul>
-
-<button id="theme-toggle">
-<i class="fas fa-moon"></i>
-</button>
-
-</nav>
-
+    </nav>
 </header>
 
-<div class="hero-text">
-
-<h1>مرحباً، أنا <span>ابتهاج</span></h1>
-
-<h2>Front-End Developer</h2>
-
-<p>
-أقوم بتطوير مواقع ويب حديثة باستخدام
-HTML وCSS وJavaScript
-مع الاهتمام بالأداء والتصميم المتجاوب.
-</p>
-
-<div class="hero-buttons">
-
-<a href="cv.pdf" class="btn" download>
-<i class="fas fa-download"></i>
-Download CV
-</a>
-
-<a href="#contact" class="btn secondary">
-<i class="fas fa-paper-plane"></i>
-Hire Me
-</a>
-
-<div>
-
-</div>
-<div class="hero-text">
-    <div/>
-   <div class="hero-image">
-    <div class="circle">
-        <span>Profile</span>
-                      </div>
-                      </div> 
-    </section>
-<section id="about">
-
-<h2>نبذة عني</h2>
-
-<p>
-أنا ابتهاج، مطورة واجهات أمامية Front-End Developer
-لدي خبرة في HTML وCSS وJavaScript وأسعى
-للحصول على فرصة عمل خارج المغرب.
-</p>
-
-</section>
-
-<section id="skills">
-
-<h2>المهارات</h2>
-
-<div class="skill">HTML</div>
-
-<div class="skill">CSS</div>
-
-<div class="skill">JavaScript</div>
-
-<div class="skill">Responsive Design</div>
-
-<div class="skill">Git & GitHub</div>
-
-</section>
-
-<section id="projects">
-
-<h2>المشاريع</h2>
-
-<div class="projects-container">
-
-<div class="project-card">
-
-<img src="images/project1.jpg">
-
-<h3>Portfolio Website</h3>
-
-<p>موقع شخصي احترافي.</p>
-
-<a href="#">Live Demo</a>
-
-<a href="#">Source Code</a>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="certificates">
-
-<h2>الشهادات</h2>
-
-<div class="certificate">
-
-<h3>بكالوريوس</h3>
-
-<p>شهادة البكالوريوس.</p>
-
-</div>
-
-</section>
-
-<section id="contact">
-
-<h2>تواصل معي</h2>
-
-<p>
-
-<i class="fas fa-envelope"></i>
-
-sbahibtihal@gmail.com
-
-</p>
-
-<p>
-
-<i class="fab fa-whatsapp"></i>
-
-+212703166572
-
-</p>
-
-</section>
-
-<footer>
-
-<p>
-
-© 2026 جميع الحقوق محفوظة | ابتهاج
-
-</p>
-
-</footer>
-
-<script src="script.js"></script>
-  <section id="home" class="hero">
+<section id="home" class="hero">
 
     <div class="hero-text">
 
@@ -183,16 +47,19 @@ sbahibtihal@gmail.com
         <h2><span id="typing"></span></h2>
 
         <p>
-            Front-End Developer passionate about creating
-            modern, responsive and fast websites using
-            HTML, CSS and JavaScript.
+            Front-End Developer passionate about creating modern,
+            responsive and fast websites using HTML, CSS and JavaScript.
         </p>
 
+        <div class="hero-buttons">
+
             <a href="cv.pdf" class="btn" download>
+                <i class="fas fa-download"></i>
                 Download CV
             </a>
 
-            <a href="#contact" class="btn btn-outline">
+            <a href="#contact" class="btn secondary">
+                <i class="fas fa-paper-plane"></i>
                 Hire Me
             </a>
 
@@ -202,11 +69,106 @@ sbahibtihal@gmail.com
 
     <div class="hero-image">
 
-        <img src="images/téléchargement.jfif" alt=profil">
+        <div class="circle">
+            <img src="images/téléchargement.jfif" alt="Profile">
+        </div>
 
     </div>
 
-</section>  
+</section>
 
-</body>
-</html>
+<section id="about">
+
+    <h2>نبذة عني</h2>
+
+    <p>
+        أنا ابتهاج، مطورة واجهات أمامية (Front-End Developer)،
+        لدي خبرة في HTML وCSS وJavaScript وأسعى للحصول على
+        فرصة عمل خارج المغرب.
+    </p>
+
+    <h3>About Me</h3>
+
+    <p>
+        I'm Ibtihaj, a Front-End Developer passionate about
+        building responsive and modern websites using HTML,
+        CSS and JavaScript.
+    </p>
+
+</section>
+<section id="skills">
+
+    <h2>المهارات</h2>
+
+    <div class="skills-container">
+
+        <div class="skill">HTML</div>
+
+        <div class="skill">CSS</div>
+
+        <div class="skill">JavaScript</div>
+
+        <div class="skill">Responsive Design</div>
+
+        <div class="skill">Git & GitHub</div>
+
+    </div>
+
+</section>
+
+<section id="projects">
+
+    <h2>المشاريع</h2>
+
+    <div class="projects-container">
+
+        <div class="project-card">
+
+            <img src="images/project1.jpg" alt="Portfolio Website">
+
+            <h3>Portfolio Website</h3>
+
+            <p>موقع شخصي احترافي.</p>
+
+            <div class="project-links">
+                <a href="#">Live Demo</a>
+                <a href="#">Source Code</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="certificates">
+
+    <h2>الشهادات</h2>
+
+    <div class="certificate">
+
+        <h3>بكالوريوس</h3>
+
+        <p>شهادة البكالوريوس.</p>
+
+    </div>
+
+</section>
+
+<section id="contact">
+
+    <h2>تواصل معي</h2>
+
+    <div class="contact-info">
+
+        <p>
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:sbahibtihal@gmail.com">
+                sbahibtihal@gmail.com
+            </a>
+        </p>
+
+        <p>
+            <i class="fab fa-whatsapp"></i>
+            <a href="https://wa.me/212703166572" target="_blank">
+                +212 703166
