@@ -80,7 +80,7 @@ nav{
 
 #about h3{
     margin-top:30px;
-    color:var(--main-light);
+    color:var( --main-light);
     font-size:28px;}
 
 #about p{
@@ -166,13 +166,13 @@ nav{
 
 .project-links a{
     background:var(--main);
-    color:#fff;
-    padding:10px 20px;
-    border-radius:8px;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
     transition:.3s;}
 
 .project-links a:hover{
-    background:var(--main-light);}
+    background:var ( --main-light);}
 
 /*==========================
   الشهادات
@@ -182,7 +182,7 @@ nav{
     text-align:center;
     color:var(--main);
     font-size:40px;
-    margin-bottom:40px;}
+    margin-bottom: 40px;}
 
 .certificate{
     max-width:600px;
@@ -191,4 +191,4 @@ nav{
     padding:30px;
     border-radius:15px;
     text-align:center;
-    box-shadow:0 5px 20px rgba(0,0,0,.3)}
+    box-shadow:0 5px 20px rgba(0, 0, 0, .3 )}
