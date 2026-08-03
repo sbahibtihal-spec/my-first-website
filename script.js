@@ -1,56 +1,150 @@
-/* ==========================
-   التواصل
-========================== */
+// ==============================
+// الوضع الليلي
+// ==============================
 
-#contact{
-    max-width:1000px;
-    margin:auto;
-    padding:100px 20px;
-    text-align:center;
+const themeToggle = document.getElementById("theme-toggle");
+
+themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("light-mode");
+
+    const icon = themeToggle.querySelector("i");
+
+    if (document.body.classList.contains("light-mode")) {
+        icon.classList.remove("fa-moon");
+        icon.classList.add("fa-sun");
+    } else {
+        icon.classList.remove("fa-sun");
+        icon.classList.add("fa-moon");
+    }
+});
+
+// ==============================
+// الكتابة المتحركة
+// ==============================
+
+const typing = document.getElementById("typing");
+
+const words = [
+    "Front-End Developer",
+    "HTML Developer",
+    "CSS Expert",
+    "JavaScript Developer"
+];
+
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeEffect() {
+
+    const currentWord = words[wordIndex];
+
+    if (!deleting) {
+        typing.textContent = currentWord.substring(0, charIndex++);
+    } else {
+        typing.textContent = currentWord.substring(0, charIndex--);
+    }
+
+    let speed = 120;
+
+    if (!deleting && charIndex === currentWord.length + 1) {
+        deleting = true;
+        speed = 1500;
+    }
+
+    if (deleting && charIndex === 0) {
+        deleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+    }
+
+    setTimeout(typeEffect, speed);
 }
 
-#contact h2{
-    color:var(--main);
-    font-size:38px;
-    margin-bottom:30px;
+typeEffect();
+
+// ==============================
+// ظهور العناصر عند التمرير
+// ==============================
+
+const observer = new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+
+    });
+
+}, {
+    threshold: 0.2
+});
+
+document.querySelectorAll("section").forEach(section => {
+
+    section.classList.add("fade-up");
+    observer.observe(section);
+
+});
+
+// ==============================
+// تفعيل روابط القائمة
+// ==============================
+
+const navLinks = document.querySelectorAll(".nav-links a");
+
+navLinks.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navLinks.forEach(item => item.classList.remove("active"));
+
+        link.classList.add("active");
+
+    });
+
+});
+
+// ==============================
+// تمرير سلس
+// ==============================
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+    anchor.addEventListener("click", function (e) {
+
+        e.preventDefault();
+
+        const target = document.querySelector(this.getAttribute("href"));
+
+        if (target) {
+
+            target.scrollIntoView({
+                behavior: "smooth"
+            });
+
+        }
+
+    });
+
+});
+
+// ==============================
+// رسالة عند إرسال النموذج
+// ==============================
+
+const form = document.querySelector(".contact-form");
+
+if (form) {
+
+    form.addEventListener("submit", function (e) {
+
+        e.preventDefault();
+
+        alert("تم إرسال رسالتك بنجاح.");
+
+        form.reset();
+
+    });
+
 }
-
-#contact p{
-    font-size:20px;
-    margin:15px 0;
-    color:var(--gray);
-}
-
-#contact i{
-    color:var(--main);
-    margin-left:10px;
-    font-size:22px;
-}
-
-/* ==========================
-   الفوتر
-========================== */
-
-footer{
-    background:#090d12;
-    padding:25px;
-    text-align:center;
-    color:var(--gray);
-    margin-top:50px;
-}
-
-/* ==========================
-   الخلفية المتحركة
-========================== */
-
-body::before{
-    content:"";
-    position:fixed;
-    width:500px;
-    height:500px;
-    background:rgba(0,119,255,.15);
-    border-radius:50%;
-    top:-150px;
-    right:-150px;
-    filter:blur(120px);
-    animation:move1
