@@ -1,6 +1,6 @@
-/* ==========================
-   إعدادات عامة
-========================== */
+/*==========================
+  إعدادات عامة
+==========================*/
 
 *{
     margin:0;
@@ -25,254 +25,122 @@ html{
 body{
     background:var(--bg);
     color:var(--text);
+    line-height:1.7;
     overflow-x:hidden;
-    line-height:1.8;
 }
 
-/* ==========================
-   شريط التنقل
-========================== */
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+}
+
+ul{
+    list-style:none;
+}
+
+section{
+    padding:100px 10%;
+}
+
+/*==========================
+  شريط التنقل
+==========================*/
 
 header{
     position:fixed;
-    width:100%;
     top:0;
-    z-index:1000;
-    background:rgba(13,17,23,.90);
+    right:0;
+    width:100%;
+    background:rgba(13,17,23,.95);
     backdrop-filter:blur(10px);
+    z-index:1000;
 }
 
 nav{
-    max-width:1200px;
-    margin:auto;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:18px 25px;
+    padding:20px 10%;
 }
 
 .logo{
-    color:var(--main);
     font-size:30px;
+    color:var(--main);
     font-weight:bold;
 }
 
 .nav-links{
     display:flex;
-    list-style:none;
-    gap:25px;
+    gap:30px;
 }
-
-.nav-links a{
-    color:#fff;
-    text-decoration:none;
-    transition:.3s;
-    font-size:17px;
-}
-
-.nav-links a:hover{
-    color:var(--main);
-}
-
-#theme-toggle{
-    width:45px;
-    height:45px;
-    border:none;
-    border-radius:50%;
-    background:var(--main);
-    color:#fff;
-    cursor:pointer;
-    transition:.3s;
-}
-
-#theme-toggle:hover{
-    transform:rotate(180deg);
-}
-
-/* ==========================
-   الصفحة الرئيسية
-========================== */
-
-.hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    max-width:1200px;
-    margin:auto;
-    padding:120px 20px 50px;
-    gap:60px;
-}
-
-.hero-text{
-    flex:1;
-}
-
-.hero-text h1{
-    font-size:55px;
-    margin-bottom:15px;
-}
-
-.hero-text span{
-    color:var(--main);
-}
-
-.hero-text h2{
-    color:var(--main-light);
-    margin-bottom:20px;
-    font-size:32px;
-}
-
-.hero-text p{
-    color:var(--gray);
-    font-size:19px;
-    margin-bottom:35px;
-}
-
-.hero-buttons{
-    display:flex;
-    gap:15px;
-    flex-wrap:wrap;
-}
-
-.btn{
-    display:inline-block;
-    padding:14px 28px;
-    border-radius:10px;
-    background:var(--main);
-    color:#fff;
-    text-decoration:none;
-    transition:.3s;
-}
-
-.btn:hover{
-    transform:translateY(-5px);
-    box-shadow:0 10px 25px rgba(0,119,255,.4);
-}
-
-.secondary{
-    background:transparent;
-    border:2px solid var(--main);
-}
-
-.secondary:hover{
-    background:var(--main);
-}
-
-/* ==========================
-   الصورة الشخصية
-========================== */
-
-.hero-image{
-    flex:1;
-    text-align:center;
-}
-
-.hero-image img{
-    width:350px;
-    height:350px;
-    border-radius:50%;
-    object-fit:cover;
-    border:6px solid var(--main);
-    box-shadow:0 0 40px rgba(0,119,255,.5);
-    animation:float 4s ease-in-out infinite;
-}
-
-@keyframes float{
-    0%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-15px);
-    }
-    100%{
-        transform:translateY(0);
-    }
-}
-/* ==========================
-   نبذة عني
-========================== */
+/*==========================
+  نبذة عني
+==========================*/
 
 #about{
-    max-width:1100px;
-    margin:auto;
-    padding:100px 20px;
     text-align:center;
 }
 
 #about h2{
-    font-size:38px;
+    font-size:40px;
     color:var(--main);
-    margin-bottom:25px;
+    margin-bottom:30px;
 }
 
 #about h3{
-    font-size:28px;
+    margin-top:30px;
     color:var(--main-light);
-    margin-top:40px;
-    margin-bottom:20px;
+    font-size:28px;
 }
 
 #about p{
+    max-width:900px;
+    margin:20px auto;
     color:var(--gray);
     font-size:18px;
-    max-width:900px;
-    margin:auto;
-    line-height:2;
+    line-height:1.9;
 }
 
-/* ==========================
-   المهارات
-========================== */
-
-#skills{
-    max-width:1100px;
-    margin:auto;
-    padding:100px 20px;
-}
+/*==========================
+  المهارات
+==========================*/
 
 #skills h2{
     text-align:center;
     color:var(--main);
-    font-size:38px;
+    font-size:40px;
     margin-bottom:50px;
+}
+
+.skills-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
 }
 
 .skill{
     background:var(--card);
-    margin:20px 0;
-    padding:18px 25px;
+    padding:25px;
     border-radius:12px;
-    border-right:6px solid var(--main);
-    transition:.3s;
-    font-size:20px;
-}
-
-.skill:hover{
-    transform:translateX(-10px);
-    box-shadow:0 12px 25px rgba(0,119,255,.25);
-}
-
-/* ==========================
-   المشاريع
-========================== */
-
-#projects{
-    max-width:1200px;
-    margin:auto;
-    padding:100px 20px;
-}
+    text-align:center;
+   /*==========================
+  المشاريع
+==========================*/
 
 #projects h2{
     text-align:center;
+    font-size:40px;
     color:var(--main);
-    font-size:38px;
     margin-bottom:50px;
 }
 
 .projects-container{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
     gap:30px;
 }
 
@@ -280,12 +148,12 @@ nav{
     background:var(--card);
     border-radius:15px;
     overflow:hidden;
-    transition:.4s;
+    transition:.3s;
+    box-shadow:0 5px 20px rgba(0,0,0,.3);
 }
 
 .project-card:hover{
-    transform:translateY(-12px);
-    box-shadow:0 20px 35px rgba(0,119,255,.25);
+    transform:translateY(-10px);
 }
 
 .project-card img{
@@ -295,259 +163,50 @@ nav{
 }
 
 .project-card h3{
-    padding:20px 20px 10px;
+    margin:20px;
     color:var(--main);
 }
 
 .project-card p{
-    padding:0 20px 20px;
+    margin:0 20px 20px;
     color:var(--gray);
 }
 
-.project-card a{
-    display:inline-block;
-    margin:10px 20px 20px;
-    padding:10px 18px;
-    border-radius:8px;
+.project-links{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    padding:20px;
+}
+
+.project-links a{
     background:var(--main);
     color:#fff;
-    text-decoration:none;
+    padding:10px 20px;
+    border-radius:8px;
     transition:.3s;
 }
 
-.project-card a:hover{
+.project-links a:hover{
     background:var(--main-light);
 }
 
-/* ==========================
-   الشهادات
-========================== */
-
-#certificates{
-    max-width:1100px;
-    margin:auto;
-    padding:100px 20px;
-}
+/*==========================
+  الشهادات
+==========================*/
 
 #certificates h2{
     text-align:center;
     color:var(--main);
-    font-size:38px;
+    font-size:40px;
     margin-bottom:40px;
 }
 
 .certificate{
+    max-width:600px;
+    margin:auto;
     background:var(--card);
     padding:30px;
     border-radius:15px;
     text-align:center;
-    transition:.3s;
-}
-
-.certificate:hover{
-    transform:scale(1.03);
-    box-shadow:0 15px 30px rgba(0,119,255,.25);
-}
-
-.certificate h3{
-    color:var(--main);
-    margin-bottom:15px;
-}
-
-.certificate p{
-    color:var(--gray);
-}
-/* ==========================
-   التواصل
-========================== */
-
-#contact{
-    max-width:1000px;
-    margin:auto;
-    padding:100px 20px;
-    text-align:center;
-}
-
-#contact h2{
-    color:var(--main);
-    font-size:38px;
-    margin-bottom:30px;
-}
-
-#contact p{
-    font-size:20px;
-    margin:15px 0;
-    color:var(--gray);
-}
-
-#contact i{
-    color:var(--main);
-    margin-left:10px;
-    font-size:22px;
-}
-
-/* ==========================
-   الفوتر
-========================== */
-
-footer{
-    background:#090d12;
-    padding:25px;
-    text-align:center;
-    color:var(--gray);
-    margin-top:50px;
-}
-
-/* ==========================
-   الخلفية المتحركة
-========================== */
-
-body::before{
-    content:"";
-    position:fixed;
-    width:500px;
-    height:500px;
-    background:rgba(0,119,255,.15);
-    border-radius:50%;
-    top:-150px;
-    right:-150px;
-    filter:blur(120px);
-    animation:move1
-   /* ==========================
-   Hero Section
-========================== */
-
-.herojkkjre display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:60px;
-    min-height:100vh;
-    padding:120px 10%;}
-
-.hero-text{ flex:1;}
-
-.hero-text h3{ color:#00bfff;
-    font-size:24px;
-    margin-bottom:10px;}
-
-.hero-text h1{ font-size:64px;
-    color:#fff;
-    margin-bottom:15px;}
-
-.hero-text h2{ font-size:34px;
-    color:#00bfff;
-    margin-bottom:20px;}
-
-.hero-text p{ color:#bdbdbd;
-    line-height:1.8;
-    font-size:20px;
-    margin-bottom:35px;}
-
-.hero-buttons{ display:flex;
-    gap:20px;
-    flex-wrap:wrap;}
-
-.btn{ padding:15px 35px;
-    border-radius:50px;
-    background:#00bfff;
-    color:#fff;
-    text-decoration:none;
-    font-weight:bold;
-    transition:.3s;}
-
-.btn:hover{ transform:translateY(-5px);
-    box-shadow:0 0 20px #00bfff;}
-
-.btn-outline{ background:transparent;
-    border:2px solid #00bfff;}
-
-.hero-image{ flex:1;
-    display:flex;
-    justify-content:center;}
-
-.hero-image img{ width:340px;
-    height:340px;
-    border-radius:50%;
-    object-fit:cover;
-    border:6px solid #00bfff;
-    box-shadow:0 0 40px rgba(0,191,255,.6);
-    animation:floatImage 4s ease-in-out infinite;}
-   
-   @keyframes floatImage{
-    0%{ transform:translateY(0); }
-    50%{ transform:translateY(-15px); }
-    100%{ transform:translateY(0); }
-}@media(max-width:768px){
-
-.hero{ flex-direction:column-reverse;
-    text-align:center;}
-
-.hero-text h1{
-    font-size:42px;}
-
-.hero-text h2{
-    font-size:26px;}
-
-.hero-image img{
-    width:240px;
-    height:240px;}
-
-.hero-buttons{
-    justify-content:center;}
-     /* ==========================
-   التواصل
-========================== */
-
-#contact{
-    max-width:1000px;
-    margin:auto;
-    padding:100px 20px;
-    text-align:center;
-}
-
-#contact h2{
-    color:var(--main);
-    font-size:38px;
-    margin-bottom:30px;
-}
-
-#contact p{
-    font-size:20px;
-    margin:15px 0;
-    color:var(--gray);
-}
-
-#contact i{
-    color:var(--main);
-    margin-left:10px;
-    font-size:22px;
-}
-
-/* ==========================
-   الفوتر
-========================== */
-
-footer{
-    background:#090d12;
-    padding:25px;
-    text-align:center;
-    color:var(--gray);
-    margin-top:50px;
-}
-
-/* ==========================
-   الخلفية المتحركة
-========================== */
-
-body::before{
-    content:"";
-    position:fixed;
-    width:500px;
-    height:500px;
-    background:rgba(0,119,255,.15);
-    border-radius:50%;
-    top:-150px;
-    right:-150px;
-    filter:blur(120px);
-    animation:move1 
-
+    box-shadow:0
