@@ -6,12 +6,10 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:"Tajawal",sans-serif;
-}
+    font-family:"Tajawal",sans-serif;}
 
 html{
-    scroll-behavior:smooth;
-}
+    scroll-behavior:smooth;}
 
 :root{
     --main:#0077ff;
@@ -19,32 +17,27 @@ html{
     --bg:#0d1117;
     --card:#161b22;
     --text:#ffffff;
-    --gray:#9ca3af;
-}
+    --gray:#9ca3af;}
 
 body{
     background:var(--bg);
     color:var(--text);
     line-height:1.7;
-    overflow-x:hidden;
-}
+    overflow-x:hidden;}
 
 img{
     max-width:100%;
-    display:block;
-}
+    display:block;}
 
 a{
     text-decoration:none;
 }
 
 ul{
-    list-style:none;
-}
+    list-style:none;}
 
 section{
-    padding:100px 10%;
-}
+    padding:100px 10%;}
 
 /*==========================
   شريط التنقل
@@ -57,53 +50,45 @@ header{
     width:100%;
     background:rgba(13,17,23,.95);
     backdrop-filter:blur(10px);
-    z-index:1000;
-}
+    z-index:1000;}
 
 nav{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:20px 10%;
-}
+    padding:20px 10%}
 
 .logo{
     font-size:30px;
     color:var(--main);
-    font-weight:bold;
-}
+    font-weight:bold;}
 
 .nav-links{
     display:flex;
-    gap:30px;
-}
+    gap:30px;}
 /*==========================
   نبذة عني
 ==========================*/
 
 #about{
-    text-align:center;
-}
+    text-align:center;}
 
 #about h2{
     font-size:40px;
     color:var(--main);
-    margin-bottom:30px;
-}
+    margin-bottom:30px;}
 
 #about h3{
     margin-top:30px;
     color:var(--main-light);
-    font-size:28px;
-}
+    font-size:28px;}
 
 #about p{
     max-width:900px;
     margin:20px auto;
     color:var(--gray);
     font-size:18px;
-    line-height:1.9;
-}
+    line-height:1.9;}
 
 /*==========================
   المهارات
@@ -119,14 +104,22 @@ nav{
 .skills-container{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:25px;
-}
+    gap:25px;}
 
 .skill{
     background:var(--card);
     padding:25px;
     border-radius:12px;
     text-align:center;
+    font-size:20px;
+    color:#fff;
+    transition:.3s;
+}
+
+.skill:hover{
+    transform:translateY(-8px);
+    background:var(--main);
+}
    /*==========================
   المشاريع
 ==========================*/
@@ -135,61 +128,51 @@ nav{
     text-align:center;
     font-size:40px;
     color:var(--main);
-    margin-bottom:50px;
-}
+    margin-bottom:50px;}
 
 .projects-container{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:30px;
-}
+    gap:30px;}
 
 .project-card{
     background:var(--card);
     border-radius:15px;
     overflow:hidden;
     transition:.3s;
-    box-shadow:0 5px 20px rgba(0,0,0,.3);
-}
+    box-shadow:0 5px 20px rgba(0,0,0,.3);}
 
 .project-card:hover{
-    transform:translateY(-10px);
-}
+    transform:translateY(-10px);}
 
 .project-card img{
     width:100%;
     height:220px;
-    object-fit:cover;
-}
+    object-fit:cover;}
 
 .project-card h3{
     margin:20px;
-    color:var(--main);
-}
+    color:var(--main);}
 
 .project-card p{
     margin:0 20px 20px;
-    color:var(--gray);
-}
+    color:var(--gray);}
 
 .project-links{
     display:flex;
     justify-content:center;
     gap:15px;
-    padding:20px;
-}
+    padding:20px;}
 
 .project-links a{
     background:var(--main);
     color:#fff;
     padding:10px 20px;
     border-radius:8px;
-    transition:.3s;
-}
+    transition:.3s;}
 
 .project-links a:hover{
-    background:var(--main-light);
-}
+    background:var(--main-light);}
 
 /*==========================
   الشهادات
@@ -199,8 +182,7 @@ nav{
     text-align:center;
     color:var(--main);
     font-size:40px;
-    margin-bottom:40px;
-}
+    margin-bottom:40px;}
 
 .certificate{
     max-width:600px;
@@ -209,4 +191,4 @@ nav{
     padding:30px;
     border-radius:15px;
     text-align:center;
-    box-shadow:0
+    box-shadow:0 5px 20px rgba(0,0,0,.3)}
