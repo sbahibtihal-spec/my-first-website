@@ -133,3 +133,4 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         loader.classList.add("hide");
     }, 1000);
 });
+            console.log("JavaScript يعمل");
