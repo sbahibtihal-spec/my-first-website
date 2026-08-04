@@ -4,19 +4,25 @@
 
 const themeToggle = document.getElementById("theme-toggle");
 
-themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("light-mode");
+if (themeToggle) {
 
-    const icon = themeToggle.querySelector("i");
+    themeToggle.addEventListener("click", () => {
 
-    if (document.body.classList.contains("light-mode")) {
-        icon.classList.remove("fa-moon");
-        icon.classList.add("fa-sun");
-    } else {
-        icon.classList.remove("fa-sun");
-        icon.classList.add("fa-moon");
-    }
-});
+        document.body.classList.toggle("light-mode");
+
+        const icon = themeToggle.querySelector("i");
+
+        if (document.body.classList.contains("light-mode")) {
+            icon.classList.remove("fa-moon");
+            icon.classList.add("fa-sun");
+        } else {
+            icon.classList.remove("fa-sun");
+            icon.classList.add("fa-moon");
+        }
+
+    });
+
+}
 
 // ==============================
 // الكتابة المتحركة
@@ -24,51 +30,55 @@ themeToggle.addEventListener("click", () => {
 
 const typing = document.getElementById("typing");
 
-const words = [
-    "Front-End Developer",
-    "HTML Developer",
-    "CSS Expert",
-    "JavaScript Developer"
-];
+if (typing) {
 
-let wordIndex = 0;
-let charIndex = 0;
-let deleting = false;
+    const words = [
+        "Front-End Developer",
+        "HTML Developer",
+        "CSS Expert",
+        "JavaScript Developer"
+    ];
 
-function typeEffect() {
+    let wordIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
 
-    const currentWord = words[wordIndex];
+    function typeEffect() {
 
-    if (!deleting) {
-        typing.textContent = currentWord.substring(0, charIndex++);
-    } else {
-        typing.textContent = currentWord.substring(0, charIndex--);
+        const currentWord = words[wordIndex];
+
+        if (!deleting) {
+            typing.textContent = currentWord.substring(0, charIndex++);
+        } else {
+            typing.textContent = currentWord.substring(0, charIndex--);
+        }
+
+        let speed = 120;
+
+        if (!deleting && charIndex === currentWord.length + 1) {
+            deleting = true;
+            speed = 1500;
+        }
+
+        if (deleting && charIndex === 0) {
+            deleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+        }
+
+        setTimeout(typeEffect, speed);
     }
 
-    let speed = 120;
+    typeEffect();
 
-    if (!deleting && charIndex === currentWord.length + 1) {
-        deleting = true;
-        speed = 1500;
-    }
-
-    if (deleting && charIndex === 0) {
-        deleting = false;
-        wordIndex = (wordIndex + 1) % words.length;
-    }
-
-    setTimeout(typeEffect, speed);
 }
 
-typeEffect();
-
 // ==============================
-// ظهور العناصر عند التمرير
+// ظهور الأقسام عند التمرير
 // ==============================
 
-const observer = new IntersectionObserver(entries => {
+const observer = new IntersectionObserver((entries) => {
 
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
 
         if (entry.isIntersecting) {
             entry.target.classList.add("show");
@@ -80,7 +90,7 @@ const observer = new IntersectionObserver(entries => {
     threshold: 0.2
 });
 
-document.querySelectorAll("section").forEach(section => {
+document.querySelectorAll("section").forEach((section) => {
 
     section.classList.add("fade-up");
     observer.observe(section);
@@ -88,16 +98,18 @@ document.querySelectorAll("section").forEach(section => {
 });
 
 // ==============================
-// تفعيل روابط القائمة
+// تفعيل رابط القائمة الحالي
 // ==============================
 
 const navLinks = document.querySelectorAll(".nav-links a");
 
-navLinks.forEach(link => {
+navLinks.forEach((link) => {
 
     link.addEventListener("click", () => {
 
-        navLinks.forEach(item => item.classList.remove("active"));
+        navLinks.forEach((item) => {
+            item.classList.remove("active");
+        });
 
         link.classList.add("active");
 
@@ -106,10 +118,10 @@ navLinks.forEach(link => {
 });
 
 // ==============================
-// تمرير سلس
+// التمرير السلس
 // ==============================
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 
     anchor.addEventListener("click", function (e) {
 
@@ -130,7 +142,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ==============================
-// رسالة عند إرسال النموذج
+// نموذج التواصل
 // ==============================
 
 const form = document.querySelector(".contact-form");
