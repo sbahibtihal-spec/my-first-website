@@ -126,3 +126,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         if (target) {
 
             target.scrollIntoView
+            window.addEventListener("load", function () {
+    const loader = document.getElementById("loader");
+
+    setTimeout(() => {
+        loader.classList.add("hide");
+    }, 1000);
+});
