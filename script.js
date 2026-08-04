@@ -6,18 +6,32 @@ const themeToggle = document.getElementById("theme-toggle");
 
 if (themeToggle) {
 
+    const icon = themeToggle.querySelector("i");
+
+    // استرجاع الوضع المحفوظ
+    if (localStorage.getItem("theme") === "light") {
+        document.body.classList.add("light-mode");
+        icon.classList.remove("fa-moon");
+        icon.classList.add("fa-sun");
+    }
+
     themeToggle.addEventListener("click", () => {
 
         document.body.classList.toggle("light-mode");
 
-        const icon = themeToggle.querySelector("i");
-
         if (document.body.classList.contains("light-mode")) {
+
             icon.classList.remove("fa-moon");
             icon.classList.add("fa-sun");
+
+            localStorage.setItem("theme", "light");
+
         } else {
+
             icon.classList.remove("fa-sun");
             icon.classList.add("fa-moon");
+
+            localStorage.setItem("theme", "dark");
         }
 
     });
@@ -53,23 +67,23 @@ if (typing) {
             typing.textContent = currentWord.substring(0, charIndex--);
         }
 
-        let speed = 120;
+        let speed = deleting ? 70 : 120;
 
-        if (!deleting && charIndex === currentWord.length + 1) {
+        if (!deleting && charIndex > currentWord.length) {
             deleting = true;
             speed = 1500;
         }
 
-        if (deleting && charIndex === 0) {
+        if (deleting && charIndex < 0) {
             deleting = false;
             wordIndex = (wordIndex + 1) % words.length;
+            charIndex = 0;
         }
 
         setTimeout(typeEffect, speed);
     }
 
     typeEffect();
-
 }
 
 // ==============================
@@ -98,30 +112,10 @@ document.querySelectorAll("section").forEach((section) => {
 });
 
 // ==============================
-// تفعيل رابط القائمة الحالي
+// تمرير سلس
 // ==============================
 
-const navLinks = document.querySelectorAll(".nav-links a");
-
-navLinks.forEach((link) => {
-
-    link.addEventListener("click", () => {
-
-        navLinks.forEach((item) => {
-            item.classList.remove("active");
-        });
-
-        link.classList.add("active");
-
-    });
-
-});
-
-// ==============================
-// التمرير السلس
-// ==============================
-
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
     anchor.addEventListener("click", function (e) {
 
@@ -131,32 +125,4 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 
         if (target) {
 
-            target.scrollIntoView({
-                behavior: "smooth"
-            });
-
-        }
-
-    });
-
-});
-
-// ==============================
-// نموذج التواصل
-// ==============================
-
-const form = document.querySelector(".contact-form");
-
-if (form) {
-
-    form.addEventListener("submit", function (e) {
-
-        e.preventDefault();
-
-        alert("تم إرسال رسالتك بنجاح.");
-
-        form.reset();
-
-    });
-
-}
+            target.scrollIntoView
