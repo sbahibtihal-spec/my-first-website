@@ -4,119 +4,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>ابتهاج | Front-End Developer</title>
 
+    <!-- ملف CSS -->
     <link rel="stylesheet" href="style.css">
 
+    <!-- Font Awesome -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
 <!-- شاشة التحميل -->
+
 <div id="loader">
     <div class="spinner"></div>
     <h2>ابتهاج</h2>
 </div>
 
+<!-- خلفية النجوم -->
+
+<div id="particles"></div>
+
 <!-- شريط التنقل -->
+
 <header>
-    <nav class="navbar">
 
-        <a href="#" class="logo">ابتهاج</a>
+<nav class="navbar">
 
-        <ul class="nav-links">
-            <li><a href="#home">الرئيسية</a></li>
-            <li><a href="#about">نبذة</a></li>
-            <li><a href="#skills">المهارات</a></li>
-            <li><a href="#projects">المشاريع</a></li>
-            <li><a href="#certificates">الشهادات</a></li>
-            <li><a href="#contact">تواصل</a></li>
-        </ul>
+<a href="#" class="logo">ابتهاج</a>
 
-        <button id="theme-toggle">
-            <i class="fas fa-moon"></i>
-        </button>
+<ul class="nav-links">
 
-    </nav>
+<li><a href="#home">الرئيسية</a></li>
+
+<li><a href="#about">نبذة</a></li>
+
+<li><a href="#skills">المهارات</a></li>
+
+<li><a href="#projects">المشاريع</a></li>
+
+<li><a href="#certificates">الشهادات</a></li>
+
+<li><a href="#contact">تواصل</a></li>
+
+</ul>
+
+<button id="theme-toggle">
+
+<i class="fas fa-moon"></i>
+
+</button>
+
+</nav>
+
 </header>
 
-<!-- الرئيسية -->
+<!-- الصفحة الرئيسية -->
+
 <section id="home" class="hero">
 
-    <div class="hero-text">
+<div class="hero-image">
 
-        <h3>Hello, I'm</h3>
+<div class="circle">
 
-        <h1>ابتهاج</h1>
+<img src="images/profile.jpg" alt="Profile">
 
-        <h2><span id="typing"></span></h2>
+</div>
 
-        <p>
-            Front-End Developer passionate about creating
-            modern, responsive and fast websites using
-            HTML, CSS and JavaScript.
-        </p>
+</div>
 
-        <div class="hero-buttons">
+<div class="hero-text">
 
-            <a href="cv.pdf" class="btn">
-                <i class="fas fa-download"></i>
-                Download CV
-            </a>
+<h3>Hello, I'm</h3>
 
-            <a href="#contact" class="btn secondary">
-                Hire Me
-            </a>
+<h1>ابتهاج</h1>
 
-        </div>
+<h2><span id="typing"></span></h2>
 
-    </div>
+<p>
 
-    <div class="hero-image">
-        <div class="circle">
-            <img src="images/profile.jpg" alt="Profile">
-        </div>
-    </div>
+Front-End Developer passionate about creating modern,
+responsive and fast websites using HTML, CSS and JavaScript.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="cv.pdf" class="btn" download>
+
+<i class="fas fa-download"></i>
+
+Download CV
+
+</a>
+
+<a href="#contact" class="btn secondary">
+
+<i class="fas fa-paper-plane"></i>
+
+Hire Me
+
+</a>
+
+</div>
+
+</div>
 
 </section>
+    <!-- نبذة عني -->
 
-<!-- نبذة -->
 <section id="about">
 
     <h2>نبذة عني</h2>
 
     <p>
-        أنا ابتهاج، مطورة واجهات أمامية (Front-End Developer)
-        متخصصة في HTML وCSS وJavaScript وأسعى للحصول
-        على فرصة عمل خارج المغرب.
+        أنا ابتهاج، مطورة واجهات أمامية (Front-End Developer)،
+        أحب تصميم مواقع ويب حديثة وسريعة ومتجاوبة باستخدام
+        HTML و CSS و JavaScript.
+        وأسعى للحصول على فرصة عمل خارج المغرب لتطوير
+        مهاراتي والمشاركة في مشاريع احترافية.
     </p>
 
 </section>
 
 <!-- المهارات -->
+
 <section id="skills">
 
     <h2>المهارات</h2>
 
     <div class="skills-container">
 
-        <div class="skill">HTML</div>
+        <div class="skill">
+            <i class="fab fa-html5"></i>
+            <h3>HTML5</h3>
+        </div>
 
-        <div class="skill">CSS</div>
+        <div class="skill">
+            <i class="fab fa-css3-alt"></i>
+            <h3>CSS3</h3>
+        </div>
 
-        <div class="skill">JavaScript</div>
+        <div class="skill">
+            <i class="fab fa-js"></i>
+            <h3>JavaScript</h3>
+        </div>
 
-        <div class="skill">Responsive Design</div>
+        <div class="skill">
+            <i class="fab fa-git-alt"></i>
+            <h3>Git</h3>
+        </div>
 
-        <div class="skill">Git & GitHub</div>
+        <div class="skill">
+            <i class="fab fa-github"></i>
+            <h3>GitHub</h3>
+        </div>
+
+        <div class="skill">
+            <i class="fas fa-mobile-alt"></i>
+            <h3>Responsive Design</h3>
+        </div>
 
     </div>
 
 </section>
 
 <!-- المشاريع -->
+
 <section id="projects">
 
     <h2>المشاريع</h2>
@@ -125,21 +185,32 @@
 
         <div class="project-card">
 
-            <img src="images/project1.jpg" alt="Project">
+            <img src="images/project1.jpg" alt="Project 1">
 
-            <h3>Portfolio Website</h3>
+            <div class="project-content">
 
-            <p>
-                موقع شخصي احترافي باستخدام HTML CSS JavaScript.
-            </p>
+                <h3>Portfolio Website</h3>
 
-            <div class="project-links">
+                <p>
+                    موقع شخصي احترافي باستخدام
+                    HTML و CSS و JavaScript.
+                </p>
 
-                <a href="#">Live Demo</a>
+                <div class="project-links">
 
-                <a href="https://github.com/sbahibtihal-spec" target="_blank">
-                    Source Code
-                </a>
+                    <a href="#" class="btn">
+                        Live Demo
+                    </a>
+
+                    <a href="https://github.com/sbahibtihal-spec"
+                       target="_blank"
+                       class="btn secondary">
+
+                        Source Code
+
+                    </a>
+
+                </div>
 
             </div>
 
@@ -148,23 +219,29 @@
     </div>
 
 </section>
+    <!-- الشهادات -->
 
-<!-- الشهادات -->
 <section id="certificates">
 
     <h2>الشهادات</h2>
 
     <div class="certificate">
 
+        <i class="fas fa-graduation-cap"></i>
+
         <h3>بكالوريوس</h3>
 
-        <p>شهادة البكالوريوس.</p>
+        <p>
+            حاصلة على شهادة البكالوريوس وأسعى لتطوير مهاراتي
+            في تطوير واجهات المستخدم Front-End.
+        </p>
 
     </div>
 
 </section>
 
 <!-- التواصل -->
+
 <section id="contact">
 
     <h2>تواصل معي</h2>
@@ -173,6 +250,7 @@
 
         <p>
             <i class="fas fa-envelope"></i>
+
             <a href="mailto:sbahibtihal@gmail.com">
                 sbahibtihal@gmail.com
             </a>
@@ -180,15 +258,25 @@
 
         <p>
             <i class="fab fa-whatsapp"></i>
+
             <a href="https://wa.me/212703166572" target="_blank">
-                +212703166572
+                +212 703166572
             </a>
         </p>
 
         <p>
             <i class="fab fa-github"></i>
+
             <a href="https://github.com/sbahibtihal-spec" target="_blank">
-                GitHub
+                github.com/sbahibtihal-spec
+            </a>
+        </p>
+
+        <p>
+            <i class="fab fa-linkedin"></i>
+
+            <a href="#" target="_blank">
+                LinkedIn
             </a>
         </p>
 
@@ -196,11 +284,20 @@
 
 </section>
 
+<!-- الفوتر -->
+
 <footer>
-    <p>© 2026 ابتهاج | Front-End Developer</p>
+
+    <p>
+        © 2026 جميع الحقوق محفوظة | ابتهاج
+    </p>
+
 </footer>
+
+<!-- JavaScript -->
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
