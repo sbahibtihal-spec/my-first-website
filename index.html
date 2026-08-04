@@ -8,10 +8,8 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 
 <body>
@@ -22,212 +20,185 @@
     <h2>ابتهاج</h2>
 </div>
 
-<!-- القائمة -->
+<!-- شريط التنقل -->
 <header>
+    <nav class="navbar">
 
-<nav class="navbar">
+        <a href="#" class="logo">ابتهاج</a>
 
-<a href="#" class="logo">ابتهاج</a>
+        <ul class="nav-links">
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#about">نبذة</a></li>
+            <li><a href="#skills">المهارات</a></li>
+            <li><a href="#projects">المشاريع</a></li>
+            <li><a href="#certificates">الشهادات</a></li>
+            <li><a href="#contact">تواصل</a></li>
+        </ul>
 
-<ul class="nav-links">
+        <button id="theme-toggle">
+            <i class="fas fa-moon"></i>
+        </button>
 
-<li><a href="#home">الرئيسية</a></li>
-<li><a href="#about">نبذة</a></li>
-<li><a href="#skills">المهارات</a></li>
-<li><a href="#projects">المشاريع</a></li>
-<li><a href="#certificates">الشهادات</a></li>
-<li><a href="#contact">تواصل</a></li>
-
-</ul>
-
-<button id="theme-toggle">
-<i class="fas fa-moon"></i>
-</button>
-
-</nav>
-
+    </nav>
 </header>
 
-<!-- الصفحة الرئيسية -->
-
+<!-- الرئيسية -->
 <section id="home" class="hero">
 
-<div class="hero-image">
+    <div class="hero-text">
 
-<div class="circle">
+        <h3>Hello, I'm</h3>
 
-<img src="images/profile.jpg" alt="Profile">
+        <h1>ابتهاج</h1>
 
-</div>
+        <h2><span id="typing"></span></h2>
 
-</div>
+        <p>
+            Front-End Developer passionate about creating
+            modern, responsive and fast websites using
+            HTML, CSS and JavaScript.
+        </p>
 
-<div class="hero-text">
+        <div class="hero-buttons">
 
-<h3>Hello, I'm</h3>
+            <a href="cv.pdf" class="btn">
+                <i class="fas fa-download"></i>
+                Download CV
+            </a>
 
-<h1>ابتهاج</h1>
+            <a href="#contact" class="btn secondary">
+                Hire Me
+            </a>
 
-<h2><span id="typing"></span></h2>
+        </div>
 
-<p>
-Front-End Developer passionate about creating modern,
-responsive and fast websites using HTML, CSS and JavaScript.
-</p>
+    </div>
 
-<div class="hero-buttons">
-
-<a href="cv.pdf" class="btn" download>
-
-<i class="fas fa-download"></i>
-
-Download CV
-
-</a>
-
-<a href="#contact" class="btn secondary">
-
-<i class="fas fa-paper-plane"></i>
-
-Hire Me
-
-</a>
-
-</div>
-
-</div>
+    <div class="hero-image">
+        <div class="circle">
+            <img src="images/profile.jpg" alt="Profile">
+        </div>
+    </div>
 
 </section>
 
 <!-- نبذة -->
-
 <section id="about">
 
-<h2>نبذة عني</h2>
+    <h2>نبذة عني</h2>
 
-<p>
-
-أنا ابتهاج، مطورة واجهات أمامية متخصصة في HTML وCSS وJavaScript وأسعى للحصول على فرصة عمل خارج المغرب.
-
-</p>
+    <p>
+        أنا ابتهاج، مطورة واجهات أمامية (Front-End Developer)
+        متخصصة في HTML وCSS وJavaScript وأسعى للحصول
+        على فرصة عمل خارج المغرب.
+    </p>
 
 </section>
 
 <!-- المهارات -->
-
 <section id="skills">
 
-<h2>المهارات</h2>
+    <h2>المهارات</h2>
 
-<div class="skills-container">
+    <div class="skills-container">
 
-<div class="skill">HTML</div>
+        <div class="skill">HTML</div>
 
-<div class="skill">CSS</div>
+        <div class="skill">CSS</div>
 
-<div class="skill">JavaScript</div>
+        <div class="skill">JavaScript</div>
 
-<div class="skill">Responsive Design</div>
+        <div class="skill">Responsive Design</div>
 
-<div class="skill">Git & GitHub</div>
+        <div class="skill">Git & GitHub</div>
 
-</div>
+    </div>
 
 </section>
 
 <!-- المشاريع -->
-
 <section id="projects">
 
-<h2>المشاريع</h2>
+    <h2>المشاريع</h2>
 
-<div class="projects-container">
+    <div class="projects-container">
 
-<div class="project-card">
+        <div class="project-card">
 
-<img src="images/project1.jpg" alt="Project">
+            <img src="images/project1.jpg" alt="Project">
 
-<h3>Portfolio Website</h3>
+            <h3>Portfolio Website</h3>
 
-<p>موقع شخصي احترافي باستخدام HTML وCSS وJavaScript.</p>
+            <p>
+                موقع شخصي احترافي باستخدام HTML CSS JavaScript.
+            </p>
 
-<div class="project-links">
+            <div class="project-links">
 
-<a href="#">Live Demo</a>
+                <a href="#">Live Demo</a>
 
-<a href="https://github.com/sbahibtihal-spec" target="_blank">Source Code</a>
+                <a href="https://github.com/sbahibtihal-spec" target="_blank">
+                    Source Code
+                </a>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
 </section>
 
 <!-- الشهادات -->
-
 <section id="certificates">
 
-<h2>الشهادات</h2>
+    <h2>الشهادات</h2>
 
-<div class="certificate">
+    <div class="certificate">
 
-<h3>بكالوريوس</h3>
+        <h3>بكالوريوس</h3>
 
-<p>شهادة البكالوريوس.</p>
+        <p>شهادة البكالوريوس.</p>
 
-</div>
+    </div>
 
 </section>
 
-<!-- تواصل -->
-
+<!-- التواصل -->
 <section id="contact">
 
-<h2>تواصل معي</h2>
+    <h2>تواصل معي</h2>
 
-<div class="contact-info">
+    <div class="contact-info">
 
-<p>
+        <p>
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:sbahibtihal@gmail.com">
+                sbahibtihal@gmail.com
+            </a>
+        </p>
 
-<i class="fas fa-envelope"></i>
+        <p>
+            <i class="fab fa-whatsapp"></i>
+            <a href="https://wa.me/212703166572" target="_blank">
+                +212703166572
+            </a>
+        </p>
 
-<a href="mailto:sbahibtihal@gmail.com">
+        <p>
+            <i class="fab fa-github"></i>
+            <a href="https://github.com/sbahibtihal-spec" target="_blank">
+                GitHub
+            </a>
+        </p>
 
-sbahibtihal@gmail.com
-
-</a>
-
-</p>
-
-<p>
-
-<i class="fab fa-whatsapp"></i>
-
-<a href="https://wa.me/212703166572">
-
-+212703166572
-
-</a>
-
-</p>
-
-<p>
-
-<i class="fab fa-github"></i>
-
-<a href="https://github.com/sbahibtihal-spec" target="_blank">
-
-GitHub
-
-</a>
-
-</p>
-
-</div>
+    </div>
 
 </section>
+
+<footer>
+    <p>© 2026 ابتهاج | Front-End Developer</p>
+</footer>
 
 <script src="script.js"></script>
 
