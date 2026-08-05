@@ -1,27 +1,61 @@
-// ==========================
+// =====================================
 // شاشة التحميل
-// ==========================
+// =====================================
 
-window.addEventListener("load", function () {
+window.addEventListener("load", () => {
 
     const loader = document.getElementById("loader");
 
-    loader.style.opacity = "0";
+    if (loader) {
+        loader.style.opacity = "0";
 
-    loader.style.visibility = "hidden";
+        setTimeout(() => {
+            loader.style.display = "none";
+        }, 500);
+    }
 
 });
 
-// ==========================
+// =====================================
+// الوضع الليلي
+// =====================================
+
+const themeToggle = document.getElementById("theme-toggle");
+
+if (themeToggle) {
+
+    themeToggle.addEventListener("click", () => {
+
+        document.body.classList.toggle("light-mode");
+
+        const icon = themeToggle.querySelector("i");
+
+        if (document.body.classList.contains("light-mode")) {
+
+            icon.classList.remove("fa-moon");
+            icon.classList.add("fa-sun");
+
+        } else {
+
+            icon.classList.remove("fa-sun");
+            icon.classList.add("fa-moon");
+
+        }
+
+    });
+
+}
+
+// =====================================
 // الكتابة المتحركة
-// ==========================
+// =====================================
 
 const typing = document.getElementById("typing");
 
 const words = [
     "Front-End Developer",
     "HTML Developer",
-    "CSS Expert",
+    "CSS Developer",
     "JavaScript Developer"
 ];
 
@@ -31,17 +65,21 @@ let deleting = false;
 
 function typeEffect() {
 
-    const current = words[wordIndex];
+    if (!typing) return;
+
+    const currentWord = words[wordIndex];
+
+    typing.textContent = currentWord.substring(0, charIndex);
 
     if (!deleting) {
 
-        typing.textContent = current.substring(0, charIndex++);
+        charIndex++;
 
-        if (charIndex > current.length) {
+        if (charIndex > currentWord.length) {
 
             deleting = true;
 
-            setTimeout(typeEffect, 1500);
+            setTimeout(typeEffect, 1200);
 
             return;
 
@@ -49,77 +87,81 @@ function typeEffect() {
 
     } else {
 
-        typing.textContent = current.substring(0, charIndex--);
+        charIndex--;
 
-        if (charIndex < 0) {
+        if (charIndex === 0) {
 
             deleting = false;
 
-            wordIndex++;
-
-            if (wordIndex >= words.length) {
-
-                wordIndex = 0;
-
-            }
+            wordIndex = (wordIndex + 1) % words.length;
 
         }
 
     }
 
-    setTimeout(typeEffect, deleting ? 70 : 120);
+    setTimeout(typeEffect, deleting ? 60 : 120);
 
 }
 
 typeEffect();
+// =====================================
+// ظهور العناصر عند التمرير
+// =====================================
 
-// ==========================
-// الوضع الليلي
-// ==========================
+const observer = new IntersectionObserver((entries) => {
 
-const themeBtn = document.getElementById("theme-toggle");
+    entries.forEach((entry) => {
 
-themeBtn.addEventListener("click", () => {
+        if (entry.isIntersecting) {
 
-    document.body.classList.toggle("light-mode");
+            entry.target.classList.add("show");
 
-    const icon = themeBtn.querySelector("i");
+        }
 
-    if (document.body.classList.contains("light-mode")) {
+    });
 
-        icon.classList.remove("fa-moon");
+}, {
+    threshold: 0.2
+});
 
-        icon.classList.add("fa-sun");
+document.querySelectorAll("section").forEach((section) => {
 
-    } else {
+    section.classList.add("hidden");
 
-        icon.classList.remove("fa-sun");
-
-        icon.classList.add("fa-moon");
-
-    }
+    observer.observe(section);
 
 });
 
-// ==========================
-// تمرير سلس
-// ==========================
+// =====================================
+// تفعيل الرابط النشط
+// =====================================
 
-document.querySelectorAll('a[href^="#"]').forEach(link => {
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-links a");
 
-    link.addEventListener("click", function (e) {
+window.addEventListener("scroll", () => {
 
-        e.preventDefault();
+    let current = "";
 
-        const target = document.querySelector(this.getAttribute("href"));
+    sections.forEach((section) => {
 
-        if (target) {
+        const sectionTop = section.offsetTop - 120;
 
-            target.scrollIntoView({
+        if (scrollY >= sectionTop) {
 
-                behavior: "smooth"
+            current = section.getAttribute("id");
 
-            });
+        }
+
+    });
+
+    navLinks.forEach((link) => {
+
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === "#" + current) {
+
+            link.classList.add("active");
 
         }
 
@@ -127,42 +169,43 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
 });
 
-console.log("Portfolio Loaded Successfully");
-const words = [
-    "Front-End Developer",
-    "HTML",
-    "CSS",
-    "JavaScript"
-];
+// =====================================
+// تأثير الحركة على الأيقونات
+// =====================================
 
-let i = 0;
-let j = 0;
-let current = "";
-let isDeleting = false;
+document.querySelectorAll(".skill-card").forEach((card) => {
 
-function type() {
-    current = words[i];
+    card.addEventListener("mouseenter", () => {
 
-    if (!isDeleting) {
-        document.getElementById("typing").textContent =
-            current.substring(0, j++);
+        card.style.transform = "translateY(-10px) scale(1.05)";
+
+    });
+
+    card.addEventListener("mouseleave", () => {
+
+        card.style.transform = "";
+
+    });
+
+});
+
+// =====================================
+// تأثير ظهور شريط التنقل
+// =====================================
+
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 50) {
+
+        header.style.background = "rgba(9,11,20,.95)";
+        header.style.backdropFilter = "blur(15px)";
+
     } else {
-        document.getElementById("typing").textContent =
-            current.substring(0, j--);
+
+        header.style.background = "transparent";
+
     }
 
-    if (j === current.length + 1) {
-        isDeleting = true;
-        setTimeout(type, 1000);
-        return;
-    }
-
-    if (j === 0) {
-        isDeleting = false;
-        i = (i + 1) % words.length;
-    }
-
-    setTimeout(type, isDeleting ? 70 : 120);
-}
-
-type();
+});
