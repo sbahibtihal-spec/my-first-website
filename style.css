@@ -22,7 +22,7 @@ html{
 body{
     background:#090b14;
     color:#ffffff;
-    overflow-x:hidden;
+    overflow-x:hiddJen;
 }
 
 /*==================================
@@ -466,7 +466,7 @@ nav ul li a.active{
 .project-buttons{
     display:flex;
     gap:15px;
-    margin-top:25px;
+    margin-top:-40px;
     flex-wrap:wrap;
 }
 
@@ -647,7 +647,7 @@ footer{
 
 .hero-text{
     font-size:20px;
-    line-height:1.8;
+    line-height:1.9;
     color:#cfcfcf;
     max-width:600px;
 }
