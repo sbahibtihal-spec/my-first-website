@@ -1,23 +1,12 @@
-/* =========================
-   Google Font
-========================= */
+/* ======================================
+   PORTFOLIO CSS
+   Front-End Developer
+====================================== */
+
+/* Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap');
 
-/* =========================
-   Variables
-========================= */
-:root{
-    --main:#6C63FF;
-    --second:#00D4FF;
-    --bg:#090b14;
-    --card:rgba(255,255,255,.08);
-    --white:#ffffff;
-    --gray:#bdbdbd;
-}
-
-/* =========================
-   Reset
-========================= */
+/* Reset */
 
 *{
     margin:0;
@@ -31,30 +20,102 @@ html{
 }
 
 body{
-    background:var(--bg);
-    color:var(--white);
+
+    background:#050816;
+    color:#fff;
     overflow-x:hidden;
+
 }
 
-/* =========================
-   Animated Background
-========================= */
+/* Variables */
 
-#particles{
-    position:fixed;
-    inset:0;
-    z-index:-2;
-    background:
-    radial-gradient(circle at top left,#6C63FF22,transparent 35%),
-    radial-gradient(circle at bottom right,#00D4FF22,transparent 35%);
+:root{
+
+    --main:#00d9ff;
+    --second:#6C63FF;
+    --white:#ffffff;
+    --gray:#bdbdbd;
+    --card:rgba(255,255,255,.07);
+    --shadow:0 0 25px rgba(0,217,255,.25);
+
 }
+
+/* Background */
 
 body::before{
+
     content:"";
     position:fixed;
     inset:0;
-    backdrop-filter:blur(35px);
+
+    background:
+
+    radial-gradient(circle at top left,#00d9ff22,transparent 30%),
+
+    radial-gradient(circle at bottom right,#6C63FF22,transparent 35%);
+
+    z-index:-2;
+
+}
+
+body::after{
+
+    content:"";
+    position:fixed;
+    inset:0;
+    backdrop-filter:blur(25px);
     z-index:-1;
+
+}
+
+/* Sections */
+
+section{
+
+    padding:90px 8%;
+
+}
+
+/* Titles */
+
+.section-title{
+
+    text-align:center;
+    margin-bottom:60px;
+
+}
+
+.section-title h2{
+
+    font-size:48px;
+
+    background:linear-gradient(90deg,#00d9ff,#6C63FF);
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#00d9ff;
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#111;
+
 }
 
 /* =========================
