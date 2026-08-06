@@ -135,9 +135,9 @@ nav ul li a.active{
 
     justify-content:space-between;
 
-    padding:100px 8;
+    padding:120px 8;
 
-    gap:40px;
+    gap:60px;
 
 }
 
@@ -647,9 +647,10 @@ footer{
 
 .hero-text{
     font-size:20px;
-    line-height:1.9;
-    color:#cfcfcf;
+    line-height:2;
+    color:#d8d8d8;
     max-width:600px;
+  margin-bottom:35px
 }
 
 .hero-buttons{
