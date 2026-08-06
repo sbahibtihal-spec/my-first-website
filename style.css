@@ -378,7 +378,7 @@ footer{
 /*==================================
   الهاتف
 ==================================*/
-{@media(max-width:900px)}
+@media(max-width:900px){
 
 .hero{
     flex-direction:column-reverse;
