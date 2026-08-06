@@ -135,7 +135,7 @@ nav ul li a.active{
 
     justify-content:space-between;
 
-    padding:120px 10%;
+    padding:60px O%;
 
     gap:35px;
 
@@ -653,7 +653,7 @@ footer{
 }
 
 .hero-buttons{
-    margin-top:35px;
+    margin-top:20px;
     display:flex;
     gap:20px;
     flex-wrap:wrap;
