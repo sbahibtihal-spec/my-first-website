@@ -352,9 +352,9 @@ section{
 
 .about-container{
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:40px;
-    align-items:center;
+    grid-template-columns:2fr 1fr;
+    gap:30px;
+    align-items:stretch;
 }
 
 .about-text{
@@ -363,6 +363,8 @@ section{
     border-radius:20px;
     padding:35px;
     backdrop-filter:blur(12px);
+   display:flex
+   justify-content:center;
 }
 
 .about-text h3{
@@ -413,23 +415,33 @@ section{
 .skills-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:25px;
+    gap:25px;margin-top:50px
 }
 
 .skill-card{
-    background:var(--card);
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:20px;
-    padding:35px;
+    background:rgba(255,255,255,08)
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:22px;
+    padding:40px 25px;
+   min-height:22px;
+   display:flex;
+   flex-direction:column;
+   justify-content:center;
+   align-items:center;
+   text-align:center;
+   transition:.4s;
+   backdrop-filter:blur(12px)}
+   
+   
     text-align:center;
     backdrop-filter:blur(10px);
     transition:.35s;
 }
 
 .skill-card:hover{
-    transform:translateY(-10px) scale(1.04);
+    transform:translateY(-12px);
     border-color:var(--second);
-    box-shadow:0 0 25px rgba(0,212,255,.25);
+    box-shadow:0 0 15px 35px ;rgba(0,212,255,.35);
 }
 
 .skill-card i{
@@ -448,16 +460,17 @@ section{
 
 .projects-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-    gap:30px;
+    grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
+    gap:35px;margin-top:50px
 }
 
 .project-card{
     overflow:hidden;
-    background:var(--card);
+    background:rgba(255,255,255,.08);
     border-radius:22px;
-    border:1px solid rgba(255,255,255,.08);
-    transition:.35s;
+    border:1px solid rgba(255,255,255,.12);
+    transition:.4s;
+   backdrop-filter:blur(12px)
 }
 
 .project-card:hover{
@@ -472,7 +485,8 @@ section{
 }
 
 .project-info{
-    padding:25px;
+    padding:30px;
+   text-align:center
 }
 
 .project-info h3{
@@ -489,6 +503,7 @@ section{
     display:flex;
     gap:15px;
     flex-wrap:wrap;
+   justify-content:center
 }
 
 .project-buttons .btn{
@@ -545,23 +560,28 @@ section{
 
 .contact-container{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
     gap:25px;
+   margin-top:50px
 }
 
 .contact-box{
-    background:var(--card);
-    border:1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.12);
     border-radius:20px;
-    padding:35px;
+    padding:35px 25px
     text-align:center;
     text-decoration:none;
     color:#fff;
-    transition:.35s;
+    transition:.4s;
+   backdrop-filter:blur(12px)
 }
 
 .contact-box:hover{
     transform:translateY(-10px);
+   border-color:var(--second)
+   box-shadow:0 15px 35px;
+   rgba(0,212,255,.35px)
     background:linear-gradient(135deg,var(--main),var(--second));
 }
 
@@ -580,10 +600,11 @@ section{
 ========================= */
 
 footer{
-    padding:30px;
+    padding:35px;
+   margin-top:80px
     text-align:center;
     color:var(--gray);
-    border-top:1px solid rgba(255,255,255,.08);
+    border-top:1px solid rgba(255,255,255,.1);
 }
 
 /* =========================
