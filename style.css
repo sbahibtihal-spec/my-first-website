@@ -33,7 +33,7 @@ button {
 section {
     position: relative;
     width: 100%;
-    padding: 100px 8%;
+    padding: 60px 8%;
 }
 
 
@@ -356,7 +356,7 @@ header {
 
 .section-title {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 35px;
 }
 
 .section-title h2 {
