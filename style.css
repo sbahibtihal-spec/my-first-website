@@ -115,80 +115,140 @@ section{
 ::-webkit-scrollbar-track{
 
     background:#111;
-
 }
 
 /* =========================
    Navbar
 ========================= */
+/* =========================
+   Navbar
+========================= */
+
 header{
     position:fixed;
     top:0;
     right:0;
+    left:0;
     width:100%;
     z-index:1000;
-    background:rgba(13,17,23,.9);
+
+    background:rgba(13,17,23,.90);
     backdrop-filter:blur(15px);
+
     border-bottom:1px solid rgba(255,255,255,.08);
 }
 
-nav{
+.navbar{
     max-width:1200px;
     margin:auto;
+
     display:flex;
-    justify-content:space-between;
     align-items:center;
+    justify-content:space-between;
+
     padding:18px 30px;
 }
+
+/* Logo */
 
 .logo{
     font-size:30px;
     font-weight:700;
-    color:var(--second);
-    text-decoration:none;
+    color:var(--main);
+
+    white-space:nowrap;
 }
+
+.logo span{
+    color:var(--main);
+}
+
+/* Navigation */
 
 .nav-links{
     display:flex;
+    align-items:center;
+
     gap:35px;
+
     list-style:none;
+    margin:0;
+    padding:0;
 }
 
 .nav-links a{
+    position:relative;
+
     color:#fff;
     text-decoration:none;
+
     font-size:17px;
     font-weight:600;
+
     transition:.3s;
-    position:relative;
 }
+
+/* الخط أسفل الرابط */
 
 .nav-links a::after{
     content:"";
+
     position:absolute;
-    left:0;
-    bottom:-6px;
+
+    right:0;
+    bottom:-8px;
+
     width:0;
     height:2px;
-    background:var(--second);
+
+    background:var(--main);
+
     transition:.3s;
 }
 
+/* عند تمرير الماوس */
+
 .nav-links a:hover{
-    color:var(--second);
+    color:var(--main);
 }
 
 .nav-links a:hover::after{
     width:100%;
 }
+
+/* زر الوضع الليلي */
+
 #theme-toggle{
-    background:none;
-    border:none;
+    width:45px;
+    height:45px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:50%;
+
     color:#fff;
-    font-size:22px;
+
+    font-size:20px;
+
     cursor:pointer;
+
+    transition:.3s;
 }
 
+#theme-toggle:hover{
+    color:var(--main);
+
+    border-color:var(--main);
+
+    box-shadow:0 0 15px rgba(0,217,255,.35);
+
+    transform:rotate(15deg);
+}
 /* =========================
    Hero
 ========================= */
@@ -439,7 +499,7 @@ section{
 }
 
 .skill-card{
-    background:rgba(255,255,255,08)
+    background:rgba(255,255,255,.08)
     border:1px solid rgba(255,255,255,.12);
     border-radius:22px;
     padding:40px 25px;
@@ -452,11 +512,6 @@ section{
    transition:.4s;
    backdrop-filter:blur(12px)}
    
-   
-    text-align:center;
-    backdrop-filter:blur(10px);
-    transition:.35s;
-}
 
 .skill-card:hover{
     transform:translateY(-12px);
@@ -481,7 +536,8 @@ section{
 .projects-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
-    gap:35px;margin-top:50px
+    gap:35px;
+   margin-top:50px;
 }
 
 .project-card{
@@ -582,26 +638,26 @@ section{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
     gap:25px;
-   margin-top:50px
+   margin-top:50px;
 }
 
 .contact-box{
     background:rgba(255,255,255,.08);
     border:1px solid rgba(255,255,255,.12);
     border-radius:20px;
-    padding:35px 25px
+    padding:35px 25px;
     text-align:center;
     text-decoration:none;
     color:#fff;
     transition:.4s;
-   backdrop-filter:blur(12px)
+   backdrop-filter:blur(12px);
 }
 
 .contact-box:hover{
     transform:translateY(-10px);
-   border-color:var(--second)
+   border-color:var(--second);
    box-shadow:0 15px 35px;
-   rgba(0,212,255,.35px)
+   rgba(0,212,255,.35)
     background:linear-gradient(135deg,var(--main),var(--second));
 }
 
@@ -621,7 +677,7 @@ section{
 
 footer{
     padding:35px;
-   margin-top:80px
+   margin-top:80px;
     text-align:center;
     color:var(--gray);
     border-top:1px solid rgba(255,255,255,.1);
