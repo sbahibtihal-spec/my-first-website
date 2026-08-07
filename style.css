@@ -33,7 +33,7 @@ button {
 section {
     position: relative;
     width: 100%;
-    padding: 50px 8%;
+    padding: 30px 8%;
 }
 
 
@@ -116,7 +116,7 @@ header {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 25px;
 }
 
 .nav-links a {
