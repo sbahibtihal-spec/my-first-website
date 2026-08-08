@@ -915,3 +915,53 @@ body.light-mode footer {
         display: none;
     }
 }
+/* =========================
+   LIGHT MODE
+========================= */
+
+body.light-mode {
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(0, 140, 255, 0.12),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #eef8ff,
+            #dff5ff
+        );
+
+    color: #07111f;
+}
+
+body.light-mode header {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+body.light-mode .nav-links a,
+body.light-mode .logo {
+    color: #07111f;
+}
+
+body.light-mode .hero h2,
+body.light-mode .project-info h3 {
+    color: #07111f;
+}
+
+body.light-mode .about-text,
+body.light-mode .stat-card,
+body.light-mode .skill-card,
+body.light-mode .project-card,
+body.light-mode .certificate-card,
+body.light-mode .contact-box {
+    color: #07111f;
+}
+
+body.light-mode .about-text p,
+body.light-mode .hero-text,
+body.light-mode .project-info p,
+body.light-mode .certificate-card p,
+body.light-mode .stat-card p {
+    color: #4b5b6b;
+}
