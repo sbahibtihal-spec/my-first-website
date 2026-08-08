@@ -1,61 +1,79 @@
-// =========================
-// THEME TOGGLE
-// =========================
+// ================================
+// 1. الوضع الليلي
+// ================================
 
 const themeToggle = document.getElementById("theme-toggle");
 
 if (themeToggle) {
     themeToggle.addEventListener("click", () => {
-
         document.body.classList.toggle("light-mode");
 
         const icon = themeToggle.querySelector("i");
 
         if (document.body.classList.contains("light-mode")) {
-            icon.classList.remove("fa-moon");
-            icon.classList.add("fa-sun");
-        } else {
-            icon.classList.remove("fa-sun");
-            icon.classList.add("fa-moon");
-        }
+            if (icon) {
+                icon.classList.remove("fa-moon");
+                icon.classList.add("fa-sun");
+            }
 
+            localStorage.setItem("theme", "light");
+        } else {
+            if (icon) {
+                icon.classList.remove("fa-sun");
+                icon.classList.add("fa-moon");
+            }
+
+            localStorage.setItem("theme", "dark");
+        }
     });
 }
 
 
-// =========================
-// SCROLL ANIMATION
-// =========================
+// ================================
+// 2. حفظ الوضع المختار
+// ================================
+
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "light") {
+    document.body.classList.add("light-mode");
+
+    const icon = document.querySelector("#theme-toggle i");
+
+    if (icon) {
+        icon.classList.remove("fa-moon");
+        icon.classList.add("fa-sun");
+    }
+}
+
+
+// ================================
+// 3. حركة ظهور الأقسام
+// ================================
 
 const sections = document.querySelectorAll("section");
 
-const observer = new IntersectionObserver(
-    (entries) => {
+const revealSections = () => {
+    sections.forEach((section) => {
+        const sectionTop = section.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
 
-        entries.forEach((entry) => {
+        if (sectionTop < windowHeight - 100) {
+            section.classList.add("show");
+        }
+    });
+};
 
-            if (entry.isIntersecting) {
-                entry.target.classList.add("show");
-            }
+window.addEventListener("scroll", revealSections);
 
-        });
-
-    },
-    {
-        threshold: 0.15
-    }
-);
-
-sections.forEach((section) => {
-    observer.observe(section);
-});
+window.addEventListener("load", revealSections);
 
 
-// =========================
-// ACTIVE NAVIGATION
-// =========================
+// ================================
+// 4. تحديد القسم الموجود فيه المستخدم
+// ================================
 
-const navLinks = document.querySelectorAll(".nav-links a");
+const navLinks = document.querySelectorAll("nav a");
 
 window.addEventListener("scroll", () => {
 
@@ -79,7 +97,9 @@ window.addEventListener("scroll", () => {
 
         link.classList.remove("active");
 
-        if (link.getAttribute("href") === "#" + currentSection) {
+        const href = link.getAttribute("href");
+
+        if (href === "#" + currentSection) {
             link.classList.add("active");
         }
 
@@ -88,17 +108,17 @@ window.addEventListener("scroll", () => {
 });
 
 
-// =========================
-// SMOOTH NAVIGATION
-// =========================
+// ================================
+// 5. التمرير السلس
+// ================================
 
 navLinks.forEach((link) => {
 
-    link.addEventListener("click", (event) => {
+    link.addEventListener("click", function (event) {
 
-        const targetId = link.getAttribute("href");
+        const targetId = this.getAttribute("href");
 
-        if (targetId.startsWith("#")) {
+        if (targetId && targetId.startsWith("#")) {
 
             const target = document.querySelector(targetId);
 
@@ -119,9 +139,37 @@ navLinks.forEach((link) => {
 });
 
 
-// =========================
-// PAGE LOADING ANIMATION
-// =========================
+// ================================
+// 6. حركة زر "تواصل معي"
+// ================================
+
+const contactButtons = document.querySelectorAll(
+    'a[href="#contact"]'
+);
+
+contactButtons.forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+        const contactSection =
+            document.getElementById("contact");
+
+        if (contactSection) {
+
+            contactSection.scrollIntoView({
+                behavior: "smooth"
+            });
+
+        }
+
+    });
+
+});
+
+
+// ================================
+// 7. حركة عند فتح الموقع
+// ================================
 
 window.addEventListener("load", () => {
 
@@ -130,56 +178,64 @@ window.addEventListener("load", () => {
 });
 
 
-// =========================
-// FLOATING PARTICLES
-// =========================
+// ================================
+// 8. تأثير على بطاقات المهارات والمشاريع
+// ================================
 
-const particlesContainer = document.getElementById("particles");
+const cards = document.querySelectorAll(
+    ".skill-card, .project-card, .certificate-card, .contact-card"
+);
 
-if (particlesContainer) {
+cards.forEach((card) => {
 
-    for (let i = 0; i < 35; i++) {
+    card.addEventListener("mousemove", (event) => {
 
-        const particle = document.createElement("span");
+        const rect = card.getBoundingClientRect();
 
-        particle.style.position = "absolute";
-        particle.style.width = Math.random() * 5 + 2 + "px";
-        particle.style.height = particle.style.width;
-        particle.style.borderRadius = "50%";
-        particle.style.background = "#00d9ff";
-        particle.style.opacity = Math.random() * 0.5 + 0.2;
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
 
-        particle.style.left = Math.random() * 100 + "%";
-        particle.style.top = Math.random() * 100 + "%";
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
 
-        particle.style.animation = `
-            particleMove ${Math.random() * 8 + 5}s ease-in-out infinite
-        `;
+        const rotateX =
+            (y - centerY) / 20;
 
-        particle.style.animationDelay =
-            Math.random() * 5 + "s";
+        const rotateY =
+            (centerX - x) / 20;
 
-        particlesContainer.appendChild(particle);
+        card.style.transform =
+            `perspective(800px)
+             rotateX(${rotateX}deg)
+             rotateY(${rotateY}deg)
+             translateY(-5px)`;
 
-    }
-
-}
-
-
-// =========================
-// BUTTON EFFECT
-// =========================
-
-const buttons = document.querySelectorAll(".btn");
-
-buttons.forEach((button) => {
-
-    button.addEventListener("mouseenter", () => {
-        button.style.transform = "translateY(-4px)";
     });
 
-    button.addEventListener("mouseleave", () => {
-        button.style.transform = "";
+    card.addEventListener("mouseleave", () => {
+
+        card.style.transform =
+            "perspective(800px) rotateX(0) rotateY(0) translateY(0)";
+
+    });
+
+});
+
+
+// ================================
+// 9. رسالة بسيطة عند الضغط على روابط فارغة
+// ================================
+
+const emptyLinks = document.querySelectorAll(
+    'a[href="#"]'
+);
+
+emptyLinks.forEach((link) => {
+
+    link.addEventListener("click", (event) => {
+
+        event.preventDefault();
+
     });
 
 });
