@@ -5,35 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ابتهاج | Front-End Developer</title>
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <title>Front-End Developer | ابتهـاج</title>
 
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap"
-        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- ================= BACKGROUND ================= -->
-
+    <!-- خلفية متحركة -->
     <div id="particles"></div>
 
-
-    <!-- ================= HEADER ================= -->
+    <!-- =========================
+         HEADER
+    ========================== -->
 
     <header>
 
         <nav class="navbar">
 
             <div class="logo">
-                <span>&lt;/&gt;</span> ابتهاج
+                ابتهـاج <span>&lt;/&gt;</span>
             </div>
 
             <ul class="nav-links">
@@ -64,12 +65,8 @@
 
             </ul>
 
-            <button id="theme-toggle"
-                class="theme-toggle"
-                aria-label="تغيير الوضع">
-
+            <button class="theme-toggle" id="theme-toggle">
                 <i class="fas fa-moon"></i>
-
             </button>
 
         </nav>
@@ -77,9 +74,23 @@
     </header>
 
 
-    <!-- ================= HOME ================= -->
+    <!-- =========================
+         HERO
+    ========================== -->
 
-    <section id="home" class="hero">
+    <section class="hero" id="home">
+
+        <div class="hero-image">
+
+            <div class="circle">
+
+                <!-- هنا غادي نحطو صورتك -->
+                <img src="profile.jpg" alt="صورة ابتهـاج">
+
+            </div>
+
+        </div>
+
 
         <div class="hero-content">
 
@@ -88,7 +99,7 @@
             </p>
 
             <h1>
-                ابتهاج
+                ابتهـاج
             </h1>
 
             <h2>
@@ -97,38 +108,23 @@
             </h2>
 
             <p class="hero-text">
-                مطورة واجهات أمامية متخصصة في HTML و CSS و JavaScript.
+                مطورة واجهات أمامية متخصصة في HTML و CSS و JavaScript،
                 أصمم مواقع ويب حديثة وسريعة ومتوافقة مع جميع الأجهزة،
                 مع التركيز على الأداء وتجربة المستخدم والتصميم العصري.
             </p>
 
+
             <div class="hero-buttons">
 
                 <a href="#contact" class="btn">
+                    <i class="fas fa-paper-plane"></i>
                     تواصل معي
                 </a>
 
-                <a href="cv.pdf"
-                    download
-                    class="btn btn-outline">
-
+                <a href="#" class="btn btn-outline">
+                    <i class="fas fa-download"></i>
                     تحميل السيرة الذاتية
-
                 </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- صورة الملف الشخصي -->
-
-        <div class="hero-image">
-
-            <div class="circle">
-
-                <img src="téléchargement.jfif"
-     alt="Portfolio Website">
 
             </div>
 
@@ -137,35 +133,39 @@
     </section>
 
 
-    <!-- ================= FLOATING ICONS ================= -->
+    <!-- =========================
+         ABOUT
+    ========================== -->
 
-    <div class="floating html">
-        <i class="fab fa-html5"></i>
-    </div>
-
-    <div class="floating css">
-        <i class="fab fa-css3-alt"></i>
-    </div>
-
-    <div class="floating js">
-        <i class="fab fa-js"></i>
-    </div>
-
-
-    <!-- ================= ABOUT ================= -->
-
-    <section id="about" class="about">
+    <section id="about">
 
         <div class="section-title">
-
-            <h2>
-                نبذة عني
-            </h2>
-
+            <h2>نبذة عني</h2>
         </div>
 
 
         <div class="about-container">
+
+            <div class="about-text">
+
+                <h3>
+                    من أنا؟
+                </h3>
+
+                <p>
+                    أنا ابتهـاج، مطورة واجهات أمامية
+                    Front-End Developer، أحب تصميم مواقع ويب
+                    حديثة وسريعة ومتجاوبة مع جميع الأجهزة.
+                </p>
+
+                <p>
+                    أعمل على تطوير واجهات سهلة الاستخدام
+                    وأهتم بالتفاصيل الصغيرة التي تجعل تجربة
+                    المستخدم أفضل والتصميم أكثر احترافية.
+                </p>
+
+            </div>
+
 
             <div class="about-stats">
 
@@ -189,11 +189,11 @@
                     <i class="fas fa-code"></i>
 
                     <h3>
-                        3+
+                        Front-End
                     </h3>
 
                     <p>
-                        سنوات خبرة
+                        تطوير الواجهات
                     </p>
 
                 </div>
@@ -204,34 +204,14 @@
                     <i class="fas fa-laptop-code"></i>
 
                     <h3>
-                        تقنيات حديثة
+                        Web Development
                     </h3>
 
                     <p>
-                        HTML - CSS - JavaScript
+                        تصميم مواقع الويب
                     </p>
 
                 </div>
-
-            </div>
-
-
-            <div class="about-text">
-
-                <h3>
-                    من أنا؟
-                </h3>
-
-                <p>
-                    أنا ابتهاج، مطورة واجهات أمامية
-                    (Front-End Developer)، أحب تصميم مواقع
-                    ويب حديثة وسريعة ومتجاوبة.
-                </p>
-
-                <p>
-                    أركز على كتابة كود نظيف ومنظم،
-                    وأهتم بتجربة المستخدم والتصميم العصري.
-                </p>
 
             </div>
 
@@ -240,16 +220,14 @@
     </section>
 
 
-    <!-- ================= SKILLS ================= -->
+    <!-- =========================
+         SKILLS
+    ========================== -->
 
-    <section id="skills" class="skills">
+    <section id="skills">
 
         <div class="section-title">
-
-            <h2>
-                المهارات
-            </h2>
-
+            <h2>المهارات</h2>
         </div>
 
 
@@ -290,10 +268,10 @@
 
             <div class="skill-card">
 
-                <i class="fab fa-git-alt"></i>
+                <i class="fas fa-mobile-screen"></i>
 
                 <h3>
-                    Git
+                    Responsive Design
                 </h3>
 
             </div>
@@ -304,7 +282,7 @@
                 <i class="fab fa-github"></i>
 
                 <h3>
-                    GitHub
+                    Git & GitHub
                 </h3>
 
             </div>
@@ -312,10 +290,10 @@
 
             <div class="skill-card">
 
-                <i class="fas fa-mobile-alt"></i>
+                <i class="fas fa-code"></i>
 
                 <h3>
-                    Responsive Design
+                    Web Development
                 </h3>
 
             </div>
@@ -325,26 +303,23 @@
     </section>
 
 
-    <!-- ================= PROJECTS ================= -->
+    <!-- =========================
+         PROJECTS
+    ========================== -->
 
-    <section id="projects" class="projects">
+    <section id="projects">
 
         <div class="section-title">
-
-            <h2>
-                المشاريع
-            </h2>
-
+            <h2>المشاريع</h2>
         </div>
 
 
         <div class="projects-grid">
 
+
             <div class="project-card">
 
-                <img src="images/project1.jpg"
-                    alt="Portfolio Website">
-
+                <img src="project1.jpg" alt="Portfolio Website">
 
                 <div class="project-info">
 
@@ -353,34 +328,22 @@
                     </h3>
 
                     <p>
-                        موقع شخصي احترافي بتصميم عصري ومتجاوب
-                        باستخدام HTML و CSS و JavaScript.
+                        موقع شخصي احترافي باستعمال
+                        HTML و CSS و JavaScript،
+                        متجاوب مع مختلف الأجهزة.
                     </p>
 
 
                     <div class="project-buttons">
 
-                        <a href="https://sbahibtihal-spec.github.io/my-first-website/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="btn primary">
-
-                            <i class="fas fa-eye"></i>
-
-                            عرض الموقع
-
+                        <a href="#" class="btn">
+                            <i class="fas fa-external-link-alt"></i>
+                            معاينة الموقع
                         </a>
 
-
-                        <a href="https://github.com/sbahibtihal-spec"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="btn secondary">
-
+                        <a href="#" class="btn secondary">
                             <i class="fab fa-github"></i>
-
-                            GitHub
-
+                            Source Code
                         </a>
 
                     </div>
@@ -389,21 +352,20 @@
 
             </div>
 
+
         </div>
 
     </section>
 
 
-    <!-- ================= CERTIFICATES ================= -->
+    <!-- =========================
+         CERTIFICATES
+    ========================== -->
 
-    <section id="certificates" class="certificates">
+    <section id="certificates">
 
         <div class="section-title">
-
-            <h2>
-                الشهادات
-            </h2>
-
+            <h2>الشهادات</h2>
         </div>
 
 
@@ -417,7 +379,8 @@
 
             <p>
                 حاصلة على شهادة البكالوريوس وأسعى
-                لتطوير مهاراتي في تطوير واجهات المستخدم.
+                إلى تطوير مهاراتي في مجال تطوير
+                واجهات المستخدم.
             </p>
 
         </div>
@@ -425,58 +388,32 @@
     </section>
 
 
-    <!-- ================= CONTACT ================= -->
+    <!-- =========================
+         CONTACT
+    ========================== -->
 
-    <section id="contact" class="contact">
+    <section id="contact">
 
         <div class="section-title">
-
-            <h2>
-                تواصل معي
-            </h2>
-
+            <h2>تواصل معي</h2>
         </div>
 
 
         <div class="contact-container">
 
 
-            <!-- Email -->
+            <a href="#" class="contact-box">
 
-            <a href="mailto:sbahibtihal@gmail.com"
-                class="contact-box">
-
-                <i class="fas fa-envelope"></i>
+                <i class="fab fa-linkedin"></i>
 
                 <span>
-                    البريد الإلكتروني
+                    LinkedIn
                 </span>
 
             </a>
 
 
-            <!-- WhatsApp -->
-
-            <a href="https://wa.me/212703166572"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="contact-box">
-
-                <i class="fab fa-whatsapp"></i>
-
-                <span>
-                    واتساب
-                </span>
-
-            </a>
-
-
-            <!-- GitHub -->
-
-            <a href="https://github.com/sbahibtihal-spec"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="contact-box">
+            <a href="#" class="contact-box">
 
                 <i class="fab fa-github"></i>
 
@@ -487,39 +424,47 @@
             </a>
 
 
-            <!-- LinkedIn -->
+            <a href="#" class="contact-box">
 
-            <a href="https://www.linkedin.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="contact-box">
-
-                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-whatsapp"></i>
 
                 <span>
-                    LinkedIn
+                    WhatsApp
                 </span>
 
             </a>
+
+
+            <a href="mailto:your@email.com" class="contact-box">
+
+                <i class="fas fa-envelope"></i>
+
+                <span>
+                    البريد الإلكتروني
+                </span>
+
+            </a>
+
 
         </div>
 
     </section>
 
 
-    <!-- ================= FOOTER ================= -->
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
     <footer>
 
         <p>
-            © 2026 جميع الحقوق محفوظة | ابتهاج
+            © 2026 جميع الحقوق محفوظة | ابتهـاج
         </p>
 
     </footer>
 
 
-    <!-- ================= JAVASCRIPT ================= -->
-
+    <!-- JavaScript -->
     <script src="script.js"></script>
 
 </body>
