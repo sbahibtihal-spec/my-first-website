@@ -33,7 +33,7 @@ button {
 section {
     position: relative;
     width: 100%;
-    padding: 30px 8%;
+    padding: 70px 8%;
 }
 
 
@@ -671,7 +671,23 @@ section.show {
     opacity: 1;
     transform: translateY(0);
 }
+section h2 {
+    margin-bottom: 35px;
+}
 
+.hero {
+    min-height: calc(100vh - 80px);
+    padding: 50px 8%;
+}
+
+.about,
+.skills,
+.projects,
+.certificates,
+.contact {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
 
 /* =========================================
    LIGHT MODE
