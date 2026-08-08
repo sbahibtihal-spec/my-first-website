@@ -1,17 +1,10 @@
-// =====================================
-// PORTFOLIO JAVASCRIPT
-// Front-End Developer
-// =====================================
-
-
-// =====================================
-// الوضع الليلي
-// =====================================
+// =========================
+// THEME TOGGLE
+// =========================
 
 const themeToggle = document.getElementById("theme-toggle");
 
 if (themeToggle) {
-
     themeToggle.addEventListener("click", () => {
 
         document.body.classList.toggle("light-mode");
@@ -19,67 +12,52 @@ if (themeToggle) {
         const icon = themeToggle.querySelector("i");
 
         if (document.body.classList.contains("light-mode")) {
-
             icon.classList.remove("fa-moon");
             icon.classList.add("fa-sun");
-
         } else {
-
             icon.classList.remove("fa-sun");
             icon.classList.add("fa-moon");
-
         }
 
     });
-
 }
 
 
-// =====================================
-// ظهور الأقسام عند التمرير
-// =====================================
+// =========================
+// SCROLL ANIMATION
+// =========================
+
+const sections = document.querySelectorAll("section");
 
 const observer = new IntersectionObserver(
-
     (entries) => {
 
         entries.forEach((entry) => {
 
             if (entry.isIntersecting) {
-
                 entry.target.classList.add("show");
-
             }
 
         });
 
     },
-
     {
         threshold: 0.15
     }
-
 );
 
-
-document.querySelectorAll("section").forEach((section) => {
-
-    section.classList.add("hidden");
-
+sections.forEach((section) => {
     observer.observe(section);
-
 });
 
 
-// =====================================
-// الرابط النشط في شريط التنقل
-// =====================================
+// =========================
+// ACTIVE NAVIGATION
+// =========================
 
-const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".nav-links a");
 
-
-function updateActiveLink() {
+window.addEventListener("scroll", () => {
 
     let currentSection = "";
 
@@ -92,270 +70,116 @@ function updateActiveLink() {
             window.scrollY >= sectionTop &&
             window.scrollY < sectionTop + sectionHeight
         ) {
-
             currentSection = section.getAttribute("id");
-
         }
 
     });
-
 
     navLinks.forEach((link) => {
 
         link.classList.remove("active");
 
-        if (
-            link.getAttribute("href") ===
-            "#" + currentSection
-        ) {
-
+        if (link.getAttribute("href") === "#" + currentSection) {
             link.classList.add("active");
-
         }
 
     });
 
-}
-
-
-window.addEventListener("scroll", updateActiveLink);
-
-updateActiveLink();
-
-
-// =====================================
-// تأثير شريط التنقل عند التمرير
-// =====================================
-
-const header = document.querySelector("header");
-
-
-window.addEventListener("scroll", () => {
-
-    if (!header) return;
-
-
-    if (window.scrollY > 50) {
-
-        header.style.background =
-            "rgba(9,11,20,.95)";
-
-        header.style.backdropFilter =
-            "blur(15px)";
-
-    } else {
-
-        header.style.background =
-            "rgba(13,17,23,.90)";
-
-        header.style.backdropFilter =
-            "blur(15px)";
-
-    }
-
 });
 
 
-// =====================================
-// حركة بطاقات المهارات
-// =====================================
+// =========================
+// SMOOTH NAVIGATION
+// =========================
 
-document.querySelectorAll(".skill-card").forEach((card) => {
+navLinks.forEach((link) => {
 
+    link.addEventListener("click", (event) => {
 
-    card.addEventListener("mouseenter", () => {
+        const targetId = link.getAttribute("href");
 
-        card.style.transform =
-            "translateY(-12px) scale(1.03)";
+        if (targetId.startsWith("#")) {
 
-    });
+            const target = document.querySelector(targetId);
 
+            if (target) {
 
-    card.addEventListener("mouseleave", () => {
+                event.preventDefault();
 
-        card.style.transform = "";
-
-    });
-
-});
-
-
-// =====================================
-// حركة بطاقات المشاريع
-// =====================================
-
-document.querySelectorAll(".project-card").forEach((card) => {
-
-
-    card.addEventListener("mouseenter", () => {
-
-        card.style.transform =
-            "translateY(-10px)";
-
-    });
-
-
-    card.addEventListener("mouseleave", () => {
-
-        card.style.transform = "";
-
-    });
-
-});
-
-
-// =====================================
-// حركة بطاقات التواصل
-// =====================================
-
-document.querySelectorAll(".contact-box").forEach((box) => {
-
-
-    box.addEventListener("mouseenter", () => {
-
-        box.style.transform =
-            "translateY(-10px)";
-
-    });
-
-
-    box.addEventListener("mouseleave", () => {
-
-        box.style.transform = "";
-
-    });
-
-});
-
-
-// =====================================
-// تأثير الكتابة المتحركة
-// =====================================
-// يعمل فقط إذا أضفنا id="typing"
-// إلى عنصر في HTML.
-// لذلك لن يسبب أي خطأ حاليًا.
-
-const typing = document.getElementById("typing");
-
-
-if (typing) {
-
-    const words = [
-
-        "Front-End Developer",
-        "HTML Developer",
-        "CSS Developer",
-        "JavaScript Developer"
-
-    ];
-
-
-    let wordIndex = 0;
-    let charIndex = 0;
-    let deleting = false;
-
-
-    function typeEffect() {
-
-        const currentWord =
-            words[wordIndex];
-
-
-        typing.textContent =
-            currentWord.substring(
-                0,
-                charIndex
-            );
-
-
-        if (!deleting) {
-
-            charIndex++;
-
-
-            if (
-                charIndex >
-                currentWord.length
-            ) {
-
-                deleting = true;
-
-                setTimeout(
-                    typeEffect,
-                    1200
-                );
-
-                return;
-
-            }
-
-        } else {
-
-            charIndex--;
-
-
-            if (charIndex === 0) {
-
-                deleting = false;
-
-                wordIndex =
-                    (wordIndex + 1) %
-                    words.length;
+                target.scrollIntoView({
+                    behavior: "smooth"
+                });
 
             }
 
         }
 
-
-        setTimeout(
-            typeEffect,
-            deleting ? 60 : 120
-        );
-
-    }
-
-
-    typeEffect();
-
-}
-
-
-// =====================================
-// زر التواصل
-// =====================================
-
-document.querySelectorAll('a[href="#contact"]').forEach((button) => {
-
-    button.addEventListener("click", () => {
-
-        const contact =
-            document.getElementById("contact");
-
-
-        if (contact) {
-
-            contact.scrollIntoView({
-                behavior: "smooth"
-            });
-
-        }
-
     });
 
 });
 
 
-// =====================================
-// السنة الحالية في Footer
-// =====================================
+// =========================
+// PAGE LOADING ANIMATION
+// =========================
 
-const footerYear =
-    document.querySelector("footer p");
+window.addEventListener("load", () => {
+
+    document.body.classList.add("loaded");
+
+});
 
 
-if (footerYear) {
+// =========================
+// FLOATING PARTICLES
+// =========================
 
-    footerYear.innerHTML =
-        `© ${new Date().getFullYear()} جميع الحقوق محفوظة | ابتهاج`;
+const particlesContainer = document.getElementById("particles");
+
+if (particlesContainer) {
+
+    for (let i = 0; i < 35; i++) {
+
+        const particle = document.createElement("span");
+
+        particle.style.position = "absolute";
+        particle.style.width = Math.random() * 5 + 2 + "px";
+        particle.style.height = particle.style.width;
+        particle.style.borderRadius = "50%";
+        particle.style.background = "#00d9ff";
+        particle.style.opacity = Math.random() * 0.5 + 0.2;
+
+        particle.style.left = Math.random() * 100 + "%";
+        particle.style.top = Math.random() * 100 + "%";
+
+        particle.style.animation = `
+            particleMove ${Math.random() * 8 + 5}s ease-in-out infinite
+        `;
+
+        particle.style.animationDelay =
+            Math.random() * 5 + "s";
+
+        particlesContainer.appendChild(particle);
+
+    }
 
 }
+
+
+// =========================
+// BUTTON EFFECT
+// =========================
+
+const buttons = document.querySelectorAll(".btn");
+
+buttons.forEach((button) => {
+
+    button.addEventListener("mouseenter", () => {
+        button.style.transform = "translateY(-4px)";
+    });
+
+    button.addEventListener("mouseleave", () => {
+        button.style.transform = "";
+    });
+
+});
