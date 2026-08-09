@@ -972,3 +972,158 @@ body.light-mode .certificate-card p,
 body.light-mode .stat-card p {
     color: #4b5b6b;
 }
+/* ===== تصغير مربعات المهارات ===== */
+.skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.skill-card {
+    min-height: 150px;
+    padding: 25px 15px;
+    border-radius: 18px;
+}
+
+.skill-card i {
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.skill-card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.skill-card p {
+    font-size: 14px;
+}
+
+/* ===== تصغير نبذة عني ===== */
+.about-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 25px;
+}
+
+.about-text {
+    padding: 25px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.about-text p {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* ===== تصغير بطاقات نبذة عني ===== */
+.about-cards {
+    gap: 18px;
+}
+
+.about-card {
+    padding: 20px 15px;
+    min-height: 130px;
+}
+
+/* ===== تصغير قسم المشاريع ===== */
+.projects-grid {
+    max-width: 950px;
+    margin: 0 auto;
+    gap: 25px;
+}
+
+.project-card {
+    max-width: 450px;
+    margin: 0 auto;
+    border-radius: 18px;
+}
+
+.project-card img {
+    height: 220px;
+    object-fit: cover;
+}
+
+.project-content {
+    padding: 20px;
+}
+
+.project-content h3 {
+    font-size: 20px;
+}
+
+.project-content p {
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* ===== تصغير الشهادات ===== */
+.certificates-grid {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.certificate-card {
+    padding: 25px;
+}
+
+/* ===== تصغير مربعات التواصل ===== */
+.contact-grid {
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.contact-card {
+    min-height: 140px;
+    padding: 25px 15px;
+}
+
+.contact-card i {
+    font-size: 35px;
+}
+
+.contact-card h3 {
+    font-size: 17px;
+}
+
+/* ===== الهاتف ===== */
+@media (max-width: 768px) {
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-card {
+        min-height: 130px;
+    }
+
+    .project-card img {
+        height: 190px;
+    }
+}
