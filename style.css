@@ -551,19 +551,14 @@ section {
     font-size: 0.8rem;
     margin-top: 4px;
 }
-
-
 /* =========================
-   SKILLS
+   SKILLS - المهارات
 ========================= */
 
 .skills-grid {
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
-
     gap: 20px;
-
     max-width: 1000px;
     margin: 0 auto;
 }
@@ -571,12 +566,10 @@ section {
 .skill-card {
     min-height: 150px;
     padding: 25px 15px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     text-align: center;
 
     background: linear-gradient(
@@ -587,7 +580,6 @@ section {
 
     border: 1px solid var(--border);
     border-radius: 18px;
-
     box-shadow: var(--shadow);
 
     transition: 0.35s ease;
@@ -595,11 +587,8 @@ section {
 
 .skill-card:hover {
     transform: translateY(-8px);
-
     border-color: var(--main);
-
-    box-shadow:
-        0 15px 35px rgba(0, 217, 255, 0.18);
+    box-shadow: 0 15px 35px rgba(0, 217, 255, 0.18);
 }
 
 .skill-card i {
@@ -617,320 +606,469 @@ section {
     color: var(--gray);
     font-size: 14px;
 }
+
+
 /* =========================
-   تحسينات نهائية للموقع
+   PROJECTS - المشاريع
 ========================= */
 
-/* منع أي عنصر من الخروج عن الشاشة */
-img {
-    max-width: 100%;
+.projects-grid {
+    display: grid;
+    grid-template-columns: minmax(280px, 850px);
+    justify-content: center;
+    gap: 25px;
+    max-width: 950px;
+    margin: 0 auto;
 }
 
-section {
+.project-card {
     overflow: hidden;
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+
+    background: rgba(10, 32, 58, 0.9);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    box-shadow: var(--shadow);
+
+    transition: 0.4s ease;
 }
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--main);
+    box-shadow: 0 20px 50px rgba(0, 217, 255, 0.18);
+}
+
+.project-card > img {
+    width: 100%;
+    height: 220px;
+    display: block;
+    object-fit: cover;
+    background: #07111f;
+}
+
+.project-info {
+    padding: 22px;
+}
+
+.project-info h3 {
+    color: var(--main);
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+
+.project-info p {
+    color: var(--gray);
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+.project-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.project-buttons .btn {
+    min-width: 135px;
+    padding: 10px 18px;
+    font-size: 0.9rem;
+}
+
+.project-buttons .secondary {
+    background: transparent;
+    color: var(--main);
+}
+
+.project-buttons .secondary:hover {
+    background: var(--main);
+    color: #03101c;
+}
+
 
 /* =========================
-   تأثير ظهور الأقسام
+   CERTIFICATES - الشهادات
 ========================= */
 
-.reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+.certificates-grid {
+    max-width: 850px;
+    margin: 0 auto;
 }
 
-.reveal.show {
-    opacity: 1;
-    transform: translateY(0);
-}
+.certificate-card {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px;
+    text-align: center;
 
-
-/* =========================
-   تأثير البطاقات
-========================= */
-
-.skill-card,
-.stat-card,
-.project-card,
-.certificate-card,
-.contact-box {
-    position: relative;
-    overflow: hidden;
-}
-
-.skill-card::before,
-.stat-card::before,
-.project-card::before,
-.certificate-card::before,
-.contact-box::before {
-    content: "";
-    position: absolute;
-    top: -100%;
-    left: -100%;
-    width: 50%;
-    height: 300%;
     background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,0.08),
-        transparent
+        135deg,
+        rgba(8, 72, 150, 0.75),
+        rgba(9, 31, 58, 0.9)
     );
-    transform: rotate(25deg);
-    transition: 0.7s ease;
+
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    box-shadow: var(--shadow);
 }
 
-.skill-card:hover::before,
-.stat-card:hover::before,
-.project-card:hover::before,
-.certificate-card:hover::before,
-.contact-box:hover::before {
-    left: 150%;
+.certificate-card i {
+    font-size: 3.2rem;
+    color: var(--main);
+    margin-bottom: 12px;
+}
+
+.certificate-card h3 {
+    font-size: 1.7rem;
+    margin-bottom: 8px;
+}
+
+.certificate-card p {
+    color: var(--gray);
+    line-height: 1.8;
 }
 
 
 /* =========================
-   زر التواصل
+   CONTACT - التواصل
 ========================= */
 
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
 .contact-box {
-    cursor: pointer;
+    min-height: 150px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+    text-align: center;
+
+    background: linear-gradient(
+        145deg,
+        rgba(10, 74, 150, 0.7),
+        rgba(8, 34, 65, 0.9)
+    );
+
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+
+    transition: 0.35s ease;
+}
+
+.contact-box:hover {
+    transform: translateY(-8px);
+    border-color: var(--main);
+}
+
+.contact-box i {
+    font-size: 2.5rem;
+    color: var(--main);
 }
 
 .contact-box span {
-    color: #fff;
+    font-weight: 700;
 }
 
-body.light-mode .contact-box span {
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 28px 20px;
+    text-align: center;
+
+    background: #030a14;
+    border-top: 1px solid rgba(0, 217, 255, 0.12);
+}
+
+footer p {
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+
+/* =========================
+   SCROLL ANIMATION
+========================= */
+
+section {
+    padding: 55px 5%;
+    margin: 0;
+}
+
+section + section {
+    margin-top: 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+/* =========================
+   LIGHT MODE
+========================= */
+
+body.light-mode {
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(0, 140, 255, 0.12),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #eef8ff,
+            #dff5ff
+        );
+
     color: #07111f;
 }
 
+body.light-mode .navbar {
+    background: rgba(255, 255, 255, 0.92);
+}
+
+body.light-mode .nav-links a,
+body.light-mode .logo {
+    color: #07111f;
+}
+
+body.light-mode .nav-links a:hover,
+body.light-mode .nav-links a.active {
+    color: #0077ff;
+}
+
+body.light-mode .hero h2 {
+    color: #07111f;
+}
+
+body.light-mode .hero-text,
+body.light-mode .about-text p,
+body.light-mode .stat-card p,
+body.light-mode .project-info p,
+body.light-mode .certificate-card p {
+    color: #4b5b6b;
+}
+
+body.light-mode .stat-card,
+body.light-mode .about-text,
+body.light-mode .skill-card,
+body.light-mode .project-card,
+body.light-mode .certificate-card,
+body.light-mode .contact-box {
+    color: #07111f;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+body.light-mode footer {
+    background: #eaf1fc;
+}
+
 
 /* =========================
-   أزرار المشاريع
+   TABLET
 ========================= */
 
-.project-buttons {
-    justify-content: center;
-}
+@media (max-width: 900px) {
 
-.project-buttons a {
-    text-align: center;
-}
-
-
-/* =========================
-   صورة المشروع
-========================= */
-
-.project-card > img {
-    transition: transform 0.5s ease;
-}
-
-.project-card:hover > img {
-    transform: scale(1.04);
-}
-
-
-/* =========================
-   تحسين العنوان الرئيسي
-========================= */
-
-.hero h1 {
-    text-shadow: 0 0 25px rgba(0, 217, 255, 0.12);
-}
-
-.hero h2 span {
-    text-shadow: 0 0 15px rgba(0, 217, 255, 0.25);
-}
-
-
-/* =========================
-   مؤشر التمرير
-========================= */
-
-.scroll-down {
-    position: absolute;
-    bottom: 25px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--main);
-    font-size: 1.5rem;
-    animation: scrollDown 1.8s infinite;
-}
-
-@keyframes scrollDown {
-
-    0% {
-        opacity: 0;
-        transform: translate(-50%, -5px);
+    .navbar {
+        width: 94%;
     }
 
-    50% {
-        opacity: 1;
-        transform: translate(-50%, 8px);
+    .nav-links {
+        gap: 12px;
     }
 
-    100% {
-        opacity: 0;
-        transform: translate(-50%, 18px);
+    .nav-links a {
+        font-size: 0.82rem;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        justify-content: center;
+        gap: 35px;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-image {
+        flex-basis: auto;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 
 /* =========================
-   زر العودة للأعلى
-========================= */
-
-#backToTop {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    width: 48px;
-    height: 48px;
-    border: none;
-    border-radius: 50%;
-    background: linear-gradient(
-        135deg,
-        var(--main),
-        var(--blue)
-    );
-    color: #03101c;
-    font-size: 1.1rem;
-    cursor: pointer;
-    z-index: 999;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(20px);
-    transition: 0.3s ease;
-    box-shadow: 0 8px 25px rgba(0, 217, 255, 0.3);
-}
-
-#backToTop.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-#backToTop:hover {
-    transform: translateY(-5px);
-}
-
-
-/* =========================
-   شريط التقدم أعلى الصفحة
-========================= */
-
-#progress-bar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 3px;
-    width: 0;
-    background: linear-gradient(
-        90deg,
-        var(--blue),
-        var(--main)
-    );
-    z-index: 2000;
-    box-shadow: 0 0 10px var(--main);
-}
-
-
-/* =========================
-   تحسين الشريط العلوي
-========================= */
-
-.navbar {
-    transition:
-        background 0.3s ease,
-        box-shadow 0.3s ease,
-        transform 0.3s ease;
-}
-
-.navbar.scrolled {
-    box-shadow:
-        0 10px 35px rgba(0, 0, 0, 0.25);
-}
-
-
-/* =========================
-   القائمة في الهاتف
+   MOBILE
 ========================= */
 
 @media (max-width: 600px) {
 
-    header {
-        padding: 0;
+    section {
+        width: 92%;
+        padding: 45px 0;
     }
 
     .navbar {
-        position: relative;
+        width: 94%;
+        min-height: 62px;
+        padding: 0 12px;
+    }
+
+    .logo {
+        font-size: 1.1rem;
     }
 
     .nav-links {
-        overflow: hidden;
-    }
+        position: absolute;
+        top: 62px;
+        right: 0;
 
-    .nav-links li {
-        text-align: center;
+        width: 100%;
+        padding: 12px;
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+
+        background: rgba(3, 12, 24, 0.97);
+        border-radius: 0 0 15px 15px;
     }
 
     .nav-links a {
-        display: block;
-        padding: 5px;
+        font-size: 0.75rem;
+        text-align: center;
     }
 
-    .hero-image {
-        width: 100%;
+    .theme-toggle {
+        width: 38px;
+        height: 38px;
     }
 
-    .hero-content {
-        width: 100%;
+    .hero {
+        padding-top: 105px;
+        min-height: auto;
+    }
+
+    .circle {
+        width: 220px;
+        height: 220px;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero h2 {
+        font-size: 1.25rem;
     }
 
     .hero-text {
-        max-width: 100%;
-        line-height: 1.8;
+        font-size: 0.9rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .hero-buttons .btn {
+        width: 90%;
+    }
+
+    .section-title {
+        margin-bottom: 30px;
     }
 
     .section-title h2 {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
-    .about-text h3 {
-        font-size: 1.3rem;
+    .about-stats {
+        grid-template-columns: 1fr;
     }
 
-    .stat-card {
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .skill-card {
         min-height: 130px;
     }
 
-    .certificate-card {
-        padding: 25px 18px;
+    .projects-grid {
+        grid-template-columns: 1fr;
     }
 
-    #backToTop {
-        width: 42px;
-        height: 42px;
-        right: 15px;
-        bottom: 15px;
+    .project-card {
+        max-width: 100%;
+    }
+
+    .project-card > img {
+        height: 180px;
+    }
+
+    .project-buttons {
+        flex-direction: column;
+    }
+
+    .project-buttons .btn {
+        width: 100%;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .floating {
+        display: none;
     }
 }
 
 
 /* =========================
-   شاشات صغيرة جداً
+   SMALL MOBILE
 ========================= */
 
 @media (max-width: 400px) {
 
     .hero h1 {
-        font-size: 2.4rem;
-    }
-
-    .hero h2 {
-        font-size: 1.1rem;
+        font-size: 2.5rem;
     }
 
     .circle {
@@ -938,66 +1076,11 @@ body.light-mode .contact-box span {
         height: 190px;
     }
 
-    .navbar {
-        width: 96%;
-    }
-
-    .nav-links {
-        grid-template-columns: repeat(2, 1fr);
+    .section-title h2 {
+        font-size: 1.8rem;
     }
 
     .skill-card {
-        min-height: 120px;
-        padding: 18px 10px;
-    }
-
-    .skill-card i {
-        font-size: 28px;
-    }
-
-    .skill-card h3 {
-        font-size: 15px;
+        min-height: 125px;
     }
 }
-
-
-/* =========================
-   تحسين الوضع الليلي
-========================= */
-
-body:not(.light-mode) .about-text,
-body:not(.light-mode) .stat-card,
-body:not(.light-mode) .skill-card,
-body:not(.light-mode) .project-card,
-body:not(.light-mode) .certificate-card,
-body:not(.light-mode) .contact-box {
-    backdrop-filter: blur(10px);
-}
-
-
-/* =========================
-   تحسين الوضع الفاتح
-========================= */
-
-body.light-mode .nav-links {
-    background: rgba(255, 255, 255, 0.96);
-}
-
-body.light-mode .theme-toggle {
-    background: rgba(0, 119, 255, 0.08);
-    color: #0077ff;
-}
-
-body.light-mode .btn-outline {
-    color: #0077ff;
-    border-color: #0077ff;
-}
-
-body.light-mode .btn-outline:hover {
-    background: #0077ff;
-    color: #fff;
-}
-
-/* =========================
-   نهاية CSS
-========================= */
