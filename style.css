@@ -15,10 +15,23 @@ html {
 body {
     font-family: "Cairo", sans-serif;
     background:
-        radial-gradient(circle at 15% 20%, rgba(0, 140, 255, 0.16), transparent 30%),
-        radial-gradient(circle at 85% 70%, rgba(0, 217, 255, 0.12), transparent 30%),
-        linear-gradient(135deg, #020812, #071a32 50%, #04101f);
-    color: #fff;
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(0, 140, 255, 0.16),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 70%,
+            rgba(0, 217, 255, 0.12),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #020812,
+            #071a32 50%,
+            #04101f
+        );
+    color: #ffffff;
     line-height: 1.8;
     overflow-x: hidden;
     transition: background 0.4s ease, color 0.4s ease;
@@ -31,7 +44,13 @@ a {
 
 button {
     font-family: inherit;
+    border: none;
 }
+
+
+/* =========================
+   VARIABLES
+========================= */
 
 :root {
     --main: #00d9ff;
@@ -98,14 +117,17 @@ header {
     width: 90%;
     max-width: 1200px;
     min-height: 75px;
-    margin: auto;
+    margin: 0 auto;
+    padding: 0 20px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 25px;
-    padding: 0 20px;
+    gap:  25px;
+
     background: rgba(3, 12, 24, 0.88);
     backdrop-filter: blur(15px);
+
     border: 1px solid rgba(0, 217, 255, 0.1);
     border-radius: 0 0 18px 18px;
 }
@@ -123,7 +145,7 @@ header {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap:  25px;
     list-style: none;
 }
 
@@ -155,15 +177,28 @@ header {
     width: 100%;
 }
 
+
+/* =========================
+   THEME BUTTON
+========================= */
+
 .theme-toggle {
     width: 42px;
     height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     border: 1px solid var(--border);
     border-radius: 50%;
+
     background: rgba(0, 217, 255, 0.08);
     color: var(--main);
+
     cursor: pointer;
     font-size: 1rem;
+
     transition: 0.3s ease;
 }
 
@@ -175,37 +210,48 @@ header {
 
 
 /* =========================
-   GENERAL SECTIONS
+   SECTIONS
 ========================= */
 
 section {
     width: 90%;
     max-width: 1200px;
-    margin: auto;
-    padding: 85px 0;
+    margin: 0 auto;
+    padding: 70px 0;
 }
 
 .section-title {
     text-align: center;
-    margin-bottom: 45px;
+    margin-bottom: 40px;
 }
 
 .section-title h2 {
     display: inline-block;
     position: relative;
+
     font-size: clamp(2rem, 5vw, 2.8rem);
     font-weight: 800;
+
     color: var(--main);
 }
 
 .section-title h2::after {
     content: "";
     display: block;
+
     width: 65px;
     height: 4px;
+
     margin: 8px auto 0;
+
     border-radius: 20px;
-    background: linear-gradient(90deg, var(--main), var(--blue));
+
+    background: linear-gradient(
+        90deg,
+        var(--main),
+        var(--blue)
+    );
+
     box-shadow: 0 0 15px rgba(0, 217, 255, 0.5);
 }
 
@@ -216,11 +262,14 @@ section {
 
 .hero {
     min-height: 100vh;
+
     padding-top: 130px;
-   padding-bottom: 70px;
+    padding-bottom: 70px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     gap: 70px;
 }
 
@@ -239,7 +288,13 @@ section {
     font-size: clamp(3rem, 7vw, 5rem);
     line-height: 1.1;
     font-weight: 800;
-    background: linear-gradient(90deg, #fff, var(--main));
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        var(--main)
+    );
+
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -259,9 +314,16 @@ section {
 .hero-text {
     max-width: 620px;
     margin: 22px 0;
+
     color: var(--gray);
-    font-size: 2rem;
+    font-size: 1.15rem;
+    line-height: 1.9;
 }
+
+
+/* =========================
+   BUTTONS
+========================= */
 
 .hero-buttons {
     display: flex;
@@ -274,13 +336,22 @@ section {
     align-items: center;
     justify-content: center;
     gap: 8px;
+
     min-width: 155px;
     padding: 12px 22px;
+
     border-radius: 30px;
     border: 2px solid var(--main);
-    background: linear-gradient(135deg, var(--blue), #0055c9);
-    color: #fff;
+
+    background: linear-gradient(
+        135deg,
+        var(--blue),
+        #0055c9
+    );
+
+    color: #ffffff;
     font-weight: 700;
+
     cursor: pointer;
     transition: 0.3s ease;
 }
@@ -307,9 +378,11 @@ section {
 
 .hero-image {
     flex: 0 0 390px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     animation: floatImage 4s ease-in-out infinite;
 }
 
@@ -317,8 +390,16 @@ section {
     width: 310px;
     height: 310px;
     padding: 8px;
+
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--main), var(--blue), var(--main));
+
+    background: linear-gradient(
+        135deg,
+        var(--main),
+        var(--blue),
+        var(--main)
+    );
+
     box-shadow:
         0 0 30px rgba(0, 217, 255, 0.5),
         0 0 80px rgba(0, 119, 255, 0.2);
@@ -327,9 +408,12 @@ section {
 .circle img {
     width: 100%;
     height: 100%;
+
     display: block;
+
     object-fit: cover;
     border-radius: 50%;
+
     border: 5px solid #061120;
 }
 
@@ -341,15 +425,21 @@ section {
 .floating {
     position: fixed;
     z-index: 5;
+
     width: 45px;
     height: 45px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     border-radius: 50%;
+
     background: rgba(0, 80, 170, 0.55);
     border: 1px solid rgba(0, 217, 255, 0.35);
+
     backdrop-filter: blur(8px);
+
     animation: floating 4s ease-in-out infinite;
 }
 
@@ -381,29 +471,63 @@ section {
 .about-container {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
-    gap: 30px;
+
+    gap: 25px;
     align-items: stretch;
+
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-text {
+    padding: 28px;
+
+    background: rgba(10, 31, 55, 0.7);
+
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    box-shadow: var(--shadow);
+}
+
+.about-text h3 {
+    color: var(--main);
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+}
+
+.about-text p {
+    color: var(--gray);
+    margin-bottom: 15px;
+    line-height: 1.9;
 }
 
 .about-stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
-   align-itmes: stretch
+
+    align-items: stretch;
 }
 
 .stat-card {
-    min-height: 170px;
+    min-height: 150px;
     padding: 20px 12px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     text-align: center;
+
     background: var(--card);
+
     border: 1px solid var(--border);
     border-radius: 18px;
+
     box-shadow: var(--shadow);
+
     transition: 0.3s ease;
 }
 
@@ -428,25 +552,6 @@ section {
     margin-top: 4px;
 }
 
-.about-text {
-    padding: 30px;
-    background: rgba(10, 31, 55, 0.7);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    box-shadow: var(--shadow);
-}
-
-.about-text h3 {
-    color: var(--main);
-    font-size: 1.6rem;
-    margin-bottom: 12px;
-}
-
-.about-text p {
-    color: var(--gray);
-    margin-bottom: 12px;
-}
-
 
 /* =========================
    SKILLS
@@ -454,528 +559,11 @@ section {
 
 .skills-grid {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
-    gap: 232px;
-   max-width: 1000px;
-   margin; auto;
-}
 
-.skill-card {
-    min-height: 165px;
-    padding: 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: linear-gradient(
-        145deg,
-        rgba(8, 73, 150, 0.65),
-        rgba(9, 37, 70, 0.85)
-    );
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    box-shadow: var(--shadow);
-    transition: 0.35s ease;
-}
-
-.skill-card:hover {
-    transform: translateY(-8px);
-    border-color: var(--main);
-    box-shadow: 0 15px 35px rgba(0, 217, 255, 0.18);
-}
-
-.skill-card i {
-    font-size: 3rem;
-    color: var(--main);
-    margin-bottom: 10px;
-}
-
-.skill-card h3 {
-    font-size: 1.05rem;
-}
-
-
-/* =========================
-   PROJECTS
-========================= */
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: minmax(280px, 850px);
-    justify-content: center;
-   gap; 25px;
-}
-
-.project-card {
-    overflow: hidden;
-    background: rgba(10, 32, 58, 0.9);
-    border: 1px solid var(--border);
-    border-radius: 22px;
-    box-shadow: var(--shadow);
-    transition: 0.4s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-8px);
-    border-color: var(--main);
-    box-shadow: 0 20px 50px rgba(0, 217, 255, 0.18);
-}
-
-.project-card > img {
-    width: 100%;
-    height: 340px;
-    display: block;
-    object-fit: cover;
-    background: #07111f;
-}
-
-.project-info {
-    padding: 25px;
-}
-
-.project-info h3 {
-    color: var(--main);
-    font-size: 1.4rem;
-    margin-bottom: 8px;
-}
-
-.project-info p {
-    color: var(--gray);
-    margin-bottom: 18px;
-}
-
-.project-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.project-buttons .btn {
-    min-width: 135px;
-    padding: 10px 18px;
-    font-size: 0.9rem;
-}
-
-.project-buttons .secondary {
-    background: transparent;
-    color: var(--main);
-}
-
-.project-buttons .secondary:hover {
-    background: var(--main);
-    color: #03101c;
-}
-
-
-/* =========================
-   CERTIFICATES
-========================= */
-
-.certificate-card {
-    max-width: 700px;
-    margin: auto;
-    padding: 40px;
-    text-align: center;
-    background: linear-gradient(
-        135deg,
-        rgba(8, 72, 150, 0.75),
-        rgba(9, 31, 58, 0.9)
-    );
-    border: 1px solid var(--border);
-    border-radius: 22px;
-    box-shadow: var(--shadow);
-}
-
-.certificate-card i {
-    font-size: 3.2rem;
-    color: var(--main);
-    margin-bottom: 12px;
-}
-
-.certificate-card h3 {
-    font-size: 1.7rem;
-    margin-bottom: 8px;
-}
-
-.certificate-card p {
-    color: var(--gray);
-}
-
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-   max-width: 1000px;
-   margin: auto
-}
-
-.contact-box {
-    min-height: 160px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    text-align: center;
-    background: linear-gradient(
-        145deg,
-        rgba(10, 74, 150, 0.7),
-        rgba(8, 34, 65, 0.9)
-    );
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    box-shadow: var(--shadow);
-    transition: 0.35s ease;
-}
-
-.contact-box:hover {
-    transform: translateY(-8px);
-    border-color: var(--main);
-}
-
-.contact-box i {
-    font-size: 2.5rem;
-    color: var(--main);
-}
-
-.contact-box span {
-    font-weight: 700;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    padding: 28px 20px;
-    text-align: center;
-    background: #030a14;
-    border-top: 1px solid rgba(0, 217, 255, 0.12);
-}
-
-footer p {
-    color: var(--gray);
-    font-size: 0.9rem;
-}
-
-
-/* =========================
-   ANIMATIONS
-========================= */
-
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes floatImage {
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-15px);
-    }
-}
-
-@keyframes floating {
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-15px);
-    }
-}
-
-
-/* =========================
-   LIGHT MODE
-========================= */
-
-body.light-mode {
-    background:
-        radial-gradient(circle at 20% 20%, rgba(0, 119, 255, 0.08), transparent 30%),
-        #f4f8ff;
-    color: #172033;
-}
-
-body.light-mode .navbar {
-    background: rgba(255, 255, 255, 0.92);
-}
-
-body.light-mode .logo,
-body.light-mode .nav-links a {
-    color: #172033;
-}
-
-body.light-mode .hero h2 {
-    color: #34415a;
-}
-
-body.light-mode .hero-text,
-body.light-mode .about-text p,
-body.light-mode .stat-card p,
-body.light-mode .project-info p,
-body.light-mode .certificate-card p {
-    color: #526078;
-}
-
-body.light-mode .stat-card,
-body.light-mode .about-text,
-body.light-mode .skill-card,
-body.light-mode .project-card,
-body.light-mode .certificate-card,
-body.light-mode .contact-box {
-    color: #172033;
-    background: rgba(255, 255, 255, 0.9);
-}
-
-body.light-mode .nav-links a:hover,
-body.light-mode .nav-links a.active {
-    color: #0077ff;
-}
-
-body.light-mode footer {
-    background: #eaf1fc;
-}
-
-
-/* =========================
-   TABLET
-========================= */
-
-@media (max-width: 900px) {
-
-    .navbar {
-        width: 94%;
-    }
-
-    .nav-links {
-        gap: 12px;
-    }
-
-    .nav-links a {
-        font-size: 0.82rem;
-    }
-
-    .hero {
-        flex-direction: column-reverse;
-        text-align: center;
-        justify-content: center;
-        gap: 35px;
-    }
-
-    .hero-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .hero-image {
-        flex-basis: auto;
-    }
-
-    .about-container {
-        grid-template-columns: 1fr;
-    }
-
-    .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .contact-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 600px) {
-
-    section {
-        width: 92%;
-        padding: 65px 0;
-    }
-
-    .navbar {
-        width: 94%;
-        min-height: 62px;
-        padding: 0 12px;
-    }
-
-    .logo {
-        font-size: 1.1rem;
-    }
-
-    .nav-links {
-        position: absolute;
-        top: 62px;
-        right: 0;
-        width: 100%;
-        padding: 12px;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
-        background: rgba(3, 12, 24, 0.97);
-        border-radius: 0 0 15px 15px;
-    }
-
-    .nav-links a {
-        font-size: 0.75rem;
-    }
-
-    .theme-toggle {
-        width: 38px;
-        height: 38px;
-    }
-
-    .hero {
-        padding-top: 105px;
-        min-height: auto;
-    }
-
-    .circle {
-        width: 220px;
-        height: 220px;
-    }
-
-    .hero h1 {
-        font-size: 3rem;
-    }
-
-    .hero h2 {
-        font-size: 1.25rem;
-    }
-
-    .hero-text {
-        font-size: 0.9rem;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
-    }
-
-    .hero-buttons .btn {
-        width: 90%;
-    }
-
-    .section-title {
-        margin-bottom: 30px;
-    }
-
-    .section-title h2 {
-        font-size: 2rem;
-    }
-
-    .about-stats {
-        grid-template-columns: 1fr;
-    }
-
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .project-card > img {
-        height: 210px;
-    }
-
-    .project-buttons {
-        flex-direction: column;
-    }
-
-    .project-buttons .btn {
-        width: 100%;
-    }
-
-    .contact-container {
-        grid-template-columns: 1fr;
-    }
-
-    .floating {
-        display: none;
-    }
-}
-/* =========================
-   LIGHT MODE
-========================= */
-
-body.light-mode {
-    background:
-        radial-gradient(
-            circle at 20% 20%,
-            rgba(0, 140, 255, 0.12),
-            transparent 30%
-        ),
-        linear-gradient(
-            135deg,
-            #eef8ff,
-            #dff5ff
-        );
-
-    color: #07111f;
-}
-
-body.light-mode header {
-    background: rgba(255, 255, 255, 0.9);
-}
-
-body.light-mode .nav-links a,
-body.light-mode .logo {
-    color: #07111f;
-}
-
-body.light-mode .hero h2,
-body.light-mode .project-info h3 {
-    color: #07111f;
-}
-
-body.light-mode .about-text,
-body.light-mode .stat-card,
-body.light-mode .skill-card,
-body.light-mode .project-card,
-body.light-mode .certificate-card,
-body.light-mode .contact-box {
-    color: #07111f;
-}
-
-body.light-mode .about-text p,
-body.light-mode .hero-text,
-body.light-mode .project-info p,
-body.light-mode .certificate-card p,
-body.light-mode .stat-card p {
-    color: #4b5b6b;
-}
-/* ===== تصغير مربعات المهارات ===== */
-.skills-grid {
-    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+
     max-width: 1000px;
     margin: 0 auto;
 }
@@ -983,11 +571,40 @@ body.light-mode .stat-card p {
 .skill-card {
     min-height: 150px;
     padding: 25px 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background: linear-gradient(
+        145deg,
+        rgba(8, 73, 150, 0.65),
+        rgba(9, 37, 70, 0.85)
+    );
+
+    border: 1px solid var(--border);
     border-radius: 18px;
+
+    box-shadow: var(--shadow);
+
+    transition: 0.35s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+
+    border-color: var(--main);
+
+    box-shadow:
+        0 15px 35px rgba(0, 217, 255, 0.18);
 }
 
 .skill-card i {
     font-size: 35px;
+    color: var(--main);
     margin-bottom: 12px;
 }
 
@@ -997,306 +614,391 @@ body.light-mode .stat-card p {
 }
 
 .skill-card p {
+    color: var(--gray);
     font-size: 14px;
 }
+/* =========================
+   تحسينات نهائية للموقع
+========================= */
 
-/* ===== تصغير نبذة عني ===== */
-.about-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    gap: 25px;
-}
-
-.about-text {
-    padding: 25px;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.about-text p {
-    font-size: 16px;
-    line-height: 1.8;
-}
-
-/* ===== تصغير بطاقات نبذة عني ===== */
-.about-cards {
-    gap: 18px;
-}
-
-.about-card {
-    padding: 20px 15px;
-    min-height: 130px;
-}
-
-/* ===== تصغير قسم المشاريع ===== */
-.projects-grid {
-    max-width: 950px;
-    margin: 0 auto;
-    gap: 25px;
-}
-
-.project-card {
-    max-width: 450px;
-    margin: 0 auto;
-    border-radius: 18px;
-}
-
-.project-card img {
-    height: 220px;
-    object-fit: cover;
-}
-
-.project-content {
-    padding: 20px;
-}
-
-.project-content h3 {
-    font-size: 20px;
-}
-
-.project-content p {
-    font-size: 14px;
-    line-height: 1.7;
-}
-
-/* ===== تصغير الشهادات ===== */
-.certificates-grid {
-    max-width: 850px;
-    margin: 0 auto;
-}
-
-.certificate-card {
-    padding: 25px;
-}
-
-/* ===== تصغير مربعات التواصل ===== */
-.contact-grid {
-    max-width: 1000px;
-    margin: 0 auto;
-    gap: 20px;
-}
-
-.contact-card {
-    min-height: 140px;
-    padding: 25px 15px;
-}
-
-.contact-card i {
-    font-size: 35px;
-}
-
-.contact-card h3 {
-    font-size: 17px;
-}
-
-/* ===== الهاتف ===== */
-@media (max-width: 768px) {
-
-    .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .about-container {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 500px) {
-
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .skill-card {
-        min-height: 130px;
-    }
-
-    .project-card img {
-        height: 190px;
-    }
-}
-section {
-    padding: 45px 5%;
-    margin: 0;
-}
-
-section h2 {
-    margin-bottom: 25px;
-}
-
-#about,
-#skills,
-#projects,
-#certificates,
-#contact {
-    padding-top: 40px;
-    padding-bottom: 40px;
-}
-
-.about-container {
-    max-width: 900px;
-    margin: 0 auto;
-    gap: 20px;
-}
-
-.about-text {
-    max-width: 650px;
-    padding: 20px;
-    margin: 0 auto;
-}
-
-.projects-grid {
-    max-width: 850px;
-    margin: 0 auto;
-    gap: 20px;
-}
-
-.project-card {
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-.project-card img {
-    height: 190px;
-    object-fit: cover;
-}
-/* ===== تحسين حجم ومسافات الأقسام ===== */
-
-section {
-    padding: 55px 5%;
-    margin: 0;
-}
-
-section h2 {
-    margin-bottom: 35px;
-}
-
-/* ===== قسم نبذة عني ===== */
-
-.about-container {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.about-container > * {
-    margin-bottom: 0;
-}
-
-.about-text {
-    padding: 28px;
-    border-radius: 20px;
+/* منع أي عنصر من الخروج عن الشاشة */
+img {
     max-width: 100%;
 }
 
-.about-text p {
-    line-height: 1.9;
-    margin-bottom: 20px;
-}
-
-/* ===== البطاقات داخل نبذة عني ===== */
-
-.about-container .about-card {
-    padding: 22px;
-}
-
-/* ===== قسم المهارات ===== */
-
-.skills-grid {
-    gap: 18px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.skill-card {
-    padding: 25px 20px;
-}
-
-/* ===== قسم المشاريع ===== */
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    max-width: 950px;
-    margin: 0 auto;
-}
-
-.project-card {
-    max-width: 100%;
-    margin: 0 auto;
+section {
     overflow: hidden;
 }
 
-.project-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
+/* =========================
+   تأثير ظهور الأقسام
+========================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.project-card-content {
-    padding: 22px;
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* ===== قسم الشهادات ===== */
 
-.certificates-grid {
-    max-width: 950px;
-    margin: 0 auto;
-    gap: 20px;
+/* =========================
+   تأثير البطاقات
+========================= */
+
+.skill-card,
+.stat-card,
+.project-card,
+.certificate-card,
+.contact-box {
+    position: relative;
+    overflow: hidden;
 }
 
-/* ===== قسم التواصل ===== */
-
-.contact-grid {
-    max-width: 950px;
-    margin: 0 auto;
-    gap: 20px;
+.skill-card::before,
+.stat-card::before,
+.project-card::before,
+.certificate-card::before,
+.contact-box::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 50%;
+    height: 300%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.08),
+        transparent
+    );
+    transform: rotate(25deg);
+    transition: 0.7s ease;
 }
 
-/* ===== تقليل المسافة بين الأقسام ===== */
-
-section + section {
-    margin-top: 0;
+.skill-card:hover::before,
+.stat-card:hover::before,
+.project-card:hover::before,
+.certificate-card:hover::before,
+.contact-box:hover::before {
+    left: 150%;
 }
 
-/* ===== الهاتف ===== */
+
+/* =========================
+   زر التواصل
+========================= */
+
+.contact-box {
+    cursor: pointer;
+}
+
+.contact-box span {
+    color: #fff;
+}
+
+body.light-mode .contact-box span {
+    color: #07111f;
+}
+
+
+/* =========================
+   أزرار المشاريع
+========================= */
+
+.project-buttons {
+    justify-content: center;
+}
+
+.project-buttons a {
+    text-align: center;
+}
+
+
+/* =========================
+   صورة المشروع
+========================= */
+
+.project-card > img {
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover > img {
+    transform: scale(1.04);
+}
+
+
+/* =========================
+   تحسين العنوان الرئيسي
+========================= */
+
+.hero h1 {
+    text-shadow: 0 0 25px rgba(0, 217, 255, 0.12);
+}
+
+.hero h2 span {
+    text-shadow: 0 0 15px rgba(0, 217, 255, 0.25);
+}
+
+
+/* =========================
+   مؤشر التمرير
+========================= */
+
+.scroll-down {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--main);
+    font-size: 1.5rem;
+    animation: scrollDown 1.8s infinite;
+}
+
+@keyframes scrollDown {
+
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -5px);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translate(-50%, 8px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, 18px);
+    }
+}
+
+
+/* =========================
+   زر العودة للأعلى
+========================= */
+
+#backToTop {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(
+        135deg,
+        var(--main),
+        var(--blue)
+    );
+    color: #03101c;
+    font-size: 1.1rem;
+    cursor: pointer;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 217, 255, 0.3);
+}
+
+#backToTop.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#backToTop:hover {
+    transform: translateY(-5px);
+}
+
+
+/* =========================
+   شريط التقدم أعلى الصفحة
+========================= */
+
+#progress-bar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 3px;
+    width: 0;
+    background: linear-gradient(
+        90deg,
+        var(--blue),
+        var(--main)
+    );
+    z-index: 2000;
+    box-shadow: 0 0 10px var(--main);
+}
+
+
+/* =========================
+   تحسين الشريط العلوي
+========================= */
+
+.navbar {
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+.navbar.scrolled {
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================
+   القائمة في الهاتف
+========================= */
 
 @media (max-width: 600px) {
 
-    section {
-        padding: 45px 5%;
+    header {
+        padding: 0;
     }
 
-    section h2 {
-        margin-bottom: 25px;
+    .navbar {
+        position: relative;
     }
 
-    .about-container {
+    .nav-links {
+        overflow: hidden;
+    }
+
+    .nav-links li {
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 5px;
+    }
+
+    .hero-image {
         width: 100%;
     }
 
-    .about-text {
-        padding: 20px;
+    .hero-content {
+        width: 100%;
     }
 
-    .projects-grid {
-        grid-template-columns: 1fr;
+    .hero-text {
+        max-width: 100%;
+        line-height: 1.8;
     }
 
-    .project-card img {
-        height: 180px;
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+
+    .about-text h3 {
+        font-size: 1.3rem;
+    }
+
+    .stat-card {
+        min-height: 130px;
+    }
+
+    .certificate-card {
+        padding: 25px 18px;
+    }
+
+    #backToTop {
+        width: 42px;
+        height: 42px;
+        right: 15px;
+        bottom: 15px;
     }
 }
 
+
+/* =========================
+   شاشات صغيرة جداً
+========================= */
+
+@media (max-width: 400px) {
+
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+
+    .hero h2 {
+        font-size: 1.1rem;
+    }
+
+    .circle {
+        width: 190px;
+        height: 190px;
+    }
+
+    .navbar {
+        width: 96%;
+    }
+
+    .nav-links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .skill-card {
+        min-height: 120px;
+        padding: 18px 10px;
+    }
+
+    .skill-card i {
+        font-size: 28px;
+    }
+
+    .skill-card h3 {
+        font-size: 15px;
+    }
+}
+
+
+/* =========================
+   تحسين الوضع الليلي
+========================= */
+
+body:not(.light-mode) .about-text,
+body:not(.light-mode) .stat-card,
+body:not(.light-mode) .skill-card,
+body:not(.light-mode) .project-card,
+body:not(.light-mode) .certificate-card,
+body:not(.light-mode) .contact-box {
+    backdrop-filter: blur(10px);
+}
+
+
+/* =========================
+   تحسين الوضع الفاتح
+========================= */
+
+body.light-mode .nav-links {
+    background: rgba(255, 255, 255, 0.96);
+}
+
+body.light-mode .theme-toggle {
+    background: rgba(0, 119, 255, 0.08);
+    color: #0077ff;
+}
+
+body.light-mode .btn-outline {
+    color: #0077ff;
+    border-color: #0077ff;
+}
+
+body.light-mode .btn-outline:hover {
+    background: #0077ff;
+    color: #fff;
+}
+
+
+/* =========================
+   نهاية CSS
+========================= */
