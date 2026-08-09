@@ -217,10 +217,11 @@ section {
 .hero {
     min-height: 100vh;
     padding-top: 130px;
+   padding-bottom: 70px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 60px;
+    gap: 70px;
 }
 
 .hero-content {
@@ -235,7 +236,7 @@ section {
 }
 
 .hero h1 {
-    font-size: clamp(3.5rem, 8vw, 6rem);
+    font-size: clamp(3rem, 7vw, 5rem);
     line-height: 1.1;
     font-weight: 800;
     background: linear-gradient(90deg, #fff, var(--main));
@@ -256,10 +257,10 @@ section {
 }
 
 .hero-text {
-    max-width: 650px;
-    margin: 20px 0;
+    max-width: 620px;
+    margin: 22px 0;
     color: var(--gray);
-    font-size: 1rem;
+    font-size: 2rem;
 }
 
 .hero-buttons {
@@ -313,8 +314,8 @@ section {
 }
 
 .circle {
-    width: 330px;
-    height: 330px;
+    width: 310px;
+    height: 310px;
     padding: 8px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--main), var(--blue), var(--main));
