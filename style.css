@@ -1172,3 +1172,131 @@ section h2 {
     height: 190px;
     object-fit: cover;
 }
+/* ===== تحسين حجم ومسافات الأقسام ===== */
+
+section {
+    padding: 55px 5%;
+    margin: 0;
+}
+
+section h2 {
+    margin-bottom: 35px;
+}
+
+/* ===== قسم نبذة عني ===== */
+
+.about-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-container > * {
+    margin-bottom: 0;
+}
+
+.about-text {
+    padding: 28px;
+    border-radius: 20px;
+    max-width: 100%;
+}
+
+.about-text p {
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+/* ===== البطاقات داخل نبذة عني ===== */
+
+.about-container .about-card {
+    padding: 22px;
+}
+
+/* ===== قسم المهارات ===== */
+
+.skills-grid {
+    gap: 18px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.skill-card {
+    padding: 25px 20px;
+}
+
+/* ===== قسم المشاريع ===== */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.project-card {
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.project-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.project-card-content {
+    padding: 22px;
+}
+
+/* ===== قسم الشهادات ===== */
+
+.certificates-grid {
+    max-width: 950px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+/* ===== قسم التواصل ===== */
+
+.contact-grid {
+    max-width: 950px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+/* ===== تقليل المسافة بين الأقسام ===== */
+
+section + section {
+    margin-top: 0;
+}
+
+/* ===== الهاتف ===== */
+
+@media (max-width: 600px) {
+
+    section {
+        padding: 45px 5%;
+    }
+
+    section h2 {
+        margin-bottom: 25px;
+    }
+
+    .about-container {
+        width: 100%;
+    }
+
+    .about-text {
+        padding: 20px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card img {
+        height: 180px;
+    }
+}
+
