@@ -380,19 +380,20 @@ section {
 
 .about-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 35px;
-    align-items: center;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 30px;
+    align-items: stretch;
 }
 
 .about-stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+    gap: 16px;
+   align-itmes: stretch
 }
 
 .stat-card {
-    min-height: 155px;
+    min-height: 170px;
     padding: 20px 12px;
     display: flex;
     flex-direction: column;
@@ -454,7 +455,9 @@ section {
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 232px;
+   max-width: 1000px;
+   margin; auto;
 }
 
 .skill-card {
@@ -499,8 +502,9 @@ section {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: minmax(280px, 750px);
+    grid-template-columns: minmax(280px, 850px);
     justify-content: center;
+   gap; 25px;
 }
 
 .project-card {
@@ -520,7 +524,7 @@ section {
 
 .project-card > img {
     width: 100%;
-    height: 300px;
+    height: 340px;
     display: block;
     object-fit: cover;
     background: #07111f;
@@ -569,9 +573,9 @@ section {
 ========================= */
 
 .certificate-card {
-    max-width: 650px;
+    max-width: 700px;
     margin: auto;
-    padding: 35px;
+    padding: 40px;
     text-align: center;
     background: linear-gradient(
         135deg,
@@ -605,8 +609,10 @@ section {
 
 .contact-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+   max-width: 1000px;
+   margin: auto
 }
 
 .contact-box {
