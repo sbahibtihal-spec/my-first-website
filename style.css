@@ -1236,56 +1236,32 @@ nav {
     transform: rotate(20deg) scale(1.1);
 }
 
-/* ================================
+/* =========================
    الأقسام
-================================ */
+========================= */
 
 section {
-    min-height: 100vh;
-
-    padding: 120px 8% 80px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    position: relative;
+    padding: 70px 8%;
+    min-height: auto;
+    scroll-margin-top: 90px;
 }
 
-/* عنوان القسم */
-
+/* عنوان كل قسم */
 .section-title {
-    font-size: 48px;
-
-    margin-bottom: 60px;
-
     text-align: center;
-
-    position: relative;
-
-    color: #ffffff;
+    font-size: 42px;
+    margin-bottom: 45px;
 }
 
+/* الخط الموجود تحت العنوان */
 .section-title::after {
     content: "";
-
-    position: absolute;
-
-    width: 75px;
-    height: 5px;
-
-    background: #00eaff;
-
+    display: block;
+    width: 70px;
+    height: 4px;
+    margin: 12px auto 0;
     border-radius: 10px;
-
-    bottom: -15px;
-
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    box-shadow: 0 0 15px #00eaff;
+    background: var(--main-light);
 }
 
 /* ================================
