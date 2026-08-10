@@ -325,7 +325,7 @@ header {
 section {
     max-width: 1200px;
     margin: auto;
-    padding: 110px 5%;
+    padding: 65px 5%;
     scroll-margin-top: 100px;
 }
 
@@ -335,7 +335,7 @@ section {
 
 .section-title {
     text-align: center;
-    margin-bottom: 65px;
+    margin-bottom: 35px;
 }
 
 .section-title h2 {
@@ -511,43 +511,45 @@ section {
     font-size: 17px;
 }
 
-/* قسم المشاريع */
+/* =========================================
+   PROJECTS
+========================================= */
+
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 320px));
+    justify-content: center;
     gap: 20px;
-    max-width: 950px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
 .project-card {
     width: 100%;
-    max-width: 450px;
+    max-width: 320px;
     margin: 0 auto;
-    border-radius: 18px;
+    border-radius: 16px;
     overflow: hidden;
 }
 
-/* صورة المشروع */
 .project-card img {
     width: 100%;
-    height: 180px;
+    height: 140px;
     object-fit: cover;
 }
 
-/* محتوى المشروع */
 .project-content {
-    padding: 20px;
+    padding: 15px;
 }
 
 .project-content h3 {
-    font-size: 22px;
-    margin-bottom: 10px;
+    font-size: 19px;
+    margin-bottom: 7px;
 }
 
 .project-content p {
-    font-size: 15px;
-    line-height: 1.7;
+    font-size: 14px;
+    line-height: 1.6;
 }
 /* =========================================
    BUTTONS
@@ -642,16 +644,35 @@ section {
 /* =========================================
    CONTACT
 ========================================= */
-
 .contact-container {
     display: grid;
 
-    grid-template-columns:
-        repeat(auto-fit, minmax(190px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
 
-    gap: 22px;
+    gap: 18px;
+
+    max-width: 850px;
+    margin: 0 auto;
 }
 
+.contact-box {
+    min-height: 130px;
+
+    border-radius: 16px;
+
+    text-decoration: none;
+    color: #ffffff;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    transition: 0.4s ease;
+}
 .contact-box {
     min-height: 150px;
 
@@ -836,7 +857,31 @@ body.light-mode .contact-box {
 ========================================= */
 
 @media (max-width: 700px) {
+.contact-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
 
+.contact-box {
+    min-height: 120px;
+}
+
+.projects-grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+}
+
+.project-card {
+    max-width: 320px;
+}
+
+section {
+    padding: 55px 5%;
+}
+
+.section-title {
+    margin-bottom: 30px;
+}
     header {
         padding: 8px;
     }
