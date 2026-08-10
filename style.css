@@ -511,64 +511,44 @@ section {
     font-size: 17px;
 }
 
-/* =========================================
-   PROJECTS
-========================================= */
-
+/* قسم المشاريع */
 .projects-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
+    max-width: 950px;
+    margin: 0 auto;
 }
 
 .project-card {
-    overflow: hidden;
-    border-radius: 22px;
-
-    transition: 0.4s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-8px);
-
-    border-color: #00eaff;
-
-    box-shadow:
-        0 15px 40px rgba(0, 234, 255, 0.2);
-}
-
-.project-card > img {
     width: 100%;
-    height: 330px;
+    max-width: 450px;
+    margin: 0 auto;
+    border-radius: 18px;
+    overflow: hidden;
+}
 
-    display: block;
-
+/* صورة المشروع */
+.project-card img {
+    width: 100%;
+    height: 180px;
     object-fit: cover;
-
-    background: #06152d;
 }
 
-.project-info {
-    padding: 30px;
+/* محتوى المشروع */
+.project-content {
+    padding: 20px;
 }
 
-.project-info h3 {
-    font-size: 25px;
-    color: #00eaff;
+.project-content h3 {
+    font-size: 22px;
     margin-bottom: 10px;
 }
 
-.project-info p {
-    color: #d6e7f8;
-    margin-bottom: 22px;
+.project-content p {
+    font-size: 15px;
+    line-height: 1.7;
 }
-
-.project-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
 /* =========================================
    BUTTONS
 ========================================= */
