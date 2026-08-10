@@ -511,45 +511,30 @@ section {
     font-size: 17px;
 }
 
-/* =========================================
-   PROJECTS
-========================================= */
+.contact-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.contact-box {
+    min-height: 120px;
+}
 
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 320px));
-    justify-content: center;
-    gap: 20px;
-    max-width: 800px;
-    margin: 0 auto;
+    grid-template-columns: 1fr;
+    max-width: 320px;
 }
 
 .project-card {
-    width: 100%;
     max-width: 320px;
-    margin: 0 auto;
-    border-radius: 16px;
-    overflow: hidden;
 }
 
-.project-card img {
-    width: 100%;
-    height: 140px;
-    object-fit: cover;
+section {
+    padding: 55px 5%;
 }
 
-.project-content {
-    padding: 15px;
-}
-
-.project-content h3 {
-    font-size: 19px;
-    margin-bottom: 7px;
-}
-
-.project-content p {
-    font-size: 14px;
-    line-height: 1.6;
+.section-title {
+    margin-bottom: 30px;
 }
 /* =========================================
    BUTTONS
@@ -645,15 +630,30 @@ section {
    CONTACT
 ========================================= */
 .contact-container {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 18px;
-
-    max-width: 850px;
-    margin: 0 auto;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
 }
+
+.contact-box {
+    min-height: 120px;
+}
+
+.projects-grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+}
+
+.project-card {
+    max-width: 320px;
+}
+
+section {
+    padding: 55px 5%;
+}
+
+.section-title {
+    margin-bottom: 30px;
+}TH
 
 .contact-box {
     min-height: 130px;
@@ -863,7 +863,15 @@ body.light-mode .contact-box {
 }
 
 .contact-box {
-    min-height: 120px;
+    min-height: 115px;
+}
+
+.project-card {
+    max-width: 100%;
+}
+
+.project-card > img {
+    height: 150px;
 }
 
 .projects-grid {
@@ -964,7 +972,7 @@ section {
     }
 
     section {
-        padding: 80px 5%;
+        padding: 50px 5%;
     }
 
     .section-title {
