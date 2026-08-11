@@ -329,111 +329,160 @@ section {
     line-height: 2;
 }
 
+/* =========================================
+   ABOUT - الشكل الدائري النهائي
+========================================= */
 
-/* ========================================
-   ABOUT
-======================================== */
-.about-container {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    gap: 20px;
-    width: 100%;
+#about .about-container {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 25px !important;
 }
 
-.about-text {
-    flex: 1;
-    min-width: 0;
-    padding: 30px;
-    border: 1px solid rgba(0, 180, 255, 0.35);
-    border-radius: 20px;
-    background: rgba(13, 17, 23, 0.45);
+
+/* جميع البطاقات */
+
+#about .about-container > .about-text,
+#about .about-container .stat-card {
+
+    flex: 0 0 auto !important;
+
+    width: 280px !important;
+    height: 280px !important;
+    min-width: 280px !important;
+    min-height: 280px !important;
+
+    margin: 0 !important;
+    padding: 35px !important;
+
+    border-radius: 50% !important;
+
+    border: 2px solid #00eaff !important;
+
+    background: rgba(3, 35, 60, 0.75) !important;
+
+    box-shadow:
+        0 0 20px rgba(0, 234, 255, 0.25),
+        inset 0 0 25px rgba(0, 234, 255, 0.08) !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    text-align: center !important;
+
+    overflow: hidden !important;
+
+    transition: 0.4s ease !important;
 }
 
-.about-stats {
-    flex: 2;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+
+/* دائرة من أنا تكون أكبر */
+
+#about .about-container > .about-text {
+
+    width: 350px !important;
+    height: 350px !important;
+
+    min-width: 350px !important;
+    min-height: 350px !important;
 }
 
-.stat-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 25px 15px;
-    border: 1px solid rgba(0, 180, 255, 0.35);
-    border-radius: 20px;
-    background: rgba(13, 17, 23, 0.45);
+
+/* الأيقونات */
+
+#about .stat-card i {
+    color: #00eaff !important;
+    font-size: 38px !important;
+    margin-bottom: 15px !important;
 }
 
-/* ========================================
-   ABOUT STAT CARDS
-======================================== */
 
-.about-stats {
-    display: grid;
+/* العناوين */
 
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 15px;
-
-    align-items: stretch;
+#about .stat-card h3,
+#about .about-text h3 {
+    color: #ffffff !important;
+    font-size: 20px !important;
+    font-weight: 800 !important;
+    margin-bottom: 10px !important;
 }
 
-.stat-card {
-    min-height: 170px;
 
-    padding: 20px 12px;
+/* النص */
 
-    border: 1px solid var(--border);
-
-    border-radius: 18px;
-
-    background: rgba(0, 150, 255, 0.08);
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-
-    transition: 0.3s;
+#about .stat-card p,
+#about .about-text p {
+    color: #d7eaff !important;
+    font-size: 14px !important;
+    line-height: 1.8 !important;
+    max-width: 220px !important;
+    margin: 0 auto !important;
 }
 
-.stat-card:hover {
-    transform: translateY(-7px);
 
-    border-color: var(--main);
+/* عند تمرير الماوس */
 
-    box-shadow: 0 0 25px rgba(0, 234, 255, 0.18);
+#about .about-container > .about-text:hover,
+#about .stat-card:hover {
+
+    transform: translateY(-10px) scale(1.04) !important;
+
+    border-color: #00ffff !important;
+
+    box-shadow:
+        0 0 35px rgba(0, 234, 255, 0.65),
+        inset 0 0 30px rgba(0, 234, 255, 0.12) !important;
 }
 
-.stat-card i {
-    color: var(--main);
 
-    font-size: 30px;
+/* =========================================
+   TABLET
+========================================= */
 
-    margin-bottom: 10px;
+@media (max-width: 1200px) {
+
+    #about .about-container {
+        flex-wrap: wrap !important;
+    }
+
 }
 
-.stat-card h3 {
-    font-size: 17px;
 
-    margin-bottom: 5px;
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    #about .about-container {
+        flex-direction: column !important;
+        gap: 30px !important;
+    }
+
+    #about .about-container > .about-text {
+
+        width: 300px !important;
+        height: 300px !important;
+
+        min-width: 300px !important;
+        min-height: 300px !important;
+    }
+
+    #about .about-container .stat-card {
+
+        width: 270px !important;
+        height: 270px !important;
+
+        min-width: 270px !important;
+        min-height: 270px !important;
+    }
+
 }
-
-.stat-card p {
-    color: var(--gray);
-
-    font-size: 13px;
-}
-
 /* ========================================
    SKILLS - CIRCLES
 ======================================== */
