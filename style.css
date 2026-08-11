@@ -496,24 +496,35 @@ section {
 .skill-card h3 {
     font-size: 16px;
 }
-/* =========================
-   PROJECTS - بطاقات دائرية
-========================= */
+/* ========================================
+   PROJECTS - CIRCULAR CARDS
+======================================== */
+
+#projects {
+    padding: 100px 25px 70px;
+}
 
 .projects-grid {
+    max-width: 1200px;
+    margin: 50px auto 0;
+
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+
     gap: 45px;
-    padding: 20px;
 }
 
 .project-card {
     width: 330px;
     height: 330px;
 
+    flex: 0 0 330px;
+
     border-radius: 50%;
+
+    padding: 40px;
 
     display: flex;
     align-items: center;
@@ -521,38 +532,33 @@ section {
 
     text-align: center;
 
-    padding: 40px;
+    position: relative;
+    overflow: hidden;
 
     background: linear-gradient(
         145deg,
-        rgba(0, 119, 255, 0.30),
+        rgba(0, 119, 255, 0.35),
         rgba(0, 180, 255, 0.12)
     );
 
-    border: 2px solid rgba(0, 180, 255, 0.55);
+    border: 2px solid rgba(0, 234, 255, 0.45);
 
     box-shadow:
-        0 0 20px rgba(0, 180, 255, 0.20),
-        inset 0 0 25px rgba(0, 180, 255, 0.08);
+        0 0 25px rgba(0, 180, 255, 0.18),
+        inset 0 0 30px rgba(0, 180, 255, 0.08);
 
-    overflow: hidden;
-
-    transition: all 0.4s ease;
+    transition: 0.4s ease;
 }
-
-
-/* حركة عند تمرير الماوس */
 
 .project-card:hover {
     transform: translateY(-12px) scale(1.04);
 
+    border-color: #00eaff;
+
     box-shadow:
-        0 0 35px rgba(0, 180, 255, 0.55),
-        inset 0 0 30px rgba(0, 180, 255, 0.12);
+        0 0 40px rgba(0, 234, 255, 0.45),
+        inset 0 0 30px rgba(0, 234, 255, 0.12);
 }
-
-
-/* محتوى المشروع */
 
 .project-info {
     width: 100%;
@@ -563,47 +569,48 @@ section {
     align-items: center;
     justify-content: center;
 
-    gap: 10px;
+    gap: 9px;
+
+    position: relative;
+    z-index: 2;
 }
 
+.project-icon {
+    font-size: 28px;
 
-/* حالة المشروع */
+    color: #00eaff;
+
+    margin-bottom: 2px;
+}
 
 .project-status {
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
 
-    padding: 6px 14px;
+    padding: 5px 12px;
 
     border-radius: 20px;
 }
 
-
-/* عنوان المشروع */
-
 .project-info h3 {
     font-size: 21px;
-    margin: 2px 0;
 
-    color: #ffffff;
+    color: white;
+
+    margin: 0;
 }
 
-
-/* وصف المشروع */
-
 .project-info p {
+    max-width: 230px;
+
+    color: rgba(255,255,255,0.82);
+
     font-size: 12px;
+
     line-height: 1.7;
 
     margin: 0;
-
-    max-width: 240px;
-
-    color: #ffffff;
 }
-
-
-/* التقنيات */
 
 .project-tech {
     display: flex;
@@ -618,47 +625,69 @@ section {
 }
 
 .project-tech span {
-    font-size: 10px;
+    font-size: 9px;
 
-    padding: 5px 9px;
+    padding: 4px 8px;
 
     border-radius: 15px;
 
-    background: rgba(255, 255, 255, 0.12);
+    color: white;
 
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255,255,255,0.10);
+
+    border: 1px solid rgba(255,255,255,0.20);
 }
-
-
-/* الأزرار */
 
 .project-buttons {
     display: flex;
 
     justify-content: center;
 
-    gap: 8px;
+    flex-wrap: wrap;
 
-    margin-top: 4px;
+    gap: 7px;
+
+    margin-top: 3px;
 }
 
 .project-buttons .btn {
-    font-size: 11px;
+    font-size: 10px;
 
-    padding: 8px 14px;
+    padding: 7px 12px;
 
     border-radius: 20px;
 }
 
 
-/* أيقونة المشروع */
+/* ========================================
+   PROJECTS - MOBILE
+======================================== */
 
-.project-icon {
-    font-size: 30px;
+@media (max-width: 700px) {
 
-    margin-bottom: 3px;
+    .projects-grid {
+        gap: 30px;
+    }
+
+    .project-card {
+        width: 290px;
+        height: 290px;
+
+        flex: 0 0 290px;
+
+        padding: 30px;
+    }
+
+    .project-info h3 {
+        font-size: 19px;
+    }
+
+    .project-info p {
+        font-size: 11px;
+
+        max-width: 210px;
+    }
 }
-
 
 /* الهاتف */
 
