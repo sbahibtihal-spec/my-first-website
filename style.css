@@ -904,75 +904,124 @@ section {
     }
 }
 /* ========================================
-   CONTACT
+   CONTACT - CIRCLES
 ======================================== */
 
-.contact-container {
-    width: 100%;
-    max-width: 1100px;
-
-    margin: 0 auto;
-
-    display: grid;
-
-    grid-template-columns: repeat(6, 1fr);
-
-    gap: 12px;
+#contact {
+    padding: 100px 25px 70px;
 }
 
-.contact-box {
-    width: 100%;
+/* عنوان تواصل معي مستقل */
+#contact .section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
 
-    min-height: 105px;
-
-    padding: 12px 8px;
-
-    border: 1px solid var(--border);
-
-    border-radius: 15px;
-
-    background: rgba(0, 150, 255, 0.08);
+/* ترتيب دوائر التواصل */
+.contact-container {
+    max-width: 1000px;
+    margin: 0 auto;
 
     display: flex;
+    justify-content: center;
+    align-items: center;
 
+    flex-wrap: wrap;
+
+    gap: 30px;
+}
+
+/* دائرة التواصل */
+.contact-box {
+    width: 135px;
+    height: 135px;
+
+    border-radius: 50%;
+
+    display: flex;
     flex-direction: column;
 
     align-items: center;
     justify-content: center;
 
-    gap: 7px;
+    gap: 10px;
 
     text-align: center;
 
     color: white;
-
     text-decoration: none;
 
-    transition: 0.3s ease;
+    background:
+        radial-gradient(
+            circle at 30% 30%,
+            rgba(0, 234, 255, 0.22),
+            rgba(0, 119, 255, 0.08)
+        );
+
+    border: 2px solid rgba(0, 234, 255, 0.45);
+
+    box-shadow:
+        0 0 20px rgba(0, 180, 255, 0.15),
+        inset 0 0 20px rgba(0, 180, 255, 0.06);
+
+    transition: 0.4s ease;
 }
 
+/* الأيقونة */
 .contact-box i {
-    font-size: 27px;
+    color: #00eaff;
 
-    color: var(--main);
+    font-size: 30px;
+
+    transition: 0.4s ease;
 }
 
+/* اسم الموقع */
 .contact-box span {
-    font-size: 12px;
+    font-size: 13px;
 
-    font-weight: 600;
+    font-weight: 700;
 }
 
+/* تأثير الماوس */
 .contact-box:hover {
-    transform: translateY(-7px);
+    transform: translateY(-10px) scale(1.06);
 
-    border-color: var(--main);
+    border-color: #00eaff;
 
-    background: rgba(0, 234, 255, 0.10);
-
-    box-shadow: 0 0 25px rgba(0, 234, 255, 0.18);
+    box-shadow:
+        0 0 35px rgba(0, 234, 255, 0.4),
+        inset 0 0 25px rgba(0, 234, 255, 0.1);
 }
 
+.contact-box:hover i {
+    transform: scale(1.15);
+}
+
+
+/* ========================================
+   CONTACT - MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .contact-container {
+        gap: 20px;
+    }
+
+    .contact-box {
+        width: 120px;
+        height: 120px;
+    }
+
+    .contact-box i {
+        font-size: 27px;
+    }
+
+    .contact-box span {
+        font-size: 12px;
+    }
+}
 
 /* ========================================
    FOOTER
