@@ -497,230 +497,194 @@ section {
     font-size: 16px;
 }
 /* =========================
-   PROJECTS
+   PROJECTS - بطاقات دائرية
 ========================= */
 
 .projects-grid {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px;
     flex-wrap: wrap;
+    gap: 45px;
+    padding: 20px;
 }
 
 .project-card {
-    width: 320px;
-    height: 320px;
+    width: 330px;
+    height: 330px;
+
     border-radius: 50%;
 
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
     text-align: center;
-    padding: 35px;
 
-    background: rgba(0, 119, 255, 0.18);
-    border: 1px solid rgba(0, 180, 255, 0.5);
+    padding: 40px;
 
-    box-shadow: 0 0 25px rgba(0, 180, 255, 0.25);
+    background: linear-gradient(
+        145deg,
+        rgba(0, 119, 255, 0.30),
+        rgba(0, 180, 255, 0.12)
+    );
+
+    border: 2px solid rgba(0, 180, 255, 0.55);
+
+    box-shadow:
+        0 0 20px rgba(0, 180, 255, 0.20),
+        inset 0 0 25px rgba(0, 180, 255, 0.08);
 
     overflow: hidden;
 
-    transition: 0.4s ease;
+    transition: all 0.4s ease;
 }
+
+
+/* حركة عند تمرير الماوس */
+
 .project-card:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 0 40px rgba(0, 180, 255, 0.5);
+    transform: translateY(-12px) scale(1.04);
+
+    box-shadow:
+        0 0 35px rgba(0, 180, 255, 0.55),
+        inset 0 0 30px rgba(0, 180, 255, 0.12);
 }
+
+
+/* محتوى المشروع */
+
 .project-info {
+    width: 100%;
+
     display: flex;
     flex-direction: column;
+
     align-items: center;
     justify-content: center;
-    gap: 12px;
-}
 
-.project-info h3 {
-    margin: 5px 0;
-}
-
-.project-info p {
-    font-size: 13px;
-    line-height: 1.7;
-}
-
-.project-tech {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 6px;
-}
-
-.project-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-}
-
-.project-info p {
-        font-size: 12px;
-    }
-}
-/* حركة البطاقة */
-.project-card:hover {
-    transform: translateY(-12px);
-    border-color: #00eaff;
-    box-shadow:
-        0 15px 40px rgba(0, 234, 255, 0.25),
-        0 0 25px rgba(0, 234, 255, 0.15);
-}
-
-/* صورة المشروع */
-.project-image {
-    width: 100%;
-    height: 190px;
-    overflow: hidden;
-    position: relative;
-}
-
-.project-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: 0.5s ease;
-}
-
-.project-card:hover .project-image img {
-    transform: scale(1.08);
-}
-
-/* طبقة فوق الصورة */
-.project-image::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to top,
-        rgba(5, 15, 40, 0.75),
-        transparent
-    );
-}
-
-/* محتوى البطاقة */
-.project-content {
-    padding: 22px;
-    text-align: right;
-}
-
-/* الشارة */
-.project-badge {
-    display: inline-block;
-    padding: 6px 12px;
-    border-radius: 20px;
-    background: rgba(0, 234, 255, 0.12);
-    border: 1px solid rgba(0, 234, 255, 0.4);
-    color: #00eaff;
-    font-size: 13px;
-    margin-bottom: 12px;
-}
-
-/* عنوان المشروع */
-.project-card h3 {
-    color: white;
-    font-size: 22px;
-    margin-bottom: 12px;
-}
-
-/* الوصف */
-.project-card p {
-    color: #d5d5d5;
-    font-size: 14px;
-    line-height: 1.8;
-    margin-bottom: 18px;
-}
-
-/* التقنيات */
-.project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 22px;
-}
-
-.project-tags span {
-    padding: 6px 11px;
-    border-radius: 15px;
-    background: rgba(0, 234, 255, 0.1);
-    border: 1px solid rgba(0, 234, 255, 0.25);
-    color: #00eaff;
-    font-size: 12px;
-}
-
-/* الأزرار */
-.project-buttons {
-    display: flex;
     gap: 10px;
 }
 
-.project-buttons a {
-    flex: 1;
-    text-align: center;
-    text-decoration: none;
-    padding: 11px 14px;
-    border-radius: 12px;
-    font-size: 14px;
-    font-weight: bold;
-    transition: 0.3s ease;
+
+/* حالة المشروع */
+
+.project-status {
+    font-size: 12px;
+    font-weight: 700;
+
+    padding: 6px 14px;
+
+    border-radius: 20px;
 }
 
-/* زر مشاهدة المشروع */
-.btn-demo {
-    background: #00eaff;
-    color: #06111f;
+
+/* عنوان المشروع */
+
+.project-info h3 {
+    font-size: 21px;
+    margin: 2px 0;
+
+    color: #ffffff;
 }
 
-.btn-demo:hover {
-    background: white;
-    transform: translateY(-3px);
+
+/* وصف المشروع */
+
+.project-info p {
+    font-size: 12px;
+    line-height: 1.7;
+
+    margin: 0;
+
+    max-width: 240px;
+
+    color: #ffffff;
 }
 
-/* زر الكود */
-.btn-code {
-    color: white;
-    border: 1px solid #00eaff;
-    background: transparent;
+
+/* التقنيات */
+
+.project-tech {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 5px;
+
+    margin-top: 3px;
 }
 
-.btn-code:hover {
-    background: rgba(0, 234, 255, 0.12);
-    transform: translateY(-3px);
+.project-tech span {
+    font-size: 10px;
+
+    padding: 5px 9px;
+
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
+
+
+/* الأزرار */
+
+.project-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 4px;
+}
+
+.project-buttons .btn {
+    font-size: 11px;
+
+    padding: 8px 14px;
+
+    border-radius: 20px;
+}
+
+
+/* أيقونة المشروع */
+
+.project-icon {
+    font-size: 30px;
+
+    margin-bottom: 3px;
+}
+
 
 /* الهاتف */
-@media (max-width: 600px) {
 
-    
+@media (max-width: 768px) {
 
-    .project-image {
-        height: 180px;
+    .projects-grid {
+        gap: 30px;
     }
 
-    .project-card h3 {
-        font-size: 20px;
+    .project-card {
+        width: 290px;
+        height: 290px;
+
+        padding: 30px;
     }
 
-    .project-buttons {
-        flex-direction: column;
+    .project-info h3 {
+        font-size: 19px;
     }
-   
-.projects-grid {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    flex-wrap: wrap;
+
+    .project-info p {
+        font-size: 11px;
+
+        max-width: 215px;
+    }
+
 }
 /* ========================================
    BUTTONS
