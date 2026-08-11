@@ -1121,15 +1121,41 @@ footer p {
     .contact-box {
         min-height: 100px;
     }
+/* ===== ترتيب قسم نبذة عني ===== */
+
+#about .about-container {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 20px !important;
+    width: 100% !important;
+    align-items: stretch !important;
 }
+
+#about .about-text {
+    grid-column: auto !important;
+    width: auto !important;
+    margin: 0 !important;
+}
+
+#about .about-stats {
+    display: contents !important;
+}
+
+#about .stat-card {
+    width: auto !important;
+    margin: 0 !important;
+}
+
+/* ===== الهاتف ===== */
+
 @media (max-width: 900px) {
-    .about-container {
-        grid-template-columns: repeat(2, 1fr);
+    #about .about-container {
+        grid-template-columns: repeat(2, 1fr) !important;
     }
 }
 
 @media (max-width: 600px) {
-    .about-container {
-        grid-template-columns: 1fr;
+    #about .about-container {
+        grid-template-columns: 1fr !important;
     }
 }
