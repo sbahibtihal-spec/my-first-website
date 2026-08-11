@@ -511,17 +511,73 @@ section {
 
 /* البطاقة */
 .project-card {
-    position: relative;
-    overflow: hidden;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(0, 238, 255, 0.35);
-    border-radius: 22px;
-    padding: 0 0 22px;
-    backdrop-filter: blur(12px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    
+    padding: 35px 30px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background: rgba(0, 119, 255, 0.15);
+    border: 1px solid rgba(0, 180, 255, 0.5);
+
+    box-shadow:
+        0 0 20px rgba(0, 180, 255, 0.25),
+        inset 0 0 20px rgba(0, 119, 255, 0.08);
+
     transition: 0.4s ease;
 }
+.project-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow:
+        0 0 35px rgba(0, 180, 255, 0.55),
+        inset 0 0 25px rgba(0, 180, 255, 0.12);
+}
+.project-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
 
+.project-info h3 {
+    margin: 5px 0;
+}
+
+.project-info p {
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.project-tech {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.project-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+@media (max-width: 768px) {
+
+    .project-card {
+        width: 290px;
+        height: 290px;
+        padding: 30px 25px;
+    }
+
+    .project-info p {
+        font-size: 12px;
+    }
+}
 /* حركة البطاقة */
 .project-card:hover {
     transform: translateY(-12px);
