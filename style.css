@@ -1865,4 +1865,258 @@ footer p {
         width: 100%;
     }
 
+/* ========================================
+   ABOUT - الشكل الدائري النهائي
+======================================== */
+
+#about .about-container {
+    width: 100% !important;
+
+    display: flex !important;
+
+    flex-wrap: wrap !important;
+
+    justify-content: center !important;
+
+    align-items: center !important;
+
+    gap: 35px !important;
+
+    margin: 0 auto !important;
+}
+
+
+/* الدائرة الكبيرة - من أنا */
+
+#about .about-text {
+    width: 330px !important;
+
+    height: 330px !important;
+
+    min-width: 330px !important;
+
+    padding: 45px !important;
+
+    margin: 0 !important;
+
+    border-radius: 50% !important;
+
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    text-align: center !important;
+
+    background:
+        radial-gradient(
+            circle at 30% 30%,
+            rgba(0, 234, 255, 0.25),
+            rgba(0, 119, 255, 0.08)
+        ) !important;
+
+    border: 2px solid rgba(0, 234, 255, 0.55) !important;
+
+    box-shadow:
+        0 0 25px rgba(0, 180, 255, 0.18),
+        inset 0 0 30px rgba(0, 180, 255, 0.08) !important;
+
+    overflow: hidden !important;
+
+    transition: 0.4s ease !important;
+}
+
+
+/* أيقونة من أنا */
+
+#about .about-icon {
+    width: 55px;
+
+    height: 55px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 10px;
+
+    background: rgba(0, 234, 255, 0.12);
+
+    border: 1px solid rgba(0, 234, 255, 0.45);
+}
+
+#about .about-icon i {
+    color: #00eaff;
+
+    font-size: 25px;
+}
+
+
+/* عنوان من أنا */
+
+#about .about-text h3 {
+    font-size: 21px !important;
+
+    color: white !important;
+
+    margin-bottom: 10px !important;
+}
+
+
+/* النص */
+
+#about .about-text p {
+    max-width: 220px !important;
+
+    color: rgba(255, 255, 255, 0.82) !important;
+
+    font-size: 11px !important;
+
+    line-height: 1.8 !important;
+
+    margin: 0 !important;
+}
+
+
+/* الدوائر الثلاث */
+
+#about .stat-card {
+    width: 190px !important;
+
+    height: 190px !important;
+
+    min-height: 190px !important;
+
+    padding: 25px !important;
+
+    margin: 0 !important;
+
+    border-radius: 50% !important;
+
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    text-align: center !important;
+
+    background:
+        radial-gradient(
+            circle at 30% 30%,
+            rgba(0, 234, 255, 0.22),
+            rgba(0, 119, 255, 0.08)
+        ) !important;
+
+    border: 2px solid rgba(0, 234, 255, 0.45) !important;
+
+    box-shadow:
+        0 0 20px rgba(0, 180, 255, 0.15),
+        inset 0 0 20px rgba(0, 180, 255, 0.06) !important;
+
+    transition: 0.4s ease !important;
+
+    overflow: hidden !important;
+}
+
+
+/* أيقونات الدوائر */
+
+#about .stat-card i {
+    color: #00eaff !important;
+
+    font-size: 32px !important;
+
+    margin-bottom: 10px !important;
+}
+
+
+/* عناوين الدوائر */
+
+#about .stat-card h3 {
+    color: white !important;
+
+    font-size: 15px !important;
+
+    margin-bottom: 5px !important;
+}
+
+
+/* نص الدوائر */
+
+#about .stat-card p {
+    color: rgba(255, 255, 255, 0.82) !important;
+
+    font-size: 10px !important;
+
+    line-height: 1.6 !important;
+
+    margin: 0 !important;
+}
+
+
+/* تأثير الماوس */
+
+#about .about-text:hover,
+#about .stat-card:hover {
+    transform: translateY(-10px) scale(1.04) !important;
+
+    border-color: #00eaff !important;
+
+    box-shadow:
+        0 0 40px rgba(0, 234, 255, 0.4),
+        inset 0 0 30px rgba(0, 234, 255, 0.1) !important;
+}
+
+
+/* ========================================
+   ABOUT - الهاتف
+======================================== */
+
+@media (max-width: 700px) {
+
+    #about .about-container {
+        gap: 25px !important;
+    }
+
+    #about .about-text {
+        width: 285px !important;
+
+        height: 285px !important;
+
+        min-width: 285px !important;
+
+        padding: 30px !important;
+    }
+
+    #about .stat-card {
+        width: 145px !important;
+
+        height: 145px !important;
+
+        min-height: 145px !important;
+
+        padding: 20px !important;
+    }
+
+    #about .stat-card i {
+        font-size: 27px !important;
+    }
+
+    #about .stat-card h3 {
+        font-size: 13px !important;
+    }
+
+    #about .stat-card p {
+        font-size: 9px !important;
+    }
 }
