@@ -2119,4 +2119,220 @@ footer p {
     #about .stat-card p {
         font-size: 9px !important;
     }
+/* =========================================
+   ABOUT - دوائر احترافية
+========================================= */
+
+#about .about-container {
+    display: grid !important;
+
+    grid-template-columns: 1.25fr 1fr 1fr 1fr !important;
+
+    gap: 25px !important;
+
+    width: 100% !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+}
+
+
+/* جميع الدوائر */
+
+#about .about-text,
+#about .stat-card {
+
+    width: 300px !important;
+    height: 300px !important;
+
+    min-height: 300px !important;
+
+    padding: 35px !important;
+
+    margin: 0 auto !important;
+
+    border-radius: 50% !important;
+
+    border: 2px solid rgba(0, 234, 255, 0.75) !important;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0, 180, 255, 0.18),
+            rgba(0, 30, 60, 0.55)
+        ) !important;
+
+    box-shadow:
+        0 0 20px rgba(0, 234, 255, 0.20),
+        inset 0 0 25px rgba(0, 234, 255, 0.08) !important;
+
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    justify-content: center !important;
+
+    align-items: center !important;
+
+    text-align: center !important;
+
+    transition: 0.4s ease !important;
+
+    overflow: hidden !important;
+}
+
+
+/* الدائرة الكبيرة */
+
+#about .about-text {
+    width: 350px !important;
+    height: 350px !important;
+
+    min-height: 350px !important;
+
+    padding: 45px !important;
+}
+
+
+/* تأثير عند مرور الماوس */
+
+#about .about-text:hover,
+#about .stat-card:hover {
+
+    transform: translateY(-10px) scale(1.03) !important;
+
+    border-color: #00eaff !important;
+
+    box-shadow:
+        0 0 35px rgba(0, 234, 255, 0.55),
+        inset 0 0 35px rgba(0, 234, 255, 0.12) !important;
+}
+
+
+/* أيقونات */
+
+#about .stat-card i,
+#about .about-text i {
+
+    font-size: 38px !important;
+
+    color: #00eaff !important;
+
+    margin-bottom: 15px !important;
+
+    text-shadow: 0 0 15px rgba(0, 234, 255, 0.6);
+}
+
+
+/* عناوين الدوائر */
+
+#about .stat-card h3,
+#about .about-text h3 {
+
+    font-size: 20px !important;
+
+    font-weight: 800 !important;
+
+    color: #ffffff !important;
+
+    margin-bottom: 10px !important;
+}
+
+
+/* النص داخل الدوائر */
+
+#about .stat-card p,
+#about .about-text p {
+
+    color: #d7eaff !important;
+
+    font-size: 14px !important;
+
+    line-height: 1.9 !important;
+
+    max-width: 230px !important;
+
+    margin: 0 auto !important;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 1100px) {
+
+    #about .about-container {
+
+        grid-template-columns: repeat(2, 1fr) !important;
+
+        gap: 30px !important;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    #about .about-container {
+
+        grid-template-columns: 1fr !important;
+
+        gap: 30px !important;
+    }
+
+    #about .about-text,
+    #about .stat-card {
+
+        width: 280px !important;
+
+        height: 280px !important;
+
+        min-height: 280px !important;
+    }
+
+    #about .about-text {
+
+        width: 300px !important;
+
+        height: 300px !important;
+
+        min-height: 300px !important;
+    }
+
+}
+
+
+/* =========================================
+   حركة خفيفة للدوائر
+========================================= */
+
+@keyframes aboutCircleFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+}
+
+#about .stat-card {
+    animation: aboutCircleFloat 4s ease-in-out infinite;
+}
+
+#about .stat-card:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+#about .stat-card:nth-child(3) {
+    animation-delay: 1s;
+}
+
+#about .stat-card:nth-child(4) {
+    animation-delay: 1.5s;
 }
