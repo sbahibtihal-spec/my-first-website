@@ -333,58 +333,28 @@ section {
 /* ========================================
    ABOUT
 ======================================== */
-
 .about-container {
-    display: grid;
-
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
-
-    gap: 20px;
-
-    align-items: stretch;
-}
-
-.about-text {
-    padding: 30px;
-
-    border: 1px solid var(--border);
-
-    border-radius: 18px;
-
-    background: var(--card);
-
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-}
-
-.about-text h3 {
-    color: var(--main);
-
-    font-size: 25px;
-
-    margin-bottom: 15px;
-}
-
-.about-text p {
-    color: var(--gray);
-
-    margin-bottom: 15px;
-
-    line-height: 2;
-}
-.about-text,
-.stat-card {
-    height: 100%;
-    min-height: 220px;
-}
-
-.about-text {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 20px;
+    width: 100%;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 0;
+    padding: 30px;
+    border: 1px solid rgba(0, 180, 255, 0.35);
+    border-radius: 20px;
+    background: rgba(13, 17, 23, 0.45);
 }
 
 .about-stats {
-    display: contents;
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 
 .stat-card {
@@ -393,8 +363,11 @@ section {
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 25px 15px;
+    border: 1px solid rgba(0, 180, 255, 0.35);
+    border-radius: 20px;
+    background: rgba(13, 17, 23, 0.45);
 }
-
 
 /* ========================================
    ABOUT STAT CARDS
