@@ -337,9 +337,9 @@ section {
 .about-container {
     display: grid;
 
-    grid-template-columns: 1.3fr 1fr;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
 
-    gap: 35px;
+    gap: 20px;
 
     align-items: stretch;
 }
@@ -370,6 +370,29 @@ section {
     margin-bottom: 15px;
 
     line-height: 2;
+}
+.about-text,
+.stat-card {
+    height: 100%;
+    min-height: 220px;
+}
+
+.about-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-stats {
+    display: contents;
+}
+
+.stat-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 
@@ -1124,5 +1147,16 @@ footer p {
 
     .contact-box {
         min-height: 100px;
+    }
+}
+@media (max-width: 900px) {
+    .about-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .about-container {
+        grid-template-columns: 1fr;
     }
 }
