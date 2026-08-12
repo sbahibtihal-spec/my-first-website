@@ -2073,3 +2073,520 @@ footer p {
     background: var(--main);
     color: #03152d;
 }
+/* =====================================================
+   HERO IMAGE - PROFESSIONAL VERSION
+===================================================== */
+
+.hero-image {
+    position: relative;
+    min-height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation: imageFloat 5s ease-in-out infinite;
+}
+
+
+/* -----------------------------------------------------
+   GLOW خلف الصورة
+----------------------------------------------------- */
+
+.image-glow {
+    position: absolute;
+
+    width: 330px;
+    height: 330px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0, 234, 255, 0.35),
+            rgba(0, 119, 255, 0.15),
+            transparent 70%
+        );
+
+    filter: blur(15px);
+
+    z-index: 1;
+
+    animation: glowPulse 3s ease-in-out infinite;
+}
+
+
+/* -----------------------------------------------------
+   الصورة
+----------------------------------------------------- */
+
+.circle {
+    width: 310px;
+    height: 310px;
+
+    position: relative;
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 234, 255, 0.20),
+            rgba(0, 119, 255, 0.15)
+        );
+
+    border: 4px solid rgba(0, 234, 255, 0.75);
+
+    box-shadow:
+        0 0 25px rgba(0, 234, 255, 0.35),
+        0 0 60px rgba(0, 119, 255, 0.20),
+        inset 0 0 30px rgba(0, 234, 255, 0.12);
+
+    transition: 0.5s ease;
+}
+
+.circle:hover {
+    transform: scale(1.03);
+
+    border-color: var(--main);
+
+    box-shadow:
+        0 0 35px rgba(0, 234, 255, 0.55),
+        0 0 80px rgba(0, 119, 255, 0.30);
+}
+
+
+/* -----------------------------------------------------
+   الصورة داخل الدائرة
+----------------------------------------------------- */
+
+.circle img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transition: 0.5s ease;
+}
+
+.circle:hover img {
+    transform: scale(1.05);
+}
+
+
+/* -----------------------------------------------------
+   إطار إضافي حول الصورة
+----------------------------------------------------- */
+
+.circle-border {
+    position: absolute;
+
+    inset: 8px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    pointer-events: none;
+
+    z-index: 6;
+}
+
+
+/* =====================================================
+   ORBITS
+===================================================== */
+
+.image-orbit {
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 2;
+
+    border: 1px solid rgba(0, 234, 255, 0.35);
+
+    animation: rotateOrbit 14s linear infinite;
+}
+
+.orbit-one {
+    width: 355px;
+    height: 355px;
+}
+
+.orbit-two {
+    width: 410px;
+    height: 410px;
+
+    border-color: rgba(100, 150, 255, 0.25);
+
+    animation-duration: 20s;
+
+    animation-direction: reverse;
+}
+
+
+/* النقاط المضيئة */
+
+.image-orbit::after {
+    content: "";
+
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: var(--main);
+
+    box-shadow:
+        0 0 8px var(--main),
+        0 0 18px var(--main);
+
+    top: 12px;
+    left: 50%;
+}
+
+
+/* =====================================================
+   AVAILABLE FOR WORK
+===================================================== */
+
+.available-badge {
+    position: absolute;
+
+    bottom: 35px;
+    right: 5px;
+
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px 16px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(4, 18, 42, 0.92);
+
+    border: 1px solid rgba(0, 255, 170, 0.45);
+
+    box-shadow:
+        0 0 20px rgba(0, 255, 170, 0.15);
+
+    backdrop-filter: blur(10px);
+
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* النقطة الخضراء */
+
+.available-badge > span:first-child {
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #00ff9d;
+
+    box-shadow:
+        0 0 8px #00ff9d;
+
+    animation: availablePulse 1.5s infinite;
+}
+
+
+/* =====================================================
+   HERO CARDS
+===================================================== */
+
+.hero-cards {
+    grid-column: 1 / -1;
+
+    width: 100%;
+    max-width: 1050px;
+
+    margin: 10px auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+
+/* -----------------------------------------------------
+   البطاقة
+----------------------------------------------------- */
+
+.hero-card {
+    min-height: 90px;
+
+    padding: 15px 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(255, 255, 255, 0.07);
+
+    border: 1px solid rgba(0, 234, 255, 0.22);
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.15);
+
+    transition: 0.35s ease;
+}
+
+
+/* -----------------------------------------------------
+   أيقونة البطاقة
+----------------------------------------------------- */
+
+.hero-card-icon {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background:
+        rgba(0, 234, 255, 0.10);
+
+    border: 1px solid rgba(0, 234, 255, 0.30);
+}
+
+.hero-card-icon i {
+    color: var(--main);
+
+    font-size: 20px;
+
+    text-shadow:
+        0 0 10px rgba(0, 234, 255, 0.5);
+}
+
+
+/* -----------------------------------------------------
+   النص داخل البطاقة
+----------------------------------------------------- */
+
+.hero-card small {
+    display: block;
+
+    color: rgba(215, 234, 255, 0.65);
+
+    font-size: 11px;
+
+    margin-bottom: 3px;
+}
+
+.hero-card strong {
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+/* -----------------------------------------------------
+   Hover
+----------------------------------------------------- */
+
+.hero-card:hover {
+    transform: translateY(-7px);
+
+    border-color: rgba(0, 234, 255, 0.65);
+
+    background:
+        rgba(0, 234, 255, 0.08);
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.25),
+        0 0 20px rgba(0, 234, 255, 0.12);
+}
+
+.hero-card:hover .hero-card-icon {
+    transform: scale(1.08);
+
+    background:
+        rgba(0, 234, 255, 0.18);
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes glowPulse {
+
+    0%,
+    100% {
+        opacity: 0.65;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.08);
+    }
+}
+
+
+@keyframes availablePulse {
+
+    0% {
+        box-shadow:
+            0 0 0 0 rgba(0, 255, 157, 0.5);
+    }
+
+    70% {
+        box-shadow:
+            0 0 0 8px rgba(0, 255, 157, 0);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 0 rgba(0, 255, 157, 0);
+    }
+}
+  /* =====================================================
+   HERO IMAGE + CARDS RESPONSIVE
+===================================================== */
+
+@media (max-width: 850px) {
+
+    .hero-image {
+        min-height: 430px;
+    }
+
+    .hero-cards {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 650px;
+    }
+
+    .available-badge {
+        right: 0;
+        bottom: 20px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .hero-image {
+        min-height: 370px;
+    }
+
+    .circle {
+        width: 220px;
+        height: 220px;
+    }
+
+    .image-glow {
+        width: 250px;
+        height: 250px;
+    }
+
+    .orbit-one {
+        width: 250px;
+        height: 250px;
+    }
+
+    .orbit-two {
+        width: 285px;
+        height: 285px;
+    }
+
+    .available-badge {
+        right: -5px;
+        bottom: 15px;
+
+        padding: 8px 12px;
+
+        font-size: 11px;
+    }
+
+    .hero-cards {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 12px;
+    }
+
+    .hero-card {
+        min-height: 80px;
+
+        padding: 12px;
+
+        gap: 9px;
+    }
+
+    .hero-card-icon {
+        width: 40px;
+        height: 40px;
+
+        border-radius: 11px;
+    }
+
+    .hero-card-icon i {
+        font-size: 17px;
+    }
+
+    .hero-card strong {
+        font-size: 11px;
+    }
+
+    .hero-card small {
+        font-size: 9px;
+    }
+}
+
+
+@media (max-width: 360px) {
+
+    .hero-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-card {
+        width: 100%;
+    }
+} 
