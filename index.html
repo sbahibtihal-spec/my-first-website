@@ -7,7 +7,9 @@
 
     <title>Front-End Developer | NAIMA</title>
 
-    <!-- Google Font -->
+    <!-- =========================
+         GOOGLE FONT
+    ========================== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -15,359 +17,552 @@
         href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-    <!-- Font Awesome -->
+    <!-- =========================
+         FONT AWESOME
+    ========================== -->
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <!-- CSS -->
+    <!-- =========================
+         CSS
+    ========================== -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 
 <body>
 
     <!-- =========================
-         خلفية متحركة
+         BACKGROUND
     ========================== -->
 
     <div id="particles"></div>
 
 
     <!-- =========================
-         HEADER
+         HEADER / NAVBAR
     ========================== -->
 
     <header>
-<nav class="navbar">
 
-    <div class="nav-container">
+        <nav class="navbar">
 
-        <!-- الشعار -->
-        <a href="#home" class="logo">
-            &lt;/&gt; NAIMA
-        </a>
+            <div class="nav-container">
 
-        <!-- زر الهاتف -->
-        <button class="menu-toggle" id="menu-toggle" aria-label="فتح القائمة">
-            ☰
-        </button>
-
-        <!-- القائمة -->
-        <ul class="nav-links" id="nav-links">
-
-            <li>
-                <a href="#home" data-ar="الرئيسية" data-en="Home">
-                    الرئيسية
+                <!-- LOGO -->
+                <a href="#home" class="logo">
+                    &lt;/&gt; <span>NAIMA</span>
                 </a>
-            </li>
-
-            <li>
-                <a href="#about" data-ar="نبذة" data-en="About">
-                    نبذة
-                </a>
-            </li>
-
-            <li>
-                <a href="#skills" data-ar="المهارات" data-en="Skills">
-                    المهارات
-                </a>
-            </li>
-
-            <li>
-                <a href="#projects" data-ar="المشاريع" data-en="Projects">
-                    المشاريع
-                </a>
-            </li>
-
-            <li>
-                <a href="#certificates" data-ar="الشهادات" data-en="Certificates">
-                    الشهادات
-                </a>
-            </li>
-
-            <li>
-                <a href="#contact" data-ar="تواصل" data-en="Contact">
-                    تواصل
-                </a>
-            </li>
-
-        </ul>
-
-        <!-- تغيير اللغة -->
-        <button id="language-toggle" class="language-toggle">
-            EN
-        </button>
-
-        <!-- الوضع الليلي -->
-        <button id="theme-toggle" class="theme-toggle">
-            🌙
-        </button>
-
-    </div>
-
-</nav>
-    </header>
-<!-- =========================
-     HERO - الصفحة الرئيسية
-========================== -->
-
-<section class="hero" id="home">
-
-    <!-- النص -->
-    <div class="hero-content">
-
-        <p class="hero-greeting">
-            مرحباً، أنا 👋
-        </p>
-
-        <h1
-            data-ar="نعيمة"
-            data-en="NAIMA">
-            نعيمة
-        </h1>
-
-        <h2>
-            <span
-                data-ar="مطورة واجهات أمامية"
-                data-en="Front-End Developer">
-                مطورة واجهات أمامية
-            </span>
-        </h2>
-
-        <p
-            class="hero-text"
-            data-ar="أطور واجهات ويب عصرية ومتجاوبة باستخدام HTML وCSS وJavaScript، مع التركيز على التصميم الجميل وسهولة الاستخدام وتجربة المستخدم."
-            data-en="I create modern and responsive web interfaces using HTML, CSS and JavaScript, focusing on beautiful design, usability and user experience.">
-            أطور واجهات ويب عصرية ومتجاوبة باستخدام HTML وCSS وJavaScript، مع التركيز على التصميم الجميل وسهولة الاستخدام وتجربة المستخدم.
-        </p>
-
-        <div class="hero-buttons">
-
-            <a href="#contact"
-               class="hero-main-btn"
-               data-ar="تواصل معي"
-               data-en="Contact Me">
-                <i class="fas fa-paper-plane"></i>
-                تواصل معي
-            </a>
-
-            <a href="#projects"
-               class="hero-second-btn"
-               data-ar="مشاهدة مشاريعي"
-               data-en="View My Projects">
-                <i class="fas fa-code"></i>
-                مشاهدة مشاريعي
-            </a>
-
-        </div>
-
-    </div>
 
 
-    <!-- الصورة الشخصية -->
-    <div class="hero-image">
+                <!-- MOBILE MENU BUTTON -->
+                <button
+                    class="menu-toggle"
+                    id="menu-toggle"
+                    aria-label="فتح القائمة"
+                    aria-expanded="false">
 
-        <div class="image-glow"></div>
+                    ☰
 
-        <div class="circle">
-
-            <div class="circle-border"></div>
-
-            <img
-                src="téléchargement.jfif"
-                alt="صورة نعيمة">
-
-        </div>
-
-        <div class="available-badge">
-            <span></span>
-            متاحة للعمل
-        </div>
-
-    </div>
+                </button>
 
 
-    <!-- البطاقات الجانبية -->
-    <div class="hero-cards">
+                <!-- NAVIGATION -->
+                <ul class="nav-links" id="nav-links">
 
-        <div class="hero-card">
+                    <li>
+                        <a
+                            href="#home"
+                            data-ar="الرئيسية"
+                            data-en="Home">
+                            الرئيسية
+                        </a>
+                    </li>
 
-            <div class="hero-card-icon">
-                <i class="fas fa-graduation-cap"></i>
+                    <li>
+                        <a
+                            href="#about"
+                            data-ar="نبذة عني"
+                            data-en="About Me">
+                            نبذة عني
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="#skills"
+                            data-ar="المهارات"
+                            data-en="Skills">
+                            المهارات
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="#projects"
+                            data-ar="المشاريع"
+                            data-en="Projects">
+                            المشاريع
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="#certificates"
+                            data-ar="الشهادات"
+                            data-en="Certificates">
+                            الشهادات
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="#contact"
+                            data-ar="تواصل معي"
+                            data-en="Contact">
+                            تواصل معي
+                        </a>
+                    </li>
+
+                </ul>
+
+
+                <!-- LANGUAGE BUTTON -->
+                <button
+                    id="language-toggle"
+                    class="language-toggle"
+                    type="button"
+                    aria-label="تغيير اللغة">
+
+                    EN
+
+                </button>
+
+
+                <!-- THEME BUTTON -->
+                <button
+                    id="theme-toggle"
+                    class="theme-toggle"
+                    type="button"
+                    aria-label="تغيير الوضع">
+
+                    🌙
+
+                </button>
+
             </div>
 
-            <div>
-                <small>التعليم</small>
+        </nav>
 
-                <strong
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero" id="home">
+
+
+        <!-- HERO TEXT -->
+
+        <div class="hero-content">
+
+            <p class="hero-greeting">
+                مرحباً، أنا <span class="wave">👋</span>
+            </p>
+
+
+            <h1
+                data-ar="نعيمة"
+                data-en="NAIMA">
+
+                نعيمة
+
+            </h1>
+
+
+            <h2>
+
+                <span
+                    data-ar="مطورة واجهات أمامية"
+                    data-en="Front-End Developer">
+
+                    مطورة واجهات أمامية
+
+                </span>
+
+            </h2>
+
+
+            <p
+                class="hero-text"
+                data-ar="أطور واجهات ويب عصرية ومتجاوبة باستخدام HTML وCSS وJavaScript، مع التركيز على التصميم الجميل وسهولة الاستخدام وتجربة المستخدم."
+                data-en="I create modern and responsive web interfaces using HTML, CSS and JavaScript, focusing on beautiful design, usability and user experience.">
+
+                أطور واجهات ويب عصرية ومتجاوبة باستخدام HTML وCSS وJavaScript،
+                مع التركيز على التصميم الجميل وسهولة الاستخدام وتجربة المستخدم.
+
+            </p>
+
+
+            <!-- HERO BUTTONS -->
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#contact"
+                    class="btn hero-main-btn"
+                    data-ar="تواصل معي"
+                    data-en="Contact Me">
+
+                    <i class="fas fa-paper-plane"></i>
+
+                    تواصل معي
+
+                </a>
+
+
+                <a
+                    href="#projects"
+                    class="btn secondary hero-second-btn"
+                    data-ar="مشاهدة مشاريعي"
+                    data-en="View My Projects">
+
+                    <i class="fas fa-code"></i>
+
+                    مشاهدة مشاريعي
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- HERO IMAGE -->
+
+        <div class="hero-image">
+
+            <div class="image-glow"></div>
+
+
+            <div class="circle">
+
+                <div class="circle-border"></div>
+
+
+                <img
+                    src="téléchargement.jfif"
+                    alt="صورة نعيمة"
+                    loading="eager">
+
+            </div>
+
+
+            <!-- ORBITS -->
+
+            <div class="image-orbit orbit-one"></div>
+
+            <div class="image-orbit orbit-two"></div>
+
+
+            <!-- AVAILABLE BADGE -->
+
+            <div class="available-badge">
+
+                <span></span>
+
+                <span
+                    data-ar="متاحة للعمل"
+                    data-en="Available for Work">
+
+                    متاحة للعمل
+
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- HERO CARDS -->
+
+        <div class="hero-cards">
+
+
+            <!-- EDUCATION -->
+
+            <div class="hero-card">
+
+                <div class="hero-card-icon">
+
+                    <i class="fas fa-graduation-cap"></i>
+
+                </div>
+
+                <div>
+
+                    <small
+                        data-ar="التعليم"
+                        data-en="Education">
+
+                        التعليم
+
+                    </small>
+
+                    <strong
+                        data-ar="بكالوريوس"
+                        data-en="Bachelor's Degree">
+
+                        بكالوريوس
+
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- SPECIALIZATION -->
+
+            <div class="hero-card">
+
+                <div class="hero-card-icon">
+
+                    <i class="fas fa-code"></i>
+
+                </div>
+
+                <div>
+
+                    <small
+                        data-ar="التخصص"
+                        data-en="Specialization">
+
+                        التخصص
+
+                    </small>
+
+                    <strong
+                        data-ar="Front-End"
+                        data-en="Front-End">
+
+                        Front-End
+
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- FIELD -->
+
+            <div class="hero-card">
+
+                <div class="hero-card-icon">
+
+                    <i class="fas fa-laptop-code"></i>
+
+                </div>
+
+                <div>
+
+                    <small
+                        data-ar="المجال"
+                        data-en="Field">
+
+                        المجال
+
+                    </small>
+
+                    <strong
+                        data-ar="تطوير الويب"
+                        data-en="Web Development">
+
+                        تطوير الويب
+
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- WORK -->
+
+            <div class="hero-card">
+
+                <div class="hero-card-icon">
+
+                    <i class="fas fa-globe"></i>
+
+                </div>
+
+                <div>
+
+                    <small
+                        data-ar="العمل"
+                        data-en="Work">
+
+                        العمل
+
+                    </small>
+
+                    <strong
+                        data-ar="عن بُعد"
+                        data-en="Remote Work">
+
+                        عن بُعد
+
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section id="about">
+
+        <div class="section-title">
+
+            <h2
+                data-ar="نبذة عني"
+                data-en="About Me">
+
+                نبذة عني
+
+            </h2>
+
+        </div>
+
+
+        <div class="about-container">
+
+
+            <!-- WHO AM I -->
+
+            <div class="about-text">
+
+                <div class="about-icon">
+
+                    <i class="fas fa-user"></i>
+
+                </div>
+
+
+                <h3
+                    data-ar="من أنا؟"
+                    data-en="Who Am I?">
+
+                    من أنا؟
+
+                </h3>
+
+
+                <p
+                    data-ar="أنا نعيمة، مطورة واجهات أمامية Front-End Developer، متخصصة في HTML وCSS وJavaScript. أحب تصميم وتطوير مواقع ويب حديثة وسريعة ومتجاوبة مع مختلف الأجهزة، مع التركيز على سهولة الاستخدام وتجربة المستخدم."
+                    data-en="I am NAIMA, a Front-End Developer specialized in HTML, CSS and JavaScript. I enjoy creating modern, fast and responsive websites for different devices, with a strong focus on usability and user experience.">
+
+                    أنا نعيمة، مطورة واجهات أمامية Front-End Developer،
+                    متخصصة في HTML وCSS وJavaScript.
+                    أحب تصميم وتطوير مواقع ويب حديثة وسريعة ومتجاوبة
+                    مع مختلف الأجهزة، مع التركيز على سهولة الاستخدام وتجربة المستخدم.
+
+                </p>
+
+            </div>
+
+
+            <!-- BACHELOR -->
+
+            <div class="stat-card">
+
+                <i class="fas fa-graduation-cap"></i>
+
+                <h3
                     data-ar="بكالوريوس"
                     data-en="Bachelor's Degree">
+
                     بكالوريوس
-                </strong>
+
+                </h3>
+
+                <p
+                    data-ar="حاصلة على شهادة البكالوريوس"
+                    data-en="Bachelor's Degree Holder">
+
+                    حاصلة على شهادة البكالوريوس
+
+                </p>
+
             </div>
 
-        </div>
 
+            <!-- UI DEVELOPMENT -->
 
-        <div class="hero-card">
+            <div class="stat-card">
 
-            <div class="hero-card-icon">
                 <i class="fas fa-code"></i>
+
+                <h3
+                    data-ar="تطوير الواجهات"
+                    data-en="UI Development">
+
+                    تطوير الواجهات
+
+                </h3>
+
+                <p
+                    data-ar="تطوير واجهات مستخدم حديثة"
+                    data-en="Modern User Interfaces">
+
+                    تطوير واجهات مستخدم حديثة
+
+                </p>
+
             </div>
 
-            <div>
-                <small>التخصص</small>
 
-                <strong
-                    data-ar="Front-End"
-                    data-en="Front-End">
-                    Front-End
-                </strong>
-            </div>
+            <!-- WEB DESIGN -->
 
-        </div>
+            <div class="stat-card">
 
-
-        <div class="hero-card">
-
-            <div class="hero-card-icon">
                 <i class="fas fa-laptop-code"></i>
-            </div>
 
-            <div>
-                <small>المجال</small>
+                <h3
+                    data-ar="تصميم مواقع الويب"
+                    data-en="Web Design">
 
-                <strong
-                    data-ar="تطوير الويب"
-                    data-en="Web Development">
-                    تطوير الويب
-                </strong>
-            </div>
+                    تصميم مواقع الويب
 
-        </div>
+                </h3>
 
+                <p
+                    data-ar="مواقع متجاوبة وسهلة الاستخدام"
+                    data-en="Responsive and User-Friendly Websites">
 
-        <div class="hero-card">
+                    مواقع متجاوبة وسهلة الاستخدام
 
-            <div class="hero-card-icon">
-                <i class="fas fa-globe"></i>
-            </div>
+                </p>
 
-            <div>
-                <small>العمل</small>
-
-                <strong
-                    data-ar="عن بُعد"
-                    data-en="Remote Work">
-                    عن بُعد
-                </strong>
             </div>
 
         </div>
 
-    </div>
-
-</section>
-<!-- =========================
-     ABOUT
-========================== -->
-
-<section id="about">
-
-    <div class="section-title">
-        <h2
-            data-ar="نبذة عني"
-            data-en="About Me">
-            نبذة عني
-        </h2>
-    </div>
-
-    <div class="about-container">
-
-        <!-- من أنا -->
-        <div class="about-text">
-
-            <div class="about-icon">
-                <i class="fas fa-user"></i>
-            </div>
-
-            <h3
-                data-ar="من أنا؟"
-                data-en="Who Am I?">
-                من أنا؟
-            </h3>
-
-            <p
-                data-ar="أنا نعيمة، مطورة واجهات أمامية Front-End Developer، متخصصة في HTML وCSS وJavaScript. أحب تصميم وتطوير مواقع ويب حديثة وسريعة ومتجاوبة مع مختلف الأجهزة، مع التركيز على سهولة الاستخدام وتجربة المستخدم."
-                data-en="I am NAIMA, a Front-End Developer specialized in HTML, CSS and JavaScript. I enjoy creating modern, fast and responsive websites for different devices, with a strong focus on usability and user experience.">
-                أنا نعيمة، مطورة واجهات أمامية Front-End Developer، متخصصة في HTML وCSS وJavaScript. أحب تصميم وتطوير مواقع ويب حديثة وسريعة ومتجاوبة مع مختلف الأجهزة، مع التركيز على سهولة الاستخدام وتجربة المستخدم.
-            </p>
-
-        </div>
+    </section>
 
 
-        <!-- البكالوريوس -->
-        <div class="stat-card">
-
-            <i class="fas fa-graduation-cap"></i>
-
-            <h3
-                data-ar="بكالوريوس"
-                data-en="Bachelor's Degree">
-                بكالوريوس
-            </h3>
-
-            <p
-                data-ar="حاصلة على شهادة البكالوريوس"
-                data-en="Bachelor's Degree Holder">
-                حاصلة على شهادة البكالوريوس
-            </p>
-
-        </div>
-
-
-        <!-- تطوير الواجهات -->
-        <div class="stat-card">
-
-            <i class="fas fa-code"></i>
-
-            <h3
-                data-ar="تطوير الواجهات"
-                data-en="UI Development">
-                تطوير الواجهات
-            </h3>
-
-            <p
-                data-ar="تطوير واجهات مستخدم حديثة"
-                data-en="Modern User Interfaces">
-                تطوير واجهات مستخدم حديثة
-            </p>
-
-        </div>
-
-
-        <!-- تصميم المواقع -->
-        <div class="stat-card">
-
-            <i class="fas fa-laptop-code"></i>
-
-            <h3
-                data-ar="تصميم مواقع الويب"
-                data-en="Web Design">
-                تصميم مواقع الويب
-            </h3>
-
-            <p
-                data-ar="مواقع متجاوبة وسهلة الاستخدام"
-                data-en="Responsive and User-Friendly Websites">
-                مواقع متجاوبة وسهلة الاستخدام
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
     <!-- =========================
          SKILLS
     ========================== -->
@@ -377,310 +572,407 @@
         <div class="section-title">
 
             <h2
-    data-ar="المهارات"
-    data-en="Skills">
-    المهارات
-</h2>
+                data-ar="المهارات"
+                data-en="Skills">
+
+                المهارات
+
+            </h2>
 
         </div>
 
 
         <div class="skills-grid">
 
+
+            <!-- HTML -->
+
             <div class="skill-card">
 
                 <i class="fab fa-html5"></i>
 
-                <h3>
-                    HTML5
-                </h3>
+                <h3>HTML5</h3>
 
             </div>
 
+
+            <!-- CSS -->
 
             <div class="skill-card">
 
                 <i class="fab fa-css3-alt"></i>
 
-                <h3>
-                    CSS3
-                </h3>
+                <h3>CSS3</h3>
 
             </div>
 
+
+            <!-- JAVASCRIPT -->
 
             <div class="skill-card">
 
                 <i class="fab fa-js"></i>
 
-                <h3>
-                    JavaScript
-                </h3>
+                <h3>JavaScript</h3>
 
             </div>
 
+
+            <!-- RESPONSIVE -->
 
             <div class="skill-card">
 
                 <i class="fas fa-mobile-screen"></i>
 
-                <h3>
-                    Responsive Design
+                <h3
+                    data-ar="تصميم متجاوب"
+                    data-en="Responsive Design">
+
+                    تصميم متجاوب
+
                 </h3>
 
             </div>
 
-<div class="skill-card">
 
-    <i class="fab fa-github"></i>
+            <!-- GIT -->
 
-    <h3
-        data-ar="Git و GitHub"
-        data-en="Git & GitHub">
-        Git و GitHub
-    </h3>
+            <div class="skill-card">
 
-</div>
+                <i class="fab fa-github"></i>
+
+                <h3
+                    data-ar="Git و GitHub"
+                    data-en="Git & GitHub">
+
+                    Git و GitHub
+
+                </h3>
+
+            </div>
 
         </div>
 
     </section>
 
-<!-- =========================
-     PROJECTS
-========================== -->
 
-<section id="projects">
+    <!-- =========================
+         PROJECTS
+    ========================== -->
 
-    <div class="section-title">
+    <section id="projects">
 
-        <h2
-            data-ar="المشاريع"
-            data-en="Projects">
-            المشاريع
-        </h2>
+        <div class="section-title">
 
-    </div>
+            <h2
+                data-ar="المشاريع"
+                data-en="Projects">
 
+                المشاريع
 
-    <div class="projects-grid">
-
-
-        <!-- المشروع الأول -->
-        <div class="project-card">
-
-            <div class="project-icon">
-                <i class="fas fa-laptop-code"></i>
-            </div>
-
-            <div class="project-info">
-
-                <span
-                    class="project-status completed"
-                    data-ar="مشروع مكتمل"
-                    data-en="Completed Project">
-                    مشروع مكتمل
-                </span>
-
-                <h3
-                    data-ar="الموقع الشخصي"
-                    data-en="Portfolio Website">
-                    الموقع الشخصي
-                </h3>
-
-                <p
-                    data-ar="موقع شخصي احترافي لمطورة Front-End، تم تطويره باستعمال HTML وCSS وJavaScript، مع تصميم متجاوب مع مختلف الأجهزة."
-                    data-en="A professional portfolio website for a Front-End Developer, built with HTML, CSS and JavaScript, with a responsive design for different devices.">
-                    موقع شخصي احترافي لمطورة Front-End، تم تطويره باستعمال HTML وCSS وJavaScript، مع تصميم متجاوب مع مختلف الأجهزة.
-                </p>
-
-                <div class="project-tech">
-                    <span>HTML5</span>
-                    <span>CSS3</span>
-                    <span>JavaScript</span>
-                </div>
-
-                <div class="project-buttons">
-
-                    <a
-                        href="https://sbahibtihal-spec.github.io/my-first-website/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn"
-                        data-ar="مشاهدة المشروع"
-                        data-en="Live Demo">
-
-                        <i class="fas fa-external-link-alt"></i>
-                        مشاهدة المشروع
-
-                    </a>
-
-
-                    <a
-                        href="https://github.com/sbahibtihal-spec/my-first-website"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn secondary"
-                        data-ar="الكود المصدري"
-                        data-en="Source Code">
-
-                        <i class="fab fa-github"></i>
-                        الكود المصدري
-
-                    </a>
-
-                </div>
-
-            </div>
+            </h2>
 
         </div>
 
 
-        <!-- المشروع الثاني -->
-        <div class="project-card">
+        <div class="projects-grid">
 
-            <div class="project-icon">
-                <i class="fas fa-shopping-cart"></i>
-            </div>
 
-            <div class="project-info">
+            <!-- PROJECT 1 -->
 
-                <span
-                    class="project-status coming"
-                    data-ar="قيد الإنجاز"
-                    data-en="In Progress">
-                    قيد الإنجاز
-                </span>
+            <div class="project-card">
 
-                <h3
-                    data-ar="متجر إلكتروني"
-                    data-en="E-Commerce Website">
-                    متجر إلكتروني
-                </h3>
+                <div class="project-icon">
 
-                <p
-                    data-ar="مشروع تدريبي لإنشاء واجهة متجر إلكتروني حديثة ومتجاوبة باستعمال HTML وCSS وJavaScript."
-                    data-en="A training project for creating a modern and responsive e-commerce interface using HTML, CSS and JavaScript.">
-                    مشروع تدريبي لإنشاء واجهة متجر إلكتروني حديثة ومتجاوبة باستعمال HTML وCSS وJavaScript.
-                </p>
+                    <i class="fas fa-laptop-code"></i>
 
-                <div class="project-tech">
-                    <span>HTML5</span>
-                    <span>CSS3</span>
-                    <span>JavaScript</span>
                 </div>
 
-                <div class="project-buttons">
 
-                    <span class="btn disabled">
+                <div class="project-info">
 
-                        <i class="fas fa-hourglass-half"></i>
 
-                        <span
-                            data-ar="قريباً"
-                            data-en="Coming Soon">
-                            قريباً
-                        </span>
+                    <span
+                        class="project-status completed"
+                        data-ar="مشروع مكتمل"
+                        data-en="Completed Project">
+
+                        مشروع مكتمل
 
                     </span>
 
+
+                    <h3
+                        data-ar="الموقع الشخصي"
+                        data-en="Portfolio Website">
+
+                        الموقع الشخصي
+
+                    </h3>
+
+
+                    <p
+                        data-ar="موقع شخصي احترافي لمطورة Front-End، تم تطويره باستعمال HTML وCSS وJavaScript، مع تصميم متجاوب مع مختلف الأجهزة."
+                        data-en="A professional portfolio website for a Front-End Developer, built with HTML, CSS and JavaScript, with a responsive design for different devices.">
+
+                        موقع شخصي احترافي لمطورة Front-End،
+                        تم تطويره باستعمال HTML وCSS وJavaScript،
+                        مع تصميم متجاوب مع مختلف الأجهزة.
+
+                    </p>
+
+
+                    <div class="project-tech">
+
+                        <span>HTML5</span>
+
+                        <span>CSS3</span>
+
+                        <span>JavaScript</span>
+
+                    </div>
+
+
+                    <div class="project-buttons">
+
+                        <a
+                            href="https://sbahibtihal-spec.github.io/my-first-website/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn"
+                            data-ar="مشاهدة المشروع"
+                            data-en="Live Demo">
+
+                            <i class="fas fa-external-link-alt"></i>
+
+                            مشاهدة المشروع
+
+                        </a>
+
+
+                        <a
+                            href="https://github.com/sbahibtihal-spec/my-first-website"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn secondary"
+                            data-ar="الكود المصدري"
+                            data-en="Source Code">
+
+                            <i class="fab fa-github"></i>
+
+                            الكود المصدري
+
+                        </a>
+
+                    </div>
+
                 </div>
 
             </div>
 
-        </div>
 
+            <!-- PROJECT 2 -->
 
-        <!-- المشروع الثالث -->
-        <div class="project-card">
+            <div class="project-card">
 
-            <div class="project-icon">
-                <i class="fas fa-calculator"></i>
-            </div>
+                <div class="project-icon">
 
-            <div class="project-info">
+                    <i class="fas fa-shopping-cart"></i>
 
-                <span
-                    class="project-status coming"
-                    data-ar="قيد الإنجاز"
-                    data-en="In Progress">
-                    قيد الإنجاز
-                </span>
-
-                <h3
-                    data-ar="تطبيق آلة حاسبة"
-                    data-en="Calculator App">
-                    تطبيق آلة حاسبة
-                </h3>
-
-                <p
-                    data-ar="تطبيق تفاعلي بسيط باستعمال JavaScript لتنفيذ العمليات الحسابية مع واجهة سهلة ومتجاوبة."
-                    data-en="A simple interactive application using JavaScript to perform calculations with an easy and responsive interface.">
-                    تطبيق تفاعلي بسيط باستعمال JavaScript لتنفيذ العمليات الحسابية مع واجهة سهلة ومتجاوبة.
-                </p>
-
-                <div class="project-tech">
-                    <span>HTML5</span>
-                    <span>CSS3</span>
-                    <span>JavaScript</span>
                 </div>
 
-                <div class="project-buttons">
 
-                    <span class="btn disabled">
+                <div class="project-info">
 
-                        <i class="fas fa-hourglass-half"></i>
+                    <span
+                        class="project-status coming"
+                        data-ar="قيد الإنجاز"
+                        data-en="In Progress">
 
-                        <span
-                            data-ar="قريباً"
-                            data-en="Coming Soon">
-                            قريباً
-                        </span>
+                        قيد الإنجاز
 
                     </span>
 
+
+                    <h3
+                        data-ar="متجر إلكتروني"
+                        data-en="E-Commerce Website">
+
+                        متجر إلكتروني
+
+                    </h3>
+
+
+                    <p
+                        data-ar="مشروع تدريبي لإنشاء واجهة متجر إلكتروني حديثة ومتجاوبة باستعمال HTML وCSS وJavaScript."
+                        data-en="A training project for creating a modern and responsive e-commerce interface using HTML, CSS and JavaScript.">
+
+                        مشروع تدريبي لإنشاء واجهة متجر إلكتروني حديثة
+                        ومتجاوبة باستعمال HTML وCSS وJavaScript.
+
+                    </p>
+
+
+                    <div class="project-tech">
+
+                        <span>HTML5</span>
+
+                        <span>CSS3</span>
+
+                        <span>JavaScript</span>
+
+                    </div>
+
+
+                    <div class="project-buttons">
+
+                        <span class="btn disabled">
+
+                            <i class="fas fa-hourglass-half"></i>
+
+                            <span
+                                data-ar="قريباً"
+                                data-en="Coming Soon">
+
+                                قريباً
+
+                            </span>
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 3 -->
+
+            <div class="project-card">
+
+                <div class="project-icon">
+
+                    <i class="fas fa-calculator"></i>
+
+                </div>
+
+
+                <div class="project-info">
+
+                    <span
+                        class="project-status coming"
+                        data-ar="قيد الإنجاز"
+                        data-en="In Progress">
+
+                        قيد الإنجاز
+
+                    </span>
+
+
+                    <h3
+                        data-ar="تطبيق آلة حاسبة"
+                        data-en="Calculator App">
+
+                        تطبيق آلة حاسبة
+
+                    </h3>
+
+
+                    <p
+                        data-ar="تطبيق تفاعلي بسيط باستعمال JavaScript لتنفيذ العمليات الحسابية مع واجهة سهلة ومتجاوبة."
+                        data-en="A simple interactive application using JavaScript to perform calculations with an easy and responsive interface.">
+
+                        تطبيق تفاعلي بسيط باستعمال JavaScript
+                        لتنفيذ العمليات الحسابية مع واجهة سهلة ومتجاوبة.
+
+                    </p>
+
+
+                    <div class="project-tech">
+
+                        <span>HTML5</span>
+
+                        <span>CSS3</span>
+
+                        <span>JavaScript</span>
+
+                    </div>
+
+
+                    <div class="project-buttons">
+
+                        <span class="btn disabled">
+
+                            <i class="fas fa-hourglass-half"></i>
+
+                            <span
+                                data-ar="قريباً"
+                                data-en="Coming Soon">
+
+                                قريباً
+
+                            </span>
+
+                        </span>
+
+                    </div>
+
                 </div>
 
             </div>
 
         </div>
 
+    </section>
 
-    </div>
 
-</section>
     <!-- =========================
          CERTIFICATES
     ========================== -->
-<section id="certificates">
 
-    <div class="section-title">
-        <h2
-            data-ar="الشهادات"
-            data-en="Certificates">
-            الشهادات
-        </h2>
-    </div>
+    <section id="certificates">
 
-    <div class="certificate-card">
+        <div class="section-title">
 
-        <i class="fas fa-award"></i>
+            <h2
+                data-ar="الشهادات"
+                data-en="Certificates">
 
-        <h3
-            data-ar="شهادة البكالوريا"
-            data-en="Baccalaureate Certificate">
-            شهادة البكالوريا
-        </h3>
+                الشهادات
 
-        <p
-            data-ar="حاصلة على شهادة البكالوريا وأسعى إلى تطوير مهاراتي في مجال تطوير واجهات المستخدم."
-            data-en="I hold a Baccalaureate Certificate and I am continuously developing my skills in Front-End development and user interface design.">
-            حاصلة على شهادة البكالوريا وأسعى إلى تطوير مهاراتي في مجال تطوير واجهات المستخدم.
-        </p>
+            </h2>
 
-    </div>
+        </div>
 
-</section>
+
+        <div class="certificate-card">
+
+            <i class="fas fa-award"></i>
+
+
+            <h3
+                data-ar="شهادة البكالوريوس"
+                data-en="Bachelor's Degree">
+
+                شهادة البكالوريوس
+
+            </h3>
+
+
+            <p
+                data-ar="حاصلة على شهادة البكالوريوس وأسعى إلى تطوير مهاراتي في مجال تطوير واجهات المستخدم."
+                data-en="I hold a Bachelor's Degree and I am continuously developing my skills in Front-End development and user interface design.">
+
+                حاصلة على شهادة البكالوريوس وأسعى إلى تطوير مهاراتي
+                في مجال تطوير واجهات المستخدم.
+
+            </p>
+
+        </div>
+
+    </section>
+
 
     <!-- =========================
          CONTACT
@@ -691,10 +983,12 @@
         <div class="section-title">
 
             <h2
-    data-ar="تواصل معي"
-    data-en="Contact Me">
-    تواصل معي
-</h2>
+                data-ar="تواصل معي"
+                data-en="Contact Me">
+
+                تواصل معي
+
+            </h2>
 
         </div>
 
@@ -702,7 +996,7 @@
         <div class="contact-container">
 
 
-            <!-- LinkedIn -->
+            <!-- LINKEDIN -->
 
             <a
                 href="https://www.linkedin.com/in/marhaba-hala/"
@@ -712,14 +1006,12 @@
 
                 <i class="fab fa-linkedin"></i>
 
-                <span>
-                    LinkedIn
-                </span>
+                <span>LinkedIn</span>
 
             </a>
 
 
-            <!-- Indeed -->
+            <!-- INDEED -->
 
             <a
                 href="https://ma.indeed.com/"
@@ -729,14 +1021,12 @@
 
                 <i class="fas fa-briefcase"></i>
 
-                <span>
-                    Indeed
-                </span>
+                <span>Indeed</span>
 
             </a>
 
 
-            <!-- GitHub -->
+            <!-- GITHUB -->
 
             <a
                 href="https://github.com/sbahibtihal-spec"
@@ -746,14 +1036,12 @@
 
                 <i class="fab fa-github"></i>
 
-                <span>
-                    GitHub
-                </span>
+                <span>GitHub</span>
 
             </a>
 
 
-            <!-- WhatsApp -->
+            <!-- WHATSAPP -->
 
             <a
                 href="https://wa.me/212703166572"
@@ -763,31 +1051,25 @@
 
                 <i class="fab fa-whatsapp"></i>
 
-                <span>
-                    WhatsApp
-                </span>
+                <span>WhatsApp</span>
 
             </a>
 
 
-            <!-- Email -->
+            <!-- EMAIL -->
 
             <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=sbahibtihal@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="mailto:sbahibtihal@gmail.com"
                 class="contact-box">
 
                 <i class="fas fa-envelope"></i>
 
-                <span>
-                 E-mail
-                </span>
+                <span>E-mail</span>
 
             </a>
 
 
-            <!-- Facebook -->
+            <!-- FACEBOOK -->
 
             <a
                 href="https://www.facebook.com/"
@@ -797,12 +1079,9 @@
 
                 <i class="fab fa-facebook"></i>
 
-                <span>
-                    Facebook
-                </span>
+                <span>Facebook</span>
 
             </a>
-
 
         </div>
 
@@ -815,11 +1094,20 @@
 
     <footer>
 
-        <p>
+        <p
+            data-ar="© 2026 جميع الحقوق محفوظة | نعيمة"
+            data-en="© 2026 All Rights Reserved | NAIMA">
+
             © 2026 جميع الحقوق محفوظة | نعيمة
+
         </p>
 
     </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
 
     <script src="script.js"></script>
 
