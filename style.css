@@ -2206,4 +2206,133 @@ footer p {
         margin-left: auto;
         margin-right: auto;
     }
+/* =================================
+   زر القائمة في الهاتف
+================================= */
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+/* =================================
+   إعدادات الهاتف والتابليت
+================================= */
+
+@media (max-width: 768px) {
+
+    .nav-container {
+        position: relative;
+    }
+
+    /* إظهار زر القائمة */
+    .menu-toggle {
+        display: block;
+        order: 1;
+    }
+
+    /* القائمة مخفية */
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+
+        width: 100%;
+        max-width: 320px;
+
+        background: rgba(5, 15, 30, 0.98);
+
+        display: flex;
+        flex-direction: column;
+
+        padding: 20px;
+
+        border-radius: 0 0 20px 20px;
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-15px);
+
+        transition:
+            opacity 0.3s ease,
+            transform 0.3s ease,
+            visibility 0.3s ease;
+
+        z-index: 9999;
+
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    /* القائمة عند فتحها */
+    .nav-links.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    /* عناصر القائمة */
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        margin: 5px 0;
+    }
+
+    .nav-links li a {
+        display: block;
+        width: 100%;
+
+        padding: 12px 15px;
+
+        border-radius: 10px;
+
+        transition: 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+        background: rgba(0, 255, 150, 0.15);
+        color: #00ff88;
+    }
+
+    /* زر اللغة */
+    .language-toggle {
+        font-size: 14px;
+    }
+
+    /* زر الوضع الليلي */
+    .theme-toggle {
+        font-size: 18px;
+    }
+
+}
+
+
+/* =================================
+   شاشات الهاتف الصغيرة جدًا
+================================= */
+
+@media (max-width: 480px) {
+
+    .nav-container {
+        padding: 10px 15px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .menu-toggle {
+        font-size: 27px;
+    }
+
+    .nav-links {
+        top: 65px;
+        width: calc(100vw - 30px);
+        right: 15px;
+    }
+
 }
