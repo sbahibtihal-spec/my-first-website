@@ -688,118 +688,111 @@ section {
 /* =========================================================
    16. HERO IMAGE AREA
 ========================================================= */
+/* =====================================================
+   HERO IMAGE - PROFESSIONAL
+===================================================== */
 
 .hero-image {
-    direction: ltr;
-
     position: relative;
-
-    min-height: 500px;
+    min-height: 480px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
-    z-index: 2;
-
-    animation:
-        imageFloat 4s ease-in-out infinite;
+    animation: imageFloat 4s ease-in-out infinite;
 }
 
-
-/* =========================================================
-   17. BLUE GLOW
-========================================================= */
+/* BLUE GLOW BEHIND IMAGE */
 
 .image-glow {
     position: absolute;
 
-    width: 390px;
-
-    height: 390px;
+    width: 330px;
+    height: 330px;
 
     border-radius: 50%;
 
-    background:
-        radial-gradient(
-            circle,
-            rgba(0, 234, 255, 0.65),
-            rgba(0, 119, 255, 0.30),
-            transparent 70%
-        );
+    background: #00eaff;
 
-    filter:
-        blur(35px);
+    filter: blur(90px);
 
-    opacity: 0.8;
-
-    animation:
-        glowPulse 4s ease-in-out infinite;
+    opacity: 0.28;
 
     z-index: 0;
+
+    animation: glowPulse 4s ease-in-out infinite;
 }
 
 
-/* =========================================================
-   18. IMAGE CIRCLE
-========================================================= */
+/* =====================================================
+   MAIN IMAGE CIRCLE
+===================================================== */
 
 .circle {
-    width: 320px;
-
-    height: 320px;
-
     position: relative;
 
-    z-index: 3;
+    width: 300px;
+    height: 300px;
 
     border-radius: 50%;
 
     overflow: hidden;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
-    background:
-        radial-gradient(
-            circle at 30% 30%,
-            rgba(0, 234, 255, 0.22),
-            rgba(0, 119, 255, 0.08)
-        );
+    z-index: 3;
 
-    border:
-        3px solid rgba(0, 234, 255, 0.85);
+    background: #07152e;
+
+    border: 3px solid #00eaff;
 
     box-shadow:
-        0 0 30px rgba(0, 234, 255, 0.65),
-        0 0 70px rgba(0, 119, 255, 0.40),
-        inset 0 0 35px rgba(0, 234, 255, 0.12);
+        0 0 25px rgba(0, 234, 255, 0.8),
+        0 0 60px rgba(0, 174, 255, 0.45),
+        inset 0 0 30px rgba(0, 234, 255, 0.2);
 }
 
 
-/* الصورة نفسها */
+/* IMAGE */
 
 .circle img {
     width: 100%;
-
     height: 100%;
 
     object-fit: cover;
 
-    position: relative;
+    display: block;
 
+    position: relative;
     z-index: 2;
 }
 
 
-/* =========================================================
-   19. ORBITS
-========================================================= */
+/* =====================================================
+   EXTRA CIRCLE BORDER
+===================================================== */
+
+.circle-border {
+    position: absolute;
+
+    inset: 8px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    z-index: 4;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   MOVING ORBITS
+===================================================== */
 
 .image-orbit {
     position: absolute;
@@ -808,25 +801,175 @@ section {
 
     pointer-events: none;
 
-    border:
-        2px solid rgba(0, 234, 255, 0.55);
-
-    animation:
-        rotateOrbit 12s linear infinite;
-
     z-index: 1;
+
+    border: 1px solid rgba(0, 234, 255, 0.55);
+
+    animation: rotateOrbit 10s linear infinite;
+}
+
+
+/* FIRST ORBIT */
+
+.orbit-one {
+    width: 350px;
+    height: 350px;
+}
+
+
+/* SECOND ORBIT */
+
+.orbit-two {
+    width: 410px;
+    height: 410px;
+
+    border-color: rgba(120, 80, 255, 0.45);
+
+    animation-duration: 16s;
+
+    animation-direction: reverse;
+}
+
+
+/* ORBIT LIGHT */
+
+.image-orbit::after {
+    content: "";
+
+    position: absolute;
+
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #00eaff;
+
+    box-shadow:
+        0 0 10px #00eaff,
+        0 0 20px #00eaff;
+
+    top: 12px;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+
+/* =====================================================
+   AVAILABLE FOR WORK BADGE
+===================================================== */
+
+.available-badge {
+    position: absolute;
+
+    bottom: 25px;
+    right: 5%;
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 10px 16px;
+
+    border-radius: 30px;
+
+    background: rgba(4, 18, 42, 0.92);
+
+    border: 1px solid rgba(0, 255, 150, 0.4);
+
+    box-shadow:
+        0 0 20px rgba(0, 255, 150, 0.15);
+
+    backdrop-filter: blur(10px);
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+/* GREEN DOT */
+
+.available-badge > span:first-child {
+    width: 10px;
+    height: 10px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #00ff88;
+
+    box-shadow:
+        0 0 8px #00ff88,
+        0 0 15px #00ff88;
+
+    animation: availablePulse 1.5s infinite;
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes glowPulse {
+
+    0%,
+    100% {
+        transform: scale(0.95);
+        opacity: 0.22;
+    }
+
+    50% {
+        transform: scale(1.08);
+        opacity: 0.38;
+    }
+}
+
+
+@keyframes availablePulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.35);
+        opacity: 0.65;
+    }
+}
+
+
+@keyframes rotateOrbit {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .orbit-one {
-    width: 365px;
+    width: 275px;
 
-    height: 365px;
+    height: 275px;
 }
 
 .orbit-two {
-    width: 430px;
+    width: 315px;
 
-    height: 430px;
+    height: 315px;
 
     border-color:
         rgba(180, 70, 255, 0.65);
@@ -881,7 +1024,7 @@ section {
 
     right: 0;
 
-    bottom: 35px;
+    bottom: 5px;
 
     z-index: 10;
 
@@ -892,7 +1035,7 @@ section {
     gap: 10px;
 
     padding:
-        12px 22px;
+        8px 12px;
 
     border-radius: 30px;
 
@@ -904,7 +1047,7 @@ section {
 
     color: #ffffff;
 
-    font-size: 14px;
+    font-size: 11px;
 
     font-weight: 800;
 
@@ -2789,21 +2932,21 @@ footer p {
     /* IMAGE */
 
     .hero-image {
-        width: 245px;
+        width: 270px;
 
         min-height: 310px;
     }
 
     .circle {
-        width: 195px;
-
-        height: 195px;
-    }
-
-    .image-glow {
         width: 220px;
 
         height: 220px;
+    }
+
+    .image-glow {
+        width: 230px;
+
+        height: 230px;
     }
 
     .orbit-one {
