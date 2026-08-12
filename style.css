@@ -2059,4 +2059,17 @@ footer p {
         scroll-behavior: auto !important;
         transition-duration: 0.01ms !important;
     }
+/* =====================================================
+   HERO CV BUTTON
+===================================================== */
+
+.cv-btn {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid var(--main);
+}
+
+.cv-btn:hover {
+    background: var(--main);
+    color: #03152d;
 }
