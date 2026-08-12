@@ -1,6 +1,6 @@
-/* ========================================
+/* =====================================================
    RESET
-======================================== */
+===================================================== */
 
 * {
     margin: 0;
@@ -25,16 +25,31 @@ body {
     overflow-x: hidden;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-/* ========================================
+button {
+    font-family: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =====================================================
    VARIABLES
-======================================== */
+===================================================== */
 
 :root {
     --main: #00eaff;
     --main-light: #24cfff;
-    --blue: #008cff;
+    --blue: #0077ff;
     --dark: #07152e;
+    --dark-2: #04122a;
     --card: rgba(0, 130, 220, 0.10);
     --border: rgba(0, 234, 255, 0.35);
     --white: #ffffff;
@@ -42,9 +57,9 @@ body {
 }
 
 
-/* ========================================
+/* =====================================================
    BACKGROUND
-======================================== */
+===================================================== */
 
 #particles {
     position: fixed;
@@ -66,9 +81,9 @@ body {
 }
 
 
-/* ========================================
-   HEADER / NAVBAR
-======================================== */
+/* =====================================================
+   HEADER
+===================================================== */
 
 header {
     width: 100%;
@@ -77,13 +92,23 @@ header {
     right: 0;
     z-index: 1000;
 
-    background: rgba(4, 18, 42, 0.88);
+    background: rgba(4, 18, 42, 0.90);
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 
     border-bottom: 1px solid rgba(0, 234, 255, 0.15);
 }
 
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
 .navbar {
+    width: 100%;
+}
+
+.nav-container {
     max-width: 1200px;
     min-height: 75px;
 
@@ -98,14 +123,22 @@ header {
 }
 
 
-/* ========================================
+/* =====================================================
    LOGO
-======================================== */
+===================================================== */
 
 .logo {
     font-size: 24px;
     font-weight: 800;
     white-space: nowrap;
+
+    color: #ffffff;
+
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    color: var(--main);
 }
 
 .logo span {
@@ -113,9 +146,36 @@ header {
 }
 
 
-/* ========================================
-   NAVIGATION
-======================================== */
+/* =====================================================
+   MENU TOGGLE
+===================================================== */
+
+.menu-toggle {
+    display: none;
+
+    background: transparent;
+    border: none;
+
+    color: #ffffff;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    padding: 5px 10px;
+
+    transition: 0.3s ease;
+}
+
+.menu-toggle:hover {
+    color: var(--main);
+    transform: scale(1.1);
+}
+
+
+/* =====================================================
+   NAVIGATION LINKS
+===================================================== */
 
 .nav-links {
     display: flex;
@@ -123,65 +183,113 @@ header {
     justify-content: center;
 
     gap: 25px;
+
+    list-style: none;
+}
+
+.nav-links li {
     list-style: none;
 }
 
 .nav-links a {
-    color: white;
-    text-decoration: none;
+    position: relative;
+
+    color: #ffffff;
 
     font-size: 15px;
     font-weight: 600;
 
-    transition: 0.3s;
+    padding: 8px 2px;
+
+    transition: 0.3s ease;
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+    right: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--main);
+
+    transition: 0.3s ease;
 }
 
 .nav-links a:hover {
     color: var(--main);
 }
 
+.nav-links a:hover::after {
+    width: 100%;
+}
 
-/* ========================================
-   THEME BUTTON
-======================================== */
+
+/* =====================================================
+   LANGUAGE / THEME BUTTONS
+===================================================== */
+
+.language-toggle,
+.theme-toggle {
+    border: 1px solid var(--border);
+
+    background: rgba(0, 234, 255, 0.08);
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.language-toggle {
+    padding: 7px 12px;
+    border-radius: 20px;
+}
 
 .theme-toggle {
     width: 42px;
     height: 42px;
 
-    border: 1px solid var(--border);
     border-radius: 50%;
 
-    background: rgba(0, 234, 255, 0.08);
-    color: white;
-
-    cursor: pointer;
     font-size: 17px;
-
-    transition: 0.3s;
 }
 
+.language-toggle:hover,
 .theme-toggle:hover {
     background: var(--main);
     color: #06152d;
+
+    box-shadow: 0 0 18px rgba(0, 234, 255, 0.35);
+}
+
+.theme-toggle:hover {
     transform: rotate(20deg);
 }
 
 
-/* ========================================
-   SECTIONS
-======================================== */
+/* =====================================================
+   GENERAL SECTIONS
+===================================================== */
 
 section {
+    width: 100%;
     max-width: 1200px;
+
     margin: auto;
+
     padding: 110px 25px 70px;
 }
 
 
-/* ========================================
+/* =====================================================
    SECTION TITLE
-======================================== */
+===================================================== */
 
 .section-title {
     text-align: center;
@@ -190,6 +298,7 @@ section {
 
 .section-title h2 {
     display: inline-block;
+
     position: relative;
 
     font-size: 42px;
@@ -202,6 +311,7 @@ section {
     content: "";
 
     position: absolute;
+
     bottom: 0;
     left: 50%;
 
@@ -211,13 +321,224 @@ section {
     transform: translateX(-50%);
 
     background: var(--main);
+
     border-radius: 20px;
 
     box-shadow: 0 0 15px var(--main);
 }
-/* =========================================
-   ABOUT - FINAL
-========================================= */
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    max-width: 1400px;
+
+    min-height: 100vh;
+
+    margin: auto;
+
+    padding: 130px 7% 70px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 50px;
+}
+
+.hero-content {
+    animation: heroText 1s ease forwards;
+}
+
+.hero-content h1 {
+    font-size: 55px;
+    font-weight: 800;
+
+    margin-bottom: 10px;
+}
+
+.hero-content h1 span {
+    color: var(--main);
+
+    text-shadow:
+        0 0 15px rgba(0, 234, 255, 0.45);
+}
+
+.hero-content h2 {
+    font-size: 30px;
+
+    color: var(--main-light);
+
+    margin-bottom: 20px;
+}
+
+.hero-text {
+    max-width: 600px;
+
+    color: var(--gray);
+
+    font-size: 17px;
+
+    line-height: 2;
+
+    margin-bottom: 25px;
+}
+
+.hero-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 25px;
+}
+
+.hero-tech {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.hero-tech span {
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    background: rgba(0, 234, 255, 0.08);
+
+    border: 1px solid rgba(0, 234, 255, 0.25);
+
+    color: var(--gray);
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   HERO IMAGE
+===================================================== */
+
+.hero-image {
+    position: relative;
+
+    min-height: 430px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    animation: imageFloat 4s ease-in-out infinite;
+}
+
+.circle {
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    position: relative;
+
+    z-index: 3;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 30% 30%,
+            rgba(0, 234, 255, 0.25),
+            rgba(0, 119, 255, 0.10)
+        );
+
+    border: 3px solid rgba(0, 234, 255, 0.65);
+
+    box-shadow:
+        0 0 35px rgba(0, 234, 255, 0.30),
+        inset 0 0 35px rgba(0, 234, 255, 0.10);
+}
+
+.circle img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.circle span {
+    color: var(--main);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   HERO ORBITS
+===================================================== */
+
+.image-orbit {
+    position: absolute;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(0, 174, 255, 0.45);
+
+    animation: rotateOrbit 12s linear infinite;
+}
+
+.orbit-one {
+    width: 340px;
+    height: 340px;
+}
+
+.orbit-two {
+    width: 390px;
+    height: 390px;
+
+    border-color: rgba(145, 70, 255, 0.30);
+
+    animation-duration: 18s;
+
+    animation-direction: reverse;
+}
+
+.image-orbit::after {
+    content: "";
+
+    position: absolute;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #00b4ff;
+
+    box-shadow:
+        0 0 12px #00b4ff;
+
+    top: 20px;
+    left: 50%;
+}
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
 
 #about {
     padding: 100px 7% 70px;
@@ -225,30 +546,38 @@ section {
 
 #about .about-container {
     max-width: 1200px;
-    margin: 0 auto;
+
+    margin: auto;
 
     display: grid;
-    grid-template-columns: 1.3fr repeat(3, 1fr);
+
+    grid-template-columns:
+        1.3fr repeat(3, 1fr);
 
     align-items: center;
-    justify-content: center;
 
     gap: 25px;
 }
 
-/* الدائرة الكبيرة - من أنا */
+
+/* =====================================================
+   ABOUT MAIN CIRCLE
+===================================================== */
 
 #about .about-text {
     width: 330px;
     height: 330px;
 
     margin: auto;
+
     padding: 40px;
 
     border-radius: 50%;
 
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
     justify-content: center;
 
@@ -272,13 +601,12 @@ section {
     transition: 0.4s ease;
 }
 
-/* أيقونة من أنا */
-
 #about .about-icon {
     width: 60px;
     height: 60px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -292,38 +620,36 @@ section {
 }
 
 #about .about-icon i {
-    color: #00eaff;
+    color: var(--main);
     font-size: 28px;
 }
-
-/* عنوان من أنا */
 
 #about .about-text h3 {
     color: #ffffff;
 
     font-size: 22px;
+
     font-weight: 800;
 
     margin-bottom: 12px;
 }
 
-/* نص من أنا */
-
 #about .about-text p {
     max-width: 230px;
 
-    color: #d7eaff;
+    color: var(--gray);
 
     font-size: 13px;
+
     line-height: 1.9;
 
-    margin: 0 auto;
+    margin: auto;
 }
 
 
-/* =========================================
-   ABOUT - STAT CARDS
-========================================= */
+/* =====================================================
+   ABOUT STAT CARDS
+===================================================== */
 
 #about .about-stats {
     display: contents;
@@ -334,11 +660,13 @@ section {
     height: 210px;
 
     margin: auto;
+
     padding: 25px;
 
     border-radius: 50%;
 
     display: flex;
+
     flex-direction: column;
 
     align-items: center;
@@ -361,17 +689,11 @@ section {
 
     transition: 0.4s ease;
 
-    overflow: hidden;
-
-    animation:
-        aboutCircleFloat
-        4s ease-in-out infinite;
+    animation: aboutCircleFloat 4s ease-in-out infinite;
 }
 
-/* الأيقونات */
-
 #about .stat-card i {
-    color: #00eaff;
+    color: var(--main);
 
     font-size: 34px;
 
@@ -381,21 +703,18 @@ section {
         0 0 15px rgba(0, 234, 255, 0.6);
 }
 
-/* العناوين */
-
 #about .stat-card h3 {
     color: #ffffff;
 
     font-size: 17px;
+
     font-weight: 800;
 
     margin-bottom: 7px;
 }
 
-/* النص */
-
 #about .stat-card p {
-    color: #d7eaff;
+    color: var(--gray);
 
     font-size: 11px;
 
@@ -403,43 +722,20 @@ section {
 
     max-width: 150px;
 
-    margin: 0 auto;
+    margin: auto;
 }
-
-
-/* =========================================
-   ABOUT - HOVER
-========================================= */
 
 #about .about-text:hover,
 #about .stat-card:hover {
-
     transform:
         translateY(-10px)
         scale(1.04);
 
-    border-color: #00eaff;
+    border-color: var(--main);
 
     box-shadow:
         0 0 40px rgba(0, 234, 255, 0.55),
         inset 0 0 30px rgba(0, 234, 255, 0.12);
-}
-
-
-/* =========================================
-   ABOUT - FLOATING ANIMATION
-========================================= */
-
-@keyframes aboutCircleFloat {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-7px);
-    }
 }
 
 #about .stat-card:nth-child(2) {
@@ -455,19 +751,18 @@ section {
 }
 
 
-/* =========================================
+/* =====================================================
    SKILLS
-========================================= */
+===================================================== */
 
 #skills {
     padding: 100px 7% 70px;
 }
 
 .skills-grid {
-
     max-width: 1000px;
 
-    margin: 0 auto;
+    margin: auto;
 
     display: flex;
 
@@ -479,11 +774,7 @@ section {
     gap: 30px;
 }
 
-
-/* دائرة المهارة */
-
 .skill-card {
-
     width: 155px;
     height: 155px;
 
@@ -507,9 +798,7 @@ section {
             rgba(0, 119, 255, 0.08)
         );
 
-    border:
-        2px solid
-        rgba(0, 234, 255, 0.45);
+    border: 2px solid rgba(0, 234, 255, 0.45);
 
     box-shadow:
         0 0 20px rgba(0, 180, 255, 0.15),
@@ -518,14 +807,10 @@ section {
     transition: 0.4s ease;
 }
 
-
-/* أيقونة المهارة */
-
 .skill-card i {
-
     font-size: 38px;
 
-    color: #00eaff;
+    color: var(--main);
 
     margin-bottom: 10px;
 
@@ -535,11 +820,7 @@ section {
         0 0 15px rgba(0, 234, 255, 0.5);
 }
 
-
-/* اسم المهارة */
-
 .skill-card h3 {
-
     color: #ffffff;
 
     font-size: 14px;
@@ -547,16 +828,12 @@ section {
     font-weight: 700;
 }
 
-
-/* Hover */
-
 .skill-card:hover {
-
     transform:
         translateY(-10px)
         scale(1.08);
 
-    border-color: #00eaff;
+    border-color: var(--main);
 
     box-shadow:
         0 0 35px rgba(0, 234, 255, 0.45),
@@ -568,16 +845,15 @@ section {
 }
 
 
-/* =========================================
+/* =====================================================
    PROJECTS
-========================================= */
+===================================================== */
 
 #projects {
     padding: 100px 7% 70px;
 }
 
 .projects-grid {
-
     max-width: 1200px;
 
     margin: 50px auto 0;
@@ -590,11 +866,7 @@ section {
     gap: 30px;
 }
 
-
-/* بطاقة المشروع */
-
 .project-card {
-
     min-height: 500px;
 
     padding: 30px 25px;
@@ -611,28 +883,21 @@ section {
         rgba(255, 255, 255, 0.08);
 
     border:
-        1px solid
-        rgba(0, 220, 255, 0.35);
+        1px solid rgba(0, 220, 255, 0.35);
 
     backdrop-filter: blur(15px);
-
     -webkit-backdrop-filter: blur(15px);
 
     box-shadow:
         0 10px 35px rgba(0, 0, 0, 0.2),
-        inset 0 0 20px
-        rgba(0, 200, 255, 0.03);
+        inset 0 0 20px rgba(0, 200, 255, 0.03);
 
     overflow: hidden;
 
     transition: 0.4s ease;
 }
 
-
-/* الضوء داخل البطاقة */
-
 .project-card::before {
-
     content: "";
 
     position: absolute;
@@ -645,31 +910,21 @@ section {
 
     border-radius: 50%;
 
-    background:
-        rgba(0, 220, 255, 0.15);
+    background: rgba(0, 220, 255, 0.15);
 
     filter: blur(50px);
 
     transition: 0.4s;
 }
 
-
-/* Hover */
-
 .project-card:hover {
+    transform: translateY(-12px);
 
-    transform:
-        translateY(-12px);
-
-    border-color:
-        rgba(0, 238, 255, 0.9);
+    border-color: rgba(0, 238, 255, 0.9);
 
     box-shadow:
-        0 20px 50px
-        rgba(0, 0, 0, 0.35),
-
-        0 0 30px
-        rgba(0, 220, 255, 0.18);
+        0 20px 50px rgba(0, 0, 0, 0.35),
+        0 0 30px rgba(0, 220, 255, 0.18);
 }
 
 .project-card:hover::before {
@@ -677,17 +932,15 @@ section {
 }
 
 
-/* =========================================
+/* =====================================================
    PROJECT ICON
-========================================= */
+===================================================== */
 
 .project-icon {
-
     width: 75px;
     height: 75px;
 
-    margin:
-        0 auto 22px;
+    margin: 0 auto 22px;
 
     display: flex;
 
@@ -696,50 +949,41 @@ section {
 
     border-radius: 22px;
 
-    background:
-        rgba(0, 220, 255, 0.12);
+    background: rgba(0, 220, 255, 0.12);
 
-    border:
-        1px solid
-        rgba(0, 220, 255, 0.5);
+    border: 1px solid rgba(0, 220, 255, 0.5);
 
     box-shadow:
-        0 0 20px
-        rgba(0, 220, 255, 0.15);
+        0 0 20px rgba(0, 220, 255, 0.15);
 
     transition: 0.4s;
 }
 
 .project-icon i {
-
     font-size: 32px;
 
-    color: #00eaff;
+    color: var(--main);
 
     transition: 0.4s;
 }
 
 .project-card:hover .project-icon {
-
     transform:
         rotate(-5deg)
         scale(1.08);
 
-    background:
-        rgba(0, 220, 255, 0.2);
+    background: rgba(0, 220, 255, 0.2);
 
     box-shadow:
-        0 0 30px
-        rgba(0, 220, 255, 0.35);
+        0 0 30px rgba(0, 220, 255, 0.35);
 }
 
 
-/* =========================================
+/* =====================================================
    PROJECT INFO
-========================================= */
+===================================================== */
 
 .project-info {
-
     position: relative;
 
     z-index: 2;
@@ -754,7 +998,6 @@ section {
 }
 
 .project-info h3 {
-
     color: #ffffff;
 
     font-size: 23px;
@@ -765,9 +1008,7 @@ section {
 }
 
 .project-info p {
-
-    color:
-        rgba(255, 255, 255, 0.78);
+    color: rgba(255, 255, 255, 0.78);
 
     font-size: 14px;
 
@@ -777,12 +1018,11 @@ section {
 }
 
 
-/* =========================================
+/* =====================================================
    PROJECT STATUS
-========================================= */
+===================================================== */
 
 .project-status {
-
     display: inline-flex;
 
     align-items: center;
@@ -790,11 +1030,9 @@ section {
 
     width: fit-content;
 
-    margin:
-        0 auto 18px;
+    margin: 0 auto 18px;
 
-    padding:
-        7px 16px;
+    padding: 7px 16px;
 
     border-radius: 30px;
 
@@ -804,36 +1042,27 @@ section {
 }
 
 .project-status.completed {
-
     color: #00ffcc;
 
-    background:
-        rgba(0, 255, 204, 0.10);
+    background: rgba(0, 255, 204, 0.10);
 
-    border:
-        1px solid
-        rgba(0, 255, 204, 0.35);
+    border: 1px solid rgba(0, 255, 204, 0.35);
 }
 
 .project-status.coming {
-
     color: #ffd166;
 
-    background:
-        rgba(255, 209, 102, 0.10);
+    background: rgba(255, 209, 102, 0.10);
 
-    border:
-        1px solid
-        rgba(255, 209, 102, 0.35);
+    border: 1px solid rgba(255, 209, 102, 0.35);
 }
 
 
-/* =========================================
+/* =====================================================
    PROJECT TECHNOLOGIES
-========================================= */
+===================================================== */
 
 .project-tech {
-
     display: flex;
 
     flex-wrap: wrap;
@@ -846,9 +1075,7 @@ section {
 }
 
 .project-tech span {
-
-    padding:
-        6px 12px;
+    padding: 6px 12px;
 
     border-radius: 20px;
 
@@ -856,35 +1083,27 @@ section {
 
     color: #ffffff;
 
-    background:
-        rgba(0, 220, 255, 0.10);
+    background: rgba(0, 220, 255, 0.10);
 
-    border:
-        1px solid
-        rgba(0, 220, 255, 0.25);
+    border: 1px solid rgba(0, 220, 255, 0.25);
 
     transition: 0.3s;
 }
 
 .project-tech span:hover {
+    background: rgba(0, 220, 255, 0.2);
 
-    background:
-        rgba(0, 220, 255, 0.2);
+    border-color: var(--main);
 
-    border-color:
-        #00eaff;
-
-    transform:
-        translateY(-2px);
+    transform: translateY(-2px);
 }
 
 
-/* =========================================
+/* =====================================================
    PROJECT BUTTONS
-========================================= */
+===================================================== */
 
 .project-buttons {
-
     display: flex;
 
     justify-content: center;
@@ -897,11 +1116,9 @@ section {
 }
 
 .project-buttons .btn {
-
     min-width: 135px;
 
-    padding:
-        11px 15px;
+    padding: 11px 15px;
 
     border-radius: 12px;
 
@@ -916,7 +1133,6 @@ section {
 }
 
 .project-buttons .btn:not(.secondary):not(.disabled) {
-
     background:
         linear-gradient(
             135deg,
@@ -928,46 +1144,39 @@ section {
 }
 
 .project-buttons .btn.secondary {
-
     background: transparent;
 
     color: #ffffff;
 
-    border:
-        1px solid
-        rgba(0, 220, 255, 0.45);
+    border: 1px solid rgba(0, 220, 255, 0.45);
 }
 
 .project-buttons .btn.disabled {
-
     width: 100%;
 
-    color:
-        rgba(255,255,255,0.65);
+    color: rgba(255, 255, 255, 0.65);
 
-    background:
-        rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.05);
 
-    border:
-        1px solid
-        rgba(255,255,255,0.12);
+    border: 1px solid rgba(255, 255, 255, 0.12);
 
     cursor: default;
 }
-/* =========================================
+
+
+/* =====================================================
    CERTIFICATES
-========================================= */
+===================================================== */
 
 #certificates {
     padding: 100px 7% 70px;
 }
 
 .certificate-card {
-
     width: 320px;
     height: 320px;
 
-    margin: 0 auto;
+    margin: auto;
 
     padding: 40px;
 
@@ -989,27 +1198,18 @@ section {
             rgba(0, 119, 255, 0.10)
         );
 
-    border:
-        2px solid
-        rgba(0, 234, 255, 0.55);
+    border: 2px solid rgba(0, 234, 255, 0.55);
 
     box-shadow:
-        0 0 25px
-        rgba(0, 180, 255, 0.18),
-
-        inset 0 0 30px
-        rgba(0, 180, 255, 0.08);
+        0 0 25px rgba(0, 180, 255, 0.18),
+        inset 0 0 30px rgba(0, 180, 255, 0.08);
 
     overflow: hidden;
 
     transition: 0.4s ease;
 }
 
-
-/* أيقونة الشهادة */
-
 .certificate-card i {
-
     width: 65px;
     height: 65px;
 
@@ -1020,25 +1220,18 @@ section {
 
     border-radius: 50%;
 
-    background:
-        rgba(0, 234, 255, 0.12);
+    background: rgba(0, 234, 255, 0.12);
 
-    border:
-        1px solid
-        rgba(0, 234, 255, 0.45);
+    border: 1px solid rgba(0, 234, 255, 0.45);
 
-    color: #00eaff;
+    color: var(--main);
 
     font-size: 30px;
 
     margin-bottom: 15px;
 }
 
-
-/* عنوان الشهادة */
-
 .certificate-card h3 {
-
     color: #ffffff;
 
     font-size: 21px;
@@ -1048,57 +1241,41 @@ section {
     margin-bottom: 10px;
 }
 
-
-/* وصف الشهادة */
-
 .certificate-card p {
-
     max-width: 220px;
 
-    color:
-        rgba(255, 255, 255, 0.82);
+    color: rgba(255, 255, 255, 0.82);
 
     font-size: 12px;
 
     line-height: 1.8;
-
-    margin: 0;
 }
 
-
-/* Hover */
-
 .certificate-card:hover {
-
     transform:
         translateY(-10px)
         scale(1.04);
 
-    border-color:
-        #00eaff;
+    border-color: var(--main);
 
     box-shadow:
-        0 0 40px
-        rgba(0, 234, 255, 0.45),
-
-        inset 0 0 35px
-        rgba(0, 234, 255, 0.12);
+        0 0 40px rgba(0, 234, 255, 0.45),
+        inset 0 0 35px rgba(0, 234, 255, 0.12);
 }
 
 
-/* =========================================
+/* =====================================================
    CONTACT
-========================================= */
+===================================================== */
 
 #contact {
     padding: 100px 7% 70px;
 }
 
 .contact-container {
-
     max-width: 1000px;
 
-    margin: 0 auto;
+    margin: auto;
 
     display: flex;
 
@@ -1110,11 +1287,7 @@ section {
     gap: 30px;
 }
 
-
-/* دائرة التواصل */
-
 .contact-box {
-
     width: 145px;
     height: 145px;
 
@@ -1133,8 +1306,6 @@ section {
 
     color: #ffffff;
 
-    text-decoration: none;
-
     background:
         radial-gradient(
             circle at 30% 30%,
@@ -1142,60 +1313,39 @@ section {
             rgba(0, 119, 255, 0.08)
         );
 
-    border:
-        2px solid
-        rgba(0, 234, 255, 0.45);
+    border: 2px solid rgba(0, 234, 255, 0.45);
 
     box-shadow:
-        0 0 20px
-        rgba(0, 180, 255, 0.15),
-
-        inset 0 0 20px
-        rgba(0, 180, 255, 0.06);
+        0 0 20px rgba(0, 180, 255, 0.15),
+        inset 0 0 20px rgba(0, 180, 255, 0.06);
 
     transition: 0.4s ease;
 }
 
-
-/* أيقونة التواصل */
-
 .contact-box i {
-
-    color: #00eaff;
+    color: var(--main);
 
     font-size: 32px;
 
     transition: 0.4s ease;
 }
 
-
-/* اسم الموقع */
-
 .contact-box span {
-
     font-size: 13px;
 
     font-weight: 700;
 }
 
-
-/* Hover */
-
 .contact-box:hover {
-
     transform:
         translateY(-10px)
         scale(1.06);
 
-    border-color:
-        #00eaff;
+    border-color: var(--main);
 
     box-shadow:
-        0 0 35px
-        rgba(0, 234, 255, 0.4),
-
-        inset 0 0 25px
-        rgba(0, 234, 255, 0.1);
+        0 0 35px rgba(0, 234, 255, 0.4),
+        inset 0 0 25px rgba(0, 234, 255, 0.1);
 }
 
 .contact-box:hover i {
@@ -1203,12 +1353,11 @@ section {
 }
 
 
-/* =========================================
-   GENERAL BUTTONS
-========================================= */
+/* =====================================================
+   GENERAL BUTTON
+===================================================== */
 
 .btn {
-
     display: inline-flex;
 
     align-items: center;
@@ -1220,12 +1369,9 @@ section {
 
     border-radius: 25px;
 
-    background:
-        var(--main);
+    background: var(--main);
 
     color: #03152d;
-
-    text-decoration: none;
 
     font-size: 13px;
 
@@ -1235,140 +1381,55 @@ section {
 }
 
 .btn:hover {
-
-    transform:
-        translateY(-3px);
+    transform: translateY(-3px);
 
     box-shadow:
-        0 0 18px
-        rgba(0, 234, 255, 0.4);
+        0 0 18px rgba(0, 234, 255, 0.4);
 }
 
 .btn.secondary {
-
     background: transparent;
 
     color: #ffffff;
 
-    border:
-        1px solid
-        var(--main);
+    border: 1px solid var(--main);
 }
 
 .btn.secondary:hover {
-
-    background:
-        var(--main);
+    background: var(--main);
 
     color: #03152d;
 }
 
 
-/* =========================================
+/* =====================================================
    FOOTER
-========================================= */
+===================================================== */
 
 footer {
-
     padding: 25px;
 
     text-align: center;
 
     border-top:
-        1px solid
-        rgba(0, 234, 255, 0.15);
+        1px solid rgba(0, 234, 255, 0.15);
 
     background:
         rgba(3, 15, 35, 0.5);
 }
 
 footer p {
-
-    color:
-        var(--gray);
+    color: var(--gray);
 
     font-size: 14px;
 }
 
 
-/* =========================================
-   HERO ORBIT ANIMATION
-========================================= */
-
-.image-orbit {
-
-    position: absolute;
-
-    border-radius: 50%;
-
-    border:
-        1px solid
-        rgba(0, 174, 255, 0.45);
-
-    animation:
-        rotateOrbit
-        12s linear infinite;
-}
-
-.orbit-one {
-
-    width: 340px;
-    height: 340px;
-}
-
-.orbit-two {
-
-    width: 390px;
-    height: 390px;
-
-    border-color:
-        rgba(145, 70, 255, 0.30);
-
-    animation-duration: 18s;
-
-    animation-direction: reverse;
-}
-
-.image-orbit::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 7px;
-    height: 7px;
-
-    border-radius: 50%;
-
-    background:
-        #00b4ff;
-
-    box-shadow:
-        0 0 12px
-        #00b4ff;
-
-    top: 20px;
-    left: 50%;
-}
-
-@keyframes rotateOrbit {
-
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-
-/* =========================================
-   HERO ANIMATIONS
-========================================= */
+/* =====================================================
+   ANIMATIONS
+===================================================== */
 
 @keyframes imageFloat {
-
     0%,
     100% {
         transform: translateY(0);
@@ -1380,26 +1441,20 @@ footer p {
 }
 
 @keyframes heroText {
-
     from {
-
         opacity: 0;
 
-        transform:
-            translateX(40px);
+        transform: translateX(40px);
     }
 
     to {
-
         opacity: 1;
 
-        transform:
-            translateX(0);
+        transform: translateX(0);
     }
 }
 
 @keyframes waveHand {
-
     0%,
     100% {
         transform: rotate(0);
@@ -1419,55 +1474,50 @@ footer p {
 }
 
 .wave {
-
     display: inline-block;
 
     animation:
-        waveHand
-        2s infinite;
+        waveHand 2s infinite;
+}
+
+@keyframes rotateOrbit {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes aboutCircleFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
 }
 
 
-/* =========================================
-   RESPONSIVE - TABLET
-========================================= */
+/* =====================================================
+   TABLET
+===================================================== */
 
 @media (max-width: 1100px) {
 
     .hero {
-
-        grid-template-columns:
-            1fr 1fr;
+        grid-template-columns: 1fr 1fr;
 
         gap: 30px;
 
         padding:
-            100px 5% 60px;
-    }
-
-    .hero-content {
-        order: 1;
-    }
-
-    .hero-image {
-        order: 2;
-    }
-
-    .hero-cards {
-
-        order: 3;
-
-        grid-column:
-            1 / -1;
-
-        display: grid;
-
-        grid-template-columns:
-            repeat(2, 1fr);
+            110px 5% 60px;
     }
 
     #about .about-container {
-
         grid-template-columns:
             repeat(2, 1fr);
 
@@ -1475,21 +1525,19 @@ footer p {
     }
 
     .projects-grid {
-
         grid-template-columns:
             repeat(2, 1fr);
     }
 }
 
 
-/* =========================================
-   RESPONSIVE - TABLET SMALL
-========================================= */
+/* =====================================================
+   SMALL TABLET
+===================================================== */
 
 @media (max-width: 850px) {
 
     .hero {
-
         grid-template-columns: 1fr;
 
         text-align: center;
@@ -1498,51 +1546,30 @@ footer p {
     }
 
     .hero-content {
-
         margin: auto;
+    }
 
-        order: 1;
+    .hero-text {
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .hero-image {
-
-        margin: auto;
-
-        order: 2;
-    }
-
-    .hero-cards {
-
-        order: 3;
-
-        width: 100%;
-
-        max-width: 600px;
-
         margin: auto;
     }
 
     .hero-buttons,
     .hero-tech {
-
         justify-content: center;
     }
 
-    .hero-text {
-
-        margin-left: auto;
-        margin-right: auto;
-    }
-
     #about .about-container {
-
         grid-template-columns: 1fr;
 
         gap: 30px;
     }
 
     .projects-grid {
-
         grid-template-columns: 1fr;
 
         max-width: 600px;
@@ -1550,124 +1577,169 @@ footer p {
 }
 
 
-/* =========================================
-   RESPONSIVE - MOBILE
-========================================= */
+/* =====================================================
+   MOBILE NAVIGATION
+===================================================== */
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
 
-    header {
-        position: fixed;
-    }
-
-    .navbar {
-
+    .nav-container {
         min-height: 65px;
 
-        padding: 0 12px;
+        padding: 10px 15px;
 
-        gap: 10px;
+        position: relative;
     }
 
     .logo {
-        font-size: 18px;
+        font-size: 20px;
+    }
+
+    .menu-toggle {
+        display: block;
     }
 
     .nav-links {
+        position: absolute;
 
-        gap: 8px;
+        top: 65px;
+        right: 15px;
 
-        overflow-x: auto;
+        width: calc(100vw - 30px);
 
-        white-space: nowrap;
+        max-width: 350px;
 
-        scrollbar-width: none;
+        padding: 20px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 5px;
+
+        background:
+            rgba(5, 15, 30, 0.98);
+
+        border:
+            1px solid
+            rgba(0, 234, 255, 0.20);
+
+        border-radius:
+            0 0 20px 20px;
+
+        box-shadow:
+            0 15px 35px rgba(0, 0, 0, 0.4);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transform: translateY(-15px);
+
+        transition:
+            opacity 0.3s ease,
+            transform 0.3s ease,
+            visibility 0.3s ease;
+
+        z-index: 9999;
     }
 
-    .nav-links::-webkit-scrollbar {
-        display: none;
+    .nav-links.active {
+        opacity: 1;
+
+        visibility: visible;
+
+        transform: translateY(0);
     }
 
-    .nav-links a {
-        font-size: 11px;
+    .nav-links li {
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .nav-links li a {
+        display: block;
+
+        width: 100%;
+
+        padding: 12px 15px;
+
+        border-radius: 10px;
+    }
+
+    .nav-links li a:hover {
+        background:
+            rgba(0, 234, 255, 0.10);
+    }
+
+    .language-toggle {
+        font-size: 13px;
     }
 
     .theme-toggle {
-
-        width: 35px;
-        height: 35px;
-
-        flex-shrink: 0;
+        width: 38px;
+        height: 38px;
     }
 
 
     /* HERO */
 
     .hero {
-
         min-height: auto;
 
         padding:
-            120px
-            20px
-            60px;
+            120px 20px 60px;
 
         display: flex;
 
         flex-direction: column;
 
-        text-align: center;
-
         gap: 30px;
+
+        text-align: center;
     }
 
     .hero-content {
-
         text-align: center;
     }
 
     .hero-content h1 {
-        font-size: 45px;
+        font-size: 40px;
     }
 
     .hero-content h2 {
-        font-size: 25px;
+        font-size: 24px;
     }
 
     .hero-text {
         font-size: 15px;
     }
 
-    .hero-buttons {
-        justify-content: center;
-    }
-
 
     /* IMAGE */
 
     .hero-image {
+        width: 290px;
 
         min-height: 350px;
-
-        width: 290px;
 
         margin: auto;
     }
 
     .circle {
-
         width: 240px;
         height: 240px;
     }
 
     .orbit-one {
-
         width: 270px;
         height: 270px;
     }
 
     .orbit-two {
-
         width: 310px;
         height: 310px;
     }
@@ -1676,28 +1748,27 @@ footer p {
     /* SECTIONS */
 
     section {
-
         padding:
-            85px
-            15px
-            50px;
+            85px 15px 50px;
     }
 
     .section-title {
-
         margin-bottom: 30px;
     }
 
     .section-title h2 {
-
         font-size: 32px;
     }
 
 
     /* ABOUT */
 
-    #about .about-container {
+    #about {
+        padding:
+            85px 15px 50px;
+    }
 
+    #about .about-container {
         display: flex;
 
         flex-direction: column;
@@ -1706,7 +1777,6 @@ footer p {
     }
 
     #about .about-text {
-
         width: 300px;
         height: 300px;
 
@@ -1716,7 +1786,6 @@ footer p {
     }
 
     #about .stat-card {
-
         width: 180px;
         height: 180px;
 
@@ -1727,38 +1796,39 @@ footer p {
     /* SKILLS */
 
     .skills-grid {
-
         gap: 20px;
     }
 
     .skill-card {
-
         width: 125px;
         height: 125px;
     }
 
     .skill-card i {
-
         font-size: 30px;
     }
 
     .skill-card h3 {
-
         font-size: 12px;
     }
 
 
     /* PROJECTS */
 
-    .projects-grid {
+    #projects {
+        padding:
+            85px 15px 50px;
+    }
 
+    .projects-grid {
         grid-template-columns: 1fr;
 
         gap: 25px;
+
+        margin-top: 30px;
     }
 
     .project-card {
-
         min-height: auto;
 
         padding:
@@ -1766,12 +1836,10 @@ footer p {
     }
 
     .project-buttons {
-
         flex-direction: column;
     }
 
     .project-buttons .btn {
-
         width: 100%;
     }
 
@@ -1779,7 +1847,6 @@ footer p {
     /* CERTIFICATES */
 
     .certificate-card {
-
         width: 285px;
         height: 285px;
 
@@ -1798,527 +1865,33 @@ footer p {
     /* CONTACT */
 
     .contact-container {
-
         gap: 20px;
     }
 
     .contact-box {
-
         width: 120px;
         height: 120px;
     }
 
     .contact-box i {
-
         font-size: 27px;
     }
 
     .contact-box span {
-
         font-size: 12px;
     }
 }
 
 
-/* =========================================
-   RESPONSIVE - SMALL MOBILE
-========================================= */
-
-@media (max-width: 430px) {
-
-    .nav-links {
-        gap: 6px;
-    }
-
-    .nav-links a {
-        font-size: 10px;
-    }
-
-    .hero-content h1 {
-        font-size: 38px;
-    }
-
-    .hero-content h2 {
-        font-size: 22px;
-    }
-
-    .section-title h2 {
-        font-size: 28px;
-    }
-
-    .circle {
-
-        width: 220px;
-        height: 220px;
-    }
-
-    .hero-image {
-
-        width: 260px;
-    }
-
-    .orbit-one {
-
-        width: 245px;
-        height: 245px;
-    }
-
-    .orbit-two {
-
-        width: 280px;
-        height: 280px;
-    }
-
-    .skill-card {
-
-        width: 120px;
-        height: 120px;
-    }
-
-    .contact-container {
-
-        gap: 15px;
-    }
-
-    .contact-box {
-
-        width: 110px;
-        height: 110px;
-    }
-<script src="script.js"></script>
-</body>
-</html>
-   
-/* =========================================
-   RESPONSIVE DESIGN
-   الهاتف - التابلت - الحاسوب
-========================================= */
-
-/* ===== التابلت ===== */
-@media (max-width: 992px) {
-
-    nav {
-        padding: 15px 25px;
-    }
-
-    nav ul {
-        gap: 15px;
-    }
-
-    .hero {
-        padding: 100px 30px 50px;
-    }
-
-    .hero h1 {
-        font-size: 40px;
-    }
-
-    .hero p {
-        font-size: 17px;
-    }
-
-    .skills-container,
-    .projects-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-
-    .contact-container {
-        gap: 20px;
-    }
-}
-
-
-/* ===== الهاتف ===== */
-@media (max-width: 768px) {
-
-    /* منع خروج العناصر من الشاشة */
-    html,
-    body {
-        width: 100%;
-        overflow-x: hidden;
-    }
-
-    /* ===== شريط التنقل ===== */
-
-    nav {
-        width: 100%;
-        padding: 12px 15px;
-        flex-wrap: wrap;
-    }
-
-    nav .logo {
-        font-size: 22px;
-    }
-
-    nav ul {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-top: 10px;
-    }
-
-    nav ul li a {
-        font-size: 13px;
-        padding: 6px 8px;
-    }
-
-    #language-toggle,
-    #theme-toggle {
-        font-size: 13px;
-    }
-
-
-    /* ===== الرئيسية ===== */
-
-    .hero {
-        min-height: auto;
-        padding: 130px 20px 60px;
-        text-align: center;
-    }
-
-    .hero h1 {
-        font-size: 32px;
-        line-height: 1.4;
-    }
-
-    .hero h2 {
-        font-size: 22px;
-    }
-
-    .hero p {
-        font-size: 15px;
-        line-height: 1.8;
-    }
-
-    .hero img {
-        width: 180px;
-        height: 180px;
-        max-width: 100%;
-    }
-
-    .hero-buttons {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
-    }
-
-    .btn {
-        width: 90%;
-        max-width: 300px;
-    }
-
-
-    /* ===== العناوين ===== */
-
-    section {
-        width: 100%;
-        padding: 70px 15px;
-    }
-
-    section h2 {
-        font-size: 30px;
-        text-align: center;
-    }
-
-
-    /* ===== نبذة عني ===== */
-
-    .about-container {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 25px;
-    }
-
-    .about-text {
-        width: 100%;
-        text-align: center;
-    }
-
-
-    /* ===== المهارات ===== */
-
-    .skills-container {
-        grid-template-columns: 1fr;
-        width: 100%;
-        gap: 20px;
-    }
-
-    .skill-card {
-        width: 100%;
-        min-height: 180px;
-    }
-
-
-    /* ===== المشاريع ===== */
-
-    .projects-container {
-        grid-template-columns: 1fr;
-        width: 100%;
-        gap: 25px;
-    }
-
-    .project-card {
-        width: 100%;
-    }
-
-    .project-card img {
-        width: 100%;
-        height: auto;
-        max-height: 250px;
-        object-fit: cover;
-    }
-
-
-    /* ===== الشهادات ===== */
-
-    .certificates-container {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 25px;
-    }
-
-    .certificate-card {
-        width: 100%;
-        max-width: 400px;
-    }
-
-
-    /* ===== التواصل ===== */
-
-    .contact-container {
-        width: 100%;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .contact-card {
-        width: 100%;
-    }
-
-
-    /* ===== أيقونات التواصل ===== */
-
-    .social-links {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-    }
-
-    .social-links a {
-        width: 100%;
-    }
-
-
-    /* ===== الفوتر ===== */
-
-    footer {
-        text-align: center;
-        padding: 20px 10px;
-        font-size: 13px;
-    }
-}
-
-
-/* ===== الهواتف الصغيرة جدًا ===== */
-
-@media (max-width: 480px) {
-
-    nav {
-        padding: 10px;
-    }
-
-    nav .logo {
-        font-size: 19px;
-    }
-
-    nav ul {
-        gap: 4px;
-    }
-
-    nav ul li a {
-        font-size: 11px;
-        padding: 5px;
-    }
-
-    .hero {
-        padding: 120px 12px 50px;
-    }
-
-    .hero h1 {
-        font-size: 26px;
-    }
-
-    .hero h2 {
-        font-size: 19px;
-    }
-
-    .hero p {
-        font-size: 14px;
-    }
-
-    .hero img {
-        width: 140px;
-        height: 140px;
-    }
-
-    section {
-        padding: 55px 10px;
-    }
-
-    section h2 {
-        font-size: 26px;
-    }
-
-    .social-links {
-        grid-template-columns: 1fr;
-    }
-
-    .project-card,
-    .skill-card,
-    .certificate-card {
-        padding: 20px 15px;
-    }
-}
-
-
-/* ===== الشاشات الكبيرة ===== */
-
-@media (min-width: 1200px) {
-
-    .hero {
-        max-width: 1400px;
-        margin: auto;
-    }
-
-    .skills-container,
-    .projects-container,
-    .contact-container {
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-/* =================================
-   زر القائمة في الهاتف
-================================= */
-
-.menu-toggle {
-    display: none;
-    background: transparent;
-    border: none;
-    color: #ffffff;
-    font-size: 30px;
-    cursor: pointer;
-    padding: 5px 10px;
-}
-
-/* =================================
-   إعدادات الهاتف والتابليت
-================================= */
-
-@media (max-width: 768px) {
-
-    .nav-container {
-        position: relative;
-    }
-
-    /* إظهار زر القائمة */
-    .menu-toggle {
-        display: block;
-        order: 1;
-    }
-
-    /* القائمة مخفية */
-    .nav-links {
-        position: absolute;
-        top: 70px;
-        right: 0;
-
-        width: 100%;
-        max-width: 320px;
-
-        background: rgba(5, 15, 30, 0.98);
-
-        display: flex;
-        flex-direction: column;
-
-        padding: 20px;
-
-        border-radius: 0 0 20px 20px;
-
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-15px);
-
-        transition:
-            opacity 0.3s ease,
-            transform 0.3s ease,
-            visibility 0.3s ease;
-
-        z-index: 9999;
-
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    }
-
-    /* القائمة عند فتحها */
-    .nav-links.active {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-    }
-
-    /* عناصر القائمة */
-    .nav-links li {
-        width: 100%;
-        text-align: center;
-        margin: 5px 0;
-    }
-
-    .nav-links li a {
-        display: block;
-        width: 100%;
-
-        padding: 12px 15px;
-
-        border-radius: 10px;
-
-        transition: 0.3s ease;
-    }
-
-    .nav-links li a:hover {
-        background: rgba(0, 255, 150, 0.15);
-        color: #00ff88;
-    }
-
-    /* زر اللغة */
-    .language-toggle {
-        font-size: 14px;
-    }
-
-    /* زر الوضع الليلي */
-    .theme-toggle {
-        font-size: 18px;
-    }
-
-}
-
-
-/* =================================
-   شاشات الهاتف الصغيرة جدًا
-================================= */
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
 
 @media (max-width: 480px) {
 
     .nav-container {
-        padding: 10px 15px;
+        padding:
+            10px 12px;
     }
 
     .logo {
@@ -2330,9 +1903,160 @@ footer p {
     }
 
     .nav-links {
-        top: 65px;
-        width: calc(100vw - 30px);
-        right: 15px;
+        right: 10px;
+
+        width:
+            calc(100vw - 20px);
+
+        top: 62px;
     }
 
+
+    /* HERO */
+
+    .hero {
+        padding:
+            115px 12px 50px;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .hero-content h2 {
+        font-size: 21px;
+    }
+
+    .hero-text {
+        font-size: 14px;
+    }
+
+    .hero-image {
+        width: 260px;
+    }
+
+    .circle {
+        width: 220px;
+        height: 220px;
+    }
+
+    .orbit-one {
+        width: 245px;
+        height: 245px;
+    }
+
+    .orbit-two {
+        width: 280px;
+        height: 280px;
+    }
+
+
+    /* SECTIONS */
+
+    section {
+        padding:
+            70px 10px 45px;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+
+
+    /* SKILLS */
+
+    .skill-card {
+        width: 120px;
+        height: 120px;
+    }
+
+
+    /* CONTACT */
+
+    .contact-container {
+        gap: 15px;
+    }
+
+    .contact-box {
+        width: 110px;
+        height: 110px;
+    }
+
+    .contact-box i {
+        font-size: 25px;
+    }
+
+
+    /* CERTIFICATE */
+
+    .certificate-card {
+        width: 270px;
+        height: 270px;
+    }
+}
+
+
+/* =====================================================
+   VERY SMALL SCREENS
+===================================================== */
+
+@media (max-width: 360px) {
+
+    .logo {
+        font-size: 16px;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+    }
+
+    .hero-content h2 {
+        font-size: 19px;
+    }
+
+    .circle {
+        width: 200px;
+        height: 200px;
+    }
+
+    .hero-image {
+        width: 230px;
+    }
+
+    .orbit-one {
+        width: 220px;
+        height: 220px;
+    }
+
+    .orbit-two {
+        width: 250px;
+        height: 250px;
+    }
+
+    .skill-card {
+        width: 110px;
+        height: 110px;
+    }
+
+    .contact-box {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+
+/* =====================================================
+   REDUCE MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
 }
