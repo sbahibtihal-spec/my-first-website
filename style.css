@@ -14,7 +14,12 @@ html {
 
 body {
     font-family: "Cairo", sans-serif;
-    background: linear-gradient(135deg, #07152e, #062d63, #008bd2);
+    background: linear-gradient(
+        135deg,
+        #07152e,
+        #062d63,
+        #008bd2
+    );
     color: #ffffff;
     line-height: 1.7;
     overflow-x: hidden;
@@ -118,7 +123,6 @@ header {
     justify-content: center;
 
     gap: 25px;
-
     list-style: none;
 }
 
@@ -160,20 +164,17 @@ header {
 .theme-toggle:hover {
     background: var(--main);
     color: #06152d;
-
     transform: rotate(20deg);
 }
 
 
 /* ========================================
-   ALL SECTIONS
+   SECTIONS
 ======================================== */
 
 section {
     max-width: 1200px;
-
     margin: auto;
-
     padding: 110px 25px 70px;
 }
 
@@ -189,7 +190,6 @@ section {
 
 .section-title h2 {
     display: inline-block;
-
     position: relative;
 
     font-size: 42px;
@@ -202,7 +202,6 @@ section {
     content: "";
 
     position: absolute;
-
     bottom: 0;
     left: 50%;
 
@@ -212,1338 +211,130 @@ section {
     transform: translateX(-50%);
 
     background: var(--main);
-
     border-radius: 20px;
 
     box-shadow: 0 0 15px var(--main);
 }
-/* =================================
-   HERO - الصفحة الرئيسية الجديدة
-================================= */
+/* =========================================
+   ABOUT - FINAL
+========================================= */
 
-.hero {
-    min-height: calc(100vh - 75px);
-
-    display: grid;
-
-    grid-template-columns:
-        1.2fr
-        1fr
-        0.9fr;
-
-    align-items: center;
-
-    gap: 45px;
-
-    padding: 100px 7% 80px;
-
-    position: relative;
-
-    overflow: hidden;
-
-    background:
-        radial-gradient(
-            circle at 50% 50%,
-            rgba(0, 180, 255, 0.16),
-            transparent 35%
-        ),
-        linear-gradient(
-            135deg,
-            #050817,
-            #071b55,
-            #006eff
-        );
+#about {
+    padding: 100px 7% 70px;
 }
 
+#about .about-container {
+    max-width: 1200px;
+    margin: 0 auto;
 
-/* ضوء خلفي */
+    display: grid;
+    grid-template-columns: 1.3fr repeat(3, 1fr);
 
-.hero::before {
-    content: "";
+    align-items: center;
+    justify-content: center;
 
-    position: absolute;
+    gap: 25px;
+}
 
-    width: 500px;
-    height: 500px;
+/* الدائرة الكبيرة - من أنا */
+
+#about .about-text {
+    width: 330px;
+    height: 330px;
+
+    margin: auto;
+    padding: 40px;
 
     border-radius: 50%;
 
-    background: rgba(0, 191, 255, 0.12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-    filter: blur(100px);
+    text-align: center;
 
-    top: 15%;
-    left: 35%;
+    background:
+        radial-gradient(
+            circle at 30% 30%,
+            rgba(0, 234, 255, 0.25),
+            rgba(0, 119, 255, 0.08)
+        );
 
-    pointer-events: none;
+    border: 2px solid rgba(0, 234, 255, 0.55);
+
+    box-shadow:
+        0 0 25px rgba(0, 180, 255, 0.18),
+        inset 0 0 30px rgba(0, 234, 255, 0.08);
+
+    overflow: hidden;
+
+    transition: 0.4s ease;
 }
 
+/* أيقونة من أنا */
 
-/* =================================
-   النص
-================================= */
+#about .about-icon {
+    width: 60px;
+    height: 60px;
 
-.hero-content {
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    z-index: 3;
+    margin-bottom: 12px;
 
-    text-align: right;
+    border-radius: 50%;
 
-    animation: heroText 1s ease forwards;
+    background: rgba(0, 234, 255, 0.12);
+
+    border: 1px solid rgba(0, 234, 255, 0.45);
 }
 
+#about .about-icon i {
+    color: #00eaff;
+    font-size: 28px;
+}
 
-.hero-greeting {
-    font-size: 22px;
+/* عنوان من أنا */
 
-    font-weight: 700;
-
+#about .about-text h3 {
     color: #ffffff;
+
+    font-size: 22px;
+    font-weight: 800;
 
     margin-bottom: 12px;
 }
 
+/* نص من أنا */
 
-.hero-content h1 {
-    font-size: clamp(55px, 7vw, 90px);
+#about .about-text p {
+    max-width: 230px;
 
-    line-height: 1;
-
-    margin-bottom: 20px;
-
-    font-weight: 800;
-
-    background:
-        linear-gradient(
-            90deg,
-            #ffffff,
-            #00eaff
-        );
-
-    -webkit-background-clip: text;
-
-    -webkit-text-fill-color: transparent;
-
-    text-shadow:
-        0 0 30px rgba(0, 220, 255, 0.25);
-}
-
-
-.hero-content h2 {
-    font-size: clamp(28px, 4vw, 48px);
-
-    line-height: 1.2;
-
-    margin-bottom: 25px;
-
-    color: #00d9ff;
-
-    font-weight: 800;
-}
-
-
-.hero-text {
-    max-width: 600px;
-
-    font-size: 18px;
-
-    line-height: 2;
-
-    color: rgba(255,255,255,0.88);
-
-    margin-bottom: 30px;
-}
-
-
-/* =================================
-   الأزرار
-================================= */
-
-.hero-buttons {
-    display: flex;
-
-    gap: 15px;
-
-    flex-wrap: wrap;
-}
-
-
-.hero-main-btn,
-.hero-second-btn {
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 10px;
-
-    padding: 14px 25px;
-
-    border-radius: 14px;
-
-    text-decoration: none;
-
-    font-weight: 700;
-
-    transition: 0.3s ease;
-}
-
-
-.hero-main-btn {
-    color: #00111d;
-
-    background:
-        linear-gradient(
-            135deg,
-            #00f2ff,
-            #00aaff
-        );
-
-    box-shadow:
-        0 0 25px rgba(0, 220, 255, 0.35);
-}
-
-
-.hero-second-btn {
-    color: white;
-
-    border: 1px solid rgba(0, 225, 255, 0.6);
-
-    background: rgba(255,255,255,0.06);
-
-    backdrop-filter: blur(10px);
-}
-
-
-.hero-main-btn:hover,
-.hero-second-btn:hover {
-    transform: translateY(-4px);
-
-    box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-
-/* =================================
-   الصورة الشخصية
-================================= */
-
-.hero-image {
-    position: relative;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    min-height: 500px;
-
-    z-index: 2;
-}
-
-
-.circle {
-    width: 330px;
-
-    height: 330px;
-
-    border-radius: 50%;
-
-    position: relative;
-
-    padding: 10px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ffffff,
-            #00eaff,
-            #0077ff,
-            #00eaff
-        );
-
-    box-shadow:
-        0 0 25px #00d9ff,
-        0 0 60px rgba(0, 217, 255, 0.5),
-        0 0 120px rgba(0, 120, 255, 0.25);
-
-    animation: imageFloat 4s ease-in-out infinite;
-}
-
-
-.circle::before {
-    content: "";
-
-    position: absolute;
-
-    inset: -18px;
-
-    border-radius: 50%;
-
-    border: 1px solid rgba(0, 238, 255, 0.5);
-
-    animation: rotateRing 8s linear infinite;
-}
-
-
-.circle::after {
-    content: "";
-
-    position: absolute;
-
-    inset: -38px;
-
-    border-radius: 50%;
-
-    border: 1px solid rgba(0, 150, 255, 0.25);
-}
-
-
-.circle img {
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
-    border-radius: 50%;
-
-    display: block;
-
-    border: 6px solid #071b55;
-}
-
-
-/* ضوء خلف الصورة */
-
-.image-glow {
-    position: absolute;
-
-    width: 300px;
-
-    height: 300px;
-
-    border-radius: 50%;
-
-    background: #00cfff;
-
-    filter: blur(100px);
-
-    opacity: 0.25;
-
-    z-index: -1;
-}
-
-
-/* =================================
-   حالة العمل
-================================= */
-
-.available-badge {
-    position: absolute;
-
-    bottom: 55px;
-
-    right: 30px;
-
-    padding: 10px 16px;
-
-    border-radius: 30px;
-
-    color: white;
-
-    background: rgba(0, 20, 50, 0.85);
-
-    border: 1px solid rgba(0, 230, 255, 0.5);
-
-    box-shadow:
-        0 5px 25px rgba(0,0,0,0.25);
-
-    backdrop-filter: blur(10px);
-
-    font-size: 14px;
-
-    font-weight: 700;
-}
-
-
-.available-badge span {
-    display: inline-block;
-
-    width: 9px;
-
-    height: 9px;
-
-    border-radius: 50%;
-
-    background: #00ff88;
-
-    margin-left: 7px;
-
-    box-shadow:
-        0 0 10px #00ff88;
-}
-
-
-/* =================================
-   البطاقات الجانبية
-================================= */
-
-.hero-cards {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 16px;
-
-    position: relative;
-
-    z-index: 3;
-}
-
-
-.hero-card {
-    display: flex;
-
-    align-items: center;
-
-    gap: 16px;
-
-    padding: 18px;
-
-    min-height: 88px;
-
-    border-radius: 18px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(0, 120, 255, 0.35),
-            rgba(0, 45, 110, 0.55)
-        );
-
-    border: 1px solid rgba(0, 210, 255, 0.3);
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,0.2);
-
-    backdrop-filter: blur(12px);
-
-    transition: 0.35s ease;
-}
-
-
-.hero-card:hover {
-    transform: translateX(-8px) scale(1.03);
-
-    border-color: #00eaff;
-
-    box-shadow:
-        0 0 30px rgba(0, 220, 255, 0.25);
-}
-
-
-.hero-card-icon {
-    width: 52px;
-
-    height: 52px;
-
-    min-width: 52px;
-
-    border-radius: 15px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    color: #ffffff;
-
-    font-size: 21px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #00d9ff,
-            #0066ff
-        );
-
-    box-shadow:
-        0 0 18px rgba(0, 220, 255, 0.35);
-}
-
-
-.hero-card small {
-    display: block;
-
-    color: rgba(255,255,255,0.6);
+    color: #d7eaff;
 
     font-size: 13px;
+    line-height: 1.9;
 
-    margin-bottom: 5px;
-}
-
-
-.hero-card strong {
-    display: block;
-
-    color: white;
-
-    font-size: 17px;
-
-    font-weight: 800;
-}
-
-
-/* =================================
-   الحركات
-================================= */
-
-@keyframes imageFloat {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-12px);
-    }
-}
-
-
-@keyframes rotateRing {
-
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-
-@keyframes heroText {
-
-    from {
-        opacity: 0;
-
-        transform: translateX(40px);
-    }
-
-    to {
-        opacity: 1;
-
-        transform: translateX(0);
-    }
-}
-
-
-/* =================================
-   الهاتف والتابلت
-================================= */
-
-@media (max-width: 1100px) {
-
-    .hero {
-        grid-template-columns:
-            1fr
-            1fr;
-
-        gap: 30px;
-
-        padding: 90px 5% 60px;
-    }
-
-    .hero-content {
-        order: 1;
-    }
-
-    .hero-image {
-        order: 2;
-    }
-
-    .hero-cards {
-        order: 3;
-
-        grid-column: 1 / -1;
-
-        display: grid;
-
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-
-}
-
-
-@media (max-width: 700px) {
-
-    .hero {
-        display: flex;
-
-        flex-direction: column;
-
-        text-align: center;
-
-        padding:
-            90px
-            20px
-            60px;
-    }
-
-
-    .hero-content {
-        text-align: center;
-
-        order: 1;
-    }
-
-
-    .hero-image {
-        order: 2;
-
-        min-height: 390px;
-    }
-
-
-    .circle {
-        width: 260px;
-
-        height: 260px;
-    }
-
-
-    .hero-text {
-        font-size: 16px;
-
-        line-height: 1.9;
-    }
-
-
-    .hero-buttons {
-        justify-content: center;
-    }
-
-
-    .hero-cards {
-        order: 3;
-
-        width: 100%;
-
-        display: flex;
-    }
-
-
-    .hero-card {
-        text-align: right;
-    }
-
-
-    .available-badge {
-        bottom: 25px;
-
-        right: 50%;
-
-        transform: translateX(50%);
-    }
-
-}
-
-
-@media (max-width: 400px) {
-
-    .circle {
-        width: 220px;
-
-        height: 220px;
-    }
-
-
-    .hero-content h1 {
-        font-size: 52px;
-    }
-
-
-    .hero-content h2 {
-        font-size: 27px;
-    }
-
-
-    .hero-main-btn,
-    .hero-second-btn {
-        width: 100%;
-    }
-
-}
-/* =====================================================
-   الدوائر المحيطة بالصورة
-===================================================== */
-
-.image-orbit {
-
-    position: absolute;
-
-    border-radius: 50%;
-
-    border: 1px solid rgba(0,174,255,0.45);
-
-    animation: rotateOrbit 12s linear infinite;
-}
-
-
-.orbit-one {
-
-    width: 340px;
-    height: 340px;
-}
-
-
-.orbit-two {
-
-    width: 390px;
-    height: 390px;
-
-    border-color: rgba(145,70,255,0.30);
-
-    animation-duration: 18s;
-
-    animation-direction: reverse;
-}
-
-
-.image-orbit::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 7px;
-    height: 7px;
-
-    border-radius: 50%;
-
-    background: #00b4ff;
-
-    box-shadow:
-        0 0 12px #00b4ff;
-
-    top: 20px;
-    left: 50%;
-}
-
-
-@keyframes rotateOrbit {
-
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-
-}
-
-
-/* =====================================================
-   شارة متاحة للعمل
-===================================================== */
-
-.image-badge {
-
-    position: absolute;
-
-    bottom: 25px;
-    right: 25px;
-
-    padding: 9px 15px;
-
-    border-radius: 30px;
-
-    background: rgba(8,15,32,0.92);
-
-    border: 1px solid rgba(0,255,170,0.40);
-
-    color: white;
-
-    font-size: 12px;
-
-    z-index: 5;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,0.35);
-}
-
-
-.image-badge i {
-
-    color: #00e89a;
-
-    margin-left: 5px;
-}
-
-
-/* =====================================================
-   محتوى الصفحة الرئيسية
-===================================================== */
-
-.hero-content {
-
-    max-width: 650px;
-
-    z-index: 2;
-}
-
-
-.hero-greeting {
-
-    color: #cbd5e1;
-
-    font-size: 20px;
-
-    margin-bottom: 5px;
-}
-
-
-.wave {
-
-    display: inline-block;
-
-    animation: waveHand 2s infinite;
-
-}
-
-
-@keyframes waveHand {
-
-    0%, 100% {
-        transform: rotate(0);
-    }
-
-    25% {
-        transform: rotate(15deg);
-    }
-
-    50% {
-        transform: rotate(-10deg);
-    }
-
-    75% {
-        transform: rotate(10deg);
-    }
-
-}
-
-
-.hero-content h1 {
-
-    margin: 0;
-
-    font-size: clamp(55px, 7vw, 90px);
-
-    font-weight: 800;
-
-    line-height: 1;
-
-    background:
-        linear-gradient(
-            90deg,
-            #ffffff,
-            #8b7cff,
-            #00b4ff
-        );
-
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    color: transparent;
-}
-
-
-.hero-content h2 {
-
-    margin: 15px 0;
-
-    font-size: clamp(25px, 3vw, 38px);
-
-    font-weight: 700;
-
-    color: #667eea;
-}
-
-
-.hero-text {
-
-    max-width: 600px;
-
-    color: #c8d0df;
-
-    font-size: 17px;
-
-    line-height: 2;
-
-    margin-bottom: 25px;
-}
-
-
-/* =====================================================
-   الأزرار
-===================================================== */
-
-.hero-buttons {
-
-    display: flex;
-
-    gap: 14px;
-
-    flex-wrap: wrap;
-
-    margin-bottom: 22px;
-}
-
-
-.hero-btn {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 9px;
-
-    padding: 13px 25px;
-
-    border-radius: 10px;
-
-    text-decoration: none;
-
-    font-weight: 700;
-
-    transition: 0.3s ease;
-}
-
-
-.primary-btn {
-
-    color: white;
-
-    background:
-        linear-gradient(
-            135deg,
-            #0077ff,
-            #5b35ff
-        );
-
-    box-shadow:
-        0 8px 25px rgba(0,119,255,0.30);
-}
-
-
-.primary-btn:hover {
-
-    transform: translateY(-4px);
-
-    box-shadow:
-        0 12px 35px rgba(0,119,255,0.45);
-}
-
-
-.outline-btn {
-
-    color: white;
-
-    border: 1px solid rgba(255,255,255,0.35);
-
-    background: rgba(255,255,255,0.04);
-}
-
-
-.outline-btn:hover {
-
-    transform: translateY(-4px);
-
-    border-color: #667eea;
-
-    background: rgba(102,126,234,0.10);
-}
-
-
-/* =====================================================
-   التقنيات
-===================================================== */
-
-.hero-tech {
-
-    display: flex;
-
-    gap: 8px;
-
-    flex-wrap: wrap;
-}
-
-
-.hero-tech span {
-
-    padding: 6px 12px;
-
-    border-radius: 20px;
-
-    font-size: 12px;
-
-    color: #b9c5ff;
-
-    border: 1px solid rgba(102,126,234,0.35);
-
-    background: rgba(102,126,234,0.08);
-}
-
-
-/* =====================================================
-   الهاتف والتابلت
-===================================================== */
-
-@media (max-width: 1100px) {
-
-    .hero {
-
-        grid-template-columns: 180px 320px 1fr;
-
-        gap: 25px;
-
-    }
-
-    .hero-image {
-
-        width: 320px;
-        height: 320px;
-    }
-
-    .hero-image .circle {
-
-        width: 250px;
-        height: 250px;
-    }
-
-    .orbit-one {
-
-        width: 285px;
-        height: 285px;
-    }
-
-    .orbit-two {
-
-        width: 325px;
-        height: 325px;
-    }
-
-}
-
-
-@media (max-width: 850px) {
-
-    .hero {
-
-        grid-template-columns: 1fr;
-
-        text-align: center;
-
-        padding-top: 110px;
-
-    }
-
-    .hero-content {
-
-        margin: auto;
-
-        order: 1;
-    }
-
-    .hero-image {
-
-        margin: auto;
-
-        order: 2;
-    }
-
-    .hero-side-cards {
-
-        order: 3;
-
-        display: grid;
-
-        grid-template-columns: repeat(2, 1fr);
-
-        max-width: 600px;
-
-        width: 100%;
-
-        margin: auto;
-    }
-
-    .hero-buttons,
-    .hero-tech {
-
-        justify-content: center;
-
-    }
-
-    .hero-text {
-
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-}
-
-
-@media (max-width: 500px) {
-
-    .hero {
-
-        padding-left: 18px;
-        padding-right: 18px;
-    }
-
-    .hero-image {
-
-        width: 290px;
-        height: 290px;
-    }
-
-    .hero-image .circle {
-
-        width: 220px;
-        height: 220px;
-    }
-
-    .orbit-one {
-
-        width: 250px;
-        height: 250px;
-    }
-
-    .orbit-two {
-
-        width: 280px;
-        height: 280px;
-    }
-
-    .hero-side-cards {
-
-        grid-template-columns: 1fr;
-    }
-
-    .hero-content h1 {
-
-        font-size: 55px;
-    }
-
-    .hero-content h2 {
-
-        font-size: 25px;
-    }
-
-    .hero-text {
-
-        font-size: 15px;
-    }
-
-}
-/* =========================================
-   ABOUT - الشكل الدائري النهائي
-========================================= */
-
-#about .about-container {
-    width: 100% !important;
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 25px !important;
-}
-
-
-/* جميع البطاقات */
-
-#about .about-container > .about-text,
-#about .about-container .stat-card {
-
-    flex: 0 0 auto !important;
-
-    width: 280px !important;
-    height: 280px !important;
-    min-width: 280px !important;
-    min-height: 280px !important;
-
-    margin: 0 !important;
-    padding: 35px !important;
-
-    border-radius: 50% !important;
-
-    border: 2px solid #00eaff !important;
-
-    background: rgba(3, 35, 60, 0.75) !important;
-
-    box-shadow:
-        0 0 20px rgba(0, 234, 255, 0.25),
-        inset 0 0 25px rgba(0, 234, 255, 0.08) !important;
-
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    text-align: center !important;
-
-    overflow: hidden !important;
-
-    transition: 0.4s ease !important;
-}
-
-
-/* دائرة من أنا تكون أكبر */
-
-#about .about-container > .about-text {
-
-    width: 350px !important;
-    height: 350px !important;
-
-    min-width: 350px !important;
-    min-height: 350px !important;
-}
-
-
-/* الأيقونات */
-
-#about .stat-card i {
-    color: #00eaff !important;
-    font-size: 38px !important;
-    margin-bottom: 15px !important;
-}
-
-
-/* العناوين */
-
-#about .stat-card h3,
-#about .about-text h3 {
-    color: #ffffff !important;
-    font-size: 20px !important;
-    font-weight: 800 !important;
-    margin-bottom: 10px !important;
-}
-
-
-/* النص */
-
-#about .stat-card p,
-#about .about-text p {
-    color: #d7eaff !important;
-    font-size: 14px !important;
-    line-height: 1.8 !important;
-    max-width: 220px !important;
-    margin: 0 auto !important;
-}
-
-
-/* عند تمرير الماوس */
-
-#about .about-container > .about-text:hover,
-#about .stat-card:hover {
-
-    transform: translateY(-10px) scale(1.04) !important;
-
-    border-color: #00ffff !important;
-
-    box-shadow:
-        0 0 35px rgba(0, 234, 255, 0.65),
-        inset 0 0 30px rgba(0, 234, 255, 0.12) !important;
-}
-
-
-/* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 1200px) {
-
-    #about .about-container {
-        flex-wrap: wrap !important;
-    }
-
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 700px) {
-
-    #about .about-container {
-        flex-direction: column !important;
-        gap: 30px !important;
-    }
-
-    #about .about-container > .about-text {
-
-        width: 300px !important;
-        height: 300px !important;
-
-        min-width: 300px !important;
-        min-height: 300px !important;
-    }
-
-    #about .about-container .stat-card {
-
-        width: 270px !important;
-        height: 270px !important;
-
-        min-width: 270px !important;
-        min-height: 270px !important;
-    }
-
-}
-/* ========================================
-   SKILLS - CIRCLES
-======================================== */
-
-#skills {
-    padding: 100px 25px 70px;
-}
-
-/* عنوان المهارات */
-#skills .section-title {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-/* ترتيب المهارات */
-.skills-grid {
-    max-width: 1000px;
     margin: 0 auto;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    flex-wrap: wrap;
-
-    gap: 30px;
 }
 
-/* دائرة المهارة */
-.skill-card {
-    width: 150px;
-    height: 150px;
 
-    padding: 20px;
+/* =========================================
+   ABOUT - STAT CARDS
+========================================= */
+
+#about .about-stats {
+    display: contents;
+}
+
+#about .stat-card {
+    width: 210px;
+    height: 210px;
+
+    margin: auto;
+    padding: 25px;
 
     border-radius: 50%;
 
@@ -1569,10 +360,169 @@ section {
         inset 0 0 20px rgba(0, 180, 255, 0.06);
 
     transition: 0.4s ease;
+
+    overflow: hidden;
+
+    animation:
+        aboutCircleFloat
+        4s ease-in-out infinite;
 }
 
+/* الأيقونات */
+
+#about .stat-card i {
+    color: #00eaff;
+
+    font-size: 34px;
+
+    margin-bottom: 12px;
+
+    text-shadow:
+        0 0 15px rgba(0, 234, 255, 0.6);
+}
+
+/* العناوين */
+
+#about .stat-card h3 {
+    color: #ffffff;
+
+    font-size: 17px;
+    font-weight: 800;
+
+    margin-bottom: 7px;
+}
+
+/* النص */
+
+#about .stat-card p {
+    color: #d7eaff;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+
+    max-width: 150px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   ABOUT - HOVER
+========================================= */
+
+#about .about-text:hover,
+#about .stat-card:hover {
+
+    transform:
+        translateY(-10px)
+        scale(1.04);
+
+    border-color: #00eaff;
+
+    box-shadow:
+        0 0 40px rgba(0, 234, 255, 0.55),
+        inset 0 0 30px rgba(0, 234, 255, 0.12);
+}
+
+
+/* =========================================
+   ABOUT - FLOATING ANIMATION
+========================================= */
+
+@keyframes aboutCircleFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+#about .stat-card:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+#about .stat-card:nth-child(3) {
+    animation-delay: 1s;
+}
+
+#about .stat-card:nth-child(4) {
+    animation-delay: 1.5s;
+}
+
+
+/* =========================================
+   SKILLS
+========================================= */
+
+#skills {
+    padding: 100px 7% 70px;
+}
+
+.skills-grid {
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 30px;
+}
+
+
+/* دائرة المهارة */
+
+.skill-card {
+
+    width: 155px;
+    height: 155px;
+
+    padding: 20px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 30% 30%,
+            rgba(0, 234, 255, 0.22),
+            rgba(0, 119, 255, 0.08)
+        );
+
+    border:
+        2px solid
+        rgba(0, 234, 255, 0.45);
+
+    box-shadow:
+        0 0 20px rgba(0, 180, 255, 0.15),
+        inset 0 0 20px rgba(0, 180, 255, 0.06);
+
+    transition: 0.4s ease;
+}
+
+
 /* أيقونة المهارة */
+
 .skill-card i {
+
     font-size: 38px;
 
     color: #00eaff;
@@ -1580,25 +530,36 @@ section {
     margin-bottom: 10px;
 
     transition: 0.4s ease;
+
+    text-shadow:
+        0 0 15px rgba(0, 234, 255, 0.5);
 }
 
+
 /* اسم المهارة */
+
 .skill-card h3 {
-    color: white;
+
+    color: #ffffff;
 
     font-size: 14px;
 
     font-weight: 700;
 }
 
-/* تأثير عند الماوس */
+
+/* Hover */
+
 .skill-card:hover {
-    transform: translateY(-10px) scale(1.07);
+
+    transform:
+        translateY(-10px)
+        scale(1.08);
 
     border-color: #00eaff;
 
     box-shadow:
-        0 0 35px rgba(0, 234, 255, 0.4),
+        0 0 35px rgba(0, 234, 255, 0.45),
         inset 0 0 25px rgba(0, 234, 255, 0.1);
 }
 
@@ -1607,323 +568,413 @@ section {
 }
 
 
-/* ========================================
-   SKILLS - MOBILE
-======================================== */
-
-@media (max-width: 700px) {
-
-    .skills-grid {
-        gap: 20px;
-    }
-
-    .skill-card {
-        width: 125px;
-        height: 125px;
-    }
-
-    .skill-card i {
-        font-size: 30px;
-    }
-
-    .skill-card h3 {
-        font-size: 12px;
-    }
-}
-/* ========================================
-   PROJECTS - CIRCULAR CARDS
-======================================== */
+/* =========================================
+   PROJECTS
+========================================= */
 
 #projects {
-    padding: 100px 25px 70px;
+    padding: 100px 7% 70px;
 }
 
 .projects-grid {
+
     max-width: 1200px;
+
     margin: 50px auto 0;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    display: grid;
 
-    gap: 45px;
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 30px;
 }
 
+
+/* بطاقة المشروع */
+
 .project-card {
-    width: 330px;
-    height: 330px;
 
-    flex: 0 0 330px;
+    min-height: 500px;
 
-    border-radius: 50%;
-
-    padding: 40px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
+    padding: 30px 25px;
 
     position: relative;
-    overflow: hidden;
 
-    background: linear-gradient(
-        145deg,
-        rgba(0, 119, 255, 0.35),
-        rgba(0, 180, 255, 0.12)
-    );
+    display: flex;
 
-    border: 2px solid rgba(0, 234, 255, 0.45);
+    flex-direction: column;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border:
+        1px solid
+        rgba(0, 220, 255, 0.35);
+
+    backdrop-filter: blur(15px);
+
+    -webkit-backdrop-filter: blur(15px);
 
     box-shadow:
-        0 0 25px rgba(0, 180, 255, 0.18),
-        inset 0 0 30px rgba(0, 180, 255, 0.08);
+        0 10px 35px rgba(0, 0, 0, 0.2),
+        inset 0 0 20px
+        rgba(0, 200, 255, 0.03);
+
+    overflow: hidden;
 
     transition: 0.4s ease;
 }
 
-.project-card:hover {
-    transform: translateY(-12px) scale(1.04);
 
-    border-color: #00eaff;
+/* الضوء داخل البطاقة */
 
-    box-shadow:
-        0 0 40px rgba(0, 234, 255, 0.45),
-        inset 0 0 30px rgba(0, 234, 255, 0.12);
+.project-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -100px;
+    right: -100px;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(0, 220, 255, 0.15);
+
+    filter: blur(50px);
+
+    transition: 0.4s;
 }
 
-.project-info {
-    width: 100%;
+
+/* Hover */
+
+.project-card:hover {
+
+    transform:
+        translateY(-12px);
+
+    border-color:
+        rgba(0, 238, 255, 0.9);
+
+    box-shadow:
+        0 20px 50px
+        rgba(0, 0, 0, 0.35),
+
+        0 0 30px
+        rgba(0, 220, 255, 0.18);
+}
+
+.project-card:hover::before {
+    transform: scale(1.4);
+}
+
+
+/* =========================================
+   PROJECT ICON
+========================================= */
+
+.project-icon {
+
+    width: 75px;
+    height: 75px;
+
+    margin:
+        0 auto 22px;
 
     display: flex;
-    flex-direction: column;
 
     align-items: center;
     justify-content: center;
 
-    gap: 9px;
+    border-radius: 22px;
 
-    position: relative;
-    z-index: 2;
+    background:
+        rgba(0, 220, 255, 0.12);
+
+    border:
+        1px solid
+        rgba(0, 220, 255, 0.5);
+
+    box-shadow:
+        0 0 20px
+        rgba(0, 220, 255, 0.15);
+
+    transition: 0.4s;
 }
 
-.project-icon {
-    font-size: 28px;
+.project-icon i {
+
+    font-size: 32px;
 
     color: #00eaff;
 
-    margin-bottom: 2px;
+    transition: 0.4s;
 }
 
-.project-status {
-    font-size: 11px;
-    font-weight: 700;
+.project-card:hover .project-icon {
 
-    padding: 5px 12px;
+    transform:
+        rotate(-5deg)
+        scale(1.08);
 
-    border-radius: 20px;
+    background:
+        rgba(0, 220, 255, 0.2);
+
+    box-shadow:
+        0 0 30px
+        rgba(0, 220, 255, 0.35);
+}
+
+
+/* =========================================
+   PROJECT INFO
+========================================= */
+
+.project-info {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
+
+    text-align: center;
 }
 
 .project-info h3 {
-    font-size: 21px;
 
-    color: white;
+    color: #ffffff;
 
-    margin: 0;
+    font-size: 23px;
+
+    font-weight: 800;
+
+    margin-bottom: 15px;
 }
 
 .project-info p {
-    max-width: 230px;
 
-    color: rgba(255,255,255,0.82);
+    color:
+        rgba(255, 255, 255, 0.78);
 
-    font-size: 12px;
+    font-size: 14px;
 
-    line-height: 1.7;
+    line-height: 2;
 
-    margin: 0;
-}
-
-.project-tech {
-    display: flex;
-
-    justify-content: center;
-
-    flex-wrap: wrap;
-
-    gap: 5px;
-
-    margin-top: 3px;
-}
-
-.project-tech span {
-    font-size: 9px;
-
-    padding: 4px 8px;
-
-    border-radius: 15px;
-
-    color: white;
-
-    background: rgba(255,255,255,0.10);
-
-    border: 1px solid rgba(255,255,255,0.20);
-}
-
-.project-buttons {
-    display: flex;
-
-    justify-content: center;
-
-    flex-wrap: wrap;
-
-    gap: 7px;
-
-    margin-top: 3px;
-}
-
-.project-buttons .btn {
-    font-size: 10px;
-
-    padding: 7px 12px;
-
-    border-radius: 20px;
+    margin-bottom: 20px;
 }
 
 
-/* ========================================
-   PROJECTS - MOBILE
-======================================== */
+/* =========================================
+   PROJECT STATUS
+========================================= */
 
-@media (max-width: 700px) {
+.project-status {
 
-    .projects-grid {
-        gap: 30px;
-    }
-
-    .project-card {
-        width: 290px;
-        height: 290px;
-
-        flex: 0 0 290px;
-
-        padding: 30px;
-    }
-
-    .project-info h3 {
-        font-size: 19px;
-    }
-
-    .project-info p {
-        font-size: 11px;
-
-        max-width: 210px;
-    }
-}
-
-/* الهاتف */
-
-@media (max-width: 768px) {
-
-    .projects-grid {
-        gap: 30px;
-    }
-
-    .project-card {
-        width: 290px;
-        height: 290px;
-
-        padding: 30px;
-    }
-
-    .project-info h3 {
-        font-size: 19px;
-    }
-
-    .project-info p {
-        font-size: 11px;
-
-        max-width: 215px;
-    }
-
-}
-/* ========================================
-   BUTTONS
-======================================== */
-
-.btn {
     display: inline-flex;
 
     align-items: center;
     justify-content: center;
 
-    gap: 7px;
+    width: fit-content;
 
-    padding: 9px 16px;
+    margin:
+        0 auto 18px;
 
-    border-radius: 25px;
+    padding:
+        7px 16px;
 
-    background: var(--main);
-
-    color: #03152d;
-
-    text-decoration: none;
+    border-radius: 30px;
 
     font-size: 13px;
 
     font-weight: 700;
+}
+
+.project-status.completed {
+
+    color: #00ffcc;
+
+    background:
+        rgba(0, 255, 204, 0.10);
+
+    border:
+        1px solid
+        rgba(0, 255, 204, 0.35);
+}
+
+.project-status.coming {
+
+    color: #ffd166;
+
+    background:
+        rgba(255, 209, 102, 0.10);
+
+    border:
+        1px solid
+        rgba(255, 209, 102, 0.35);
+}
+
+
+/* =========================================
+   PROJECT TECHNOLOGIES
+========================================= */
+
+.project-tech {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-bottom: 25px;
+}
+
+.project-tech span {
+
+    padding:
+        6px 12px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    color: #ffffff;
+
+    background:
+        rgba(0, 220, 255, 0.10);
+
+    border:
+        1px solid
+        rgba(0, 220, 255, 0.25);
 
     transition: 0.3s;
 }
 
-.btn:hover {
-    transform: translateY(-3px);
+.project-tech span:hover {
 
-    box-shadow: 0 0 18px rgba(0, 234, 255, 0.4);
+    background:
+        rgba(0, 220, 255, 0.2);
+
+    border-color:
+        #00eaff;
+
+    transform:
+        translateY(-2px);
 }
 
-.btn.secondary {
+
+/* =========================================
+   PROJECT BUTTONS
+========================================= */
+
+.project-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: auto;
+
+    flex-wrap: wrap;
+}
+
+.project-buttons .btn {
+
+    min-width: 135px;
+
+    padding:
+        11px 15px;
+
+    border-radius: 12px;
+
+    font-size: 13px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+}
+
+.project-buttons .btn:not(.secondary):not(.disabled) {
+
+    background:
+        linear-gradient(
+            135deg,
+            #00eaff,
+            #0077ff
+        );
+
+    color: #ffffff;
+}
+
+.project-buttons .btn.secondary {
+
     background: transparent;
 
-    color: white;
+    color: #ffffff;
 
-    border: 1px solid var(--main);
+    border:
+        1px solid
+        rgba(0, 220, 255, 0.45);
 }
 
-.btn.secondary:hover {
-    background: var(--main);
+.project-buttons .btn.disabled {
 
-    color: #03152d;
+    width: 100%;
+
+    color:
+        rgba(255,255,255,0.65);
+
+    background:
+        rgba(255,255,255,0.05);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    cursor: default;
 }
-
-
-/* ========================================
-   CERTIFICATES - CIRCLE
-======================================== */
+/* =========================================
+   CERTIFICATES
+========================================= */
 
 #certificates {
-    padding: 100px 25px 70px;
+    padding: 100px 7% 70px;
 }
 
-/* عنوان الشهادات يبقى خارج الدائرة */
-#certificates .section-title {
-    text-align: center;
-    margin-bottom: 45px;
-}
-
-/* دائرة الشهادة */
 .certificate-card {
+
     width: 320px;
     height: 320px;
 
     margin: 0 auto;
+
     padding: 40px;
 
     border-radius: 50%;
 
     display: flex;
+
     flex-direction: column;
 
     align-items: center;
@@ -1938,42 +989,43 @@ section {
             rgba(0, 119, 255, 0.10)
         );
 
-    border: 2px solid rgba(0, 234, 255, 0.55);
+    border:
+        2px solid
+        rgba(0, 234, 255, 0.55);
 
     box-shadow:
-        0 0 25px rgba(0, 180, 255, 0.18),
-        inset 0 0 30px rgba(0, 180, 255, 0.08);
+        0 0 25px
+        rgba(0, 180, 255, 0.18),
 
-    transition: 0.4s ease;
+        inset 0 0 30px
+        rgba(0, 180, 255, 0.08);
 
     overflow: hidden;
+
+    transition: 0.4s ease;
 }
 
-/* تأثير عند تمرير الماوس */
-.certificate-card:hover {
-    transform: translateY(-10px) scale(1.04);
 
-    border-color: #00eaff;
+/* أيقونة الشهادة */
 
-    box-shadow:
-        0 0 40px rgba(0, 234, 255, 0.45),
-        inset 0 0 35px rgba(0, 234, 255, 0.12);
-}
-
-/* الأيقونة */
 .certificate-card i {
+
     width: 65px;
     height: 65px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
     border-radius: 50%;
 
-    background: rgba(0, 234, 255, 0.12);
+    background:
+        rgba(0, 234, 255, 0.12);
 
-    border: 1px solid rgba(0, 234, 255, 0.45);
+    border:
+        1px solid
+        rgba(0, 234, 255, 0.45);
 
     color: #00eaff;
 
@@ -1982,9 +1034,12 @@ section {
     margin-bottom: 15px;
 }
 
-/* اسم الشهادة */
+
+/* عنوان الشهادة */
+
 .certificate-card h3 {
-    color: white;
+
+    color: #ffffff;
 
     font-size: 21px;
 
@@ -1993,13 +1048,17 @@ section {
     margin-bottom: 10px;
 }
 
+
 /* وصف الشهادة */
+
 .certificate-card p {
+
     max-width: 220px;
 
-    color: rgba(255, 255, 255, 0.82);
+    color:
+        rgba(255, 255, 255, 0.82);
 
-    font-size: 11px;
+    font-size: 12px;
 
     line-height: 1.8;
 
@@ -2007,56 +1066,42 @@ section {
 }
 
 
-/* ========================================
-   CERTIFICATE - MOBILE
-======================================== */
+/* Hover */
 
-@media (max-width: 700px) {
+.certificate-card:hover {
 
-    .certificate-card {
-        width: 285px;
-        height: 285px;
+    transform:
+        translateY(-10px)
+        scale(1.04);
 
-        padding: 30px;
-    }
+    border-color:
+        #00eaff;
 
-    .certificate-card h3 {
-        font-size: 19px;
-    }
+    box-shadow:
+        0 0 40px
+        rgba(0, 234, 255, 0.45),
 
-    .certificate-card p {
-        font-size: 10px;
-
-        max-width: 200px;
-    }
-
-    .certificate-card i {
-        width: 55px;
-        height: 55px;
-
-        font-size: 25px;
-    }
+        inset 0 0 35px
+        rgba(0, 234, 255, 0.12);
 }
-/* ========================================
-   CONTACT - CIRCLES
-======================================== */
+
+
+/* =========================================
+   CONTACT
+========================================= */
 
 #contact {
-    padding: 100px 25px 70px;
+    padding: 100px 7% 70px;
 }
 
-/* عنوان تواصل معي مستقل */
-#contact .section-title {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-/* ترتيب دوائر التواصل */
 .contact-container {
+
     max-width: 1000px;
+
     margin: 0 auto;
 
     display: flex;
+
     justify-content: center;
     align-items: center;
 
@@ -2065,14 +1110,18 @@ section {
     gap: 30px;
 }
 
+
 /* دائرة التواصل */
+
 .contact-box {
-    width: 135px;
-    height: 135px;
+
+    width: 145px;
+    height: 145px;
 
     border-radius: 50%;
 
     display: flex;
+
     flex-direction: column;
 
     align-items: center;
@@ -2082,7 +1131,8 @@ section {
 
     text-align: center;
 
-    color: white;
+    color: #ffffff;
+
     text-decoration: none;
 
     background:
@@ -2092,40 +1142,60 @@ section {
             rgba(0, 119, 255, 0.08)
         );
 
-    border: 2px solid rgba(0, 234, 255, 0.45);
+    border:
+        2px solid
+        rgba(0, 234, 255, 0.45);
 
     box-shadow:
-        0 0 20px rgba(0, 180, 255, 0.15),
-        inset 0 0 20px rgba(0, 180, 255, 0.06);
+        0 0 20px
+        rgba(0, 180, 255, 0.15),
+
+        inset 0 0 20px
+        rgba(0, 180, 255, 0.06);
 
     transition: 0.4s ease;
 }
 
-/* الأيقونة */
+
+/* أيقونة التواصل */
+
 .contact-box i {
+
     color: #00eaff;
 
-    font-size: 30px;
+    font-size: 32px;
 
     transition: 0.4s ease;
 }
 
+
 /* اسم الموقع */
+
 .contact-box span {
+
     font-size: 13px;
 
     font-weight: 700;
 }
 
-/* تأثير الماوس */
-.contact-box:hover {
-    transform: translateY(-10px) scale(1.06);
 
-    border-color: #00eaff;
+/* Hover */
+
+.contact-box:hover {
+
+    transform:
+        translateY(-10px)
+        scale(1.06);
+
+    border-color:
+        #00eaff;
 
     box-shadow:
-        0 0 35px rgba(0, 234, 255, 0.4),
-        inset 0 0 25px rgba(0, 234, 255, 0.1);
+        0 0 35px
+        rgba(0, 234, 255, 0.4),
+
+        inset 0 0 25px
+        rgba(0, 234, 255, 0.1);
 }
 
 .contact-box:hover i {
@@ -2133,56 +1203,171 @@ section {
 }
 
 
-/* ========================================
-   CONTACT - MOBILE
-======================================== */
+/* =========================================
+   GENERAL BUTTONS
+========================================= */
 
-@media (max-width: 700px) {
+.btn {
 
-    .contact-container {
-        gap: 20px;
-    }
+    display: inline-flex;
 
-    .contact-box {
-        width: 120px;
-        height: 120px;
-    }
+    align-items: center;
+    justify-content: center;
 
-    .contact-box i {
-        font-size: 27px;
-    }
+    gap: 7px;
 
-    .contact-box span {
-        font-size: 12px;
-    }
+    padding: 9px 16px;
+
+    border-radius: 25px;
+
+    background:
+        var(--main);
+
+    color: #03152d;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition: 0.3s;
 }
 
-/* ========================================
+.btn:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 0 18px
+        rgba(0, 234, 255, 0.4);
+}
+
+.btn.secondary {
+
+    background: transparent;
+
+    color: #ffffff;
+
+    border:
+        1px solid
+        var(--main);
+}
+
+.btn.secondary:hover {
+
+    background:
+        var(--main);
+
+    color: #03152d;
+}
+
+
+/* =========================================
    FOOTER
-======================================== */
+========================================= */
 
 footer {
+
     padding: 25px;
 
     text-align: center;
 
-    border-top: 1px solid rgba(0, 234, 255, 0.15);
+    border-top:
+        1px solid
+        rgba(0, 234, 255, 0.15);
 
-    background: rgba(3, 15, 35, 0.5);
+    background:
+        rgba(3, 15, 35, 0.5);
 }
 
 footer p {
-    color: var(--gray);
+
+    color:
+        var(--gray);
 
     font-size: 14px;
 }
 
 
-/* ========================================
-   ANIMATION
-======================================== */
+/* =========================================
+   HERO ORBIT ANIMATION
+========================================= */
 
-@keyframes floating {
+.image-orbit {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(0, 174, 255, 0.45);
+
+    animation:
+        rotateOrbit
+        12s linear infinite;
+}
+
+.orbit-one {
+
+    width: 340px;
+    height: 340px;
+}
+
+.orbit-two {
+
+    width: 390px;
+    height: 390px;
+
+    border-color:
+        rgba(145, 70, 255, 0.30);
+
+    animation-duration: 18s;
+
+    animation-direction: reverse;
+}
+
+.image-orbit::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background:
+        #00b4ff;
+
+    box-shadow:
+        0 0 12px
+        #00b4ff;
+
+    top: 20px;
+    left: 50%;
+}
+
+@keyframes rotateOrbit {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================
+   HERO ANIMATIONS
+========================================= */
+
+@keyframes imageFloat {
 
     0%,
     100% {
@@ -2194,59 +1379,180 @@ footer p {
     }
 }
 
+@keyframes heroText {
 
-/* ========================================
-   TABLET
-======================================== */
+    from {
 
-@media (max-width: 1000px) {
+        opacity: 0;
 
-    .navbar {
-        padding: 0 18px;
+        transform:
+            translateX(40px);
     }
 
-    .nav-links {
-        gap: 15px;
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+}
+
+@keyframes waveHand {
+
+    0%,
+    100% {
+        transform: rotate(0);
     }
 
-    .nav-links a {
-        font-size: 13px;
+    25% {
+        transform: rotate(15deg);
     }
+
+    50% {
+        transform: rotate(-10deg);
+    }
+
+    75% {
+        transform: rotate(10deg);
+    }
+}
+
+.wave {
+
+    display: inline-block;
+
+    animation:
+        waveHand
+        2s infinite;
+}
+
+
+/* =========================================
+   RESPONSIVE - TABLET
+========================================= */
+
+@media (max-width: 1100px) {
 
     .hero {
-        gap: 40px;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 30px;
+
+        padding:
+            100px 5% 60px;
+    }
+
+    .hero-content {
+        order: 1;
     }
 
     .hero-image {
-        flex-basis: 280px;
+        order: 2;
     }
 
-    .circle {
-        width: 240px;
-        height: 240px;
+    .hero-cards {
+
+        order: 3;
+
+        grid-column:
+            1 / -1;
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
-    .hero-content h1 {
-        font-size: 50px;
-    }
+    #about .about-container {
 
-    .skills-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 30px;
     }
 
     .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
 
-    .contact-container {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 }
 
 
-/* ========================================
-   MOBILE
-======================================== */
+/* =========================================
+   RESPONSIVE - TABLET SMALL
+========================================= */
+
+@media (max-width: 850px) {
+
+    .hero {
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        padding-top: 110px;
+    }
+
+    .hero-content {
+
+        margin: auto;
+
+        order: 1;
+    }
+
+    .hero-image {
+
+        margin: auto;
+
+        order: 2;
+    }
+
+    .hero-cards {
+
+        order: 3;
+
+        width: 100%;
+
+        max-width: 600px;
+
+        margin: auto;
+    }
+
+    .hero-buttons,
+    .hero-tech {
+
+        justify-content: center;
+    }
+
+    .hero-text {
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #about .about-container {
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .projects-grid {
+
+        grid-template-columns: 1fr;
+
+        max-width: 600px;
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE - MOBILE
+========================================= */
 
 @media (max-width: 700px) {
 
@@ -2255,6 +1561,7 @@ footer p {
     }
 
     .navbar {
+
         min-height: 65px;
 
         padding: 0 12px;
@@ -2267,6 +1574,7 @@ footer p {
     }
 
     .nav-links {
+
         gap: 8px;
 
         overflow-x: auto;
@@ -2285,6 +1593,7 @@ footer p {
     }
 
     .theme-toggle {
+
         width: 35px;
         height: 35px;
 
@@ -2295,9 +1604,15 @@ footer p {
     /* HERO */
 
     .hero {
+
         min-height: auto;
 
-        padding-top: 120px;
+        padding:
+            120px
+            20px
+            60px;
+
+        display: flex;
 
         flex-direction: column;
 
@@ -2306,13 +1621,9 @@ footer p {
         gap: 30px;
     }
 
-    .hero-image {
-        flex: none;
-    }
+    .hero-content {
 
-    .circle {
-        width: 210px;
-        height: 210px;
+        text-align: center;
     }
 
     .hero-content h1 {
@@ -2320,138 +1631,198 @@ footer p {
     }
 
     .hero-content h2 {
-        font-size: 21px;
-    }
-
-    .hero-content h2 span {
-        font-size: 19px;
+        font-size: 25px;
     }
 
     .hero-text {
-        font-size: 14px;
+        font-size: 15px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+
+    /* IMAGE */
+
+    .hero-image {
+
+        min-height: 350px;
+
+        width: 290px;
+
+        margin: auto;
+    }
+
+    .circle {
+
+        width: 240px;
+        height: 240px;
+    }
+
+    .orbit-one {
+
+        width: 270px;
+        height: 270px;
+    }
+
+    .orbit-two {
+
+        width: 310px;
+        height: 310px;
     }
 
 
     /* SECTIONS */
 
     section {
-        padding: 85px 15px 50px;
+
+        padding:
+            85px
+            15px
+            50px;
     }
 
     .section-title {
+
         margin-bottom: 30px;
     }
 
     .section-title h2 {
+
         font-size: 32px;
     }
 
 
     /* ABOUT */
 
-    .about-container {
-        grid-template-columns: 1fr;
+    #about .about-container {
 
-        gap: 20px;
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 25px;
     }
 
-    .about-text {
-        padding: 22px;
+    #about .about-text {
+
+        width: 300px;
+        height: 300px;
+
+        min-width: 300px;
+
+        padding: 30px;
     }
 
-    .about-stats {
-        grid-template-columns: repeat(3, 1fr);
+    #about .stat-card {
 
-        gap: 8px;
-    }
+        width: 180px;
+        height: 180px;
 
-    .stat-card {
-        min-height: 130px;
-
-        padding: 12px 5px;
-    }
-
-    .stat-card i {
-        font-size: 25px;
-    }
-
-    .stat-card h3 {
-        font-size: 12px;
-    }
-
-    .stat-card p {
-        font-size: 10px;
+        padding: 20px;
     }
 
 
     /* SKILLS */
 
     .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
 
-        gap: 12px;
+        gap: 20px;
     }
 
     .skill-card {
-        min-height: 135px;
+
+        width: 125px;
+        height: 125px;
     }
 
     .skill-card i {
-        font-size: 32px;
+
+        font-size: 30px;
     }
 
     .skill-card h3 {
-        font-size: 13px;
+
+        font-size: 12px;
     }
 
 
     /* PROJECTS */
 
     .projects-grid {
+
         grid-template-columns: 1fr;
+
+        gap: 25px;
     }
 
-    .project-card img {
-        height: 190px;
+    .project-card {
+
+        min-height: auto;
+
+        padding:
+            28px 20px;
+    }
+
+    .project-buttons {
+
+        flex-direction: column;
+    }
+
+    .project-buttons .btn {
+
+        width: 100%;
     }
 
 
     /* CERTIFICATES */
 
     .certificate-card {
-        min-height: 190px;
 
-        padding: 25px 18px;
+        width: 285px;
+        height: 285px;
+
+        padding: 30px;
+    }
+
+    .certificate-card h3 {
+        font-size: 19px;
+    }
+
+    .certificate-card p {
+        font-size: 10px;
     }
 
 
     /* CONTACT */
 
     .contact-container {
-        grid-template-columns: repeat(2, 1fr);
 
-        gap: 12px;
+        gap: 20px;
     }
 
     .contact-box {
-        min-height: 100px;
 
-        padding: 15px 8px;
+        width: 120px;
+        height: 120px;
     }
 
     .contact-box i {
-        font-size: 28px;
+
+        font-size: 27px;
     }
 
     .contact-box span {
-        font-size: 13px;
+
+        font-size: 12px;
     }
 }
 
 
-/* ========================================
-   SMALL MOBILE
-======================================== */
+/* =========================================
+   RESPONSIVE - SMALL MOBILE
+========================================= */
 
 @media (max-width: 430px) {
 
@@ -2467,948 +1838,51 @@ footer p {
         font-size: 38px;
     }
 
+    .hero-content h2 {
+        font-size: 22px;
+    }
+
     .section-title h2 {
         font-size: 28px;
     }
 
-    .about-stats {
-        grid-template-columns: 1fr;
+    .circle {
+
+        width: 220px;
+        height: 220px;
     }
 
-    .stat-card {
-        min-height: 105px;
+    .hero-image {
+
+        width: 260px;
     }
 
-    .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .orbit-one {
+
+        width: 245px;
+        height: 245px;
+    }
+
+    .orbit-two {
+
+        width: 280px;
+        height: 280px;
+    }
+
+    .skill-card {
+
+        width: 120px;
+        height: 120px;
     }
 
     .contact-container {
-        grid-template-columns: 1fr;
+
+        gap: 15px;
     }
 
     .contact-box {
-        min-height: 100px;
+
+        width: 110px;
+        height: 110px;
     }
-/* ===== ترتيب قسم نبذة عني ===== */
-
-#about .about-container {
-    display: grid !important;
-    grid-template-columns: repeat(4, 1fr) !important;
-    gap: 20px !important;
-    width: 100% !important;
-    align-items: stretch !important;
-}
-
-#about .about-text {
-    grid-column: auto !important;
-    width: auto !important;
-    margin: 0 !important;
-}
-
-#about .about-stats {
-    display: contents !important;
-}
-
-#about .stat-card {
-    width: auto !important;
-    margin: 0 !important;
-}
-  /* =========================================
-   PROFESSIONAL PROJECT CARDS
-========================================= */
-
-#projects {
-    padding: 100px 7%;
-    position: relative;
-}
-
-.projects-grid {
-    max-width: 1200px;
-    margin: 50px auto 0;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
-
-/* بطاقة المشروع */
-
-.project-card {
-    position: relative;
-
-    min-height: 520px;
-
-    padding: 30px 25px;
-
-    display: flex;
-    flex-direction: column;
-
-    background: rgba(255, 255, 255, 0.08);
-
-    border: 1px solid rgba(0, 220, 255, 0.35);
-
-    border-radius: 25px;
-
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-
-    box-shadow:
-        0 10px 35px rgba(0, 0, 0, 0.20),
-        inset 0 0 20px rgba(0, 200, 255, 0.03);
-
-    overflow: hidden;
-
-    transition:
-        transform 0.4s ease,
-        box-shadow 0.4s ease,
-        border-color 0.4s ease;
-}
-
-
-/* لمعان البطاقة */
-
-.project-card::before {
-    content: "";
-
-    position: absolute;
-
-    top: -100px;
-    right: -100px;
-
-    width: 220px;
-    height: 220px;
-
-    background: rgba(0, 220, 255, 0.15);
-
-    border-radius: 50%;
-
-    filter: blur(50px);
-
-    transition: 0.4s;
-}
-
-
-/* حركة البطاقة */
-
-.project-card:hover {
-    transform: translateY(-12px);
-
-    border-color: rgba(0, 238, 255, 0.9);
-
-    box-shadow:
-        0 20px 50px rgba(0, 0, 0, 0.35),
-        0 0 30px rgba(0, 220, 255, 0.18);
-}
-
-
-.project-card:hover::before {
-    transform: scale(1.4);
-}
-
-
-/* =========================================
-   PROJECT ICON
-========================================= */
-
-.project-icon {
-    width: 75px;
-    height: 75px;
-
-    margin: 0 auto 22px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 22px;
-
-    background: rgba(0, 220, 255, 0.12);
-
-    border: 1px solid rgba(0, 220, 255, 0.5);
-
-    box-shadow:
-        0 0 20px rgba(0, 220, 255, 0.15);
-
-    transition: 0.4s;
-}
-
-
-.project-icon i {
-    font-size: 32px;
-
-    color: #00eaff;
-
-    transition: 0.4s;
-}
-
-
-.project-card:hover .project-icon {
-    transform: rotate(-5deg) scale(1.08);
-
-    background: rgba(0, 220, 255, 0.2);
-
-    box-shadow:
-        0 0 30px rgba(0, 220, 255, 0.35);
-}
-
-
-.project-card:hover .project-icon i {
-    transform: scale(1.1);
-}
-
-
-/* =========================================
-   PROJECT INFO
-========================================= */
-
-.project-info {
-    position: relative;
-
-    z-index: 2;
-
-    display: flex;
-    flex-direction: column;
-
-    flex: 1;
-
-    text-align: center;
-}
-
-
-/* =========================================
-   PROJECT STATUS
-========================================= */
-
-.project-status {
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    width: fit-content;
-
-    margin: 0 auto 18px;
-
-    padding: 7px 16px;
-
-    border-radius: 30px;
-
-    font-size: 13px;
-    font-weight: 700;
-}
-
-
-/* مكتمل */
-
-.project-status.completed {
-    color: #00ffcc;
-
-    background: rgba(0, 255, 204, 0.10);
-
-    border: 1px solid rgba(0, 255, 204, 0.35);
-
-    box-shadow: 0 0 15px rgba(0, 255, 204, 0.08);
-}
-
-
-/* قيد الإنجاز */
-
-.project-status.coming {
-    color: #ffd166;
-
-    background: rgba(255, 209, 102, 0.10);
-
-    border: 1px solid rgba(255, 209, 102, 0.35);
-}
-
-
-/* =========================================
-   PROJECT TITLE
-========================================= */
-
-.project-info h3 {
-    margin-bottom: 15px;
-
-    font-size: 23px;
-
-    color: #ffffff;
-
-    font-weight: 800;
-}
-
-
-/* =========================================
-   PROJECT DESCRIPTION
-========================================= */
-
-.project-info p {
-    color: rgba(255, 255, 255, 0.78);
-
-    font-size: 14px;
-
-    line-height: 2;
-
-    margin-bottom: 20px;
-}
-
-
-/* =========================================
-   TECHNOLOGIES
-========================================= */
-
-.project-tech {
-    display: flex;
-
-    flex-wrap: wrap;
-
-    justify-content: center;
-
-    gap: 8px;
-
-    margin-bottom: 25px;
-}
-
-
-.project-tech span {
-    padding: 6px 12px;
-
-    border-radius: 20px;
-
-    font-size: 12px;
-
-    font-weight: 600;
-
-    color: #ffffff;
-
-    background: rgba(0, 220, 255, 0.10);
-
-    border: 1px solid rgba(0, 220, 255, 0.25);
-
-    transition: 0.3s;
-}
-
-
-.project-tech span:hover {
-    background: rgba(0, 220, 255, 0.2);
-
-    border-color: #00eaff;
-
-    transform: translateY(-2px);
-}
-
-
-/* =========================================
-   PROJECT BUTTONS
-========================================= */
-
-.project-buttons {
-    display: flex;
-
-    justify-content: center;
-
-    gap: 10px;
-
-    margin-top: auto;
-
-    flex-wrap: wrap;
-}
-
-
-.project-buttons .btn {
-    min-width: 135px;
-
-    padding: 11px 15px;
-
-    border-radius: 12px;
-
-    font-size: 13px;
-
-    font-weight: 700;
-
-    text-decoration: none;
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 8px;
-
-    transition: 0.3s;
-}
-
-
-/* الزر الأساسي */
-
-.project-buttons .btn:not(.secondary):not(.disabled) {
-    background: linear-gradient(
-        135deg,
-        #00eaff,
-        #0077ff
-    );
-
-    color: #ffffff;
-
-    border: 1px solid rgba(255,255,255,0.15);
-
-    box-shadow:
-        0 5px 20px rgba(0, 150, 255, 0.25);
-}
-
-
-.project-buttons .btn:not(.secondary):not(.disabled):hover {
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 8px 25px rgba(0, 200, 255, 0.4);
-}
-
-
-/* زر GitHub */
-
-.project-buttons .btn.secondary {
-    background: transparent;
-
-    color: #ffffff;
-
-    border: 1px solid rgba(0, 220, 255, 0.45);
-}
-
-
-.project-buttons .btn.secondary:hover {
-    background: rgba(0, 220, 255, 0.12);
-
-    border-color: #00eaff;
-
-    transform: translateY(-3px);
-}
-
-
-/* زر قريباً */
-
-.project-buttons .btn.disabled {
-    width: 100%;
-
-    color: rgba(255,255,255,0.65);
-
-    background: rgba(255,255,255,0.05);
-
-    border: 1px solid rgba(255,255,255,0.12);
-
-    cursor: default;
-}
-
-
-/* =========================================
-   RESPONSIVE
-========================================= */
-
-@media (max-width: 1000px) {
-
-    .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-}
-
-
-@media (max-width: 700px) {
-
-    #projects {
-        padding: 80px 5%;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-
-        gap: 25px;
-    }
-
-    .project-card {
-        min-height: auto;
-
-        padding: 28px 20px;
-    }
-
-    .project-info h3 {
-        font-size: 21px;
-    }
-
-    .project-buttons .btn {
-        width: 100%;
-    }
-
-/* ========================================
-   ABOUT - الشكل الدائري النهائي
-======================================== */
-
-#about .about-container {
-    width: 100% !important;
-
-    display: flex !important;
-
-    flex-wrap: wrap !important;
-
-    justify-content: center !important;
-
-    align-items: center !important;
-
-    gap: 35px !important;
-
-    margin: 0 auto !important;
-}
-
-
-/* الدائرة الكبيرة - من أنا */
-
-#about .about-text {
-    width: 330px !important;
-
-    height: 330px !important;
-
-    min-width: 330px !important;
-
-    padding: 45px !important;
-
-    margin: 0 !important;
-
-    border-radius: 50% !important;
-
-    display: flex !important;
-
-    flex-direction: column !important;
-
-    align-items: center !important;
-
-    justify-content: center !important;
-
-    text-align: center !important;
-
-    background:
-        radial-gradient(
-            circle at 30% 30%,
-            rgba(0, 234, 255, 0.25),
-            rgba(0, 119, 255, 0.08)
-        ) !important;
-
-    border: 2px solid rgba(0, 234, 255, 0.55) !important;
-
-    box-shadow:
-        0 0 25px rgba(0, 180, 255, 0.18),
-        inset 0 0 30px rgba(0, 180, 255, 0.08) !important;
-
-    overflow: hidden !important;
-
-    transition: 0.4s ease !important;
-}
-
-
-/* أيقونة من أنا */
-
-#about .about-icon {
-    width: 55px;
-
-    height: 55px;
-
-    border-radius: 50%;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    margin-bottom: 10px;
-
-    background: rgba(0, 234, 255, 0.12);
-
-    border: 1px solid rgba(0, 234, 255, 0.45);
-}
-
-#about .about-icon i {
-    color: #00eaff;
-
-    font-size: 25px;
-}
-
-
-/* عنوان من أنا */
-
-#about .about-text h3 {
-    font-size: 21px !important;
-
-    color: white !important;
-
-    margin-bottom: 10px !important;
-}
-
-
-/* النص */
-
-#about .about-text p {
-    max-width: 220px !important;
-
-    color: rgba(255, 255, 255, 0.82) !important;
-
-    font-size: 11px !important;
-
-    line-height: 1.8 !important;
-
-    margin: 0 !important;
-}
-
-
-/* الدوائر الثلاث */
-
-#about .stat-card {
-    width: 190px !important;
-
-    height: 190px !important;
-
-    min-height: 190px !important;
-
-    padding: 25px !important;
-
-    margin: 0 !important;
-
-    border-radius: 50% !important;
-
-    display: flex !important;
-
-    flex-direction: column !important;
-
-    align-items: center !important;
-
-    justify-content: center !important;
-
-    text-align: center !important;
-
-    background:
-        radial-gradient(
-            circle at 30% 30%,
-            rgba(0, 234, 255, 0.22),
-            rgba(0, 119, 255, 0.08)
-        ) !important;
-
-    border: 2px solid rgba(0, 234, 255, 0.45) !important;
-
-    box-shadow:
-        0 0 20px rgba(0, 180, 255, 0.15),
-        inset 0 0 20px rgba(0, 180, 255, 0.06) !important;
-
-    transition: 0.4s ease !important;
-
-    overflow: hidden !important;
-}
-
-
-/* أيقونات الدوائر */
-
-#about .stat-card i {
-    color: #00eaff !important;
-
-    font-size: 32px !important;
-
-    margin-bottom: 10px !important;
-}
-
-
-/* عناوين الدوائر */
-
-#about .stat-card h3 {
-    color: white !important;
-
-    font-size: 15px !important;
-
-    margin-bottom: 5px !important;
-}
-
-
-/* نص الدوائر */
-
-#about .stat-card p {
-    color: rgba(255, 255, 255, 0.82) !important;
-
-    font-size: 10px !important;
-
-    line-height: 1.6 !important;
-
-    margin: 0 !important;
-}
-
-
-/* تأثير الماوس */
-
-#about .about-text:hover,
-#about .stat-card:hover {
-    transform: translateY(-10px) scale(1.04) !important;
-
-    border-color: #00eaff !important;
-
-    box-shadow:
-        0 0 40px rgba(0, 234, 255, 0.4),
-        inset 0 0 30px rgba(0, 234, 255, 0.1) !important;
-}
-
-
-/* ========================================
-   ABOUT - الهاتف
-======================================== */
-
-@media (max-width: 700px) {
-
-    #about .about-container {
-        gap: 25px !important;
-    }
-
-    #about .about-text {
-        width: 285px !important;
-
-        height: 285px !important;
-
-        min-width: 285px !important;
-
-        padding: 30px !important;
-    }
-
-    #about .stat-card {
-        width: 145px !important;
-
-        height: 145px !important;
-
-        min-height: 145px !important;
-
-        padding: 20px !important;
-    }
-
-    #about .stat-card i {
-        font-size: 27px !important;
-    }
-
-    #about .stat-card h3 {
-        font-size: 13px !important;
-    }
-
-    #about .stat-card p {
-        font-size: 9px !important;
-    }
-/* =========================================
-   ABOUT - دوائر احترافية
-========================================= */
-
-#about .about-container {
-    display: grid !important;
-
-    grid-template-columns: 1.25fr 1fr 1fr 1fr !important;
-
-    gap: 25px !important;
-
-    width: 100% !important;
-
-    align-items: center !important;
-
-    justify-content: center !important;
-}
-
-
-/* جميع الدوائر */
-
-#about .about-text,
-#about .stat-card {
-
-    width: 300px !important;
-    height: 300px !important;
-
-    min-height: 300px !important;
-
-    padding: 35px !important;
-
-    margin: 0 auto !important;
-
-    border-radius: 50% !important;
-
-    border: 2px solid rgba(0, 234, 255, 0.75) !important;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(0, 180, 255, 0.18),
-            rgba(0, 30, 60, 0.55)
-        ) !important;
-
-    box-shadow:
-        0 0 20px rgba(0, 234, 255, 0.20),
-        inset 0 0 25px rgba(0, 234, 255, 0.08) !important;
-
-    display: flex !important;
-
-    flex-direction: column !important;
-
-    justify-content: center !important;
-
-    align-items: center !important;
-
-    text-align: center !important;
-
-    transition: 0.4s ease !important;
-
-    overflow: hidden !important;
-}
-
-
-/* الدائرة الكبيرة */
-
-#about .about-text {
-    width: 350px !important;
-    height: 350px !important;
-
-    min-height: 350px !important;
-
-    padding: 45px !important;
-}
-
-
-/* تأثير عند مرور الماوس */
-
-#about .about-text:hover,
-#about .stat-card:hover {
-
-    transform: translateY(-10px) scale(1.03) !important;
-
-    border-color: #00eaff !important;
-
-    box-shadow:
-        0 0 35px rgba(0, 234, 255, 0.55),
-        inset 0 0 35px rgba(0, 234, 255, 0.12) !important;
-}
-
-
-/* أيقونات */
-
-#about .stat-card i,
-#about .about-text i {
-
-    font-size: 38px !important;
-
-    color: #00eaff !important;
-
-    margin-bottom: 15px !important;
-
-    text-shadow: 0 0 15px rgba(0, 234, 255, 0.6);
-}
-
-
-/* عناوين الدوائر */
-
-#about .stat-card h3,
-#about .about-text h3 {
-
-    font-size: 20px !important;
-
-    font-weight: 800 !important;
-
-    color: #ffffff !important;
-
-    margin-bottom: 10px !important;
-}
-
-
-/* النص داخل الدوائر */
-
-#about .stat-card p,
-#about .about-text p {
-
-    color: #d7eaff !important;
-
-    font-size: 14px !important;
-
-    line-height: 1.9 !important;
-
-    max-width: 230px !important;
-
-    margin: 0 auto !important;
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 1100px) {
-
-    #about .about-container {
-
-        grid-template-columns: repeat(2, 1fr) !important;
-
-        gap: 30px !important;
-    }
-
-}
-
-
-@media (max-width: 700px) {
-
-    #about .about-container {
-
-        grid-template-columns: 1fr !important;
-
-        gap: 30px !important;
-    }
-
-    #about .about-text,
-    #about .stat-card {
-
-        width: 280px !important;
-
-        height: 280px !important;
-
-        min-height: 280px !important;
-    }
-
-    #about .about-text {
-
-        width: 300px !important;
-
-        height: 300px !important;
-
-        min-height: 300px !important;
-    }
-
-}
-
-
-/* =========================================
-   حركة خفيفة للدوائر
-========================================= */
-
-@keyframes aboutCircleFloat {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-6px);
-    }
-
-}
-
-#about .stat-card {
-    animation: aboutCircleFloat 4s ease-in-out infinite;
-}
-
-#about .stat-card:nth-child(2) {
-    animation-delay: 0.5s;
-}
-
-#about .stat-card:nth-child(3) {
-    animation-delay: 1s;
-}
-
-#about .stat-card:nth-child(4) {
-    animation-delay: 1.5s;
 }
