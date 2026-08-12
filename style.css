@@ -1888,3 +1888,322 @@ footer p {
 <script src="script.js"></script>
 </body>
 </html>
+   
+/* =========================================
+   RESPONSIVE DESIGN
+   الهاتف - التابلت - الحاسوب
+========================================= */
+
+/* ===== التابلت ===== */
+@media (max-width: 992px) {
+
+    nav {
+        padding: 15px 25px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    .hero {
+        padding: 100px 30px 50px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .skills-container,
+    .projects-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .contact-container {
+        gap: 20px;
+    }
+}
+
+
+/* ===== الهاتف ===== */
+@media (max-width: 768px) {
+
+    /* منع خروج العناصر من الشاشة */
+    html,
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* ===== شريط التنقل ===== */
+
+    nav {
+        width: 100%;
+        padding: 12px 15px;
+        flex-wrap: wrap;
+    }
+
+    nav .logo {
+        font-size: 22px;
+    }
+
+    nav ul {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 10px;
+    }
+
+    nav ul li a {
+        font-size: 13px;
+        padding: 6px 8px;
+    }
+
+    #language-toggle,
+    #theme-toggle {
+        font-size: 13px;
+    }
+
+
+    /* ===== الرئيسية ===== */
+
+    .hero {
+        min-height: auto;
+        padding: 130px 20px 60px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+        line-height: 1.4;
+    }
+
+    .hero h2 {
+        font-size: 22px;
+    }
+
+    .hero p {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .hero img {
+        width: 180px;
+        height: 180px;
+        max-width: 100%;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .btn {
+        width: 90%;
+        max-width: 300px;
+    }
+
+
+    /* ===== العناوين ===== */
+
+    section {
+        width: 100%;
+        padding: 70px 15px;
+    }
+
+    section h2 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+
+    /* ===== نبذة عني ===== */
+
+    .about-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .about-text {
+        width: 100%;
+        text-align: center;
+    }
+
+
+    /* ===== المهارات ===== */
+
+    .skills-container {
+        grid-template-columns: 1fr;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .skill-card {
+        width: 100%;
+        min-height: 180px;
+    }
+
+
+    /* ===== المشاريع ===== */
+
+    .projects-container {
+        grid-template-columns: 1fr;
+        width: 100%;
+        gap: 25px;
+    }
+
+    .project-card {
+        width: 100%;
+    }
+
+    .project-card img {
+        width: 100%;
+        height: auto;
+        max-height: 250px;
+        object-fit: cover;
+    }
+
+
+    /* ===== الشهادات ===== */
+
+    .certificates-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .certificate-card {
+        width: 100%;
+        max-width: 400px;
+    }
+
+
+    /* ===== التواصل ===== */
+
+    .contact-container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .contact-card {
+        width: 100%;
+    }
+
+
+    /* ===== أيقونات التواصل ===== */
+
+    .social-links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .social-links a {
+        width: 100%;
+    }
+
+
+    /* ===== الفوتر ===== */
+
+    footer {
+        text-align: center;
+        padding: 20px 10px;
+        font-size: 13px;
+    }
+}
+
+
+/* ===== الهواتف الصغيرة جدًا ===== */
+
+@media (max-width: 480px) {
+
+    nav {
+        padding: 10px;
+    }
+
+    nav .logo {
+        font-size: 19px;
+    }
+
+    nav ul {
+        gap: 4px;
+    }
+
+    nav ul li a {
+        font-size: 11px;
+        padding: 5px;
+    }
+
+    .hero {
+        padding: 120px 12px 50px;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+    }
+
+    .hero h2 {
+        font-size: 19px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .hero img {
+        width: 140px;
+        height: 140px;
+    }
+
+    section {
+        padding: 55px 10px;
+    }
+
+    section h2 {
+        font-size: 26px;
+    }
+
+    .social-links {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card,
+    .skill-card,
+    .certificate-card {
+        padding: 20px 15px;
+    }
+}
+
+
+/* ===== الشاشات الكبيرة ===== */
+
+@media (min-width: 1200px) {
+
+    .hero {
+        max-width: 1400px;
+        margin: auto;
+    }
+
+    .skills-container,
+    .projects-container,
+    .contact-container {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
