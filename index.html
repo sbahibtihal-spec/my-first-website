@@ -38,61 +38,74 @@
     ========================== -->
 
     <header>
+<nav class="navbar">
 
-        <nav class="navbar">
+    <div class="nav-container">
 
-            <div class="logo">
-                NAIMA <span>&lt;/&gt;</span>
-            </div>
+        <!-- الشعار -->
+        <a href="#home" class="logo">
+            &lt;/&gt; NAIMA
+        </a>
 
-            <ul class="nav-links">
+        <!-- زر الهاتف -->
+        <button class="menu-toggle" id="menu-toggle" aria-label="فتح القائمة">
+            ☰
+        </button>
 
-    <li>
-        <a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
-    </li>
+        <!-- القائمة -->
+        <ul class="nav-links" id="nav-links">
 
-    <li>
-        <a href="#about" data-ar="نبذة" data-en="About">نبذة</a>
-    </li>
+            <li>
+                <a href="#home" data-ar="الرئيسية" data-en="Home">
+                    الرئيسية
+                </a>
+            </li>
 
-    <li>
-        <a href="#skills" data-ar="المهارات" data-en="Skills">المهارات</a>
-    </li>
+            <li>
+                <a href="#about" data-ar="نبذة" data-en="About">
+                    نبذة
+                </a>
+            </li>
 
-    <li>
-        <a href="#projects" data-ar="المشاريع" data-en="Projects">المشاريع</a>
-    </li>
+            <li>
+                <a href="#skills" data-ar="المهارات" data-en="Skills">
+                    المهارات
+                </a>
+            </li>
 
-    <li>
-        <a href="#certificates" data-ar="الشهادات" data-en="Certificates">الشهادات</a>
-    </li>
+            <li>
+                <a href="#projects" data-ar="المشاريع" data-en="Projects">
+                    المشاريع
+                </a>
+            </li>
 
-    <li>
-        <a href="#contact" data-ar="تواصل" data-en="Contact">تواصل</a>
-    </li>
+            <li>
+                <a href="#certificates" data-ar="الشهادات" data-en="Certificates">
+                    الشهادات
+                </a>
+            </li>
 
-</ul>
+            <li>
+                <a href="#contact" data-ar="تواصل" data-en="Contact">
+                    تواصل
+                </a>
+            </li>
 
-<button
-    id="language-toggle"
-    class="theme-toggle"
-    type="button"
-    aria-label="تغيير اللغة">
-    EN
-</button>
+        </ul>
 
-<button
-    class="theme-toggle"
-    id="theme-toggle"
-    type="button"
-    aria-label="تغيير الوضع">
+        <!-- تغيير اللغة -->
+        <button id="language-toggle" class="language-toggle">
+            EN
+        </button>
 
-    <i class="fas fa-moon"></i>
+        <!-- الوضع الليلي -->
+        <button id="theme-toggle" class="theme-toggle">
+            🌙
+        </button>
 
-</button>
+    </div>
 
-        </nav>
-
+</nav>
     </header>
 <!-- =========================
      HERO - الصفحة الرئيسية
