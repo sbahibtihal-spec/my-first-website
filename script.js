@@ -8,7 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
        1. الوضع الليلي / النهاري
        ========================================= */
 
-    const themeToggle = document.getElementById("theme-toggle");
+   const languageToggle = document.getElementById("language-toggle");
+const html = document.documentElement;
+
+let currentLanguage = "ar"; 
 
     if (themeToggle) {
         themeToggle.addEventListener("click", () => {
