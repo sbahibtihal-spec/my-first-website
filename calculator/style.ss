@@ -8,6 +8,7 @@ body {
     font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #141e30, #243b55);
     min-height: 100vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,12 +26,16 @@ body {
     width: 100%;
     height: 70px;
     margin-bottom: 15px;
+
     border: none;
     border-radius: 12px;
+
     background: #000;
     color: #fff;
+
     font-size: 30px;
     text-align: right;
+
     padding: 10px 15px;
 }
 
@@ -44,39 +49,30 @@ button {
     height: 60px;
     border: none;
     border-radius: 12px;
-    font-size: 22px;
-    font-weight: bold;
-    cursor: pointer;
+
     background: #333;
     color: white;
-    transition: 0.2s;
+
+    font-size: 22px;
+    cursor: pointer;
 }
 
 button:hover {
     background: #555;
-    transform: scale(1.03);
 }
 
 button:active {
     transform: scale(0.95);
 }
 
-button:nth-child(1),
-button:nth-child(2) {
-    background: #e74c3c;
-}
-
-button:nth-child(4),
-button:nth-child(8),
-button:nth-child(12),
-button:nth-child(16) {
-    background: #ff9500;
+.zero {
+    grid-column: span 2;
 }
 
 .equal {
-    background: #27ae60;
+    background: #ff9500;
 }
 
-.zero {
-    grid-column: span 2;
+.equal:hover {
+    background: #ffad33;
 }
