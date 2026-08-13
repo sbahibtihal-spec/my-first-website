@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +15,7 @@
         <input type="text" id="display" readonly>
 
         <div class="buttons">
+
             <button onclick="clearDisplay()">C</button>
             <button onclick="deleteLast()">DEL</button>
             <button onclick="appendValue('%')">%</button>
@@ -38,6 +39,7 @@
             <button onclick="appendValue('0')" class="zero">0</button>
             <button onclick="appendValue('.')">.</button>
             <button onclick="calculate()" class="equal">=</button>
+
         </div>
 
     </div>
@@ -45,4 +47,5 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>
