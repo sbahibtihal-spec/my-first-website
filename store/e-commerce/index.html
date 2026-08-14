@@ -1,854 +1,1203 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" id="html">
+<html lang="ar" dir="rtl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>NAIMA STORE</title>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
     <meta
         name="description"
-        content="NAIMA STORE - متجر إلكتروني عصري للمنتجات المتنوعة."
-    >
+        content="NAIMA STORE - متجر إلكتروني عصري للمنتجات المميزة">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>NAIMA STORE</title>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
-
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    >
-
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-    <!-- =========================
-         HEADER
-    ========================== -->
 
-    <header class="header">
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
-        <div class="container header-container">
+<header class="header">
 
-            <a href="#home" class="logo">
-                <span class="logo-icon">🛍️</span>
-                <span>NAIMA STORE</span>
+    <div class="container">
+
+        <!-- LOGO -->
+
+        <a href="#home" class="logo">
+            🛍️ NAIMA STORE
+        </a>
+
+
+        <!-- NAVIGATION -->
+
+        <nav>
+
+            <a
+                href="#home"
+                data-ar="الرئيسية"
+                data-en="Home">
+                الرئيسية
             </a>
 
-            <nav class="main-nav">
+            <a
+                href="#products"
+                data-ar="المنتجات"
+                data-en="Products">
+                المنتجات
+            </a>
 
-                <a href="#home"
-                   data-ar="الرئيسية"
-                   data-en="Home">
-                    الرئيسية
-                </a>
+            <a
+                href="#categories"
+                data-ar="التصنيفات"
+                data-en="Categories">
+                التصنيفات
+            </a>
 
-                <a href="#categories"
-                   data-ar="التصنيفات"
-                   data-en="Categories">
-                    التصنيفات
-                </a>
-
-                <a href="#products"
-                   data-ar="المنتجات"
-                   data-en="Products">
-                    المنتجات
-                </a>
+            <a
+                href="#about"
+                data-ar="من نحن"
+                data-en="About Us">
+                من نحن
+            </a>
 
-                <a href="#about"
-                   data-ar="من نحن"
-                   data-en="About Us">
-                    من نحن
-                </a>
-
-                <a href="#contact"
-                   data-ar="تواصل معنا"
-                   data-en="Contact">
-                    تواصل معنا
-                </a>
-
-            </nav>
-
-            <div class="header-actions">
-
-                <button
-                    id="language-toggle"
-                    class="language-button"
-                    type="button">
-                    EN
-                </button>
-
-                <button
-                    id="cart-button"
-                    class="cart-button"
-                    type="button">
-
-                    <i class="fas fa-shopping-cart"></i>
-
-                    <span
-                        data-ar="السلة"
-                        data-en="Cart">
-                        السلة
-                    </span>
-
-                    <span id="cart-count">0</span>
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </header>
-
-
-    <!-- =========================
-         HERO
-    ========================== -->
-
-    <main>
-
-        <section id="home" class="hero">
-
-            <div class="container hero-container">
-
-                <div class="hero-content">
-
-                    <span
-                        class="hero-badge"
-                        data-ar="✨ تسوقي بسهولة وثقة"
-                        data-en="✨ Shop Easily & Confidently">
-                        ✨ تسوقي بسهولة وثقة
-                    </span>
-
-                    <h1
-                        data-ar="اكتشفي منتجاتك المفضلة في NAIMA STORE"
-                        data-en="Discover Your Favorite Products at NAIMA STORE">
-                        اكتشفي منتجاتك المفضلة في NAIMA STORE
-                    </h1>
+            <a
+                href="#contact"
+                data-ar="تواصل معنا"
+                data-en="Contact">
+                تواصل معنا
+            </a>
 
-                    <p
-                        data-ar="منتجات متنوعة، عروض مميزة، وتجربة تسوق بسيطة وسريعة."
-                        data-en="A wide range of products, special offers, and a simple shopping experience.">
-                        منتجات متنوعة، عروض مميزة، وتجربة تسوق بسيطة وسريعة.
-                    </p>
+        </nav>
 
-                    <div class="hero-buttons">
 
-                        <a
-                            href="#products"
-                            class="hero-button"
-                            data-ar="تسوقي الآن"
-                            data-en="Shop Now">
-                            تسوقي الآن
-                        </a>
-
-                        <a
-                            href="#categories"
-                            class="hero-button secondary"
-                            data-ar="اكتشفي التصنيفات"
-                            data-en="Explore Categories">
-                            اكتشفي التصنيفات
-                        </a>
-
-                    </div>
-
-                    <div class="hero-features">
+        <!-- LANGUAGE -->
 
-                        <div>
-                            <i class="fas fa-truck"></i>
-                            <span
-                                data-ar="توصيل سريع"
-                                data-en="Fast Delivery">
-                                توصيل سريع
-                            </span>
-                        </div>
+        <button
+            id="language-toggle"
+            class="language-toggle"
+            type="button">
+            EN
+        </button>
 
-                        <div>
-                            <i class="fas fa-shield-halved"></i>
-                            <span
-                                data-ar="تسوق آمن"
-                                data-en="Secure Shopping">
-                                تسوق آمن
-                            </span>
-                        </div>
-
-                        <div>
-                            <i class="fas fa-headset"></i>
-                            <span
-                                data-ar="دعم العملاء"
-                                data-en="Customer Support">
-                                دعم العملاء
-                            </span>
-                        </div>
 
-                    </div>
+        <!-- CART -->
 
-                </div>
+        <button
+            id="cart-button"
+            class="cart-button"
+            type="button">
 
-                <div class="hero-visual">
+            🛒
 
-                    <div class="hero-card-main">
+            <span
+                data-ar="السلة"
+                data-en="Cart">
+                السلة
+            </span>
 
-                        <span class="hero-card-label"
-                              data-ar="عروض مميزة"
-                              data-en="Special Offers">
-                            عروض مميزة
-                        </span>
+            <span id="cart-count">
+                0
+            </span>
 
-                        <div class="hero-product-icon">
-                            🛍️
-                        </div>
+        </button>
 
-                        <h3
-                            data-ar="تسوقي واختاري ما يناسبك"
-                            data-en="Shop & Find What You Love">
-                            تسوقي واختاري ما يناسبك
-                        </h3>
+    </div>
 
-                        <p
-                            data-ar="منتجات مختارة بعناية"
-                            data-en="Carefully selected products">
-                            منتجات مختارة بعناية
-                        </p>
+</header>
 
-                    </div>
 
-                </div>
 
-            </div>
+<!-- =====================================================
+     HERO
+===================================================== -->
 
-        </section>
+<section
+    id="home"
+    class="hero">
 
+    <div class="container">
 
-        <!-- =========================
-             CATEGORIES
-        ========================== -->
+        <p
+            class="small-title"
+            data-ar="مرحباً بك في"
+            data-en="Welcome to">
+            مرحباً بك في
+        </p>
 
-        <section id="categories" class="categories-section">
 
-            <div class="container">
+        <h1>
+            NAIMA STORE
+        </h1>
 
-                <div class="section-title">
 
-                    <span
-                        data-ar="تسوق حسب"
-                        data-en="Shop By">
-                        تسوق حسب
-                    </span>
+        <p
+            data-ar="منتجات عصرية، عروض مميزة، وتجربة تسوق بسيطة وسريعة."
+            data-en="Trendy products, great offers and a simple, fast shopping experience.">
 
-                    <h2
-                        data-ar="التصنيفات"
-                        data-en="Categories">
-                        التصنيفات
-                    </h2>
+            منتجات عصرية، عروض مميزة،
+            وتجربة تسوق بسيطة وسريعة.
 
-                </div>
+        </p>
 
-                <div class="categories-grid">
 
-                    <button
-                        class="category-card"
-                        data-category="electronics">
+        <a
+            href="#products"
+            class="hero-button"
+            data-ar="اكتشفي المنتجات"
+            data-en="Shop Now">
 
-                        <span>📱</span>
+            اكتشفي المنتجات
 
-                        <strong
-                            data-ar="إلكترونيات"
-                            data-en="Electronics">
-                            إلكترونيات
-                        </strong>
+        </a>
 
-                    </button>
+    </div>
 
-                    <button
-                        class="category-card"
-                        data-category="beauty">
+</section>
 
-                        <span>💄</span>
 
-                        <strong
-                            data-ar="الجمال والعناية"
-                            data-en="Beauty & Care">
-                            الجمال والعناية
-                        </strong>
 
-                    </button>
+<!-- =====================================================
+     FEATURES
+===================================================== -->
 
-                    <button
-                        class="category-card"
-                        data-category="fashion">
+<section class="features">
 
-                        <span>👗</span>
+    <div class="container">
 
-                        <strong
-                            data-ar="الموضة"
-                            data-en="Fashion">
-                            الموضة
-                        </strong>
+        <div class="feature-grid">
 
-                    </button>
 
-                    <button
-                        class="category-card"
-                        data-category="home">
+            <div class="feature">
 
-                        <span>🏠</span>
+                <span>🚚</span>
 
-                        <strong
-                            data-ar="المنزل"
-                            data-en="Home">
-                            المنزل
-                        </strong>
-
-                    </button>
-
-                    <button
-                        class="category-card"
-                        data-category="sports">
-
-                        <span>🏃</span>
-
-                        <strong
-                            data-ar="الرياضة"
-                            data-en="Sports">
-                            الرياضة
-                        </strong>
-
-                    </button>
-
-                    <button
-                        class="category-card"
-                        data-category="all">
-
-                        <span>🛍️</span>
-
-                        <strong
-                            data-ar="جميع المنتجات"
-                            data-en="All Products">
-                            جميع المنتجات
-                        </strong>
-
-                    </button>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             SEARCH
-        ========================== -->
-
-        <section class="search-section">
-
-            <div class="container">
-
-                <div class="search-box">
-
-                    <i class="fas fa-search"></i>
-
-                    <input
-                        type="search"
-                        id="search-input"
-                        placeholder="ابحثي عن منتج..."
-                        data-placeholder-ar="ابحثي عن منتج..."
-                        data-placeholder-en="Search for a product..."
-                        autocomplete="off">
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             PRODUCTS
-        ========================== -->
-
-        <section id="products" class="products-section">
-
-            <div class="container">
-
-                <div class="section-title">
-
-                    <span
-                        data-ar="اختياراتنا"
-                        data-en="Our Selection">
-                        اختياراتنا
-                    </span>
-
-                    <h2
-                        data-ar="منتجات مميزة"
-                        data-en="Featured Products">
-                        منتجات مميزة
-                    </h2>
-
-                    <p
-                        data-ar="اكتشفي مجموعة من المنتجات المختارة لك."
-                        data-en="Discover a selection of products chosen for you.">
-                        اكتشفي مجموعة من المنتجات المختارة لك.
-                    </p>
-
-                </div>
-
-
-                <div class="products-toolbar">
-
-                    <div class="results-count" id="results-count">
-                        المنتجات
-                    </div>
-
-                    <select id="category-filter">
-
-                        <option
-                            value="all"
-                            data-ar="جميع التصنيفات"
-                            data-en="All Categories">
-                            جميع التصنيفات
-                        </option>
-
-                        <option
-                            value="electronics"
-                            data-ar="إلكترونيات"
-                            data-en="Electronics">
-                            إلكترونيات
-                        </option>
-
-                        <option
-                            value="beauty"
-                            data-ar="الجمال والعناية"
-                            data-en="Beauty & Care">
-                            الجمال والعناية
-                        </option>
-
-                        <option
-                            value="fashion"
-                            data-ar="الموضة"
-                            data-en="Fashion">
-                            الموضة
-                        </option>
-
-                        <option
-                            value="home"
-                            data-ar="المنزل"
-                            data-en="Home">
-                            المنزل
-                        </option>
-
-                        <option
-                            value="sports"
-                            data-ar="الرياضة"
-                            data-en="Sports">
-                            الرياضة
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <div
-                    class="products-grid"
-                    id="products-container">
-
-                    <!-- Products will be loaded by JavaScript -->
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             WHY US
-        ========================== -->
-
-        <section class="why-us-section">
-
-            <div class="container">
-
-                <div class="section-title">
-
-                    <span
-                        data-ar="لماذا نحن؟"
-                        data-en="Why Us?">
-                        لماذا نحن؟
-                    </span>
-
-                    <h2
-                        data-ar="تجربة تسوق أفضل"
-                        data-en="A Better Shopping Experience">
-                        تجربة تسوق أفضل
-                    </h2>
-
-                </div>
-
-                <div class="features-grid">
-
-                    <div class="feature-card">
-
-                        <i class="fas fa-truck-fast"></i>
-
-                        <h3
-                            data-ar="توصيل سريع"
-                            data-en="Fast Delivery">
-                            توصيل سريع
-                        </h3>
-
-                        <p
-                            data-ar="نسعى لتوفير تجربة توصيل سهلة وسريعة."
-                            data-en="We aim to provide a smooth and fast delivery experience.">
-                            نسعى لتوفير تجربة توصيل سهلة وسريعة.
-                        </p>
-
-                    </div>
-
-                    <div class="feature-card">
-
-                        <i class="fas fa-lock"></i>
-
-                        <h3
-                            data-ar="تسوق آمن"
-                            data-en="Secure Shopping">
-                            تسوق آمن
-                        </h3>
-
-                        <p
-                            data-ar="نهتم بخصوصية وأمان معلومات عملائنا."
-                            data-en="We care about the privacy and security of our customers.">
-                            نهتم بخصوصية وأمان معلومات عملائنا.
-                        </p>
-
-                    </div>
-
-                    <div class="feature-card">
-
-                        <i class="fas fa-star"></i>
-
-                        <h3
-                            data-ar="منتجات مختارة"
-                            data-en="Selected Products">
-                            منتجات مختارة
-                        </h3>
-
-                        <p
-                            data-ar="نختار المنتجات بعناية لتقديم قيمة أفضل."
-                            data-en="We carefully select products to offer better value.">
-                            نختار المنتجات بعناية لتقديم قيمة أفضل.
-                        </p>
-
-                    </div>
-
-                    <div class="feature-card">
-
-                        <i class="fas fa-comments"></i>
-
-                        <h3
-                            data-ar="دعم العملاء"
-                            data-en="Customer Support">
-                            دعم العملاء
-                        </h3>
-
-                        <p
-                            data-ar="يمكنك التواصل معنا بسهولة عند الحاجة."
-                            data-en="You can easily contact us whenever you need help.">
-                            يمكنك التواصل معنا بسهولة عند الحاجة.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             ABOUT
-        ========================== -->
-
-        <section id="about" class="about-section">
-
-            <div class="container">
-
-                <div class="section-title">
-
-                    <span
-                        data-ar="تعرفي علينا"
-                        data-en="About Us">
-                        تعرفي علينا
-                    </span>
-
-                    <h2>
-                        NAIMA STORE
-                    </h2>
-
-                </div>
-
-                <div class="about-content">
-
-                    <p
-                        data-ar="مرحباً بك في NAIMA STORE. متجر إلكتروني يهتم بتقديم مجموعة متنوعة من المنتجات العصرية والمفيدة، مع التركيز على سهولة التصفح وتجربة التسوق."
-                        data-en="Welcome to NAIMA STORE. An online store offering a variety of modern and useful products, with a focus on easy browsing and a smooth shopping experience.">
-                        مرحباً بك في NAIMA STORE. متجر إلكتروني يهتم بتقديم مجموعة متنوعة من المنتجات العصرية والمفيدة، مع التركيز على سهولة التصفح وتجربة التسوق.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             CONTACT
-        ========================== -->
-
-        <section id="contact" class="contact-section">
-
-            <div class="container">
-
-                <div class="section-title">
-
-                    <span
-                        data-ar="نحن هنا لمساعدتك"
-                        data-en="We Are Here To Help">
-                        نحن هنا لمساعدتك
-                    </span>
-
-                    <h2
-                        data-ar="تواصل معنا"
-                        data-en="Contact Us">
-                        تواصل معنا
-                    </h2>
-
-                </div>
-
-                <div class="contact-grid">
-
-                    <a
-                        class="contact-card"
-                        href="tel:0703166572">
-
-                        <i class="fas fa-phone"></i>
-
-                        <span
-                            data-ar="الهاتف"
-                            data-en="Phone">
-                            الهاتف
-                        </span>
-
-                        <strong>
-                            0703166572
-                        </strong>
-
-                    </a>
-
-                    <a
-                        class="contact-card"
-                        href="https://wa.me/212703166572"
-                        target="_blank"
-                        rel="noopener noreferrer">
-
-                        <i class="fab fa-whatsapp"></i>
-
-                        <span>
-                            WhatsApp
-                        </span>
-
-                        <strong>
-                            0703166572
-                        </strong>
-
-                    </a>
-
-                    <a
-                        class="contact-card"
-                        href="mailto:sbahibtihal@gmail.com">
-
-                        <i class="fas fa-envelope"></i>
-
-                        <span>
-                            Email
-                        </span>
-
-                        <strong>
-                            sbahibtihal@gmail.com
-                        </strong>
-
-                    </a>
-
-                    <a
-                        class="contact-card"
-                        href="https://www.facebook.com/khawla.khawla"
-                        target="_blank"
-                        rel="noopener noreferrer">
-
-                        <i class="fab fa-facebook"></i>
-
-                        <span>
-                            Facebook
-                        </span>
-
-                        <strong>
-                            Khawla Khawla
-                        </strong>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- =========================
-         CART
-    ========================== -->
-
-    <div
-        id="cart-overlay"
-        class="cart-overlay">
-
-        <div class="cart">
-
-            <button
-                id="close-cart"
-                class="close-cart"
-                type="button"
-                aria-label="Close cart">
-                ✕
-            </button>
-
-            <div class="cart-header">
-
-                <h2
-                    data-ar="🛒 سلة المشتريات"
-                    data-en="🛒 Shopping Cart">
-                    🛒 سلة المشتريات
-                </h2>
-
-            </div>
-
-            <div id="cart-items">
+                <h3
+                    data-ar="توصيل سريع"
+                    data-en="Fast Delivery">
+                    توصيل سريع
+                </h3>
 
                 <p
-                    class="empty-cart"
-                    data-ar="السلة فارغة"
-                    data-en="Your cart is empty">
-                    السلة فارغة
+                    data-ar="نسعى لتوفير تجربة توصيل سهلة وسريعة."
+                    data-en="We aim to provide a fast and easy delivery experience.">
+                    نسعى لتوفير تجربة توصيل سهلة وسريعة.
                 </p>
 
             </div>
 
-            <div class="cart-total">
 
-                <span
-                    data-ar="المجموع"
-                    data-en="Total">
-                    المجموع
-                </span>
+            <div class="feature">
 
-                <strong id="cart-total">
-                    0 DH
-                </strong>
+                <span>🔒</span>
+
+                <h3
+                    data-ar="تسوق آمن"
+                    data-en="Secure Shopping">
+                    تسوق آمن
+                </h3>
+
+                <p
+                    data-ar="نحافظ على خصوصية وأمان معلومات العملاء."
+                    data-en="Your privacy and customer information are important to us.">
+                    نحافظ على خصوصية وأمان معلومات العملاء.
+                </p>
 
             </div>
 
-            <button
-                id="checkout"
-                class="checkout-button"
-                type="button">
 
-                <i class="fab fa-whatsapp"></i>
+            <div class="feature">
 
-                <span
-                    data-ar="إتمام الطلب عبر WhatsApp"
-                    data-en="Order via WhatsApp">
-                    إتمام الطلب عبر WhatsApp
-                </span>
+                <span>⭐</span>
 
-            </button>
+                <h3
+                    data-ar="منتجات مختارة"
+                    data-en="Selected Products">
+                    منتجات مختارة
+                </h3>
+
+                <p
+                    data-ar="نختار منتجات عصرية ومناسبة لاحتياجاتك."
+                    data-en="We select modern products that fit your needs.">
+                    نختار منتجات عصرية ومناسبة لاحتياجاتك.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <span>💬</span>
+
+                <h3
+                    data-ar="دعم العملاء"
+                    data-en="Customer Support">
+                    دعم العملاء
+                </h3>
+
+                <p
+                    data-ar="يمكنك التواصل معنا عند الحاجة."
+                    data-en="You can contact us whenever you need help.">
+                    يمكنك التواصل معنا عند الحاجة.
+                </p>
+
+            </div>
 
         </div>
 
     </div>
 
+</section>
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
 
-    <footer class="footer">
 
-        <div class="container">
+<!-- =====================================================
+     SEARCH
+===================================================== -->
 
-            <div class="footer-content">
+<section class="search-section">
 
-                <div>
-                    <h3>🛍️ NAIMA STORE</h3>
+    <div class="container">
 
-                    <p
-                        data-ar="شكراً لزيارتك متجرنا."
-                        data-en="Thank you for visiting our store.">
-                        شكراً لزيارتك متجرنا.
-                    </p>
+        <input
+            type="text"
+            id="search-input"
+            placeholder="🔎 ابحثي عن منتج..."
+            aria-label="Search products">
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CATEGORIES
+===================================================== -->
+
+<section
+    id="categories"
+    class="categories-section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <p
+                data-ar="التصنيفات"
+                data-en="Categories">
+                التصنيفات
+            </p>
+
+            <h2
+                data-ar="اختاري ما يناسبك"
+                data-en="Shop by Category">
+                اختاري ما يناسبك
+            </h2>
+
+        </div>
+
+
+        <div class="category-grid">
+
+
+            <a
+                href="#products"
+                class="category-card">
+
+                <span>👗</span>
+
+                <h3
+                    data-ar="الملابس"
+                    data-en="Fashion">
+                    الملابس
+                </h3>
+
+            </a>
+
+
+            <a
+                href="#products"
+                class="category-card">
+
+                <span>👜</span>
+
+                <h3
+                    data-ar="الحقائب"
+                    data-en="Bags">
+                    الحقائب
+                </h3>
+
+            </a>
+
+
+            <a
+                href="#products"
+                class="category-card">
+
+                <span>👟</span>
+
+                <h3
+                    data-ar="الأحذية"
+                    data-en="Shoes">
+                    الأحذية
+                </h3>
+
+            </a>
+
+
+            <a
+                href="#products"
+                class="category-card">
+
+                <span>⌚</span>
+
+                <h3
+                    data-ar="الإكسسوارات"
+                    data-en="Accessories">
+                    الإكسسوارات
+                </h3>
+
+            </a>
+
+
+            <a
+                href="#products"
+                class="category-card">
+
+                <span>💄</span>
+
+                <h3
+                    data-ar="الجمال"
+                    data-en="Beauty">
+                    الجمال
+                </h3>
+
+            </a>
+
+
+            <a
+                href="#products"
+                class="category-card">
+
+                <span>🏠</span>
+
+                <h3
+                    data-ar="المنزل"
+                    data-en="Home">
+                    المنزل
+                </h3>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PRODUCTS
+===================================================== -->
+
+<section
+    id="products"
+    class="products-section">
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+            <p
+                data-ar="منتجات مميزة"
+                data-en="Featured Products">
+                منتجات مميزة
+            </p>
+
+            <h2
+                data-ar="اكتشفي منتجاتنا"
+                data-en="Discover Our Products">
+                اكتشفي منتجاتنا
+            </h2>
+
+        </div>
+
+
+
+        <div class="products-grid">
+
+
+            <!-- PRODUCT 1 -->
+
+            <div
+                class="product-card"
+                data-name="حقيبة نسائية">
+
+                <div class="product-image">
+                    👜
                 </div>
 
-                <div class="footer-contact">
+                <div class="product-info">
 
-                    <a href="tel:0703166572">
-                        📱 0703166572
-                    </a>
+                    <span
+                        class="product-badge"
+                        data-ar="الأكثر مبيعاً"
+                        data-en="Best Seller">
+                        الأكثر مبيعاً
+                    </span>
 
-                    <a href="mailto:sbahibtihal@gmail.com">
-                        📧 sbahibtihal@gmail.com
-                    </a>
+                    <h3
+                        data-ar="حقيبة نسائية أنيقة"
+                        data-en="Elegant Women's Bag">
+                        حقيبة نسائية أنيقة
+                    </h3>
+
+                    <p
+                        data-ar="حقيبة عصرية وعملية مناسبة للاستعمال اليومي."
+                        data-en="A stylish and practical bag for everyday use.">
+                        حقيبة عصرية وعملية مناسبة للاستعمال اليومي.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <strong>
+                            250 DH
+                        </strong>
+
+                        <button
+                            class="add-cart"
+                            data-name="حقيبة نسائية"
+                            data-price="250">
+
+                            <span
+                                data-ar="أضف للسلة"
+                                data-en="Add to Cart">
+                                أضف للسلة
+                            </span>
+
+                        </button>
+
+                    </div>
 
                 </div>
 
             </div>
 
-            <div class="footer-bottom">
 
-                <p>
-                    © 2026 NAIMA STORE -
+
+            <!-- PRODUCT 2 -->
+
+            <div
+                class="product-card"
+                data-name="حذاء رياضي">
+
+                <div class="product-image">
+                    👟
+                </div>
+
+                <div class="product-info">
+
                     <span
-                        data-ar="جميع الحقوق محفوظة"
-                        data-en="All Rights Reserved">
-                        جميع الحقوق محفوظة
+                        class="product-badge"
+                        data-ar="رائج"
+                        data-en="Trending">
+                        رائج
                     </span>
-                </p>
+
+                    <h3
+                        data-ar="حذاء رياضي مريح"
+                        data-en="Comfortable Sneakers">
+                        حذاء رياضي مريح
+                    </h3>
+
+                    <p
+                        data-ar="تصميم عصري ومريح مناسب للحياة اليومية."
+                        data-en="Modern and comfortable design for everyday life.">
+                        تصميم عصري ومريح مناسب للحياة اليومية.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <strong>
+                            350 DH
+                        </strong>
+
+                        <button
+                            class="add-cart"
+                            data-name="حذاء رياضي"
+                            data-price="350">
+
+                            <span
+                                data-ar="أضف للسلة"
+                                data-en="Add to Cart">
+                                أضف للسلة
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 3 -->
+
+            <div
+                class="product-card"
+                data-name="ساعة ذكية">
+
+                <div class="product-image">
+                    ⌚
+                </div>
+
+                <div class="product-info">
+
+                    <span
+                        class="product-badge"
+                        data-ar="جديد"
+                        data-en="New">
+                        جديد
+                    </span>
+
+                    <h3
+                        data-ar="ساعة ذكية"
+                        data-en="Smart Watch">
+                        ساعة ذكية
+                    </h3>
+
+                    <p
+                        data-ar="ساعة بتصميم أنيق مناسبة للاستعمال اليومي."
+                        data-en="Stylish smartwatch suitable for everyday use.">
+                        ساعة بتصميم أنيق مناسبة للاستعمال اليومي.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <strong>
+                            399 DH
+                        </strong>
+
+                        <button
+                            class="add-cart"
+                            data-name="ساعة ذكية"
+                            data-price="399">
+
+                            <span
+                                data-ar="أضف للسلة"
+                                data-en="Add to Cart">
+                                أضف للسلة
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 4 -->
+
+            <div
+                class="product-card"
+                data-name="سماعات لاسلكية">
+
+                <div class="product-image">
+                    🎧
+                </div>
+
+                <div class="product-info">
+
+                    <span
+                        class="product-badge"
+                        data-ar="الأكثر طلباً"
+                        data-en="Popular">
+                        الأكثر طلباً
+                    </span>
+
+                    <h3
+                        data-ar="سماعات لاسلكية"
+                        data-en="Wireless Earbuds">
+                        سماعات لاسلكية
+                    </h3>
+
+                    <p
+                        data-ar="سماعات صغيرة وعملية للاستماع إلى الموسيقى والمكالمات."
+                        data-en="Compact wireless earbuds for music and calls.">
+                        سماعات صغيرة وعملية للاستماع إلى الموسيقى والمكالمات.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <strong>
+                            299 DH
+                        </strong>
+
+                        <button
+                            class="add-cart"
+                            data-name="سماعات لاسلكية"
+                            data-price="299">
+
+                            <span
+                                data-ar="أضف للسلة"
+                                data-en="Add to Cart">
+                                أضف للسلة
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 5 -->
+
+            <div
+                class="product-card"
+                data-name="نظارات شمسية">
+
+                <div class="product-image">
+                    🕶️
+                </div>
+
+                <div class="product-info">
+
+                    <span
+                        class="product-badge"
+                        data-ar="اختيار مميز"
+                        data-en="Editor's Choice">
+                        اختيار مميز
+                    </span>
+
+                    <h3
+                        data-ar="نظارات شمسية عصرية"
+                        data-en="Modern Sunglasses">
+                        نظارات شمسية عصرية
+                    </h3>
+
+                    <p
+                        data-ar="تصميم عصري وأنيق مناسب للإطلالات اليومية."
+                        data-en="Modern and stylish sunglasses for everyday looks.">
+                        تصميم عصري وأنيق مناسب للإطلالات اليومية.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <strong>
+                            180 DH
+                        </strong>
+
+                        <button
+                            class="add-cart"
+                            data-name="نظارات شمسية"
+                            data-price="180">
+
+                            <span
+                                data-ar="أضف للسلة"
+                                data-en="Add to Cart">
+                                أضف للسلة
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 6 -->
+
+            <div
+                class="product-card"
+                data-name="عطر فاخر">
+
+                <div class="product-image">
+                    🌸
+                </div>
+
+                <div class="product-info">
+
+                    <span
+                        class="product-badge"
+                        data-ar="مميز"
+                        data-en="Featured">
+                        مميز
+                    </span>
+
+                    <h3
+                        data-ar="عطر فاخر"
+                        data-en="Luxury Perfume">
+                        عطر فاخر
+                    </h3>
+
+                    <p
+                        data-ar="رائحة مميزة تضيف لمسة أنيقة لإطلالتك."
+                        data-en="A beautiful fragrance that adds an elegant touch.">
+                        رائحة مميزة تضيف لمسة أنيقة لإطلالتك.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <strong>
+                            320 DH
+                        </strong>
+
+                        <button
+                            class="add-cart"
+                            data-name="عطر فاخر"
+                            data-price="320">
+
+                            <span
+                                data-ar="أضف للسلة"
+                                data-en="Add to Cart">
+                                أضف للسلة
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 7 -->
+
+            <div
+                class="product-card"
+                data-name="محفظة جلدية">
+
+                <div class="product-image">
+                    👝
+                </div>
+
+                <div class="product-info">
+
+                    <span
+                        class="product-badge"
+                        data-ar="عرض خاص"
+                        data-en="Special Offer">
+                        عرض خاص
+                    </span>
+
+                    <h3
+                        data-ar="محفظة جلدية"
+                        data-en="Leather Wallet">
+                        محفظة جلدية
+                    </h3>
+
+                    <p
+                        data-ar="محفظة عملية وأنيقة للاستخدام اليومي."
+                        data-en="Practical and elegant wallet for everyday use.">
+                        محفظة عملية وأنيقة للاستخدام اليومي.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <strong>
+                            150 DH
+                        </strong>
+
+                        <button
+                            class="add-cart"
+                            data-name="محفظة جلدية"
+                            data-price="150">
+
+                            <span
+                                data-ar="أضف للسلة"
+                                data-en="Add to Cart">
+                                أضف للسلة
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 8 -->
+
+            <div
+                class="product-card"
+                data-name="فستان أنيق">
+
+                <div class="product-image">
+                    👗
+                </div>
+
+                <div class="product-info">
+
+                    <span
+                        class="product-badge"
+                        data-ar="جديد"
+                        data-en="New">
+                        جديد
+                    </span>
+
+                    <h3
+                        data-ar="فستان أنيق"
+                        data-en="Elegant Dress">
+                        فستان أنيق
+                    </h3>
+
+                    <p
+                        data-ar="فستان بتصميم عصري مناسب للمناسبات والإطلالات اليومية."
+                        data-en="Modern dress suitable for occasions and everyday looks.">
+                        فستان بتصميم عصري مناسب للمناسبات والإطلالات اليومية.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <strong>
+                            420 DH
+                        </strong>
+
+                        <button
+                            class="add-cart"
+                            data-name="فستان أنيق"
+                            data-price="420">
+
+                            <span
+                                data-ar="أضف للسلة"
+                                data-en="Add to Cart">
+                                أضف للسلة
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </div>
 
             </div>
 
         </div>
 
-    </footer>
+    </div>
+
+</section>
 
 
-    <!-- =========================
-         JAVASCRIPT
-    ========================== -->
 
-    <script src="script.js"></script>
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section
+    id="about"
+    class="about">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <p
+                data-ar="من نحن"
+                data-en="About Us">
+                من نحن
+            </p>
+
+            <h2>
+                NAIMA STORE
+            </h2>
+
+        </div>
+
+
+        <p
+            class="about-text"
+            data-ar="مرحباً بك في NAIMA STORE. متجر إلكتروني نهتم فيه بتقديم مجموعة متنوعة من المنتجات العصرية والمفيدة، مع التركيز على سهولة التصفح وتجربة تسوق بسيطة ومريحة."
+            data-en="Welcome to NAIMA STORE. We offer a variety of modern and useful products while focusing on easy navigation and a simple, comfortable shopping experience.">
+
+            مرحباً بك في NAIMA STORE.
+            متجر إلكتروني نهتم فيه بتقديم مجموعة متنوعة
+            من المنتجات العصرية والمفيدة، مع التركيز على
+            سهولة التصفح وتجربة تسوق بسيطة ومريحة.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section
+    id="contact"
+    class="contact">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <p
+                data-ar="تواصل معنا"
+                data-en="Contact Us">
+                تواصل معنا
+            </p>
+
+            <h2
+                data-ar="نحن هنا لمساعدتك"
+                data-en="We're Here to Help">
+                نحن هنا لمساعدتك
+            </h2>
+
+        </div>
+
+
+        <div class="contact-info">
+
+
+            <!-- PHONE -->
+
+            <p>
+
+                📱
+
+                <strong
+                    data-ar="الهاتف:"
+                    data-en="Phone:">
+                    الهاتف:
+                </strong>
+
+                <a href="tel:+212703166572">
+                    0703166572
+                </a>
+
+            </p>
+
+
+
+            <!-- WHATSAPP -->
+
+            <p>
+
+                💬
+
+                <strong>
+                    WhatsApp:
+                </strong>
+
+                <a
+                    href="https://wa.me/212703166572"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    0703166572
+
+                </a>
+
+            </p>
+
+
+
+            <!-- EMAIL -->
+
+            <p>
+
+                📧
+
+                <strong
+                    data-ar="البريد الإلكتروني:"
+                    data-en="Email:">
+                    البريد الإلكتروني:
+                </strong>
+
+                <a
+                    href="mailto:sbahibtihal@gmail.com">
+
+                    sbahibtihal@gmail.com
+
+                </a>
+
+            </p>
+
+
+
+            <!-- FACEBOOK -->
+
+            <p>
+
+                📘
+
+                <strong>
+                    Facebook:
+                </strong>
+
+                <span>
+                    Khawla Khawla
+                </span>
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CART
+===================================================== -->
+
+<div
+    id="cart"
+    class="cart">
+
+    <div class="cart-content">
+
+
+        <button
+            id="close-cart"
+            class="close-cart"
+            type="button">
+            ✖
+        </button>
+
+
+        <h2
+            data-ar="🛒 سلة المشتريات"
+            data-en="🛒 Shopping Cart">
+            🛒 سلة المشتريات
+        </h2>
+
+
+        <div id="cart-items">
+
+            <p
+                class="empty-cart"
+                data-ar="السلة فارغة"
+                data-en="Your cart is empty">
+                السلة فارغة
+            </p>
+
+        </div>
+
+
+        <div class="cart-total">
+
+            <strong
+                data-ar="المجموع:"
+                data-en="Total:">
+                المجموع:
+            </strong>
+
+            <span id="cart-total">
+                0 DH
+            </span>
+
+        </div>
+
+
+        <button
+            id="checkout"
+            class="checkout"
+            type="button">
+
+            🟢
+
+            <span
+                data-ar="إتمام الطلب عبر WhatsApp"
+                data-en="Order via WhatsApp">
+                إتمام الطلب عبر WhatsApp
+            </span>
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="container">
+
+        <h3>
+            🛍️ NAIMA STORE
+        </h3>
+
+        <p
+            data-ar="تسوقي بسهولة واكتشفي منتجاتك المفضلة."
+            data-en="Shop easily and discover your favorite products.">
+            تسوقي بسهولة واكتشفي منتجاتك المفضلة.
+        </p>
+
+
+        <p>
+            📧
+            sbahibtihal@gmail.com
+        </p>
+
+
+        <p>
+            📱
+            0703166572
+        </p>
+
+
+        <p>
+            © 2026 NAIMA STORE -
+            <span
+                data-ar="جميع الحقوق محفوظة"
+                data-en="All Rights Reserved">
+                جميع الحقوق محفوظة
+            </span>
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="script.js"></script>
 
 </body>
 
