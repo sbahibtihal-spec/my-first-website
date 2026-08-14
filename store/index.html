@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NAIMA STORE</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="container">
+
+            <a href="#" class="logo">
+                🛍️ NAIMA STORE
+            </a>
+
+            <nav>
+                <a href="#home">الرئيسية</a>
+                <a href="#products">المنتجات</a>
+                <a href="#about">من نحن</a>
+                <a href="#contact">تواصل معنا</a>
+            </nav>
+
+            <button class="cart-button" onclick="openCart()">
+                🛒 السلة
+                <span id="cart-count">0</span>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="small-title">
+                مرحبًا بك في
+            </p>
+
+            <h1>
+                NAIMA STORE
+            </h1>
+
+            <p>
+                اكتشفي منتجاتنا المميزة واختاري ما يناسبك بسهولة.
+            </p>
+
+            <a href="#products" class="hero-button">
+                اكتشفي المنتجات
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- SEARCH -->
+    <section class="search-section">
+
+        <div class="container">
+
+            <input
+                type="text"
+                id="search-input"
+                placeholder="🔎 ابحثي عن منتج..."
+                oninput="searchProducts()">
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUCTS -->
+    <section class="products-section" id="products">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <p>منتجاتنا</p>
+
+                <h2>
+                    اكتشفي مجموعتنا
+                </h2>
+
+            </div>
+
+
+            <div class="products-grid" id="products-container">
+
+                <!-- PRODUCT 1 -->
+                <div class="product-card" data-name="حقيبة أنيقة">
+
+                    <div class="product-image">
+                        👜
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            حقيبة أنيقة
+                        </h3>
+
+                        <p>
+                            حقيبة عصرية وأنيقة للاستخدام اليومي.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <strong>
+                                250 درهم
+                            </strong>
+
+                            <button
+                                onclick="addToCart('حقيبة أنيقة', 250)">
+                                إضافة للسلة
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCT 2 -->
+                <div class="product-card" data-name="ساعة أنيقة">
+
+                    <div class="product-image">
+                        ⌚
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            ساعة أنيقة
+                        </h3>
+
+                        <p>
+                            ساعة بتصميم عصري وأنيق.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <strong>
+                                350 درهم
+                            </strong>
+
+                            <button
+                                onclick="addToCart('ساعة أنيقة', 350)">
+                                إضافة للسلة
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCT 3 -->
+                <div class="product-card" data-name="حذاء رياضي">
+
+                    <div class="product-image">
+                        👟
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            حذاء رياضي
+                        </h3>
+
+                        <p>
+                            حذاء مريح ومناسب للاستعمال اليومي.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <strong>
+                                450 درهم
+                            </strong>
+
+                            <button
+                                onclick="addToCart('حذاء رياضي', 450)">
+                                إضافة للسلة
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCT 4 -->
+                <div class="product-card" data-name="نظارات شمسية">
+
+                    <div class="product-image">
+                        🕶️
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            نظارات شمسية
+                        </h3>
+
+                        <p>
+                            نظارات أنيقة بتصميم عصري.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <strong>
+                                180 درهم
+                            </strong>
+
+                            <button
+                                onclick="addToCart('نظارات شمسية', 180)">
+                                إضافة للسلة
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCT 5 -->
+                <div class="product-card" data-name="عطر فاخر">
+
+                    <div class="product-image">
+                        🌸
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            عطر فاخر
+                        </h3>
+
+                        <p>
+                            عطر برائحة جميلة ومميزة.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <strong>
+                                300 درهم
+                            </strong>
+
+                            <button
+                                onclick="addToCart('عطر فاخر', 300)">
+                                إضافة للسلة
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCT 6 -->
+                <div class="product-card" data-name="محفظة جلدية">
+
+                    <div class="product-image">
+                        👝
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>
+                            محفظة جلدية
+                        </h3>
+
+                        <p>
+                            محفظة عملية بتصميم أنيق.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <strong>
+                                150 درهم
+                            </strong>
+
+                            <button
+                                onclick="addToCart('محفظة جلدية', 150)">
+                                إضافة للسلة
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about-section" id="about">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <p>من نحن</p>
+
+                <h2>
+                    متجر NAIMA
+                </h2>
+
+            </div>
+
+            <p class="about-text">
+                متجر إلكتروني تجريبي تم تطويره باستعمال
+                HTML وCSS وJavaScript، بهدف إنشاء تجربة تسوق
+                بسيطة وحديثة وسهلة الاستخدام.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <p>تواصل معنا</p>
+
+                <h2>
+                    نحن هنا لمساعدتك
+                </h2>
+
+            </div>
+
+            <div class="contact-info">
+
+                <p>
+                    📧 البريد الإلكتروني:
+                    naima@example.com
+                </p>
+
+                <p>
+                    📱 الهاتف:
+                    +212 600 000 000
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CART -->
+    <div class="cart-overlay" id="cart-overlay">
+
+        <div class="cart">
+
+            <button
+                class="close-cart"
+                onclick="closeCart()">
+                ✕
+            </button>
+
+            <h2>
+                🛒 سلة المشتريات
+            </h2>
+
+            <div id="cart-items">
+                <p class="empty-cart">
+                    السلة فارغة
+                </p>
+            </div>
+
+            <div class="cart-total">
+
+                <span>
+                    المجموع:
+                </span>
+
+                <strong id="cart-total">
+                    0 درهم
+                </strong>
+
+            </div>
+
+            <button
+                class="checkout-button"
+                onclick="checkout()">
+
+                إتمام الطلب
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 NAIMA STORE - جميع الحقوق محفوظة
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
