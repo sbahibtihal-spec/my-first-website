@@ -1,305 +1,911 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+/* =========================================
+   NAIMA STORE - SCRIPT.JS
+========================================= */
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+document.addEventListener("DOMContentLoaded", function () {
 
-    <title>متجري الإلكتروني | NAIMA</title>
+    /* =========================================
+       VARIABLES
+    ========================================= */
 
-    <link rel="stylesheet" href="style.css">
-</head>
+    let cart = JSON.parse(localStorage.getItem("naimaCart")) || [];
 
-<body>
-
-    <!-- HEADER -->
-    <header class="header">
-
-        <div class="container">
-
-            <h1 class="logo">
-                🛍️ متجري
-            </h1>
-
-            <nav>
-                <a href="#home">الرئيسية</a>
-                <a href="#products">المنتجات</a>
-                <a href="#about">من نحن</a>
-                <a href="#contact">تواصل معنا</a>
-            </nav>
-
-            <button id="cart-button" class="cart-button">
-                🛒 السلة
-                <span id="cart-count">0</span>
-            </button>
-
-        </div>
-
-    </header>
+    let currentLanguage =
+        localStorage.getItem("naimaLanguage") || "ar";
 
 
-    <!-- HERO -->
-    <section id="home" class="hero">
+    /* =========================================
+       ELEMENTS
+    ========================================= */
 
-        <div class="container">
+    const cartButton = document.getElementById("cart-button");
+    const cartElement = document.getElementById("cart");
+    const closeCartButton = document.getElementById("close-cart");
 
-            <h2>مرحباً بك في متجري الإلكتروني</h2>
+    const cartItems = document.getElementById("cart-items");
+    const cartCount = document.getElementById("cart-count");
+    const cartTotal = document.getElementById("cart-total");
 
-            <p>
-                اكتشفي منتجاتنا واختاري ما يناسبك بسهولة.
-            </p>
+    const checkoutButton = document.getElementById("checkout");
 
-            <a href="#products" class="hero-button">
-                تصفح المنتجات
-            </a>
-
-        </div>
-
-    </section>
+    const addCartButtons =
+        document.querySelectorAll(".add-cart");
 
 
-    <!-- PRODUCTS -->
-    <section id="products" class="products-section">
+    /* =========================================
+       TRANSLATIONS
+    ========================================= */
 
-        <div class="container">
+    const translations = {
 
-            <h2 class="section-title">
-                منتجاتنا
-            </h2>
+        ar: {
 
-            <div class="products-grid">
+            home: "الرئيسية",
+            products: "المنتجات",
+            about: "من نحن",
+            contact: "تواصل معنا",
+
+            welcome: "مرحباً بك في متجر NAIMA",
+            discover: "اكتشفي منتجاتنا المميزة واختاري ما يناسبك بسهولة.",
+            browse: "تصفح المنتجات",
+
+            productsTitle: "منتجاتنا",
+
+            aboutTitle: "من نحن؟",
+
+            aboutText:
+                "NAIMA STORE هو متجر إلكتروني حديث يهدف إلى تقديم منتجات مميزة وتجربة تسوق سهلة وسريعة للعملاء داخل وخارج المغرب.",
+
+            contactTitle: "تواصل معنا",
+
+            email: "البريد الإلكتروني",
+            phone: "الهاتف",
+            facebook: "فيسبوك",
+
+            cart: "السلة",
+            cartTitle: "سلة المشتريات",
+
+            emptyCart: "السلة فارغة",
+
+            total: "المجموع",
+
+            addCart: "أضف إلى السلة 🛒",
+
+            checkout: "إتمام الطلب",
+
+            orderMessage:
+                "مرحباً، أريد طلب المنتجات التالية:",
+
+            success:
+                "تم إرسال طلبك بنجاح. سنتواصل معك قريباً.",
+
+            quantity: "الكمية",
+
+            remove: "حذف",
+
+            currency: "درهم"
+
+        },
+
+        en: {
+
+            home: "Home",
+            products: "Products",
+            about: "About Us",
+            contact: "Contact",
+
+            welcome: "Welcome to NAIMA STORE",
+            discover:
+                "Discover our featured products and choose what suits you easily.",
+
+            browse: "Shop Now",
+
+            productsTitle: "Our Products",
+
+            aboutTitle: "About Us",
+
+            aboutText:
+                "NAIMA STORE is a modern online store offering selected products and a simple shopping experience for customers in Morocco and worldwide.",
+
+            contactTitle: "Contact Us",
+
+            email: "Email",
+            phone: "Phone",
+            facebook: "Facebook",
+
+            cart: "Cart",
+            cartTitle: "Shopping Cart",
+
+            emptyCart: "Your cart is empty",
+
+            total: "Total",
+
+            addCart: "Add to Cart 🛒",
+
+            checkout: "Checkout",
+
+            orderMessage:
+                "Hello, I would like to order the following products:",
+
+            success:
+                "Your order has been prepared successfully. We will contact you soon.",
+
+            quantity: "Quantity",
+
+            remove: "Remove",
+
+            currency: "MAD"
+
+        }
+
+    };
 
 
-                <!-- PRODUCT 1 -->
-                <div class="product-card">
+    /* =========================================
+       LANGUAGE SYSTEM
+    ========================================= */
 
-                    <div class="product-image">
-                        👗
-                    </div>
+    function changeLanguage(language) {
 
-                    <h3>
-                        فستان أنيق
-                    </h3>
+        currentLanguage = language;
 
-                    <p>
-                        فستان نسائي بتصميم عصري وأنيق.
-                    </p>
+        localStorage.setItem(
+            "naimaLanguage",
+            language
+        );
 
-                    <strong class="price">
-                        250 درهم
+        document.documentElement.lang = language;
+
+        document.documentElement.dir =
+            language === "ar" ? "rtl" : "ltr";
+
+
+        /* Navigation */
+
+        const navLinks =
+            document.querySelectorAll("nav a");
+
+        if (navLinks.length >= 4) {
+
+            navLinks[0].textContent =
+                translations[language].home;
+
+            navLinks[1].textContent =
+                translations[language].products;
+
+            navLinks[2].textContent =
+                translations[language].about;
+
+            navLinks[3].textContent =
+                translations[language].contact;
+        }
+
+
+        /* Cart button */
+
+        if (cartButton) {
+
+            cartButton.innerHTML =
+                `🛒 ${translations[language].cart}
+                 <span id="cart-count">${cart.length}</span>`;
+        }
+
+
+        /* Hero */
+
+        const heroTitle =
+            document.querySelector("#home h2");
+
+        const heroText =
+            document.querySelector("#home p");
+
+        const heroButton =
+            document.querySelector("#home .hero-button");
+
+
+        if (heroTitle) {
+
+            heroTitle.textContent =
+                translations[language].welcome;
+        }
+
+
+        if (heroText) {
+
+            heroText.textContent =
+                translations[language].discover;
+        }
+
+
+        if (heroButton) {
+
+            heroButton.textContent =
+                translations[language].browse;
+        }
+
+
+        /* Products title */
+
+        const productTitle =
+            document.querySelector("#products .section-title");
+
+        if (productTitle) {
+
+            productTitle.textContent =
+                translations[language].productsTitle;
+        }
+
+
+        /* About */
+
+        const aboutTitle =
+            document.querySelector("#about .section-title");
+
+        const aboutText =
+            document.querySelector("#about p");
+
+
+        if (aboutTitle) {
+
+            aboutTitle.textContent =
+                translations[language].aboutTitle;
+        }
+
+
+        if (aboutText) {
+
+            aboutText.textContent =
+                translations[language].aboutText;
+        }
+
+
+        /* Contact */
+
+        const contactTitle =
+            document.querySelector("#contact .section-title");
+
+        if (contactTitle) {
+
+            contactTitle.textContent =
+                translations[language].contactTitle;
+        }
+
+
+        updateAddButtons();
+
+        updateCart();
+
+    }
+
+
+    /* =========================================
+       ADD TO CART
+    ========================================= */
+
+    addCartButtons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            const name =
+                button.dataset.name;
+
+            const price =
+                Number(button.dataset.price);
+
+
+            const existingProduct =
+                cart.find(function (item) {
+
+                    return item.name === name;
+
+                });
+
+
+            if (existingProduct) {
+
+                existingProduct.quantity++;
+
+            } else {
+
+                cart.push({
+
+                    name: name,
+
+                    price: price,
+
+                    quantity: 1
+
+                });
+
+            }
+
+
+            saveCart();
+
+            updateCart();
+
+            showNotification(
+                currentLanguage === "ar"
+                    ? "تمت إضافة المنتج إلى السلة 🛒"
+                    : "Product added to cart 🛒"
+            );
+
+        });
+
+    });
+
+
+    /* =========================================
+       UPDATE CART
+    ========================================= */
+
+    function updateCart() {
+
+        if (!cartItems) return;
+
+
+        if (cart.length === 0) {
+
+            cartItems.innerHTML =
+                `<p>${translations[currentLanguage].emptyCart}</p>`;
+
+            updateCartCount();
+
+            if (cartTotal) {
+
+                cartTotal.textContent = "0";
+
+            }
+
+            return;
+        }
+
+
+        cartItems.innerHTML = "";
+
+
+        let total = 0;
+
+
+        cart.forEach(function (item, index) {
+
+            const itemTotal =
+                item.price * item.quantity;
+
+            total += itemTotal;
+
+
+            const itemElement =
+                document.createElement("div");
+
+            itemElement.className =
+                "cart-item";
+
+
+            itemElement.innerHTML = `
+
+                <div>
+
+                    <strong>
+                        ${item.name}
                     </strong>
 
-                    <button
-                        class="add-cart"
-                        data-name="فستان أنيق"
-                        data-price="250">
-
-                        أضف إلى السلة 🛒
-
-                    </button>
+                    <p>
+                        ${item.price}
+                        ${translations[currentLanguage].currency}
+                    </p>
 
                 </div>
 
 
-                <!-- PRODUCT 2 -->
-                <div class="product-card">
-
-                    <div class="product-image">
-                        👟
-                    </div>
-
-                    <h3>
-                        حذاء رياضي
-                    </h3>
-
-                    <p>
-                        حذاء مريح مناسب للاستعمال اليومي.
-                    </p>
-
-                    <strong class="price">
-                        300 درهم
-                    </strong>
+                <div class="cart-item-actions">
 
                     <button
-                        class="add-cart"
-                        data-name="حذاء رياضي"
-                        data-price="300">
+                        onclick="decreaseQuantity(${index})">
+                        −
+                    </button>
 
-                        أضف إلى السلة 🛒
+                    <span>
+                        ${item.quantity}
+                    </span>
 
+                    <button
+                        onclick="increaseQuantity(${index})">
+                        +
+                    </button>
+
+                    <button
+                        class="remove-item"
+                        onclick="removeFromCart(${index})">
+                        🗑️
                     </button>
 
                 </div>
 
-
-                <!-- PRODUCT 3 -->
-                <div class="product-card">
-
-                    <div class="product-image">
-                        👜
-                    </div>
-
-                    <h3>
-                        حقيبة نسائية
-                    </h3>
-
-                    <p>
-                        حقيبة أنيقة وعملية للاستخدام اليومي.
-                    </p>
-
-                    <strong class="price">
-                        200 درهم
-                    </strong>
-
-                    <button
-                        class="add-cart"
-                        data-name="حقيبة نسائية"
-                        data-price="200">
-
-                        أضف إلى السلة 🛒
-
-                    </button>
-
-                </div>
+            `;
 
 
-                <!-- PRODUCT 4 -->
-                <div class="product-card">
+            cartItems.appendChild(itemElement);
 
-                    <div class="product-image">
-                        ⌚
-                    </div>
-
-                    <h3>
-                        ساعة أنيقة
-                    </h3>
-
-                    <p>
-                        ساعة بتصميم بسيط وعصري.
-                    </p>
-
-                    <strong class="price">
-                        180 درهم
-                    </strong>
-
-                    <button
-                        class="add-cart"
-                        data-name="ساعة أنيقة"
-                        data-price="180">
-
-                        أضف إلى السلة 🛒
-
-                    </button>
-
-                </div>
+        });
 
 
-            </div>
+        if (cartTotal) {
 
-        </div>
+            cartTotal.textContent =
+                total.toLocaleString();
 
-    </section>
-
-
-    <!-- ABOUT -->
-    <section id="about" class="about">
-
-        <div class="container">
-
-            <h2 class="section-title">
-                من نحن؟
-            </h2>
-
-            <p>
-                نحن متجر إلكتروني تدريبي تم تطويره باستعمال
-                HTML و CSS و JavaScript.
-                هدفنا تقديم تجربة تسوق بسيطة وسهلة الاستخدام.
-            </p>
-
-        </div>
-
-    </section>
+        }
 
 
-    <!-- CONTACT -->
-    <section id="contact" class="contact">
+        updateCartCount();
 
-        <div class="container">
-
-            <h2 class="section-title">
-                تواصل معنا
-            </h2>
-
-            <p>
-                📧 البريد الإلكتروني:
-                example@gmail.com
-            </p>
-
-            <p>
-                📱 الهاتف:
-                0600000000
-            </p>
-
-        </div>
-
-    </section>
+    }
 
 
-    <!-- CART -->
-    <div id="cart" class="cart">
+    /* =========================================
+       CART COUNT
+    ========================================= */
 
-        <div class="cart-content">
+    function updateCartCount() {
 
-            <button id="close-cart" class="close-cart">
-                ✖
-            </button>
+        const count =
+            cart.reduce(function (sum, item) {
 
-            <h2>
-                🛒 سلة المشتريات
-            </h2>
+                return sum + item.quantity;
 
-            <div id="cart-items">
-                <p>
-                    السلة فارغة
-                </p>
-            </div>
-
-            <div class="cart-total">
-
-                <strong>
-                    المجموع:
-                </strong>
-
-                <span id="cart-total">
-                    0
-                </span>
-
-                درهم
-
-            </div>
-
-            <button id="checkout" class="checkout">
-                إتمام الطلب
-            </button>
-
-        </div>
-
-    </div>
+            }, 0);
 
 
-    <!-- FOOTER -->
-    <footer>
+        if (cartCount) {
 
-        <p>
-            © 2026 NAIMA - جميع الحقوق محفوظة
-        </p>
+            cartCount.textContent =
+                count;
 
-    </footer>
+        }
+
+    }
 
 
-    <!-- JAVASCRIPT -->
-    <script src="script.js"></script>
+    /* =========================================
+       INCREASE QUANTITY
+    ========================================= */
 
-</body>
+    window.increaseQuantity = function (index) {
 
-</html>
+        cart[index].quantity++;
+
+        saveCart();
+
+        updateCart();
+
+    };
+
+
+    /* =========================================
+       DECREASE QUANTITY
+    ========================================= */
+
+    window.decreaseQuantity = function (index) {
+
+        if (cart[index].quantity > 1) {
+
+            cart[index].quantity--;
+
+        } else {
+
+            cart.splice(index, 1);
+
+        }
+
+
+        saveCart();
+
+        updateCart();
+
+    };
+
+
+    /* =========================================
+       REMOVE PRODUCT
+    ========================================= */
+
+    window.removeFromCart = function (index) {
+
+        cart.splice(index, 1);
+
+        saveCart();
+
+        updateCart();
+
+    };
+
+
+    /* =========================================
+       SAVE CART
+    ========================================= */
+
+    function saveCart() {
+
+        localStorage.setItem(
+            "naimaCart",
+            JSON.stringify(cart)
+        );
+
+    }
+
+
+    /* =========================================
+       OPEN CART
+    ========================================= */
+
+    if (cartButton) {
+
+        cartButton.addEventListener("click", function () {
+
+            if (cartElement) {
+
+                cartElement.classList.add("active");
+
+            }
+
+        });
+
+    }
+
+
+    /* =========================================
+       CLOSE CART
+    ========================================= */
+
+    if (closeCartButton) {
+
+        closeCartButton.addEventListener(
+            "click",
+            function () {
+
+                if (cartElement) {
+
+                    cartElement.classList.remove("active");
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =========================================
+       CLICK OUTSIDE CART
+    ========================================= */
+
+    if (cartElement) {
+
+        cartElement.addEventListener(
+            "click",
+            function (event) {
+
+                if (event.target === cartElement) {
+
+                    cartElement.classList.remove(
+                        "active"
+                    );
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =========================================
+       CHECKOUT
+    ========================================= */
+
+    if (checkoutButton) {
+
+        checkoutButton.addEventListener(
+            "click",
+            function () {
+
+                if (cart.length === 0) {
+
+                    showNotification(
+                        currentLanguage === "ar"
+                            ? "السلة فارغة"
+                            : "Your cart is empty"
+                    );
+
+                    return;
+                }
+
+
+                let message =
+                    translations[currentLanguage]
+                        .orderMessage
+                    + "\n\n";
+
+
+                let total = 0;
+
+
+                cart.forEach(function (item) {
+
+                    const itemTotal =
+                        item.price *
+                        item.quantity;
+
+
+                    total += itemTotal;
+
+
+                    message +=
+                        `• ${item.name} × ${item.quantity} = ${itemTotal} ${translations[currentLanguage].currency}\n`;
+
+                });
+
+
+                message +=
+                    `\n${translations[currentLanguage].total}: ${total} ${translations[currentLanguage].currency}`;
+
+
+                /*
+                    WhatsApp
+                    رقم المتجر:
+                    212703166572
+                */
+
+                const whatsappNumber =
+                    "212703166572";
+
+
+                const whatsappURL =
+                    "https://wa.me/" +
+                    whatsappNumber +
+                    "?text=" +
+                    encodeURIComponent(message);
+
+
+                window.open(
+                    whatsappURL,
+                    "_blank"
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =========================================
+       SEARCH PRODUCTS
+    ========================================= */
+
+    window.searchProducts = function () {
+
+        const searchInput =
+            document.getElementById(
+                "search-input"
+            );
+
+
+        if (!searchInput) return;
+
+
+        const search =
+            searchInput.value
+                .toLowerCase()
+                .trim();
+
+
+        const products =
+            document.querySelectorAll(
+                ".product-card"
+            );
+
+
+        products.forEach(function (product) {
+
+            const name =
+                product.dataset.name ||
+                product.querySelector("h3")?.textContent ||
+                "";
+
+
+            if (
+                name
+                    .toLowerCase()
+                    .includes(search)
+            ) {
+
+                product.style.display =
+                    "";
+
+            } else {
+
+                product.style.display =
+                    "none";
+
+            }
+
+        });
+
+    };
+
+
+    /* =========================================
+       UPDATE ADD BUTTONS LANGUAGE
+    ========================================= */
+
+    function updateAddButtons() {
+
+        const buttons =
+            document.querySelectorAll(
+                ".add-cart"
+            );
+
+
+        buttons.forEach(function (button) {
+
+            button.textContent =
+                translations[currentLanguage]
+                    .addCart;
+
+        });
+
+    }
+
+
+    /* =========================================
+       NOTIFICATION
+    ========================================= */
+
+    function showNotification(message) {
+
+        const notification =
+            document.createElement("div");
+
+
+        notification.textContent =
+            message;
+
+
+        notification.style.position =
+            "fixed";
+
+        notification.style.bottom =
+            "25px";
+
+        notification.style.left =
+            "50%";
+
+        notification.style.transform =
+            "translateX(-50%)";
+
+        notification.style.background =
+            "#6c4cff";
+
+        notification.style.color =
+            "#fff";
+
+        notification.style.padding =
+            "14px 24px";
+
+        notification.style.borderRadius =
+            "12px";
+
+        notification.style.zIndex =
+            "9999";
+
+        notification.style.fontWeight =
+            "bold";
+
+
+        document.body.appendChild(
+            notification
+        );
+
+
+        setTimeout(function () {
+
+            notification.remove();
+
+        }, 2500);
+
+    }
+
+
+    /* =========================================
+       LANGUAGE BUTTON
+    ========================================= */
+
+    const languageButton =
+        document.createElement("button");
+
+
+    languageButton.id =
+        "language-button";
+
+
+    languageButton.textContent =
+        currentLanguage === "ar"
+            ? "EN"
+            : "AR";
+
+
+    languageButton.style.position =
+        "fixed";
+
+    languageButton.style.bottom =
+        "25px";
+
+    languageButton.style.right =
+        "25px";
+
+    languageButton.style.zIndex =
+        "9999";
+
+    languageButton.style.border =
+        "none";
+
+    languageButton.style.background =
+        "#6c4cff";
+
+    languageButton.style.color =
+        "white";
+
+    languageButton.style.padding =
+        "12px 18px";
+
+    languageButton.style.borderRadius =
+        "10px";
+
+    languageButton.style.cursor =
+        "pointer";
+
+    languageButton.style.fontWeight =
+        "bold";
+
+
+    document.body.appendChild(
+        languageButton
+    );
+
+
+    languageButton.addEventListener(
+        "click",
+        function () {
+
+            const newLanguage =
+                currentLanguage === "ar"
+                    ? "en"
+                    : "ar";
+
+
+            changeLanguage(
+                newLanguage
+            );
+
+
+            languageButton.textContent =
+                newLanguage === "ar"
+                    ? "EN"
+                    : "AR";
+
+        }
+    );
+
+
+    /* =========================================
+       INITIALIZE
+    ========================================= */
+
+    updateCart();
+
+    changeLanguage(
+        currentLanguage
+    );
+
+});
