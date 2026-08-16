@@ -1,423 +1,363 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NAIMA STORE</title>
-<style>
-:root{--primary:#7c3aed;--dark:#17131f;--muted:#6b6472;--bg:#faf8fc;--card:#fff;--border:#eadff1;--danger:#dc2626;--shadow:0 12px 35px #24102b14}
-*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:var(--bg);color:var(--dark)}
-button,input,select,textarea{font:inherit}button{cursor:pointer;border:0}
-.top{background:#17131f;color:#fff;padding:9px 5%;text-align:center;font-size:14px}
-header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--border)}
-.nav{max-width:1200px;margin:auto;padding:15px 20px;display:flex;align-items:center;gap:18px}
-.logo{font-size:25px;font-weight:900;color:var(--primary);text-decoration:none;white-space:nowrap}
-.search{flex:1;position:relative}.search input{width:100%;padding:12px 42px 12px 15px;border:1px solid var(--border);border-radius:14px;outline:0}.search span{position:absolute;right:14px;top:10px}
-.iconbtn{background:#f4eef8;padding:11px 14px;border-radius:12px}.cartbtn{position:relative}.count{position:absolute;top:-7px;left:-7px;background:var(--danger);color:#fff;border-radius:50%;min-width:21px;height:21px;font-size:12px;display:grid;place-items:center}
-.hero{max-width:1200px;margin:24px auto;padding:50px 35px;border-radius:28px;background:linear-gradient(135deg,#f0e8ff,#fff);display:flex;align-items:center;justify-content:space-between;gap:30px}.hero h1{font-size:44px;margin:0 0 12px}.hero p{color:var(--muted);font-size:18px;line-height:1.8}.hero .badge{display:inline-block;background:var(--primary);color:#fff;padding:8px 14px;border-radius:99px}.badge-btn{border:0;cursor:pointer;font-weight:800}.section-link{background:none;border:0;padding:0;font-size:24px;font-weight:900;color:var(--dark);cursor:pointer}.product[role="button"]{cursor:pointer}.product:focus{outline:3px solid #c4b5fd;outline-offset:3px}.hero-art{font-size:110px}
-.container{max-width:1200px;margin:30px auto;padding:0 20px}.section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.section-title h2{margin:0}
-.categories{display:flex;gap:10px;overflow:auto;padding-bottom:10px}.cat{background:#fff;border:1px solid var(--border);padding:10px 16px;border-radius:99px;white-space:nowrap}.cat.active,.cat:hover{background:var(--primary);color:#fff}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.product{background:#fff;border:1px solid var(--border);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);transition:.2s}.product:hover{transform:translateY(-3px)}.pic{height:235px;background:#f2edf7;overflow:hidden;position:relative}.pic img{width:100%;height:100%;object-fit:cover}.tag{position:absolute;top:10px;right:10px;background:#fff;padding:6px 9px;border-radius:9px;font-size:12px}.info{padding:14px}.info h3{font-size:17px;margin:0 0 7px}.desc{color:var(--muted);font-size:13px;min-height:38px}.price{font-size:19px;font-weight:900;margin:10px 0}.actions{display:flex;gap:8px}.primary{background:var(--primary);color:#fff;padding:11px 14px;border-radius:12px;flex:1}.secondary{background:#f3edf8;padding:11px 14px;border-radius:12px}
-.overlay{display:none;position:fixed;inset:0;background:#0008;z-index:50}.overlay.show{display:block}.drawer{position:absolute;right:0;top:0;height:100%;width:min(470px,100%);background:#fff;padding:20px;overflow:auto}.modal{position:absolute;inset:4% 5%;max-width:1000px;margin:auto;background:#fff;border-radius:24px;padding:24px;overflow:auto;max-height:92vh}.close{float:left;background:#eee;border-radius:50%;width:36px;height:36px}
-.detail{display:grid;grid-template-columns:1fr 1fr;gap:28px}.detail img{width:100%;height:420px;object-fit:cover;border-radius:20px;background:#f5f0f8}.thumbs{display:flex;gap:8px;margin-top:10px}.thumbs img{width:65px;height:65px;object-fit:cover;border-radius:10px;cursor:pointer}.option{margin:18px 0}.option label{display:block;font-weight:bold;margin-bottom:8px}.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{padding:9px 14px;border:1px solid var(--border);border-radius:10px;background:#fff}.chip.selected{background:var(--primary);color:#fff;border-color:var(--primary)}
-.cart-item{display:grid;grid-template-columns:70px 1fr auto;gap:10px;padding:12px 0;border-bottom:1px solid var(--border);align-items:center}.cart-item img{width:70px;height:70px;border-radius:10px;object-fit:cover}.qty{display:flex;align-items:center;gap:8px}.qty button{width:28px;height:28px;border-radius:8px;background:#eee}.total{font-size:20px;font-weight:900;margin:18px 0}
-.form{display:grid;gap:10px}.form input,.form textarea,.form select{width:100%;padding:12px;border:1px solid var(--border);border-radius:11px;outline:0}.form textarea{min-height:80px}.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.admin{display:none;margin-top:30px;background:#fff;border:1px solid var(--border);border-radius:20px;padding:20px}.admin.show{display:block}.admin-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.notice{padding:12px;border-radius:12px;background:#fff7ed;color:#9a3412;font-size:13px;margin:10px 0}
-footer{margin-top:50px;background:#17131f;color:#fff;padding:35px 20px}.foot{max-width:1200px;margin:auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.empty{text-align:center;padding:45px;color:var(--muted)}
-.contactLink{color:#fff;text-decoration:none;display:inline-block;margin:5px 0}.contactLink:hover{text-decoration:underline}
-@media(max-width:850px){.grid{grid-template-columns:repeat(2,1fr)}.hero{padding:30px 20px}.hero h1{font-size:32px}.hero-art{font-size:70px}.detail{grid-template-columns:1fr}.detail img{height:300px}}
-@media(max-width:520px){.nav{flex-wrap:wrap}.logo{width:100%}.grid{grid-template-columns:1fr}.hero{margin:12px}.hero-art{display:none}.two,.admin-grid{grid-template-columns:1fr}.pic{height:260px}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NAIMA STORE</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<div class="top">🚚 توصيل سريع • الدفع عند الاستلام • دعم عبر WhatsApp</div>
-<header><div class="nav">
-<a class="logo" href="#">NAIMA STORE</a>
-<div class="search"><span>🔎</span><input id="search" placeholder="ابحثي عن منتج..." oninput="renderProducts()"></div>
-<button class="iconbtn cartbtn" onclick="openCart()">🛒 السلة <span id="cartCount" class="count">0</span></button>
-</div></header>
 
-<section class="hero"><div><button class="badge badge-btn" type="button" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">عروض مميزة</button><h1>اختاري ما يناسبك ✨</h1><p>منتجات عصرية بأسعار مناسبة، مع إمكانية اختيار اللون والمقاس قبل إضافة المنتج إلى السلة.</p><button class="primary" style="flex:0" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">تسوقي الآن</button></div><div class="hero-art">🛍️</div></section>
+<header class="header">
 
-<main class="container">
-<div class="section-title"><button class="section-link" type="button" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">المنتجات</button><button class="secondary" onclick="toggleAdmin()">⚙️ إدارة المتجر</button></div>
-<div id="categories" class="categories"></div>
-<div id="products" class="grid"></div>
+    <div class="container header-inner">
 
-<section id="admin" class="admin">
-<h2>⚙️ إدارة المتجر</h2>
-<div class="notice">هذه الإدارة تحفظ المنتجات داخل هذا المتصفح. إذا أردتِ إدارة المتجر من أي هاتف/كمبيوتر وحفظ الطلبات للزبائن، سنربطها لاحقاً بقاعدة بيانات.</div>
+        <a href="#" class="logo">
+            NAIMA STORE
+        </a>
 
-<div class="admin-grid">
-<input id="aName" placeholder="اسم المنتج">
-<input id="aPrice" type="number" min="0" placeholder="السعر بالدرهم">
-<input id="aCat" placeholder="التصنيف (ملابس، أحذية...)">
-<input id="aImg" placeholder="رابط صورة المنتج">
-<input id="aColors" placeholder="الألوان: أسود, أبيض, أحمر">
-<input id="aSizes" placeholder="المقاسات: S, M, L, XL">
-<input id="aDesc" placeholder="وصف المنتج">
-</div>
-<br>
-<button class="primary" onclick="addProduct()">➕ إضافة المنتج</button>
-<button class="secondary" onclick="resetProducts()">↩️ إرجاع المنتجات التجريبية</button>
-<div id="adminList"></div>
+        <nav>
+            <a href="#home">الرئيسية</a>
+            <a href="#products-section">المنتجات</a>
+            <a href="#about">من نحن</a>
+            <a href="#contact">اتصل بنا</a>
+        </nav>
+
+        <div class="header-actions">
+
+            <button id="cart-button" class="cart-button">
+                🛒 السلة
+                <span id="cart-count">0</span>
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<section id="home" class="hero">
+
+    <div class="container hero-content">
+
+        <div>
+
+            <span class="hero-badge">
+                ✨ عروض مميزة
+            </span>
+
+            <h1>
+                اختاري ما يناسبك
+            </h1>
+
+            <p>
+                منتجات عصرية بجودة رائعة وأسعار مناسبة.
+                اختاري اللون والمقاس قبل إضافة المنتج إلى السلة.
+            </p>
+
+            <a href="#products-section" class="hero-button">
+                تسوقي الآن 🛍️
+            </a>
+
+        </div>
+
+        <div class="hero-icon">
+            🛍️
+        </div>
+
+    </div>
+
 </section>
-</main>
 
-<!-- product modal -->
-<div id="productOverlay" class="overlay" onclick="outsideClose(event,'productOverlay')"><div class="modal">
-<button class="close" onclick="closeOverlay('productOverlay')">✕</button>
-<div id="detail"></div>
-</div></div>
 
-<!-- cart drawer -->
-<div id="cartOverlay" class="overlay" onclick="outsideClose(event,'cartOverlay')"><aside class="drawer">
-<button class="close" onclick="closeOverlay('cartOverlay')">✕</button><h2>سلة المشتريات</h2>
-<div id="cartItems"></div><div id="cartBottom"></div>
-</aside></div>
+<section class="search-section">
 
-<!-- checkout modal -->
-<div id="checkoutOverlay" class="overlay" onclick="outsideClose(event,'checkoutOverlay')"><div class="modal" style="max-width:650px">
-<button class="close" onclick="closeOverlay('checkoutOverlay')">✕</button>
-<h2>إتمام الطلب</h2>
-<p>الدفع عند الاستلام</p>
-<form class="form" onsubmit="placeOrder(event)">
-<div class="two"><input id="customerName" required placeholder="الاسم الكامل"><input id="customerPhone" required placeholder="رقم الهاتف"></div>
-<div class="two"><input id="city" required placeholder="المدينة"><input id="address" required placeholder="العنوان"></div>
-<textarea id="note" placeholder="ملاحظة للطلب (اختياري)"></textarea>
-<button class="primary" type="submit">💬 إرسال الطلب عبر WhatsApp</button>
-<button class="secondary" type="button" onclick="sendEmailOrder()">✉️ إرسال الطلب عبر Gmail</button>
-<button class="secondary" type="button" onclick="openMailApp()">📧 فتح تطبيق البريد</button>
-<p style="font-size:12px;color:#6b6472;margin:0">زر البريد يفتح Gmail لكتابة الرسالة إلى متجر NAIMA STORE.</p>
-</form>
-</div></div>
+    <div class="container">
 
-<footer><div class="foot">
-<div><b>NAIMA STORE</b><br><small>متجرك الإلكتروني</small></div>
-<div>
-  <a class="contactLink" href="tel:0703166572">📞 0703166572</a><br>
-  <a class="contactLink" href="https://wa.me/212703166572" target="_blank" rel="noopener">💬 WhatsApp</a><br>
-  <a class="contactLink" href="https://mail.google.com/mail/?view=cm&fs=1&to=sbahibtihal@gmail.com" target="_blank" rel="noopener">✉️ البريد الإلكتروني</a>
+        <input
+            type="search"
+            id="search-input"
+            placeholder="🔎 ابحثي عن منتج..."
+        >
+
+    </div>
+
+</section>
+
+
+<section id="products-section" class="products-section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <p>NAIMA STORE</p>
+
+            <h2>
+                منتجاتنا
+            </h2>
+
+        </div>
+
+
+        <div id="categories" class="categories"></div>
+
+
+        <div
+            id="products-grid"
+            class="products-grid">
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="about" class="about">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <p>من نحن</p>
+
+            <h2>
+                NAIMA STORE
+            </h2>
+
+        </div>
+
+        <p class="about-text">
+
+            متجر إلكتروني يقدم منتجات عصرية
+            بأسعار مناسبة، مع إمكانية اختيار
+            اللون والمقاس والدفع عند الاستلام.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<section id="contact" class="contact">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <p>تواصلي معنا</p>
+
+            <h2>
+                اتصل بنا
+            </h2>
+
+        </div>
+
+        <div class="contact-info">
+
+            <p>
+                📞
+                <a href="tel:0703166572">
+                    0703166572
+                </a>
+            </p>
+
+            <p>
+                💬
+                <a
+                    href="https://wa.me/212703166572"
+                    target="_blank">
+                    WhatsApp
+                </a>
+            </p>
+
+            <p>
+                ✉️
+                <a
+                    href="mailto:sbahibtihal@gmail.com">
+                    sbahibtihal@gmail.com
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PRODUCT MODAL
+========================= -->
+
+<div id="product-modal" class="modal">
+
+    <div class="modal-content product-modal-content">
+
+        <button
+            id="close-product"
+            class="close-button">
+            ✕
+        </button>
+
+        <div id="product-details"></div>
+
+    </div>
+
 </div>
-</div></footer>
 
-<script>
-const WHATSAPP_NUMBER = "212703166572";
-const STORE_EMAIL = "sbahibtihal@gmail.com";
 
-const demoProducts=[
-{id:1,name:"حقيبة نسائية أنيقة",price:250,cat:"الحقائب",img:"https://placehold.co/800x800/f0e8ff/4c1d95?text=Bag",colors:["أسود","بني","بيج"],sizes:["صغير","متوسط","كبير"],desc:"حقيبة عصرية وعملية للاستعمال اليومي.",images:["https://placehold.co/800x800/f0e8ff/4c1d95?text=Bag+1","https://placehold.co/800x800/e9d5ff/4c1d95?text=Bag+2"]},
-{id:2,name:"حذاء رياضي مريح",price:350,cat:"الأحذية",img:"https://placehold.co/800x800/e0f2fe/075985?text=Shoes",colors:["أبيض","أسود","وردي"],sizes:["36","37","38","39","40","41"],desc:"تصميم عصري ومريح للحياة اليومية.",images:["https://placehold.co/800x800/e0f2fe/075985?text=Shoes+1","https://placehold.co/800x800/bae6fd/075985?text=Shoes+2"]},
-{id:3,name:"ساعة ذكية",price:399,cat:"الإكسسوارات",img:"https://placehold.co/800x800/fef3c7/92400e?text=Watch",colors:["أسود","فضي","وردي"],sizes:["موحد"],desc:"ساعة أنيقة مناسبة للاستعمال اليومي.",images:["https://placehold.co/800x800/fef3c7/92400e?text=Watch+1"]},
-{id:4,name:"نظارات شمسية عصرية",price:180,cat:"الإكسسوارات",img:"https://placehold.co/800x800/dcfce7/166534?text=Glasses",colors:["أسود","بني"],sizes:["موحد"],desc:"تصميم عصري وأنيق للإطلالات اليومية.",images:["https://placehold.co/800x800/dcfce7/166534?text=Glasses+1"]}
-];
+<!-- =========================
+     CART
+========================= -->
 
-let products=loadJSON("naima_products",demoProducts);
-let cart=loadJSON("naima_cart",[]);
-let currentCat="الكل";
-let selectedColor="موحد";
-let selectedSize="موحد";
+<div id="cart" class="cart">
 
-function loadJSON(key,fallback){
-  try{
-    const raw=localStorage.getItem(key);
-    return raw ? JSON.parse(raw) : JSON.parse(JSON.stringify(fallback));
-  }catch(e){ return JSON.parse(JSON.stringify(fallback)); }
-}
-function save(){
-  localStorage.setItem("naima_products",JSON.stringify(products));
-  localStorage.setItem("naima_cart",JSON.stringify(cart));
-  updateCount();
-}
-function updateCount(){
-  const el=document.getElementById("cartCount");
-  if(el) el.textContent=cart.reduce((s,x)=>s+Number(x.qty||0),0);
-}
-function renderCategories(){
-  const cats=["الكل",...new Set(products.map(p=>p.cat).filter(Boolean))];
-  document.getElementById("categories").innerHTML=cats.map(c=>
-    `<button class="cat ${c===currentCat?"active":""}" onclick="selectCategory(${JSON.stringify(c)})">${esc(c)}</button>`
-  ).join("");
-}
-function selectCategory(c){
-  currentCat=c;
-  renderCategories();
-  renderProducts();
-}
-function renderProducts(){
-  const searchEl=document.getElementById("search");
-  const q=(searchEl?.value||"").trim().toLowerCase();
-  const list=products.filter(p=>
-    (currentCat==="الكل"||p.cat===currentCat) &&
-    (!q || String(p.name).toLowerCase().includes(q))
-  );
-  document.getElementById("products").innerHTML=list.length ? list.map(p=>`
-    <article class="product" role="button" tabindex="0" onclick="openProduct(${p.id})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProduct(${p.id})}">
-      <div class="pic"><img src="${esc(p.img)}" alt="${esc(p.name)}"><span class="tag">${esc(p.cat)}</span></div>
-      <div class="info">
-        <h3>${esc(p.name)}</h3>
-        <div class="desc">${esc(p.desc||"منتج مميز من متجرنا.")}</div>
-        <div class="price">${Number(p.price).toFixed(0)} DH</div>
-        <div class="actions">
-          <button class="secondary" onclick="event.stopPropagation();openProduct(${p.id})">التفاصيل</button>
-          <button class="primary" onclick="event.stopPropagation();openProduct(${p.id})">اختيار المقاس/اللون</button>
+    <div class="cart-content">
+
+        <button
+            id="close-cart"
+            class="close-cart">
+            ✕
+        </button>
+
+        <h2>
+            🛒 سلة المشتريات
+        </h2>
+
+        <div id="cart-items"></div>
+
+        <div class="cart-total">
+
+            <strong>
+                المجموع:
+            </strong>
+
+            <span id="cart-total">
+                0 DH
+            </span>
+
         </div>
-      </div>
-    </article>
-  `).join("") : `<div class="empty" style="grid-column:1/-1">لا توجد منتجات.</div>`;
-}
-function openProduct(id){
-  const p=products.find(x=>x.id===id);
-  if(!p)return;
-  const images=(p.images&&p.images.length?p.images:[p.img]).filter(Boolean);
-  selectedColor=(p.colors&&p.colors.length?p.colors[0]:"موحد");
-  selectedSize=(p.sizes&&p.sizes.length?p.sizes[0]:"موحد");
 
-  const colors=p.colors?.length?`
-    <div class="option"><label>اللون: <span id="selectedColorText">${esc(selectedColor)}</span></label>
-      <div class="chips" id="colors">
-        ${p.colors.map((c,i)=>`<button type="button" class="chip ${i===0?"selected":""}" onclick="chooseColor(${JSON.stringify(c)})">${esc(c)}</button>`).join("")}
-      </div>
-    </div>`:"";
+        <button
+            id="checkout"
+            class="checkout">
+            متابعة الطلب
+        </button>
 
-  const sizes=p.sizes?.length?`
-    <div class="option"><label>المقاس: <span id="selectedSizeText">${esc(selectedSize)}</span></label>
-      <div class="chips" id="sizes">
-        ${p.sizes.map((s,i)=>`<button type="button" class="chip ${i===0?"selected":""}" onclick="chooseSize(${JSON.stringify(s)})">${esc(s)}</button>`).join("")}
-      </div>
-    </div>`:"";
+    </div>
 
-  document.getElementById("detail").innerHTML=`
-    <div class="detail">
-      <div>
-        <img id="mainImg" src="${esc(images[0])}" alt="${esc(p.name)}">
-        <div class="thumbs">${images.map(i=>`<img src="${esc(i)}" alt="" onclick="document.getElementById('mainImg').src=${JSON.stringify(i)}">`).join("")}</div>
-      </div>
-      <div>
-        <h1>${esc(p.name)}</h1>
-        <p>${esc(p.desc||"")}</p>
-        <h2>${Number(p.price).toFixed(0)} DH</h2>
-        ${colors}
-        ${sizes}
-        <div class="two">
-          <input id="detailQty" type="number" min="1" step="1" value="1">
-          <button class="primary" type="button" onclick="addCurrentToCart(${p.id})">🛒 أضف إلى السلة</button>
-        </div>
-      </div>
-    </div>`;
-  document.getElementById("productOverlay").classList.add("show");
-}
-function chooseColor(c){
-  selectedColor=c;
-  const text=document.getElementById("selectedColorText");
-  if(text)text.textContent=c;
-  document.querySelectorAll("#colors .chip").forEach(b=>b.classList.toggle("selected",b.textContent.trim()===c));
-}
-function chooseSize(s){
-  selectedSize=s;
-  const text=document.getElementById("selectedSizeText");
-  if(text)text.textContent=s;
-  document.querySelectorAll("#sizes .chip").forEach(b=>b.classList.toggle("selected",b.textContent.trim()===s));
-}
-function addCurrentToCart(id){
-  const qty=Math.max(1,parseInt(document.getElementById("detailQty")?.value,10)||1);
-  addToCart(id,selectedColor,selectedSize,qty);
-}
-function addToCart(id,color="موحد",size="موحد",qty=1){
-  const p=products.find(x=>x.id===id);
-  if(!p)return;
-  const key=`${id}|${color}|${size}`;
-  const found=cart.find(x=>x.key===key);
-  if(found)found.qty+=qty;
-  else cart.push({key,id,color,size,qty});
-  save();
-  closeOverlay("productOverlay");
-  openCart();
-}
-function openCart(){
-  renderCart();
-  document.getElementById("cartOverlay").classList.add("show");
-}
-function getCartTotal(){
-  return cart.reduce((sum,x)=>{
-    const p=products.find(p=>p.id===x.id);
-    return sum+(p?Number(p.price)*Number(x.qty):0);
-  },0);
-}
-function renderCart(){
-  const box=document.getElementById("cartItems");
-  if(!cart.length){
-    box.innerHTML='<div class="empty">السلة فارغة 🛒</div>';
-    document.getElementById("cartBottom").innerHTML="";
-    return;
-  }
-  box.innerHTML=cart.map((x,i)=>{
-    const p=products.find(p=>p.id===x.id);
-    return `<div class="cart-item">
-      <img src="${esc(p?.img||"https://placehold.co/200")}" alt="">
-      <div><b>${esc(p?.name||"منتج")}</b><br>
-      <small>اللون: ${esc(x.color)} • المقاس: ${esc(x.size)}</small><br>
-      <b>${p?Number(p.price)*Number(x.qty):0} DH</b></div>
-      <div class="qty">
-        <button onclick="changeQty(${i},-1)">−</button>${x.qty}<button onclick="changeQty(${i},1)">+</button>
-        <button onclick="removeItem(${i})">🗑️</button>
-      </div>
-    </div>`;
-  }).join("");
-  document.getElementById("cartBottom").innerHTML=`
-    <div class="total">المجموع: ${getCartTotal()} DH</div>
-    <button class="primary" onclick="openCheckout()">متابعة الطلب</button>`;
-}
-function changeQty(i,d){
-  if(!cart[i])return;
-  cart[i].qty+=d;
-  if(cart[i].qty<=0)cart.splice(i,1);
-  save();renderCart();
-}
-function removeItem(i){
-  cart.splice(i,1);save();renderCart();
-}
-function openCheckout(){
-  if(!cart.length){alert("السلة فارغة.");return;}
-  closeOverlay("cartOverlay");
-  document.getElementById("checkoutOverlay").classList.add("show");
-}
-function buildOrderText(){
-  const name=document.getElementById("customerName").value.trim();
-  const phone=document.getElementById("customerPhone").value.trim();
-  const city=document.getElementById("city").value.trim();
-  const address=document.getElementById("address").value.trim();
-  const note=document.getElementById("note").value.trim();
-  const lines=cart.map(x=>{
-    const p=products.find(p=>p.id===x.id);
-    return `- ${p?.name||"منتج"} | اللون: ${x.color} | المقاس: ${x.size} | الكمية: ${x.qty}`;
-  }).join("\n");
-  return `طلب جديد من NAIMA STORE
+</div>
 
-الاسم: ${name}
-الهاتف: ${phone}
-المدينة: ${city}
-العنوان: ${address}
-${note?`ملاحظة: ${note}\n`:""}
-المنتجات:
-${lines}
 
-المجموع: ${getCartTotal()} DH
-طريقة الدفع: الدفع عند الاستلام`;
-}
-function placeOrder(e){
-  e.preventDefault();
-  const msg=buildOrderText();
-  sendWhatsApp(msg);
-}
-function sendWhatsApp(msg){
-  const url=`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
-  const w=window.open(url,"_blank");
-  if(!w) window.location.href=url;
-}
-function sendEmailOrder(){
-  const form=document.querySelector("#checkoutOverlay form");
-  if(!form.checkValidity()){form.reportValidity();return;}
-  const body=buildOrderText();
-  const subject="طلب جديد من NAIMA STORE";
-  const gmail=`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(STORE_EMAIL)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  const w=window.open(gmail,"_blank");
-  if(!w) window.location.href=gmail;
-}
+<!-- =========================
+     CHECKOUT
+========================= -->
 
-function openMailApp(){
-  const form=document.querySelector("#checkoutOverlay form");
-  if(!form.checkValidity()){form.reportValidity();return;}
-  const body=buildOrderText();
-  const subject="طلب جديد من NAIMA STORE";
-  window.location.href=`mailto:${STORE_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-}
-function toggleAdmin(){
-  const panel=document.getElementById("admin");
-  panel.classList.toggle("show");
-  if(panel.classList.contains("show")){
-    panel.scrollIntoView({behavior:"smooth",block:"start"});
-    renderAdmin();
-  }
-}
-function clearAdminForm(){
-  ["aName","aPrice","aCat","aImg","aColors","aSizes","aDesc"].forEach(id=>{
-    const el=document.getElementById(id);if(el)el.value="";
-  });
-}
-function addProduct(){
-  const name=document.getElementById("aName").value.trim();
-  const price=Number(document.getElementById("aPrice").value);
-  const cat=document.getElementById("aCat").value.trim()||"منتجات";
-  const img=document.getElementById("aImg").value.trim()||"https://placehold.co/800x800?text=Product";
-  const colors=document.getElementById("aColors").value.split(",").map(x=>x.trim()).filter(Boolean);
-  const sizes=document.getElementById("aSizes").value.split(",").map(x=>x.trim()).filter(Boolean);
-  const desc=document.getElementById("aDesc").value.trim()||"منتج جديد من NAIMA STORE";
-  if(!name||!Number.isFinite(price)||price<0){
-    alert("أدخلي اسم المنتج والسعر بشكل صحيح.");return;
-  }
-  products.unshift({id:Date.now(),name,price,cat,img,colors,sizes,desc,images:[img]});
-  save();clearAdminForm();renderCategories();renderProducts();renderAdmin();
-  alert("تمت إضافة المنتج بنجاح.");
-}
-function renderAdmin(){
-  const el=document.getElementById("adminList");
-  if(!el)return;
-  if(!products.length){el.innerHTML="<hr><div class='empty'>لا توجد منتجات.</div>";return;}
-  el.innerHTML="<hr>"+products.map(p=>`
-    <div style="padding:12px 0;border-bottom:1px solid var(--border)">
-      <div><b>${esc(p.name)}</b> — ${Number(p.price).toFixed(0)} DH — ${esc(p.cat)}</div>
-      <small>الألوان: ${esc((p.colors||[]).join(", ")||"غير محدد")} | المقاسات: ${esc((p.sizes||[]).join(", ")||"غير محدد")}</small><br>
-      <button class="secondary" style="margin-top:8px" onclick="editProduct(${p.id})">✏️ تعديل</button>
-      <button class="secondary" style="margin-top:8px" onclick="deleteProduct(${p.id})">🗑️ حذف</button>
-    </div>`).join("");
-}
-function editProduct(id){
-  const p=products.find(x=>x.id===id);if(!p)return;
-  const name=prompt("اسم المنتج:",p.name);if(name===null)return;
-  const price=prompt("السعر:",p.price);if(price===null)return;
-  const cat=prompt("التصنيف:",p.cat);if(cat===null)return;
-  const img=prompt("رابط الصورة:",p.img);if(img===null)return;
-  const colors=prompt("الألوان مفصولة بفواصل:",(p.colors||[]).join(", "));if(colors===null)return;
-  const sizes=prompt("المقاسات مفصولة بفواصل:",(p.sizes||[]).join(", "));if(sizes===null)return;
-  const desc=prompt("الوصف:",p.desc||"");if(desc===null)return;
-  p.name=name.trim()||p.name;
-  p.price=Number(price)||p.price;
-  p.cat=cat.trim()||p.cat;
-  p.img=img.trim()||p.img;
-  p.colors=colors.split(",").map(x=>x.trim()).filter(Boolean);
-  p.sizes=sizes.split(",").map(x=>x.trim()).filter(Boolean);
-  p.desc=desc.trim();
-  p.images=[p.img];
-  save();renderCategories();renderProducts();renderAdmin();
-  alert("تم تعديل المنتج.");
-}
-function deleteProduct(id){
-  if(!confirm("هل تريدين حذف هذا المنتج؟"))return;
-  products=products.filter(p=>p.id!==id);
-  cart=cart.filter(x=>products.some(p=>p.id===x.id));
-  save();renderCategories();renderProducts();renderAdmin();
-}
-function resetProducts(){
-  if(!confirm("سيتم استبدال المنتجات الحالية بالمنتجات التجريبية. هل أنت متأكدة؟"))return;
-  products=JSON.parse(JSON.stringify(demoProducts));
-  cart=[];
-  save();renderCategories();renderProducts();renderAdmin();
-}
-function closeOverlay(id){
-  document.getElementById(id).classList.remove("show");
-}
-function outsideClose(e,id){
-  if(e.target.id===id)closeOverlay(id);
-}
-function esc(v){
-  return String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
-}
+<div id="checkout-modal" class="modal">
 
-renderCategories();
-renderProducts();
-updateCount();
-</script>
+    <div class="modal-content checkout-content">
+
+        <button
+            id="close-checkout"
+            class="close-button">
+            ✕
+        </button>
+
+        <h2>
+            إتمام الطلب
+        </h2>
+
+        <p class="payment-text">
+            💵 الدفع عند الاستلام
+        </p>
+
+
+        <form id="checkout-form">
+
+            <input
+                id="customer-name"
+                type="text"
+                placeholder="الاسم الكامل"
+                required
+            >
+
+            <input
+                id="customer-phone"
+                type="tel"
+                placeholder="رقم الهاتف"
+                required
+            >
+
+            <input
+                id="customer-city"
+                type="text"
+                placeholder="المدينة"
+                required
+            >
+
+            <textarea
+                id="customer-address"
+                placeholder="العنوان"
+                required>
+            </textarea>
+
+            <textarea
+                id="customer-note"
+                placeholder="ملاحظة اختيارية">
+            </textarea>
+
+
+            <button
+                type="submit"
+                class="whatsapp-button">
+
+                💬 إرسال الطلب عبر WhatsApp
+
+            </button>
+
+
+            <button
+                type="button"
+                id="email-order"
+                class="email-button">
+
+                ✉️ إرسال الطلب عبر Gmail
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    <div class="container">
+
+        <h3>
+            NAIMA STORE
+        </h3>
+
+        <p>
+            جميع الحقوق محفوظة © 2026
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
 </body>
+
 </html>
