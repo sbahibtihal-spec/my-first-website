@@ -87,7 +87,8 @@ footer{margin-top:50px;background:#17131f;color:#fff;padding:35px 20px}.foot{max
 <div class="two"><input id="city" required placeholder="المدينة"><input id="address" required placeholder="العنوان"></div>
 <textarea id="note" placeholder="ملاحظة للطلب (اختياري)"></textarea>
 <button class="primary" type="submit">💬 إرسال الطلب عبر WhatsApp</button>
-<button class="secondary" type="button" onclick="sendEmailOrder()">✉️ إرسال الطلب عبر البريد الإلكتروني</button>
+<button class="secondary" type="button" onclick="sendEmailOrder()">✉️ إرسال الطلب عبر Gmail</button>
+<button class="secondary" type="button" onclick="openMailApp()">📧 فتح تطبيق البريد</button>
 <p style="font-size:12px;color:#6b6472;margin:0">زر البريد يفتح Gmail لكتابة الرسالة إلى متجر NAIMA STORE.</p>
 </form>
 </div></div>
@@ -318,11 +319,21 @@ function sendWhatsApp(msg){
 function sendEmailOrder(){
   const form=document.querySelector("#checkoutOverlay form");
   if(!form.checkValidity()){form.reportValidity();return;}
+
   const body=buildOrderText();
   const subject="طلب جديد من NAIMA STORE";
+
+  // نحاول فتح Gmail مباشرة في نفس الصفحة حتى لا يمنعه المتصفح من العمل.
   const gmail=`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(STORE_EMAIL)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  const w=window.open(gmail,"_blank");
-  if(!w) window.location.href=gmail;
+  window.location.href=gmail;
+}
+
+function openMailApp(){
+  const form=document.querySelector("#checkoutOverlay form");
+  if(!form.checkValidity()){form.reportValidity();return;}
+  const body=buildOrderText();
+  const subject="طلب جديد من NAIMA STORE";
+  window.location.href=`mailto:${STORE_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 function toggleAdmin(){
   const panel=document.getElementById("admin");
