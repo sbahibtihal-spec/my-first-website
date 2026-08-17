@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>NAIMA STORE</title>
+    <title>NAIMA STORE | متجر نعيمة</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+<!-- ================= TOP BAR ================= -->
+
+<div class="top-bar">
+    🚚 توصيل لجميع المدن المغربية
+    <span>•</span>
+    💳 الدفع عند الاستلام
+    <span>•</span>
+    💬 خدمة الزبناء عبر WhatsApp
+</div>
+
 
 <!-- ================= HEADER ================= -->
 
@@ -19,36 +29,35 @@
     <div class="container header-content">
 
         <a href="#" class="logo">
-            NAIMA STORE
+            <span>NAIMA</span> STORE
         </a>
 
-        <nav class="nav">
+        <nav class="main-nav">
 
             <a href="#home">الرئيسية</a>
-
-            <a href="#products-section">المنتجات</a>
-
+            <a href="#products">المنتجات</a>
             <a href="#about">من نحن</a>
-
             <a href="#contact">اتصل بنا</a>
 
         </nav>
 
         <div class="header-actions">
 
-            <button id="language-toggle" class="language-btn">
+            <button
+                type="button"
+                class="language-btn"
+                id="languageBtn">
                 EN
             </button>
 
-            <button id="cart-button" class="cart-button">
+            <button
+                type="button"
+                class="cart-btn"
+                id="cartBtn">
 
-                🛒
+                🛒 السلة
 
-                <span>السلة</span>
-
-                <span id="cart-count" class="cart-count">
-                    0
-                </span>
+                <span id="cartCount">0</span>
 
             </button>
 
@@ -61,33 +70,56 @@
 
 <!-- ================= HERO ================= -->
 
-<section id="home" class="hero">
+<section class="hero" id="home">
 
     <div class="container hero-content">
 
         <div class="hero-text">
 
-            <span class="hero-small">
-                ✨ NAIMA STORE
+            <span class="hero-badge">
+                ✨ تشكيلة جديدة
             </span>
 
             <h1>
-                اختاري ما يناسبك
+                أناقتك تبدأ<br>
+                من <strong>NAIMA STORE</strong>
             </h1>
 
             <p>
-                منتجات عصرية بجودة رائعة وأسعار مناسبة،
-                مع إمكانية اختيار اللون والمقاس قبل إضافة المنتج إلى السلة.
+                اكتشفي أجمل المنتجات المختارة بعناية،
+                بجودة رائعة وأسعار مناسبة.
             </p>
 
-            <a href="#products-section" class="hero-button">
-                🛍️ تسوقي الآن
+            <a
+                href="#products"
+                class="hero-btn">
+
+                تسوقي الآن
+                <span>←</span>
+
             </a>
 
         </div>
 
-        <div class="hero-image">
-            🛍️
+
+        <div class="hero-visual">
+
+            <div class="hero-circle">
+
+                <div class="hero-bag">
+                    🛍️
+                </div>
+
+            </div>
+
+            <div class="floating-card card-one">
+                ⭐ جودة ممتازة
+            </div>
+
+            <div class="floating-card card-two">
+                🚚 توصيل سريع
+            </div>
+
         </div>
 
     </div>
@@ -99,7 +131,7 @@
 
 <section class="features">
 
-    <div class="container feature-grid">
+    <div class="container features-grid">
 
         <div class="feature">
 
@@ -107,13 +139,10 @@
                 🚚
             </div>
 
-            <h3>
-                توصيل سريع
-            </h3>
-
-            <p>
-                توصيل الطلبات إلى مختلف المدن.
-            </p>
+            <div>
+                <h3>توصيل سريع</h3>
+                <p>نوصل طلبك إلى مدينتك</p>
+            </div>
 
         </div>
 
@@ -121,16 +150,13 @@
         <div class="feature">
 
             <div class="feature-icon">
-                💵
+                💳
             </div>
 
-            <h3>
-                الدفع عند الاستلام
-            </h3>
-
-            <p>
-                ادفعي عند وصول طلبك.
-            </p>
+            <div>
+                <h3>الدفع عند الاستلام</h3>
+                <p>ادفعي عند وصول طلبك</p>
+            </div>
 
         </div>
 
@@ -138,16 +164,13 @@
         <div class="feature">
 
             <div class="feature-icon">
-                🎨
+                🔒
             </div>
 
-            <h3>
-                اختيار اللون والمقاس
-            </h3>
-
-            <p>
-                اختاري المنتج كما يناسبك.
-            </p>
+            <div>
+                <h3>طلب آمن</h3>
+                <p>نحافظ على معلوماتك</p>
+            </div>
 
         </div>
 
@@ -155,63 +178,13 @@
         <div class="feature">
 
             <div class="feature-icon">
-                💬
+                ⭐
             </div>
 
-            <h3>
-                دعم WhatsApp
-            </h3>
-
-            <p>
-                تواصلي معنا بسهولة.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= SEARCH ================= -->
-
-<section class="search-section">
-
-    <div class="container">
-
-        <input
-            type="search"
-            id="search-input"
-            placeholder="🔎 ابحثي عن منتج..."
-        >
-
-    </div>
-
-</section>
-
-
-<!-- ================= CATEGORIES ================= -->
-
-<section class="categories-section">
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <p>
-                اكتشفي مجموعتنا
-            </p>
-
-            <h2>
-                الأقسام
-            </h2>
-
-        </div>
-
-
-        <div id="categories" class="category-grid">
-
-            <!-- JavaScript سيضيف الأقسام هنا -->
+            <div>
+                <h3>جودة مختارة</h3>
+                <p>منتجات مختارة بعناية</p>
+            </div>
 
         </div>
 
@@ -222,26 +195,52 @@
 
 <!-- ================= PRODUCTS ================= -->
 
-<section id="products-section" class="products-section">
+<section class="products-section" id="products">
 
     <div class="container">
 
-        <div class="section-title">
+        <div class="section-heading">
 
-            <p>
-                NAIMA STORE
-            </p>
+            <div>
 
-            <h2>
-                منتجاتنا
-            </h2>
+                <span>
+                    اكتشفي مجموعتنا
+                </span>
+
+                <h2>
+                    منتجاتنا
+                </h2>
+
+            </div>
+
+            <div class="search-box">
+
+                <span>🔎</span>
+
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="ابحثي عن منتج...">
+
+            </div>
 
         </div>
 
 
-        <div id="products-grid" class="products-grid">
+        <!-- CATEGORIES -->
 
-            <!-- JavaScript سيضيف المنتجات هنا -->
+        <div
+            class="categories"
+            id="categories">
+
+        </div>
+
+
+        <!-- PRODUCTS -->
+
+        <div
+            class="products-grid"
+            id="productsGrid">
 
         </div>
 
@@ -252,28 +251,22 @@
 
 <!-- ================= ABOUT ================= -->
 
-<section id="about" class="about">
+<section class="about" id="about">
 
     <div class="container">
 
-        <div class="section-title">
+        <span class="section-label">
+            NAIMA STORE
+        </span>
 
-            <p>
-                من نحن
-            </p>
+        <h2>
+            متجرنا يهتم بتفاصيلك
+        </h2>
 
-            <h2>
-                NAIMA STORE
-            </h2>
-
-        </div>
-
-        <p class="about-text">
-
-            متجر إلكتروني يقدم منتجات عصرية بأسعار مناسبة،
-            مع إمكانية اختيار اللون والمقاس قبل إضافة المنتج إلى السلة.
-            هدفنا تقديم تجربة تسوق سهلة ومريحة للزبائن.
-
+        <p>
+            في NAIMA STORE نحرص على تقديم منتجات عصرية
+            بجودة جيدة وأسعار مناسبة، مع تجربة شراء سهلة
+            وسريعة من الهاتف أو الكمبيوتر.
         </p>
 
     </div>
@@ -283,50 +276,61 @@
 
 <!-- ================= CONTACT ================= -->
 
-<section id="contact" class="contact">
+<section class="contact" id="contact">
 
     <div class="container">
 
-        <div class="section-title">
+        <span class="section-label">
+            تواصلي معنا
+        </span>
 
-            <p>
-                تواصلي معنا
-            </p>
+        <h2>
+            نحن هنا لخدمتك
+        </h2>
 
-            <h2>
-                اتصل بنا
-            </h2>
+        <div class="contact-grid">
 
-        </div>
+            <a
+                href="tel:0703166572"
+                class="contact-card">
 
+                <span>📞</span>
 
-        <div class="contact-info">
+                <div>
+                    <strong>الهاتف</strong>
+                    <small>0703166572</small>
+                </div>
 
-            <p>
-                📞
-                <a href="tel:0703166572">
-                    0703166572
-                </a>
-            </p>
-
-
-            <p>
-                💬
-                <a
-                    href="https://wa.me/212703166572"
-                    target="_blank"
-                >
-                    WhatsApp
-                </a>
-            </p>
+            </a>
 
 
-            <p>
-                ✉️
-                <a href="mailto:sbahibtihal@gmail.com">
-                    sbahibtihal@gmail.com
-                </a>
-            </p>
+            <a
+                href="https://wa.me/212703166572"
+                target="_blank"
+                class="contact-card">
+
+                <span>💬</span>
+
+                <div>
+                    <strong>WhatsApp</strong>
+                    <small>تواصلي معنا مباشرة</small>
+                </div>
+
+            </a>
+
+
+            <a
+                href="mailto:sbahibtihal@gmail.com"
+                class="contact-card">
+
+                <span>✉️</span>
+
+                <div>
+                    <strong>البريد الإلكتروني</strong>
+                    <small>راسلينا عبر البريد</small>
+                </div>
+
+            </a>
 
         </div>
 
@@ -337,246 +341,419 @@
 
 <!-- ================= CART ================= -->
 
-<div id="cart" class="cart">
+<div
+    class="modal-overlay"
+    id="cartModal">
 
-    <div class="cart-content">
+    <div class="cart-modal">
 
         <button
-            id="close-cart"
-            class="close-cart"
             type="button"
-        >
+            class="modal-close"
+            id="closeCart">
+
             ✕
+
         </button>
 
+        <div class="modal-title">
 
-        <h2>
-            🛒 سلة المشتريات
-        </h2>
+            <h2>🛒 سلة المشتريات</h2>
 
-
-        <div id="cart-items">
-
-            <!-- المنتجات ستظهر هنا -->
-
-        </div>
-
-
-        <div class="cart-total">
-
-            <strong>
-                المجموع:
-            </strong>
-
-            <span id="cart-total">
-                0 DH
+            <span id="cartItemsCount">
+                0 منتجات
             </span>
 
         </div>
 
 
-        <button
-            id="checkout"
-            class="checkout"
-            type="button"
-        >
-            💬 إتمام الطلب عبر WhatsApp
-        </button>
+        <div
+            id="cartItems"
+            class="cart-items">
 
-    </div>
-
-</div>
+        </div>
 
 
-<!-- ================= PRODUCT MODAL ================= -->
+        <div
+            id="cartEmpty"
+            class="cart-empty">
 
-<div id="product-modal" class="product-modal">
+            <div>🛒</div>
 
-    <div class="product-modal-content">
+            <h3>السلة فارغة</h3>
 
-        <button
-            id="close-product-modal"
-            class="close-product-modal"
-            type="button"
-        >
-            ✕
-        </button>
+            <p>
+                أضيفي المنتجات التي تريدين شراءها.
+            </p>
 
-
-        <div class="product-detail">
-
-            <div class="product-detail-image">
-
-                <img
-                    id="modal-product-image"
-                    src=""
-                    alt="Product"
-                >
-
-            </div>
+        </div>
 
 
-            <div class="product-detail-info">
+        <div
+            class="cart-footer"
+            id="cartFooter">
 
-                <span
-                    id="modal-product-category"
-                    class="product-badge"
-                >
-                    المنتج
-                </span>
+            <div class="cart-total">
 
+                <span>المجموع</span>
 
-                <h2 id="modal-product-name">
-                    اسم المنتج
-                </h2>
-
-
-                <p id="modal-product-description">
-                    وصف المنتج
-                </p>
-
-
-                <div
-                    id="modal-product-price"
-                    class="modal-price"
-                >
+                <strong id="cartTotal">
                     0 DH
-                </div>
-
-
-                <!-- COLOR -->
-
-                <div
-                    id="color-section"
-                    class="option-section"
-                >
-
-                    <h3>
-                        🎨 اللون:
-                        <span id="selected-color">
-                            -
-                        </span>
-                    </h3>
-
-
-                    <div
-                        id="color-options"
-                        class="option-buttons"
-                    >
-
-                        <!-- الألوان هنا -->
-
-                    </div>
-
-                </div>
-
-
-                <!-- SIZE -->
-
-                <div
-                    id="size-section"
-                    class="option-section"
-                >
-
-                    <h3>
-                        📏 المقاس:
-                        <span id="selected-size">
-                            -
-                        </span>
-                    </h3>
-
-
-                    <div
-                        id="size-options"
-                        class="option-buttons"
-                    >
-
-                        <!-- المقاسات هنا -->
-
-                    </div>
-
-                </div>
-
-
-                <!-- QUANTITY -->
-
-                <div class="quantity-section">
-
-                    <h3>
-                        الكمية
-                    </h3>
-
-                    <div class="quantity-control">
-
-                        <button
-                            id="quantity-minus"
-                            type="button"
-                        >
-                            −
-                        </button>
-
-
-                        <span id="product-quantity">
-                            1
-                        </span>
-
-
-                        <button
-                            id="quantity-plus"
-                            type="button"
-                        >
-                            +
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <button
-                    id="modal-add-cart"
-                    class="modal-add-cart"
-                    type="button"
-                >
-                    🛒 أضف إلى السلة
-                </button>
+                </strong>
 
             </div>
+
+            <button
+                type="button"
+                class="checkout-btn"
+                id="checkoutBtn">
+
+                إتمام الطلب
+
+            </button>
 
         </div>
 
     </div>
 
 </div>
+
+
+<!-- ================= PRODUCT DETAILS ================= -->
+
+<div
+    class="modal-overlay"
+    id="productModal">
+
+    <div class="product-modal">
+
+        <button
+            type="button"
+            class="modal-close"
+            id="closeProduct">
+
+            ✕
+
+        </button>
+
+        <div id="productDetails">
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= CHECKOUT ================= -->
+
+<div
+    class="modal-overlay"
+    id="checkoutModal">
+
+    <div class="checkout-modal">
+
+        <button
+            type="button"
+            class="modal-close"
+            id="closeCheckout">
+
+            ✕
+
+        </button>
+
+        <h2>
+            إتمام الطلب
+        </h2>
+
+        <p class="checkout-subtitle">
+            أدخلي معلوماتك لإرسال الطلب.
+        </p>
+
+
+        <form id="checkoutForm">
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>
+                        الاسم الكامل
+                    </label>
+
+                    <input
+                        type="text"
+                        id="customerName"
+                        required
+                        placeholder="مثال: نعيمة">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        رقم الهاتف
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="customerPhone"
+                        required
+                        placeholder="06XXXXXXXX">
+
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>
+                        المدينة
+                    </label>
+
+                    <input
+                        type="text"
+                        id="customerCity"
+                        required
+                        placeholder="مثال: خنيفرة">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        العنوان
+                    </label>
+
+                    <input
+                        type="text"
+                        id="customerAddress"
+                        required
+                        placeholder="العنوان بالتفصيل">
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    ملاحظات
+                </label>
+
+                <textarea
+                    id="customerNote"
+                    placeholder="أي ملاحظة إضافية..."></textarea>
+
+            </div>
+
+
+            <div class="payment-box">
+
+                <span>💵</span>
+
+                <div>
+
+                    <strong>
+                        الدفع عند الاستلام
+                    </strong>
+
+                    <small>
+                        تدفعين عند وصول الطلب
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="whatsapp-order-btn">
+
+                💬 إرسال الطلب عبر WhatsApp
+
+            </button>
+
+            <button
+                type="button"
+                class="email-order-btn"
+                id="emailOrderBtn">
+
+                ✉️ إرسال الطلب عبر البريد
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- ================= ADMIN ================= -->
+
+<section
+    class="admin-section"
+    id="admin">
+
+    <div class="container">
+
+        <div class="admin-header">
+
+            <div>
+
+                <span>
+                    لوحة التحكم
+                </span>
+
+                <h2>
+                    إدارة NAIMA STORE
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-card">
+
+            <h3>
+                ➕ إضافة منتج جديد
+            </h3>
+
+            <div class="admin-grid">
+
+                <input
+                    id="adminName"
+                    placeholder="اسم المنتج">
+
+                <input
+                    id="adminPrice"
+                    type="number"
+                    placeholder="السعر بالدرهم">
+
+                <input
+                    id="adminCategory"
+                    placeholder="التصنيف">
+
+                <input
+                    id="adminImage"
+                    placeholder="رابط صورة المنتج">
+
+                <input
+                    id="adminColors"
+                    placeholder="الألوان: أسود, أبيض, أحمر">
+
+                <input
+                    id="adminSizes"
+                    placeholder="المقاسات: S, M, L, XL">
+
+            </div>
+
+
+            <textarea
+                id="adminDescription"
+                placeholder="وصف المنتج">
+
+            </textarea>
+
+
+            <button
+                type="button"
+                class="admin-add-btn"
+                id="adminAddBtn">
+
+                ➕ إضافة المنتج
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
 
 
 <!-- ================= FOOTER ================= -->
 
 <footer>
 
-    <div class="container">
+    <div class="container footer-content">
 
-        <h3>
-            NAIMA STORE
-        </h3>
+        <div>
 
-        <p>
-            متجرك الإلكتروني للتسوق بسهولة وأمان.
-        </p>
+            <div class="footer-logo">
+                NAIMA STORE
+            </div>
 
-        <p class="copyright">
-            © 2026 NAIMA STORE
-        </p>
+            <p>
+                متجر إلكتروني عصري وسهل الاستعمال.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                روابط
+            </h3>
+
+            <a href="#home">
+                الرئيسية
+            </a>
+
+            <a href="#products">
+                المنتجات
+            </a>
+
+            <a href="#about">
+                من نحن
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                التواصل
+            </h3>
+
+            <a href="tel:0703166572">
+                📞 0703166572
+            </a>
+
+            <a
+                href="https://wa.me/212703166572"
+                target="_blank">
+
+                💬 WhatsApp
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 NAIMA STORE — جميع الحقوق محفوظة
 
     </div>
 
 </footer>
 
 
-<!-- ================= JAVASCRIPT ================= -->
-
 <script src="script.js"></script>
 
 </body>
-
 </html>
