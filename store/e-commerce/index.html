@@ -12,26 +12,44 @@
 
 <body>
 
+<!-- ================= HEADER ================= -->
+
 <header class="header">
 
-    <div class="container header-inner">
+    <div class="container header-content">
 
         <a href="#" class="logo">
             NAIMA STORE
         </a>
 
-        <nav>
+        <nav class="nav">
+
             <a href="#home">الرئيسية</a>
+
             <a href="#products-section">المنتجات</a>
+
             <a href="#about">من نحن</a>
+
             <a href="#contact">اتصل بنا</a>
+
         </nav>
 
         <div class="header-actions">
 
+            <button id="language-toggle" class="language-btn">
+                EN
+            </button>
+
             <button id="cart-button" class="cart-button">
-                🛒 السلة
-                <span id="cart-count">0</span>
+
+                🛒
+
+                <span>السلة</span>
+
+                <span id="cart-count" class="cart-count">
+                    0
+                </span>
+
             </button>
 
         </div>
@@ -41,14 +59,16 @@
 </header>
 
 
+<!-- ================= HERO ================= -->
+
 <section id="home" class="hero">
 
     <div class="container hero-content">
 
-        <div>
+        <div class="hero-text">
 
-            <span class="hero-badge">
-                ✨ عروض مميزة
+            <span class="hero-small">
+                ✨ NAIMA STORE
             </span>
 
             <h1>
@@ -56,17 +76,17 @@
             </h1>
 
             <p>
-                منتجات عصرية بجودة رائعة وأسعار مناسبة.
-                اختاري اللون والمقاس قبل إضافة المنتج إلى السلة.
+                منتجات عصرية بجودة رائعة وأسعار مناسبة،
+                مع إمكانية اختيار اللون والمقاس قبل إضافة المنتج إلى السلة.
             </p>
 
             <a href="#products-section" class="hero-button">
-                تسوقي الآن 🛍️
+                🛍️ تسوقي الآن
             </a>
 
         </div>
 
-        <div class="hero-icon">
+        <div class="hero-image">
             🛍️
         </div>
 
@@ -74,6 +94,86 @@
 
 </section>
 
+
+<!-- ================= FEATURES ================= -->
+
+<section class="features">
+
+    <div class="container feature-grid">
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                🚚
+            </div>
+
+            <h3>
+                توصيل سريع
+            </h3>
+
+            <p>
+                توصيل الطلبات إلى مختلف المدن.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                💵
+            </div>
+
+            <h3>
+                الدفع عند الاستلام
+            </h3>
+
+            <p>
+                ادفعي عند وصول طلبك.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                🎨
+            </div>
+
+            <h3>
+                اختيار اللون والمقاس
+            </h3>
+
+            <p>
+                اختاري المنتج كما يناسبك.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                💬
+            </div>
+
+            <h3>
+                دعم WhatsApp
+            </h3>
+
+            <p>
+                تواصلي معنا بسهولة.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SEARCH ================= -->
 
 <section class="search-section">
 
@@ -90,13 +190,47 @@
 </section>
 
 
+<!-- ================= CATEGORIES ================= -->
+
+<section class="categories-section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <p>
+                اكتشفي مجموعتنا
+            </p>
+
+            <h2>
+                الأقسام
+            </h2>
+
+        </div>
+
+
+        <div id="categories" class="category-grid">
+
+            <!-- JavaScript سيضيف الأقسام هنا -->
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PRODUCTS ================= -->
+
 <section id="products-section" class="products-section">
 
     <div class="container">
 
         <div class="section-title">
 
-            <p>NAIMA STORE</p>
+            <p>
+                NAIMA STORE
+            </p>
 
             <h2>
                 منتجاتنا
@@ -105,12 +239,10 @@
         </div>
 
 
-        <div id="categories" class="categories"></div>
+        <div id="products-grid" class="products-grid">
 
+            <!-- JavaScript سيضيف المنتجات هنا -->
 
-        <div
-            id="products-grid"
-            class="products-grid">
         </div>
 
     </div>
@@ -118,13 +250,17 @@
 </section>
 
 
+<!-- ================= ABOUT ================= -->
+
 <section id="about" class="about">
 
     <div class="container">
 
         <div class="section-title">
 
-            <p>من نحن</p>
+            <p>
+                من نحن
+            </p>
 
             <h2>
                 NAIMA STORE
@@ -134,9 +270,9 @@
 
         <p class="about-text">
 
-            متجر إلكتروني يقدم منتجات عصرية
-            بأسعار مناسبة، مع إمكانية اختيار
-            اللون والمقاس والدفع عند الاستلام.
+            متجر إلكتروني يقدم منتجات عصرية بأسعار مناسبة،
+            مع إمكانية اختيار اللون والمقاس قبل إضافة المنتج إلى السلة.
+            هدفنا تقديم تجربة تسوق سهلة ومريحة للزبائن.
 
         </p>
 
@@ -145,19 +281,24 @@
 </section>
 
 
+<!-- ================= CONTACT ================= -->
+
 <section id="contact" class="contact">
 
     <div class="container">
 
         <div class="section-title">
 
-            <p>تواصلي معنا</p>
+            <p>
+                تواصلي معنا
+            </p>
 
             <h2>
                 اتصل بنا
             </h2>
 
         </div>
+
 
         <div class="contact-info">
 
@@ -168,19 +309,21 @@
                 </a>
             </p>
 
+
             <p>
                 💬
                 <a
                     href="https://wa.me/212703166572"
-                    target="_blank">
+                    target="_blank"
+                >
                     WhatsApp
                 </a>
             </p>
 
+
             <p>
                 ✉️
-                <a
-                    href="mailto:sbahibtihal@gmail.com">
+                <a href="mailto:sbahibtihal@gmail.com">
                     sbahibtihal@gmail.com
                 </a>
             </p>
@@ -192,30 +335,7 @@
 </section>
 
 
-<!-- =========================
-     PRODUCT MODAL
-========================= -->
-
-<div id="product-modal" class="modal">
-
-    <div class="modal-content product-modal-content">
-
-        <button
-            id="close-product"
-            class="close-button">
-            ✕
-        </button>
-
-        <div id="product-details"></div>
-
-    </div>
-
-</div>
-
-
-<!-- =========================
-     CART
-========================= -->
+<!-- ================= CART ================= -->
 
 <div id="cart" class="cart">
 
@@ -223,15 +343,24 @@
 
         <button
             id="close-cart"
-            class="close-cart">
+            class="close-cart"
+            type="button"
+        >
             ✕
         </button>
+
 
         <h2>
             🛒 سلة المشتريات
         </h2>
 
-        <div id="cart-items"></div>
+
+        <div id="cart-items">
+
+            <!-- المنتجات ستظهر هنا -->
+
+        </div>
+
 
         <div class="cart-total">
 
@@ -245,10 +374,13 @@
 
         </div>
 
+
         <button
             id="checkout"
-            class="checkout">
-            متابعة الطلب
+            class="checkout"
+            type="button"
+        >
+            💬 إتمام الطلب عبر WhatsApp
         </button>
 
     </div>
@@ -256,88 +388,169 @@
 </div>
 
 
-<!-- =========================
-     CHECKOUT
-========================= -->
+<!-- ================= PRODUCT MODAL ================= -->
 
-<div id="checkout-modal" class="modal">
+<div id="product-modal" class="product-modal">
 
-    <div class="modal-content checkout-content">
+    <div class="product-modal-content">
 
         <button
-            id="close-checkout"
-            class="close-button">
+            id="close-product-modal"
+            class="close-product-modal"
+            type="button"
+        >
             ✕
         </button>
 
-        <h2>
-            إتمام الطلب
-        </h2>
 
-        <p class="payment-text">
-            💵 الدفع عند الاستلام
-        </p>
+        <div class="product-detail">
 
+            <div class="product-detail-image">
 
-        <form id="checkout-form">
+                <img
+                    id="modal-product-image"
+                    src=""
+                    alt="Product"
+                >
 
-            <input
-                id="customer-name"
-                type="text"
-                placeholder="الاسم الكامل"
-                required
-            >
-
-            <input
-                id="customer-phone"
-                type="tel"
-                placeholder="رقم الهاتف"
-                required
-            >
-
-            <input
-                id="customer-city"
-                type="text"
-                placeholder="المدينة"
-                required
-            >
-
-            <textarea
-                id="customer-address"
-                placeholder="العنوان"
-                required>
-            </textarea>
-
-            <textarea
-                id="customer-note"
-                placeholder="ملاحظة اختيارية">
-            </textarea>
+            </div>
 
 
-            <button
-                type="submit"
-                class="whatsapp-button">
+            <div class="product-detail-info">
 
-                💬 إرسال الطلب عبر WhatsApp
+                <span
+                    id="modal-product-category"
+                    class="product-badge"
+                >
+                    المنتج
+                </span>
 
-            </button>
+
+                <h2 id="modal-product-name">
+                    اسم المنتج
+                </h2>
 
 
-            <button
-                type="button"
-                id="email-order"
-                class="email-button">
+                <p id="modal-product-description">
+                    وصف المنتج
+                </p>
 
-                ✉️ إرسال الطلب عبر Gmail
 
-            </button>
+                <div
+                    id="modal-product-price"
+                    class="modal-price"
+                >
+                    0 DH
+                </div>
 
-        </form>
+
+                <!-- COLOR -->
+
+                <div
+                    id="color-section"
+                    class="option-section"
+                >
+
+                    <h3>
+                        🎨 اللون:
+                        <span id="selected-color">
+                            -
+                        </span>
+                    </h3>
+
+
+                    <div
+                        id="color-options"
+                        class="option-buttons"
+                    >
+
+                        <!-- الألوان هنا -->
+
+                    </div>
+
+                </div>
+
+
+                <!-- SIZE -->
+
+                <div
+                    id="size-section"
+                    class="option-section"
+                >
+
+                    <h3>
+                        📏 المقاس:
+                        <span id="selected-size">
+                            -
+                        </span>
+                    </h3>
+
+
+                    <div
+                        id="size-options"
+                        class="option-buttons"
+                    >
+
+                        <!-- المقاسات هنا -->
+
+                    </div>
+
+                </div>
+
+
+                <!-- QUANTITY -->
+
+                <div class="quantity-section">
+
+                    <h3>
+                        الكمية
+                    </h3>
+
+                    <div class="quantity-control">
+
+                        <button
+                            id="quantity-minus"
+                            type="button"
+                        >
+                            −
+                        </button>
+
+
+                        <span id="product-quantity">
+                            1
+                        </span>
+
+
+                        <button
+                            id="quantity-plus"
+                            type="button"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="modal-add-cart"
+                    class="modal-add-cart"
+                    type="button"
+                >
+                    🛒 أضف إلى السلة
+                </button>
+
+            </div>
+
+        </div>
 
     </div>
 
 </div>
 
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -348,13 +561,19 @@
         </h3>
 
         <p>
-            جميع الحقوق محفوظة © 2026
+            متجرك الإلكتروني للتسوق بسهولة وأمان.
+        </p>
+
+        <p class="copyright">
+            © 2026 NAIMA STORE
         </p>
 
     </div>
 
 </footer>
 
+
+<!-- ================= JAVASCRIPT ================= -->
 
 <script src="script.js"></script>
 
