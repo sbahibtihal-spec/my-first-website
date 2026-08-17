@@ -1,678 +1,1097 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>NAIMA STORE | متجر نعيمة</title>
+<title>SABIH | Beauty & Fashion</title>
 
-    <link rel="stylesheet" href="style.css">
+<style>
+:root {
+    --beige: #f3e7d8;
+    --cream: #faf6f0;
+    --champagne: #c8a77a;
+    --brown: #3c2c22;
+    --black: #11100f;
+    --white: #ffffff;
+    --border: #e7ddd2;
+    --muted: #766b63;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, "Tahoma", sans-serif;
+    background: var(--white);
+    color: var(--brown);
+}
+
+/* ================= TOP BAR ================= */
+
+.top-bar {
+    background: var(--beige);
+    padding: 10px 6%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+}
+
+/* ================= HEADER ================= */
+
+header {
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header {
+    max-width: 1400px;
+    margin: auto;
+    padding: 20px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo {
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 42px;
+    letter-spacing: 8px;
+    color: #171311;
+}
+
+.logo span {
+    display: block;
+    font-family: Arial;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--champagne);
+    margin-top: 7px;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: var(--brown);
+    text-decoration: none;
+    font-size: 14px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--champagne);
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-btn {
+    border: 1px solid var(--border);
+    background: white;
+    padding: 9px 13px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 620px;
+    max-width: 1450px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 38% 31% 31%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f5e9dc 0%,
+            #f5e9dc 38%,
+            #d6c0aa 38%,
+            #b29a84 70%,
+            #745d4d 100%
+        );
+
+    overflow: hidden;
+}
+
+.hero-content {
+    padding: 90px 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-content h1 {
+    font-family: Georgia, serif;
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-family: Georgia, serif;
+    font-size: 19px;
+    letter-spacing: 2px;
+    line-height: 1.8;
+}
+
+.shop-btn {
+    width: max-content;
+    margin-top: 25px;
+    padding: 16px 35px;
+
+    background: var(--black);
+    color: white;
+
+    border: none;
+    cursor: pointer;
+
+    font-size: 15px;
+    transition: .3s;
+}
+
+.shop-btn:hover {
+    background: var(--champagne);
+}
+
+/* الصور التجريبية */
+
+.hero-image {
+    position: relative;
+    min-height: 620px;
+    overflow: hidden;
+}
+
+.hero-image.beauty {
+    background:
+        radial-gradient(
+            circle at center,
+            #f0d7c1 0,
+            #b58d72 45%,
+            #695345 100%
+        );
+}
+
+.hero-image.fashion {
+    background:
+        linear-gradient(
+            135deg,
+            #d8c3af,
+            #725c4c
+        );
+}
+
+.hero-image::after {
+    content: "SABIH";
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+
+    font-family: Georgia, serif;
+    font-size: 65px;
+    letter-spacing: 8px;
+
+    color: white;
+    opacity: .18;
+}
+
+/* ================= CATEGORIES ================= */
+
+.categories {
+    max-width: 1300px;
+    margin: 25px auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+    padding: 0 5%;
+}
+
+.category {
+    min-height: 210px;
+
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    background: linear-gradient(
+        135deg,
+        #f0e1d2,
+        #bda38c
+    );
+
+    position: relative;
+    overflow: hidden;
+}
+
+.category:nth-child(2) {
+    background: linear-gradient(
+        135deg,
+        #e7d4c0,
+        #8f7461
+    );
+}
+
+.category:nth-child(3) {
+    background: linear-gradient(
+        135deg,
+        #f4e7db,
+        #b8997d
+    );
+}
+
+.category:nth-child(4) {
+    background: linear-gradient(
+        135deg,
+        #d9c0a8,
+        #665044
+    );
+}
+
+.category h3 {
+    font-size: 21px;
+    margin-bottom: 7px;
+}
+
+.category p {
+    font-family: Georgia, serif;
+    letter-spacing: 2px;
+    font-size: 12px;
+}
+
+.category button {
+    width: max-content;
+    margin-top: 15px;
+
+    padding: 9px 20px;
+
+    background: var(--black);
+    color: white;
+    border: none;
+
+    cursor: pointer;
+}
+
+/* ================= BENEFITS ================= */
+
+.benefits {
+    margin-top: 35px;
+
+    background: var(--cream);
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    padding: 28px 6%;
+
+    text-align: center;
+    gap: 20px;
+}
+
+.benefit {
+    color: var(--brown);
+}
+
+.benefit .symbol {
+    font-size: 27px;
+    margin-bottom: 8px;
+}
+
+.benefit strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.benefit small {
+    color: var(--muted);
+}
+
+/* ================= SECTIONS ================= */
+
+.section {
+    max-width: 1300px;
+    margin: 70px auto;
+
+    padding: 0 5%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-title h2 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+}
+
+.section-title p {
+    color: var(--champagne);
+    letter-spacing: 4px;
+    margin-top: 8px;
+}
+
+/* ================= PRODUCTS ================= */
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+}
+
+.product {
+    border: 1px solid var(--border);
+    background: white;
+
+    position: relative;
+
+    transition: .3s;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.08);
+}
+
+.product-image {
+    height: 270px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #efe0d1,
+            #b89c84
+        );
+
+    font-family: Georgia, serif;
+    font-size: 30px;
+    color: white;
+    letter-spacing: 3px;
+}
+
+.product:nth-child(2) .product-image {
+    background: linear-gradient(145deg,#f0dfd0,#c39a78);
+}
+
+.product:nth-child(3) .product-image {
+    background: linear-gradient(145deg,#dfc7b1,#92735d);
+}
+
+.product:nth-child(4) .product-image {
+    background: linear-gradient(145deg,#e7ddd3,#1c1917);
+}
+
+.product:nth-child(5) .product-image {
+    background: linear-gradient(145deg,#eee5dc,#bca997);
+}
+
+.product-info {
+    padding: 15px;
+}
+
+.product-info h3 {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.price {
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.add-cart {
+    width: 100%;
+
+    background: var(--black);
+    color: white;
+
+    border: none;
+
+    padding: 11px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.add-cart:hover {
+    background: var(--champagne);
+}
+
+.favorite {
+    position: absolute;
+
+    top: 10px;
+    left: 10px;
+
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background: white;
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #171311;
+    color: white;
+
+    padding: 60px 6%;
+
+    margin-top: 80px;
+}
+
+.footer {
+    max-width: 1300px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 50px;
+}
+
+.footer-logo {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    letter-spacing: 6px;
+}
+
+.footer h3 {
+    margin-bottom: 15px;
+}
+
+.footer p,
+.footer a {
+    color: #cfc6be;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.footer a {
+    display: block;
+    text-decoration: none;
+}
+
+/* ================= WHATSAPP ================= */
+
+.whatsapp {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 60px;
+    height: 60px;
+
+    background: #25D366;
+
+    color: white;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 28px;
+
+    text-decoration: none;
+
+    z-index: 999;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,.2);
+}
+
+/* ================= CART ================= */
+
+.cart-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,.6);
+
+    display: none;
+
+    z-index: 1000;
+}
+
+.cart {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    height: 100%;
+
+    width: min(430px,95%);
+
+    background: white;
+
+    padding: 25px;
+
+    overflow-y: auto;
+}
+
+.close-cart {
+    float: left;
+
+    border: none;
+    background: none;
+
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+.cart h2 {
+    margin-bottom: 25px;
+}
+
+.cart-item {
+    padding: 15px 0;
+
+    border-bottom: 1px solid var(--border);
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-total {
+    margin-top: 25px;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.checkout {
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+    background: var(--black);
+
+    color: white;
+
+    border: none;
+
+    cursor: pointer;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width: 1000px) {
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-image {
+        display: none;
+    }
+
+    .categories {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .products {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .benefits {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .footer {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 600px) {
+
+    .top-bar {
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+    }
+
+    .logo {
+        font-size: 30px;
+    }
+
+    .hero-content {
+        padding: 70px 8%;
+    }
+
+    .hero-content h1 {
+        font-size: 37px;
+    }
+
+    .categories,
+    .products,
+    .benefits {
+        grid-template-columns: 1fr;
+    }
+
+    .product-image {
+        height: 300px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-<!-- ================= TOP BAR ================= -->
+<!-- TOP BAR -->
 
 <div class="top-bar">
-    🚚 توصيل لجميع المدن المغربية
-    <span>•</span>
-    💳 الدفع عند الاستلام
-    <span>•</span>
-    💬 خدمة الزبناء عبر WhatsApp
+
+    <span>
+        🚚 توصيل مجاني للطلبات فوق 500 درهم
+    </span>
+
+    <span>
+        ☎ 0703166572
+        &nbsp;&nbsp;
+        ✉ sbahibtihal@gmail.com
+    </span>
+
 </div>
 
 
-<!-- ================= HEADER ================= -->
+<!-- HEADER -->
 
-<header class="header">
+<header>
 
-    <div class="container header-content">
+<div class="header">
 
-        <a href="#" class="logo">
-            <span>NAIMA</span> STORE
-        </a>
+    <div class="header-icons">
 
-        <nav class="main-nav">
+        <button class="icon-btn"
+                onclick="openCart()">
 
-            <a href="#home">الرئيسية</a>
-            <a href="#products">المنتجات</a>
-            <a href="#about">من نحن</a>
-            <a href="#contact">اتصل بنا</a>
+            🛍️
+            <span id="cartCount">0</span>
 
-        </nav>
+        </button>
 
-        <div class="header-actions">
+        <button class="icon-btn">
 
-            <button
-                type="button"
-                class="language-btn"
-                id="languageBtn">
-                EN
-            </button>
+            ♡
 
-            <button
-                type="button"
-                class="cart-btn"
-                id="cartBtn">
-
-                🛒 السلة
-
-                <span id="cartCount">0</span>
-
-            </button>
-
-        </div>
+        </button>
 
     </div>
+
+
+    <nav>
+
+        <a href="#home">
+            الرئيسية
+        </a>
+
+        <a href="#beauty">
+            الجمال
+        </a>
+
+        <a href="#fashion">
+            الملابس
+        </a>
+
+        <a href="#offers">
+            العروض
+        </a>
+
+        <a href="#best">
+            الأكثر مبيعاً
+        </a>
+
+        <a href="#contact">
+            تواصل معنا
+        </a>
+
+    </nav>
+
+
+    <div class="logo">
+
+        SABIH
+
+        <span>
+            BEAUTY • FASHION • CONFIDENCE
+        </span>
+
+    </div>
+
+</div>
 
 </header>
 
 
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 
 <section class="hero" id="home">
 
-    <div class="container hero-content">
+    <div class="hero-content">
 
-        <div class="hero-text">
+        <h1>
+            للجمال والأناقة
+            <br>
+            في مكان واحد
+        </h1>
 
-            <span class="hero-badge">
-                ✨ تشكيلة جديدة
-            </span>
+        <p>
+            BEAUTY & FASHION
+            <br>
+            ALL IN ONE PLACE
+        </p>
 
-            <h1>
-                أناقتك تبدأ<br>
-                من <strong>NAIMA STORE</strong>
-            </h1>
+        <button class="shop-btn"
+                onclick="scrollToProducts()">
 
-            <p>
-                اكتشفي أجمل المنتجات المختارة بعناية،
-                بجودة رائعة وأسعار مناسبة.
-            </p>
+            تسوق الآن
+            <br>
 
-            <a
-                href="#products"
-                class="hero-btn">
+            <small>
+                SHOP NOW
+            </small>
 
-                تسوقي الآن
-                <span>←</span>
+        </button>
 
-            </a>
-
-        </div>
+    </div>
 
 
-        <div class="hero-visual">
+    <div class="hero-image beauty"></div>
 
-            <div class="hero-circle">
+    <div class="hero-image fashion"></div>
 
-                <div class="hero-bag">
-                    🛍️
-                </div>
+</section>
 
-            </div>
 
-            <div class="floating-card card-one">
-                ⭐ جودة ممتازة
-            </div>
+<!-- CATEGORIES -->
 
-            <div class="floating-card card-two">
-                🚚 توصيل سريع
-            </div>
+<section class="categories">
 
-        </div>
+    <div class="category" id="beauty">
+
+        <h3>
+            مستحضرات التجميل
+        </h3>
+
+        <p>
+            BEAUTY
+        </p>
+
+        <button onclick="showCategory('beauty')">
+            تسوق الآن
+        </button>
+
+    </div>
+
+
+    <div class="category" id="fashion">
+
+        <h3>
+            ملابس نسائية
+        </h3>
+
+        <p>
+            FASHION
+        </p>
+
+        <button onclick="showCategory('fashion')">
+            تسوق الآن
+        </button>
+
+    </div>
+
+
+    <div class="category" id="offers">
+
+        <h3>
+            العروض
+        </h3>
+
+        <p>
+            OFFERS
+        </p>
+
+        <button onclick="scrollToProducts()">
+            تسوق الآن
+        </button>
+
+    </div>
+
+
+    <div class="category" id="best">
+
+        <h3>
+            الأكثر مبيعاً
+        </h3>
+
+        <p>
+            BEST SELLERS
+        </p>
+
+        <button onclick="scrollToProducts()">
+            تسوق الآن
+        </button>
 
     </div>
 
 </section>
 
 
-<!-- ================= FEATURES ================= -->
+<!-- BENEFITS -->
 
-<section class="features">
+<section class="benefits">
 
-    <div class="container features-grid">
+    <div class="benefit">
 
-        <div class="feature">
-
-            <div class="feature-icon">
-                🚚
-            </div>
-
-            <div>
-                <h3>توصيل سريع</h3>
-                <p>نوصل طلبك إلى مدينتك</p>
-            </div>
-
+        <div class="symbol">
+            📦
         </div>
 
+        <strong>
+            توصيل سريع
+        </strong>
 
-        <div class="feature">
+        <small>
+            لجميع المدن المغربية
+        </small>
 
-            <div class="feature-icon">
-                💳
-            </div>
+    </div>
 
-            <div>
-                <h3>الدفع عند الاستلام</h3>
-                <p>ادفعي عند وصول طلبك</p>
-            </div>
 
+    <div class="benefit">
+
+        <div class="symbol">
+            💳
         </div>
 
+        <strong>
+            دفع آمن
+        </strong>
 
-        <div class="feature">
+        <small>
+            عند الاستلام أو إلكتروني
+        </small>
 
-            <div class="feature-icon">
-                🔒
-            </div>
+    </div>
 
-            <div>
-                <h3>طلب آمن</h3>
-                <p>نحافظ على معلوماتك</p>
-            </div>
 
+    <div class="benefit">
+
+        <div class="symbol">
+            ↩
         </div>
 
+        <strong>
+            إرجاع واستبدال
+        </strong>
 
-        <div class="feature">
+        <small>
+            بسهولة وأمان
+        </small>
 
-            <div class="feature-icon">
-                ⭐
-            </div>
+    </div>
 
-            <div>
-                <h3>جودة مختارة</h3>
-                <p>منتجات مختارة بعناية</p>
-            </div>
 
+    <div class="benefit">
+
+        <div class="symbol">
+            ✦
         </div>
+
+        <strong>
+            جودة مضمونة
+        </strong>
+
+        <small>
+            منتجات مختارة بعناية
+        </small>
 
     </div>
 
 </section>
 
 
-<!-- ================= PRODUCTS ================= -->
+<!-- NEW PRODUCTS -->
 
-<section class="products-section" id="products">
+<section class="section" id="products">
 
-    <div class="container">
-
-        <div class="section-heading">
-
-            <div>
-
-                <span>
-                    اكتشفي مجموعتنا
-                </span>
-
-                <h2>
-                    منتجاتنا
-                </h2>
-
-            </div>
-
-            <div class="search-box">
-
-                <span>🔎</span>
-
-                <input
-                    type="search"
-                    id="searchInput"
-                    placeholder="ابحثي عن منتج...">
-
-            </div>
-
-        </div>
-
-
-        <!-- CATEGORIES -->
-
-        <div
-            class="categories"
-            id="categories">
-
-        </div>
-
-
-        <!-- PRODUCTS -->
-
-        <div
-            class="products-grid"
-            id="productsGrid">
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= ABOUT ================= -->
-
-<section class="about" id="about">
-
-    <div class="container">
-
-        <span class="section-label">
-            NAIMA STORE
-        </span>
+    <div class="section-title">
 
         <h2>
-            متجرنا يهتم بتفاصيلك
+            وصل حديثاً
         </h2>
 
         <p>
-            في NAIMA STORE نحرص على تقديم منتجات عصرية
-            بجودة جيدة وأسعار مناسبة، مع تجربة شراء سهلة
-            وسريعة من الهاتف أو الكمبيوتر.
+            NEW ARRIVALS
         </p>
 
     </div>
 
-</section>
 
-
-<!-- ================= CONTACT ================= -->
-
-<section class="contact" id="contact">
-
-    <div class="container">
-
-        <span class="section-label">
-            تواصلي معنا
-        </span>
-
-        <h2>
-            نحن هنا لخدمتك
-        </h2>
-
-        <div class="contact-grid">
-
-            <a
-                href="tel:0703166572"
-                class="contact-card">
-
-                <span>📞</span>
-
-                <div>
-                    <strong>الهاتف</strong>
-                    <small>0703166572</small>
-                </div>
-
-            </a>
-
-
-            <a
-                href="https://wa.me/212703166572"
-                target="_blank"
-                class="contact-card">
-
-                <span>💬</span>
-
-                <div>
-                    <strong>WhatsApp</strong>
-                    <small>تواصلي معنا مباشرة</small>
-                </div>
-
-            </a>
-
-
-            <a
-                href="mailto:sbahibtihal@gmail.com"
-                class="contact-card">
-
-                <span>✉️</span>
-
-                <div>
-                    <strong>البريد الإلكتروني</strong>
-                    <small>راسلينا عبر البريد</small>
-                </div>
-
-            </a>
-
-        </div>
+    <div class="products" id="productList">
 
     </div>
 
 </section>
 
 
-<!-- ================= CART ================= -->
+<!-- BEST SELLERS -->
 
-<div
-    class="modal-overlay"
-    id="cartModal">
+<section class="section">
 
-    <div class="cart-modal">
-
-        <button
-            type="button"
-            class="modal-close"
-            id="closeCart">
-
-            ✕
-
-        </button>
-
-        <div class="modal-title">
-
-            <h2>🛒 سلة المشتريات</h2>
-
-            <span id="cartItemsCount">
-                0 منتجات
-            </span>
-
-        </div>
-
-
-        <div
-            id="cartItems"
-            class="cart-items">
-
-        </div>
-
-
-        <div
-            id="cartEmpty"
-            class="cart-empty">
-
-            <div>🛒</div>
-
-            <h3>السلة فارغة</h3>
-
-            <p>
-                أضيفي المنتجات التي تريدين شراءها.
-            </p>
-
-        </div>
-
-
-        <div
-            class="cart-footer"
-            id="cartFooter">
-
-            <div class="cart-total">
-
-                <span>المجموع</span>
-
-                <strong id="cartTotal">
-                    0 DH
-                </strong>
-
-            </div>
-
-            <button
-                type="button"
-                class="checkout-btn"
-                id="checkoutBtn">
-
-                إتمام الطلب
-
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- ================= PRODUCT DETAILS ================= -->
-
-<div
-    class="modal-overlay"
-    id="productModal">
-
-    <div class="product-modal">
-
-        <button
-            type="button"
-            class="modal-close"
-            id="closeProduct">
-
-            ✕
-
-        </button>
-
-        <div id="productDetails">
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- ================= CHECKOUT ================= -->
-
-<div
-    class="modal-overlay"
-    id="checkoutModal">
-
-    <div class="checkout-modal">
-
-        <button
-            type="button"
-            class="modal-close"
-            id="closeCheckout">
-
-            ✕
-
-        </button>
+    <div class="section-title">
 
         <h2>
-            إتمام الطلب
+            الأكثر مبيعاً
         </h2>
 
-        <p class="checkout-subtitle">
-            أدخلي معلوماتك لإرسال الطلب.
+        <p>
+            BEST SELLERS
         </p>
 
-
-        <form id="checkoutForm">
-
-            <div class="form-row">
-
-                <div class="form-group">
-
-                    <label>
-                        الاسم الكامل
-                    </label>
-
-                    <input
-                        type="text"
-                        id="customerName"
-                        required
-                        placeholder="مثال: نعيمة">
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label>
-                        رقم الهاتف
-                    </label>
-
-                    <input
-                        type="tel"
-                        id="customerPhone"
-                        required
-                        placeholder="06XXXXXXXX">
-
-                </div>
-
-            </div>
-
-
-            <div class="form-row">
-
-                <div class="form-group">
-
-                    <label>
-                        المدينة
-                    </label>
-
-                    <input
-                        type="text"
-                        id="customerCity"
-                        required
-                        placeholder="مثال: خنيفرة">
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label>
-                        العنوان
-                    </label>
-
-                    <input
-                        type="text"
-                        id="customerAddress"
-                        required
-                        placeholder="العنوان بالتفصيل">
-
-                </div>
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label>
-                    ملاحظات
-                </label>
-
-                <textarea
-                    id="customerNote"
-                    placeholder="أي ملاحظة إضافية..."></textarea>
-
-            </div>
-
-
-            <div class="payment-box">
-
-                <span>💵</span>
-
-                <div>
-
-                    <strong>
-                        الدفع عند الاستلام
-                    </strong>
-
-                    <small>
-                        تدفعين عند وصول الطلب
-                    </small>
-
-                </div>
-
-            </div>
-
-
-            <button
-                type="submit"
-                class="whatsapp-order-btn">
-
-                💬 إرسال الطلب عبر WhatsApp
-
-            </button>
-
-            <button
-                type="button"
-                class="email-order-btn"
-                id="emailOrderBtn">
-
-                ✉️ إرسال الطلب عبر البريد
-
-            </button>
-
-        </form>
-
     </div>
 
-</div>
 
+    <div class="products">
 
-<!-- ================= ADMIN ================= -->
+        <div class="product">
 
-<section
-    class="admin-section"
-    id="admin">
+            <button class="favorite">
+                ♡
+            </button>
 
-    <div class="container">
+            <div class="product-image">
+                SABIH
+            </div>
 
-        <div class="admin-header">
+            <div class="product-info">
 
-            <div>
+                <h3>
+                    عطر SABIH Signature
+                </h3>
 
-                <span>
-                    لوحة التحكم
-                </span>
+                <div class="price">
+                    690 MAD
+                </div>
 
-                <h2>
-                    إدارة NAIMA STORE
-                </h2>
+                <button class="add-cart"
+                        onclick="addProduct('عطر SABIH Signature',690)">
+
+                    أضف للسلة
+
+                </button>
 
             </div>
 
         </div>
 
 
-        <div class="admin-card">
+        <div class="product">
 
-            <h3>
-                ➕ إضافة منتج جديد
-            </h3>
+            <button class="favorite">
+                ♡
+            </button>
 
-            <div class="admin-grid">
+            <div class="product-image">
+                LUXE
+            </div>
 
-                <input
-                    id="adminName"
-                    placeholder="اسم المنتج">
+            <div class="product-info">
 
-                <input
-                    id="adminPrice"
-                    type="number"
-                    placeholder="السعر بالدرهم">
+                <h3>
+                    أحمر شفاه فاخر
+                </h3>
 
-                <input
-                    id="adminCategory"
-                    placeholder="التصنيف">
+                <div class="price">
+                    280 MAD
+                </div>
 
-                <input
-                    id="adminImage"
-                    placeholder="رابط صورة المنتج">
+                <button class="add-cart"
+                        onclick="addProduct('أحمر شفاه فاخر',280)">
 
-                <input
-                    id="adminColors"
-                    placeholder="الألوان: أسود, أبيض, أحمر">
+                    أضف للسلة
 
-                <input
-                    id="adminSizes"
-                    placeholder="المقاسات: S, M, L, XL">
+                </button>
 
             </div>
 
-
-            <textarea
-                id="adminDescription"
-                placeholder="وصف المنتج">
-
-            </textarea>
+        </div>
 
 
-            <button
-                type="button"
-                class="admin-add-btn"
-                id="adminAddBtn">
+        <div class="product">
 
-                ➕ إضافة المنتج
-
+            <button class="favorite">
+                ♡
             </button>
+
+            <div class="product-image">
+                SABIH
+            </div>
+
+            <div class="product-info">
+
+                <h3>
+                    فستان بيج أنيق
+                </h3>
+
+                <div class="price">
+                    550 MAD
+                </div>
+
+                <button class="add-cart"
+                        onclick="addProduct('فستان بيج أنيق',550)">
+
+                    أضف للسلة
+
+                </button>
+
+            </div>
 
         </div>
 
@@ -681,79 +1100,420 @@
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 
-<footer>
+<footer id="contact">
 
-    <div class="container footer-content">
+<div class="footer">
 
-        <div>
+    <div>
 
-            <div class="footer-logo">
-                NAIMA STORE
-            </div>
-
-            <p>
-                متجر إلكتروني عصري وسهل الاستعمال.
-            </p>
-
+        <div class="footer-logo">
+            SABIH
         </div>
 
+        <p>
+            Beauty • Fashion • Confidence
+        </p>
 
-        <div>
-
-            <h3>
-                روابط
-            </h3>
-
-            <a href="#home">
-                الرئيسية
-            </a>
-
-            <a href="#products">
-                المنتجات
-            </a>
-
-            <a href="#about">
-                من نحن
-            </a>
-
-        </div>
-
-
-        <div>
-
-            <h3>
-                التواصل
-            </h3>
-
-            <a href="tel:0703166572">
-                📞 0703166572
-            </a>
-
-            <a
-                href="https://wa.me/212703166572"
-                target="_blank">
-
-                💬 WhatsApp
-
-            </a>
-
-        </div>
+        <p>
+            متجر فاخر يجمع الجمال
+            والأناقة في مكان واحد.
+        </p>
 
     </div>
 
 
-    <div class="copyright">
+    <div>
 
-        © 2026 NAIMA STORE — جميع الحقوق محفوظة
+        <h3>
+            روابط سريعة
+        </h3>
+
+        <a href="#home">
+            الرئيسية
+        </a>
+
+        <a href="#beauty">
+            الجمال
+        </a>
+
+        <a href="#fashion">
+            الملابس
+        </a>
+
+        <a href="#products">
+            المنتجات
+        </a>
 
     </div>
+
+
+    <div>
+
+        <h3>
+            تواصل معنا
+        </h3>
+
+        <p>
+            WhatsApp:
+            0703166572
+        </p>
+
+        <p>
+            Email:
+            sbahibtihal@gmail.com
+        </p>
+
+    </div>
+
+</div>
 
 </footer>
 
 
-<script src="script.js"></script>
+<!-- WHATSAPP -->
+
+<a
+    class="whatsapp"
+    href="https://wa.me/212703166572"
+    target="_blank">
+
+    ☎
+
+</a>
+
+
+<!-- CART -->
+
+<div
+    class="cart-overlay"
+    id="cartOverlay">
+
+    <div class="cart">
+
+        <button
+            class="close-cart"
+            onclick="closeCart()">
+
+            ×
+
+        </button>
+
+        <h2>
+            سلة المشتريات
+        </h2>
+
+        <div id="cartItems">
+
+            <p>
+                السلة فارغة.
+            </p>
+
+        </div>
+
+        <div
+            class="cart-total"
+            id="cartTotal">
+
+            المجموع: 0 MAD
+
+        </div>
+
+        <button
+            class="checkout"
+            onclick="checkoutWhatsApp()">
+
+            إتمام الطلب عبر واتساب
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* ================= PRODUCTS ================= */
+
+const products = [
+
+    {
+        name: "عطر SABIH Signature",
+        price: 690
+    },
+
+    {
+        name: "أحمر شفاه فاخر",
+        price: 280
+    },
+
+    {
+        name: "فستان بيج أنيق",
+        price: 550
+    },
+
+    {
+        name: "بليزر نسائي كلاسيك",
+        price: 450
+    },
+
+    {
+        name: "كريم ترطيب فاخر",
+        price: 950
+    }
+
+];
+
+
+/* ================= CART ================= */
+
+let cart = [];
+
+
+/* عرض المنتجات */
+
+function renderProducts() {
+
+    const container =
+        document.getElementById("productList");
+
+    container.innerHTML = "";
+
+    products.forEach((product,index) => {
+
+        const card = document.createElement("div");
+
+        card.className = "product";
+
+        card.innerHTML = `
+
+            <button
+                class="favorite">
+
+                ♡
+
+            </button>
+
+            <div class="product-image">
+
+                ${index % 2 === 0
+                    ? "SABIH"
+                    : "LUXE"}
+
+            </div>
+
+            <div class="product-info">
+
+                <h3>
+                    ${product.name}
+                </h3>
+
+                <div class="price">
+
+                    ${product.price.toLocaleString()}
+                    MAD
+
+                </div>
+
+                <button
+                    class="add-cart"
+                    onclick="addProduct(
+                        '${product.name}',
+                        ${product.price}
+                    )">
+
+                    أضف للسلة
+
+                </button>
+
+            </div>
+
+        `;
+
+        container.appendChild(card);
+
+    });
+
+}
+
+
+/* إضافة للسلة */
+
+function addProduct(name,price) {
+
+    cart.push({
+        name:name,
+        price:price
+    });
+
+    updateCart();
+
+    openCart();
+
+}
+
+
+/* تحديث السلة */
+
+function updateCart() {
+
+    document.getElementById("cartCount")
+        .textContent = cart.length;
+
+    const items =
+        document.getElementById("cartItems");
+
+    if(cart.length === 0) {
+
+        items.innerHTML =
+            "<p>السلة فارغة.</p>";
+
+        return;
+
+    }
+
+    items.innerHTML = cart.map(
+        (item,index) => `
+
+        <div class="cart-item">
+
+            <span>
+                ${item.name}
+            </span>
+
+            <strong>
+                ${item.price.toLocaleString()}
+                MAD
+            </strong>
+
+        </div>
+
+        `
+    ).join("");
+
+
+    const total = cart.reduce(
+        (sum,item) =>
+            sum + item.price,
+        0
+    );
+
+
+    document.getElementById("cartTotal")
+        .textContent =
+        "المجموع: " +
+        total.toLocaleString() +
+        " MAD";
+
+}
+
+
+/* فتح السلة */
+
+function openCart() {
+
+    document.getElementById("cartOverlay")
+        .style.display = "block";
+
+    updateCart();
+
+}
+
+
+/* إغلاق السلة */
+
+function closeCart() {
+
+    document.getElementById("cartOverlay")
+        .style.display = "none";
+
+}
+
+
+/* الانتقال للمنتجات */
+
+function scrollToProducts() {
+
+    document.getElementById("products")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+}
+
+
+/* التصنيف */
+
+function showCategory(category) {
+
+    scrollToProducts();
+
+}
+
+
+/* ================= WHATSAPP CHECKOUT ================= */
+
+function checkoutWhatsApp() {
+
+    if(cart.length === 0) {
+
+        alert(
+            "أضف منتجاً إلى السلة أولاً."
+        );
+
+        return;
+
+    }
+
+
+    const total = cart.reduce(
+        (sum,item) =>
+            sum + item.price,
+        0
+    );
+
+
+    let message =
+        "مرحباً SABIH 👋%0A%0A";
+
+    message +=
+        "أريد طلب المنتجات التالية:%0A%0A";
+
+
+    cart.forEach(item => {
+
+        message +=
+            "• " +
+            item.name +
+            " — " +
+            item.price +
+            " MAD%0A";
+
+    });
+
+
+    message +=
+        "%0Aالمجموع: " +
+        total +
+        " MAD";
+
+
+    window.open(
+        "https://wa.me/212703166572?text=" +
+        message,
+        "_blank"
+    );
+
+}
+
+
+/* تشغيل المتجر */
+
+renderProducts();
+
+</script>
 
 </body>
 </html>
