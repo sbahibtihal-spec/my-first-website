@@ -1184,4 +1184,173 @@ body::after {
     padding: 10px 14px;
     font-size: 10px;
   }
+/* =========================================
+   EXTRA PROFESSIONAL EFFECTS
+========================================= */
+
+
+/* HEADER SCROLL */
+
+.header{
+    transition:
+        box-shadow .3s ease,
+        background .3s ease
+}
+
+.header.scrolled{
+    box-shadow:
+        0 8px 30px rgba(30,25,20,.08)
+}
+
+
+/* NOTIFICATION */
+
+.sabih-notification{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    z-index:5000;
+
+    background:var(--ink);
+    color:#fff;
+
+    padding:13px 20px;
+
+    border-radius:8px;
+
+    font-size:13px;
+    font-weight:700;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.20);
+
+    transform:
+        translateY(30px);
+
+    opacity:0;
+
+    transition:
+        .3s ease;
+}
+
+.sabih-notification.show{
+    transform:
+        translateY(0);
+
+    opacity:1;
+}
+
+
+/* EMPTY CART */
+
+.empty-cart{
+    text-align:center;
+    padding:50px 15px;
+    color:var(--muted);
+}
+
+.empty-cart h3{
+    color:var(--ink);
+    margin-bottom:5px;
+}
+
+.empty-cart p{
+    font-size:13px;
+}
+
+
+/* FAVORITE */
+
+.quick{
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        color .2s ease;
+}
+
+.quick:hover{
+    transform:scale(1.1);
+}
+
+.quick.favorite{
+    color:#b38a5a;
+}
+
+
+/* REVEAL */
+
+.reveal{
+    opacity:0;
+    transform:translateY(25px);
+    transition:
+        opacity .6s ease,
+        transform .6s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+
+/* CART ITEM */
+
+.cart-item{
+    animation:
+        cartItemIn .25s ease;
+}
+
+@keyframes cartItemIn{
+
+    from{
+        opacity:0;
+        transform:translateX(15px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+
+}
+
+
+/* BUTTON HOVER */
+
+.btn,
+.add-cart,
+.checkout,
+.cart-btn{
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        box-shadow .2s ease;
+}
+
+.btn:hover,
+.add-cart:hover,
+.checkout:hover,
+.cart-btn:hover{
+    transform:translateY(-2px);
+}
+
+
+/* IMAGE LOADING */
+
+img{
+    background:#f1ece6;
+}
+
+
+/* MOBILE NOTIFICATION */
+
+@media(max-width:600px){
+
+    .sabih-notification{
+        right:15px;
+        left:15px;
+        bottom:15px;
+        text-align:center;
+    }
+
 }
