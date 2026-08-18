@@ -1,9 +1,11 @@
 /* =====================================================
    SABIH BEAUTY & FASHION
-   Main JavaScript
+   MAIN JAVASCRIPT
 ===================================================== */
 
 const WHATSAPP_NUMBER = "212703166572";
+
+/* ================= PRODUCTS ================= */
 
 const products = [
     {
@@ -43,27 +45,74 @@ const products = [
     }
 ];
 
+/* ================= CART ================= */
+
+let cart = JSON.parse(
+    localStorage.getItem("sabihCart")
+) || [];
+
+
+/* ================= FAVORITES ================= */
+
+let favorites = JSON.parse(
+    localStorage.getItem("sabihFavorites")
+) || [];
+
 
 /* =====================================================
-   CART
+   FORMAT PRICE
 ===================================================== */
 
-let cart = JSON.parse(localStorage.getItem("sabihCart")) || [];
+function formatPrice(price) {
+    return Number(price).toLocaleString("fr-MA") + " MAD";
+}
 
 
-/* إضافة منتج */
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function escapeHTML(text) {
+
+    const div = document.createElement("div");
+
+    div.textContent = text;
+
+    return div.innerHTML;
+}
+
+
+/* =====================================================
+   SAVE CART
+===================================================== */
+
+function saveCart() {
+
+    localStorage.setItem(
+        "sabihCart",
+        JSON.stringify(cart)
+    );
+
+}
+
+
+/* =====================================================
+   ADD PRODUCT
+===================================================== */
 
 function addProduct(productId) {
 
     const product = products.find(
-        item => item.id === productId
+        item => item.id === Number(productId)
     );
 
     if (!product) return;
 
+
     const existingProduct = cart.find(
-        item => item.id === productId
+        item => item.id === product.id
     );
+
 
     if (existingProduct) {
 
@@ -78,6 +127,7 @@ function addProduct(productId) {
 
     }
 
+
     saveCart();
 
     updateCart();
@@ -87,12 +137,14 @@ function addProduct(productId) {
 }
 
 
-/* حذف منتج */
+/* =====================================================
+   REMOVE PRODUCT
+===================================================== */
 
 function removeProduct(productId) {
 
     cart = cart.filter(
-        item => item.id !== productId
+        item => item.id !== Number(productId)
     );
 
     saveCart();
@@ -102,17 +154,19 @@ function removeProduct(productId) {
 }
 
 
-/* زيادة الكمية */
+/* =====================================================
+   INCREASE QUANTITY
+===================================================== */
 
 function increaseQuantity(productId) {
 
-    const product = cart.find(
-        item => item.id === productId
+    const item = cart.find(
+        product => product.id === Number(productId)
     );
 
-    if (!product) return;
+    if (!item) return;
 
-    product.quantity++;
+    item.quantity++;
 
     saveCart();
 
@@ -121,19 +175,22 @@ function increaseQuantity(productId) {
 }
 
 
-/* تقليل الكمية */
+/* =====================================================
+   DECREASE QUANTITY
+===================================================== */
 
 function decreaseQuantity(productId) {
 
-    const product = cart.find(
-        item => item.id === productId
+    const item = cart.find(
+        product => product.id === Number(productId)
     );
 
-    if (!product) return;
+    if (!item) return;
 
-    if (product.quantity > 1) {
 
-        product.quantity--;
+    if (item.quantity > 1) {
+
+        item.quantity--;
 
     } else {
 
@@ -143,6 +200,7 @@ function decreaseQuantity(productId) {
 
     }
 
+
     saveCart();
 
     updateCart();
@@ -150,20 +208,8 @@ function decreaseQuantity(productId) {
 }
 
 
-/* حفظ السلة */
-
-function saveCart() {
-
-    localStorage.setItem(
-        "sabihCart",
-        JSON.stringify(cart)
-    );
-
-}
-
-
 /* =====================================================
-   CART UI
+   UPDATE CART
 ===================================================== */
 
 function updateCart() {
@@ -178,6 +224,8 @@ function updateCart() {
         document.getElementById("cartTotal");
 
 
+    /* عدد المنتجات */
+
     const totalQuantity = cart.reduce(
         (total, item) =>
             total + item.quantity,
@@ -185,9 +233,14 @@ function updateCart() {
     );
 
 
+    /* المجموع */
+
     const totalPrice = cart.reduce(
         (total, item) =>
-            total + (item.price * item.quantity),
+            total + (
+                item.price *
+                item.quantity
+            ),
         0
     );
 
@@ -204,8 +257,7 @@ function updateCart() {
 
         cartTotal.textContent =
             "المجموع: " +
-            totalPrice.toLocaleString("fr-MA") +
-            " MAD";
+            formatPrice(totalPrice);
 
     }
 
@@ -213,21 +265,32 @@ function updateCart() {
     if (!cartItems) return;
 
 
+    /* السلة فارغة */
+
     if (cart.length === 0) {
 
         cartItems.innerHTML = `
+
             <div class="empty-cart">
-                <p>السلة فارغة</p>
+
+                <p>
+                    السلة فارغة
+                </p>
+
                 <small>
                     أضيفي منتجاتك المفضلة إلى السلة
                 </small>
+
             </div>
+
         `;
 
         return;
 
     }
 
+
+    /* عرض المنتجات */
 
     cartItems.innerHTML = cart.map(item => `
 
@@ -240,8 +303,7 @@ function updateCart() {
                 </strong>
 
                 <span>
-                    ${item.price.toLocaleString("fr-MA")}
-                    MAD
+                    ${formatPrice(item.price)}
                 </span>
 
             </div>
@@ -250,23 +312,32 @@ function updateCart() {
             <div class="quantity-controls">
 
                 <button
+                    type="button"
                     onclick="decreaseQuantity(${item.id})">
+
                     −
+
                 </button>
+
 
                 <span>
                     ${item.quantity}
                 </span>
 
+
                 <button
+                    type="button"
                     onclick="increaseQuantity(${item.id})">
+
                     +
+
                 </button>
 
             </div>
 
 
             <button
+                type="button"
                 class="remove-product"
                 onclick="removeProduct(${item.id})">
 
@@ -282,42 +353,51 @@ function updateCart() {
 
 
 /* =====================================================
-   CART OPEN / CLOSE
+   OPEN CART
 ===================================================== */
 
 function openCart() {
 
-    const cartOverlay =
+    const overlay =
         document.getElementById("cartOverlay");
 
-    if (cartOverlay) {
 
-        cartOverlay.style.display = "block";
+    if (!overlay) return;
 
-        document.body.style.overflow = "hidden";
 
-    }
+    overlay.style.display = "block";
+
+    document.body.style.overflow = "hidden";
+
+
+    updateCart();
 
 }
 
+
+/* =====================================================
+   CLOSE CART
+===================================================== */
 
 function closeCart() {
 
-    const cartOverlay =
+    const overlay =
         document.getElementById("cartOverlay");
 
-    if (cartOverlay) {
 
-        cartOverlay.style.display = "none";
+    if (!overlay) return;
 
-        document.body.style.overflow = "";
 
-    }
+    overlay.style.display = "none";
+
+    document.body.style.overflow = "";
 
 }
 
 
-/* إغلاق عند الضغط خارج السلة */
+/* =====================================================
+   CLOSE CART WHEN CLICKING OUTSIDE
+===================================================== */
 
 document.addEventListener(
     "click",
@@ -325,6 +405,7 @@ document.addEventListener(
 
         const overlay =
             document.getElementById("cartOverlay");
+
 
         if (
             overlay &&
@@ -340,7 +421,25 @@ document.addEventListener(
 
 
 /* =====================================================
-   PRODUCT RENDERING
+   ESC KEY
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Escape") {
+
+            closeCart();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   RENDER PRODUCTS
 ===================================================== */
 
 function renderProducts(list = products) {
@@ -348,15 +447,20 @@ function renderProducts(list = products) {
     const container =
         document.getElementById("productList");
 
+
     if (!container) return;
 
 
     if (list.length === 0) {
 
         container.innerHTML = `
-            <p class="no-products">
+
+            <div class="no-products">
+
                 لا توجد منتجات في هذا القسم.
-            </p>
+
+            </div>
+
         `;
 
         return;
@@ -364,18 +468,23 @@ function renderProducts(list = products) {
     }
 
 
-    container.innerHTML =
-        list.map(product => `
+    container.innerHTML = list.map(
+        product => `
 
         <article
             class="product"
             data-category="${product.category}">
 
+
             <button
-                class="favorite"
+                type="button"
+                class="favorite
+                ${favorites.includes(product.id) ? "active" : ""}"
                 onclick="toggleFavorite(${product.id})">
 
-                ♡
+                ${favorites.includes(product.id)
+                    ? "♥"
+                    : "♡"}
 
             </button>
 
@@ -395,15 +504,16 @@ function renderProducts(list = products) {
                     ${escapeHTML(product.name)}
                 </h3>
 
+
                 <div class="price">
 
-                    ${product.price.toLocaleString("fr-MA")}
-                    MAD
+                    ${formatPrice(product.price)}
 
                 </div>
 
 
                 <button
+                    type="button"
                     class="add-cart"
                     onclick="addProduct(${product.id})">
 
@@ -415,13 +525,14 @@ function renderProducts(list = products) {
 
         </article>
 
-    `).join("");
+    `
+    ).join("");
 
 }
 
 
 /* =====================================================
-   FILTERS
+   FILTER PRODUCTS
 ===================================================== */
 
 function filterProducts(category) {
@@ -435,32 +546,33 @@ function filterProducts(category) {
     }
 
 
-    const filteredProducts =
+    const filtered =
         products.filter(
             product =>
                 product.category === category
         );
 
 
-    renderProducts(filteredProducts);
+    renderProducts(filtered);
 
 }
 
 
 /* =====================================================
-   SEARCH
+   SEARCH PRODUCTS
 ===================================================== */
 
 function searchProducts() {
 
-    const searchInput =
+    const input =
         document.getElementById("searchInput");
 
-    if (!searchInput) return;
+
+    if (!input) return;
 
 
     const search =
-        searchInput.value
+        input.value
             .trim()
             .toLowerCase();
 
@@ -476,9 +588,11 @@ function searchProducts() {
 
     const results =
         products.filter(product =>
+
             product.name
                 .toLowerCase()
                 .includes(search)
+
         );
 
 
@@ -491,13 +605,10 @@ function searchProducts() {
    FAVORITES
 ===================================================== */
 
-let favorites =
-    JSON.parse(
-        localStorage.getItem("sabihFavorites")
-    ) || [];
-
-
 function toggleFavorite(productId) {
+
+    productId = Number(productId);
+
 
     if (favorites.includes(productId)) {
 
@@ -517,6 +628,54 @@ function toggleFavorite(productId) {
         "sabihFavorites",
         JSON.stringify(favorites)
     );
+
+
+    renderProducts();
+
+}
+
+
+/* =====================================================
+   SCROLL TO PRODUCTS
+===================================================== */
+
+function scrollToProducts() {
+
+    const section =
+        document.getElementById("products");
+
+
+    if (!section) return;
+
+
+    section.scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+
+/* =====================================================
+   CATEGORY BUTTON
+===================================================== */
+
+function showCategory(category) {
+
+    if (
+        category === "beauty" ||
+        category === "fashion"
+    ) {
+
+        filterProducts(category);
+
+    } else {
+
+        renderProducts(products);
+
+    }
+
+
+    scrollToProducts();
 
 }
 
@@ -541,6 +700,7 @@ function checkoutWhatsApp() {
     let message =
         "مرحباً SABIH 👋\n\n";
 
+
     message +=
         "أرغب في طلب المنتجات التالية:\n\n";
 
@@ -559,11 +719,11 @@ function checkoutWhatsApp() {
 
         message +=
             "السعر: " +
-            (
+            formatPrice(
                 item.price *
                 item.quantity
-            ).toLocaleString("fr-MA") +
-            " MAD\n\n";
+            ) +
+            "\n\n";
 
     });
 
@@ -572,7 +732,10 @@ function checkoutWhatsApp() {
         cart.reduce(
             (sum, item) =>
                 sum +
-                (item.price * item.quantity),
+                (
+                    item.price *
+                    item.quantity
+                ),
             0
         );
 
@@ -582,8 +745,9 @@ function checkoutWhatsApp() {
 
     message +=
         "المجموع: " +
-        total.toLocaleString("fr-MA") +
-        " MAD\n\n";
+        formatPrice(total) +
+        "\n\n";
+
 
     message +=
         "الاسم:\n";
@@ -614,52 +778,7 @@ function checkoutWhatsApp() {
 
 
 /* =====================================================
-   SCROLL
-===================================================== */
-
-function scrollToProducts() {
-
-    const productsSection =
-        document.getElementById("products");
-
-    if (!productsSection) return;
-
-
-    productsSection.scrollIntoView({
-        behavior: "smooth"
-    });
-
-}
-
-
-/* =====================================================
-   LANGUAGE
-===================================================== */
-
-function switchLanguage() {
-
-    const html =
-        document.documentElement;
-
-    if (html.lang === "ar") {
-
-        html.lang = "en";
-
-        html.dir = "ltr";
-
-    } else {
-
-        html.lang = "ar";
-
-        html.dir = "rtl";
-
-    }
-
-}
-
-
-/* =====================================================
-   CONTACT
+   OPEN WHATSAPP
 ===================================================== */
 
 function openWhatsApp() {
@@ -674,17 +793,28 @@ function openWhatsApp() {
 
 
 /* =====================================================
-   SECURITY
+   LANGUAGE
 ===================================================== */
 
-function escapeHTML(text) {
+function switchLanguage() {
 
-    const div =
-        document.createElement("div");
+    const html =
+        document.documentElement;
 
-    div.textContent = text;
 
-    return div.innerHTML;
+    if (html.lang === "ar") {
+
+        html.lang = "en";
+
+        html.dir = "ltr";
+
+    } else {
+
+        html.lang = "ar";
+
+        html.dir = "rtl";
+
+    }
 
 }
 
