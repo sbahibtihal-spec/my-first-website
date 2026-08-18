@@ -1,160 +1,1134 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="SABIH Beauty & Fashion - متجر الجمال والأناقة">
-<title>SABIH | Beauty & Fashion</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="SABIH BEAUTY - FASHION - CONFIDENCE | متجر أنيق للحقائب والأحذية والساعات والإكسسوارات">
+
+  <title>SABIH BEAUTY • FASHION • CONFIDENCE</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="top-bar">
-    <span>🚚 توصيل مجاني للطلبات فوق 500 درهم</span>
-    <span>☎ 0703166572 &nbsp; ✉ sbahibtihal@gmail.com</span>
-</div>
+<header class="topbar">
+  <div class="container topbar-inner">
 
-<header>
-    <div class="header">
-        <div class="header-icons">
-            <button class="icon-btn" onclick="openCart()" aria-label="فتح السلة">🛍️ <span id="cartCount">0</span></button>
-            <button class="icon-btn" onclick="showFavorites()" aria-label="المفضلة">♡ <span id="favoriteCount">0</span></button>
-        </div>
-
-        <nav>
-            <a href="#home">الرئيسية</a>
-            <a href="#beauty">الجمال</a>
-            <a href="#fashion">الملابس</a>
-            <a href="#offers">العروض</a>
-            <a href="#products">المنتجات</a>
-            <a href="#contact">تواصل معنا</a>
-        </nav>
-
-        <div class="logo">
-            SABIH
-            <span>BEAUTY • FASHION • CONFIDENCE</span>
-        </div>
+    <div>
+      🚚 توصيل مجاني للطلبات فوق 500 درهم
     </div>
+
+    <div class="top-links">
+      <a href="tel:+212703166572">0703166572</a>
+      <a href="mailto:sbahibtihal@gmail.com">
+        sbahibtihal@gmail.com
+      </a>
+    </div>
+
+  </div>
 </header>
 
-<main>
-<section class="hero" id="home">
-    <div class="hero-content">
-        <span class="eyebrow">SABIH COLLECTION</span>
-        <h1>للجمال والأناقة<br>في مكان واحد</h1>
-        <p>منتجات مختارة بعناية لتكملي إطلالتك بثقة وأناقة.</p>
-        <button class="shop-btn" onclick="scrollToProducts()">تسوقي الآن <small>SHOP NOW</small></button>
+
+<header class="header">
+
+  <div class="container nav-wrap">
+
+    <a class="brand" href="#home">
+
+      <span class="brand-mark">S</span>
+
+      <span>
+        <strong>SABIH</strong>
+        <small>BEAUTY • FASHION • CONFIDENCE</small>
+      </span>
+
+    </a>
+
+
+    <button
+      class="menu-toggle"
+      id="menu-toggle"
+      aria-label="فتح القائمة">
+      ☰
+    </button>
+
+
+    <nav id="main-nav">
+
+      <a href="#home">الرئيسية</a>
+      <a href="#categories">التصنيفات</a>
+      <a href="#products">المنتجات</a>
+      <a href="#offers">العروض</a>
+      <a href="#about">من نحن</a>
+      <a href="#contact">تواصل معنا</a>
+
+    </nav>
+
+
+    <div class="nav-actions">
+
+      <button
+        id="language-toggle"
+        class="icon-btn"
+        type="button">
+        EN
+      </button>
+
+      <button
+        id="cart-button"
+        class="cart-btn"
+        type="button">
+
+        🛒
+        <span>السلة</span>
+
+        <b id="cart-count">0</b>
+
+      </button>
+
     </div>
-    <div class="hero-image beauty" aria-label="قسم الجمال"><span>BEAUTY</span></div>
-    <div class="hero-image fashion" aria-label="قسم الموضة"><span>FASHION</span></div>
+
+  </div>
+
+</header>
+
+
+
+<main id="home">
+
+
+<section class="hero">
+
+  <div class="hero-overlay"></div>
+
+  <div class="container hero-grid">
+
+    <div class="hero-copy">
+
+      <p class="eyebrow">
+        SABIH COLLECTION
+      </p>
+
+      <h1>
+        للجمال والأناقة
+        <br>
+        <em>في مكان واحد</em>
+      </h1>
+
+      <p class="hero-text">
+        منتجات مختارة بعناية لتكملي إطلالتك بثقة وأناقة،
+        من الحقائب والأحذية إلى الساعات والإكسسوارات.
+      </p>
+
+
+      <div class="hero-actions">
+
+        <a class="btn btn-dark" href="#products">
+          تسوقي الآن
+        </a>
+
+        <a class="btn btn-light" href="#categories">
+          اكتشفي التصنيفات
+        </a>
+
+      </div>
+
+
+      <div class="hero-points">
+
+        <span>✓ منتجات مختارة</span>
+        <span>✓ طلب سهل عبر WhatsApp</span>
+        <span>✓ توصيل داخل المغرب</span>
+
+      </div>
+
+    </div>
+
+
+    <div class="hero-image-card">
+
+      <img
+        src="images/bags-classic.jpg"
+        alt="حقائب SABIH">
+
+      <div class="hero-badge">
+        NEW COLLECTION
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
 
-<section class="categories">
-    <div class="category" id="beauty">
-        <span class="category-number">01</span>
-        <h3>مستحضرات التجميل</h3>
-        <p>BEAUTY</p>
-        <button onclick="filterAndScroll('beauty')">اكتشفي المجموعة</button>
+
+
+<section class="trust">
+
+  <div class="container trust-grid">
+
+    <div>
+      <span>🚚</span>
+
+      <div>
+        <strong>توصيل سريع</strong>
+        <small>داخل المغرب</small>
+      </div>
     </div>
-    <div class="category" id="fashion">
-        <span class="category-number">02</span>
-        <h3>ملابس نسائية</h3>
-        <p>FASHION</p>
-        <button onclick="filterAndScroll('fashion')">اكتشفي المجموعة</button>
+
+
+    <div>
+      <span>💬</span>
+
+      <div>
+        <strong>طلب عبر WhatsApp</strong>
+        <small>بسهولة وفي دقائق</small>
+      </div>
     </div>
-    <div class="category" id="offers">
-        <span class="category-number">03</span>
-        <h3>العروض</h3>
-        <p>OFFERS</p>
-        <button onclick="filterAndScroll('offers')">شوفي العروض</button>
+
+
+    <div>
+      <span>✨</span>
+
+      <div>
+        <strong>اختيارات أنيقة</strong>
+        <small>منتجات تناسب ذوقك</small>
+      </div>
     </div>
-    <div class="category">
-        <span class="category-number">04</span>
-        <h3>الأكثر مبيعاً</h3>
-        <p>BEST SELLERS</p>
-        <button onclick="filterAndScroll('all')">تسوقي الآن</button>
+
+
+    <div>
+      <span>🔒</span>
+
+      <div>
+        <strong>تسوق مطمئن</strong>
+        <small>تواصل مباشر معنا</small>
+      </div>
     </div>
+
+  </div>
+
 </section>
 
-<section class="benefits">
-    <div class="benefit"><div class="symbol">📦</div><strong>توصيل سريع</strong><small>لجميع المدن المغربية</small></div>
-    <div class="benefit"><div class="symbol">💳</div><strong>دفع آمن</strong><small>عند الاستلام أو إلكتروني</small></div>
-    <div class="benefit"><div class="symbol">↩</div><strong>إرجاع واستبدال</strong><small>بسهولة وأمان</small></div>
-    <div class="benefit"><div class="symbol">✦</div><strong>جودة مضمونة</strong><small>منتجات مختارة بعناية</small></div>
-</section>
 
-<section class="section" id="products">
-    <div class="section-title">
-        <span class="eyebrow">SABIH STORE</span>
-        <h2>اكتشفي منتجاتنا</h2>
-        <p>BEAUTY • FASHION • CONFIDENCE</p>
+
+<section id="categories" class="section">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <p class="eyebrow">
+        SHOP BY CATEGORY
+      </p>
+
+      <h2>
+        اختاري ما يناسبك
+      </h2>
+
+      <span>
+        كل ما تحتاجينه لإطلالة أنيقة في مكان واحد.
+      </span>
+
     </div>
 
-    <div class="shop-tools">
-        <div class="search-box">
-            <input id="searchInput" type="search" placeholder="ابحثي عن منتج..." oninput="searchProducts()">
-            <span>⌕</span>
+
+    <div class="category-grid">
+
+      <button
+        class="category-card active"
+        data-filter="all">
+
+        <img
+          src="images/bags-display.jpg"
+          alt="">
+
+        <span>الكل</span>
+
+      </button>
+
+
+      <button
+        class="category-card"
+        data-filter="bags">
+
+        <img
+          src="images/bags-chain.jpg"
+          alt="">
+
+        <span>الحقائب</span>
+
+      </button>
+
+
+      <button
+        class="category-card"
+        data-filter="shoes">
+
+        <img
+          src="images/shoes.jpg"
+          alt="">
+
+        <span>الأحذية</span>
+
+      </button>
+
+
+      <button
+        class="category-card"
+        data-filter="watches">
+
+        <img
+          src="images/watches.jpg"
+          alt="">
+
+        <span>الساعات</span>
+
+      </button>
+
+
+      <button
+        class="category-card"
+        data-filter="accessories">
+
+        <img
+          src="images/sunglasses.jpg"
+          alt="">
+
+        <span>الإكسسوارات</span>
+
+      </button>
+
+
+      <button
+        class="category-card"
+        data-filter="tech">
+
+        <img
+          src="images/headphones.jpg"
+          alt="">
+
+        <span>الإلكترونيات</span>
+
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section id="products" class="section products-section">
+
+  <div class="container">
+
+
+    <div class="section-heading row-heading">
+
+      <div>
+
+        <p class="eyebrow">
+          OUR PRODUCTS
+        </p>
+
+        <h2>
+          اكتشفي منتجاتنا
+        </h2>
+
+      </div>
+
+
+      <div class="search-box">
+
+        <span>⌕</span>
+
+        <input
+          id="search-input"
+          type="search"
+          placeholder="ابحثي عن منتج...">
+
+      </div>
+
+    </div>
+
+
+    <div class="filter-pills">
+
+      <button
+        class="filter-pill active"
+        data-filter="all">
+        الكل
+      </button>
+
+      <button
+        class="filter-pill"
+        data-filter="bags">
+        الحقائب
+      </button>
+
+      <button
+        class="filter-pill"
+        data-filter="shoes">
+        الأحذية
+      </button>
+
+      <button
+        class="filter-pill"
+        data-filter="watches">
+        الساعات
+      </button>
+
+      <button
+        class="filter-pill"
+        data-filter="accessories">
+        الإكسسوارات
+      </button>
+
+      <button
+        class="filter-pill"
+        data-filter="tech">
+        الإلكترونيات
+      </button>
+
+    </div>
+
+
+
+    <div id="products-grid" class="products-grid">
+
+
+      <article
+        class="product-card"
+        data-category="bags"
+        data-name="حقيبة نسائية أنيقة">
+
+        <div class="product-media">
+
+          <img
+            src="images/bags-chain.jpg"
+            alt="حقيبة نسائية أنيقة">
+
+          <span class="tag">
+            الأكثر مبيعاً
+          </span>
+
+          <button
+            class="quick"
+            type="button">
+            ♡
+          </button>
+
         </div>
-        <div class="filters">
-            <button class="filter-btn active" data-filter="all" onclick="filterProducts('all')">الكل</button>
-            <button class="filter-btn" data-filter="beauty" onclick="filterProducts('beauty')">الجمال</button>
-            <button class="filter-btn" data-filter="fashion" onclick="filterProducts('fashion')">الملابس</button>
-            <button class="filter-btn" data-filter="offers" onclick="filterProducts('offers')">العروض</button>
+
+
+        <div class="product-body">
+
+          <small>حقائب</small>
+
+          <h3>
+            حقيبة نسائية أنيقة
+          </h3>
+
+          <p>
+            تصميم أنيق مناسب للإطلالات اليومية والمناسبات.
+          </p>
+
+
+          <div class="product-bottom">
+
+            <strong>
+              250 DH
+            </strong>
+
+            <button
+              class="add-cart"
+              data-name="حقيبة نسائية أنيقة"
+              data-price="250">
+
+              أضيفي للسلة
+
+            </button>
+
+          </div>
+
         </div>
+
+      </article>
+
+
+
+      <article
+        class="product-card"
+        data-category="bags"
+        data-name="حقيبة كتف عصرية">
+
+        <div class="product-media">
+
+          <img
+            src="images/mini-bags.jpg"
+            alt="حقيبة كتف عصرية">
+
+          <span class="tag new">
+            جديد
+          </span>
+
+          <button
+            class="quick"
+            type="button">
+            ♡
+          </button>
+
+        </div>
+
+
+        <div class="product-body">
+
+          <small>حقائب</small>
+
+          <h3>
+            حقيبة كتف عصرية
+          </h3>
+
+          <p>
+            حجم عملي ولمسة أنيقة تناسب يومك.
+          </p>
+
+
+          <div class="product-bottom">
+
+            <strong>
+              220 DH
+            </strong>
+
+            <button
+              class="add-cart"
+              data-name="حقيبة كتف عصرية"
+              data-price="220">
+
+              أضيفي للسلة
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <article
+        class="product-card"
+        data-category="shoes"
+        data-name="حذاء نسائي أنيق">
+
+        <div class="product-media">
+
+          <img
+            src="images/shoes.jpg"
+            alt="حذاء نسائي أنيق">
+
+          <span class="tag">
+            رائج
+          </span>
+
+          <button
+            class="quick"
+            type="button">
+            ♡
+          </button>
+
+        </div>
+
+
+        <div class="product-body">
+
+          <small>أحذية</small>
+
+          <h3>
+            حذاء نسائي أنيق
+          </h3>
+
+          <p>
+            تصميم عصري مع راحة مناسبة للاستعمال اليومي.
+          </p>
+
+
+          <div class="product-bottom">
+
+            <strong>
+              350 DH
+            </strong>
+
+            <button
+              class="add-cart"
+              data-name="حذاء نسائي أنيق"
+              data-price="350">
+
+              أضيفي للسلة
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <article
+        class="product-card"
+        data-category="watches"
+        data-name="ساعة نسائية فاخرة">
+
+        <div class="product-media">
+
+          <img
+            src="images/watches.jpg"
+            alt="ساعة نسائية فاخرة">
+
+          <span class="tag new">
+            جديد
+          </span>
+
+          <button
+            class="quick"
+            type="button">
+            ♡
+          </button>
+
+        </div>
+
+
+        <div class="product-body">
+
+          <small>ساعات</small>
+
+          <h3>
+            ساعة نسائية فاخرة
+          </h3>
+
+          <p>
+            لمسة فاخرة تكمل إطلالتك في كل مناسبة.
+          </p>
+
+
+          <div class="product-bottom">
+
+            <strong>
+              399 DH
+            </strong>
+
+            <button
+              class="add-cart"
+              data-name="ساعة نسائية فاخرة"
+              data-price="399">
+
+              أضيفي للسلة
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <article
+        class="product-card"
+        data-category="accessories"
+        data-name="نظارات شمسية عصرية">
+
+        <div class="product-media">
+
+          <img
+            src="images/sunglasses.jpg"
+            alt="نظارات شمسية عصرية">
+
+          <span class="tag">
+            اختيارنا
+          </span>
+
+          <button
+            class="quick"
+            type="button">
+            ♡
+          </button>
+
+        </div>
+
+
+        <div class="product-body">
+
+          <small>إكسسوارات</small>
+
+          <h3>
+            نظارات شمسية عصرية
+          </h3>
+
+          <p>
+            تصاميم متنوعة لإضافة لمسة مميزة لإطلالتك.
+          </p>
+
+
+          <div class="product-bottom">
+
+            <strong>
+              180 DH
+            </strong>
+
+            <button
+              class="add-cart"
+              data-name="نظارات شمسية عصرية"
+              data-price="180">
+
+              أضيفي للسلة
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <article
+        class="product-card"
+        data-category="tech"
+        data-name="سماعات لاسلكية">
+
+        <div class="product-media">
+
+          <img
+            src="images/headphones.jpg"
+            alt="سماعات لاسلكية">
+
+          <span class="tag">
+            الأكثر طلباً
+          </span>
+
+          <button
+            class="quick"
+            type="button">
+            ♡
+          </button>
+
+        </div>
+
+
+        <div class="product-body">
+
+          <small>إلكترونيات</small>
+
+          <h3>
+            سماعات لاسلكية
+          </h3>
+
+          <p>
+            ألوان متعددة وتصميم مريح للاستماع والمكالمات.
+          </p>
+
+
+          <div class="product-bottom">
+
+            <strong>
+              299 DH
+            </strong>
+
+            <button
+              class="add-cart"
+              data-name="سماعات لاسلكية"
+              data-price="299">
+
+              أضيفي للسلة
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <article
+        class="product-card"
+        data-category="bags"
+        data-name="حقيبة كلاسيكية">
+
+        <div class="product-media">
+
+          <img
+            src="images/bags-classic.jpg"
+            alt="حقيبة كلاسيكية">
+
+          <span class="tag sale">
+            عرض خاص
+          </span>
+
+          <button
+            class="quick"
+            type="button">
+            ♡
+          </button>
+
+        </div>
+
+
+        <div class="product-body">
+
+          <small>حقائب</small>
+
+          <h3>
+            حقيبة كلاسيكية
+          </h3>
+
+          <p>
+            أناقة هادئة وتصميم سهل التنسيق مع إطلالاتك.
+          </p>
+
+
+          <div class="product-bottom">
+
+            <strong>
+              280 DH
+            </strong>
+
+            <button
+              class="add-cart"
+              data-name="حقيبة كلاسيكية"
+              data-price="280">
+
+              أضيفي للسلة
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <article
+        class="product-card"
+        data-category="bags"
+        data-name="مجموعة حقائب عملية">
+
+        <div class="product-media">
+
+          <img
+            src="images/backpacks.jpg"
+            alt="مجموعة حقائب عملية">
+
+          <span class="tag">
+            مميز
+          </span>
+
+          <button
+            class="quick"
+            type="button">
+            ♡
+          </button>
+
+        </div>
+
+
+        <div class="product-body">
+
+          <small>حقائب</small>
+
+          <h3>
+            مجموعة حقائب عملية
+          </h3>
+
+          <p>
+            اختيارات عملية للاستخدام اليومي والسفر.
+          </p>
+
+
+          <div class="product-bottom">
+
+            <strong>
+              320 DH
+            </strong>
+
+            <button
+              class="add-cart"
+              data-name="مجموعة حقائب عملية"
+              data-price="320">
+
+              أضيفي للسلة
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
     </div>
 
-    <div class="products" id="productList"></div>
+
+    <p
+      id="no-results"
+      class="no-results"
+      hidden>
+      لم نجد منتجًا بهذا الاسم.
+    </p>
+
+  </div>
+
 </section>
 
-<section class="section story">
-    <div class="story-content">
-        <span class="eyebrow">THE SABIH EXPERIENCE</span>
-        <h2>أناقة بسيطة، حضور لا يُنسى.</h2>
-        <p>في SABIH نختار قطعاً ومنتجات تجمع بين الجمال، الجودة، والأناقة العصرية لتمنحك تجربة تسوق راقية وبسيطة.</p>
-        <button class="outline-btn" onclick="scrollToProducts()">اكتشفي المنتجات</button>
+
+
+<section id="offers" class="offer-banner">
+
+  <div class="container offer-inner">
+
+    <div>
+
+      <p class="eyebrow">
+        SPECIAL OFFER
+      </p>
+
+      <h2>
+        اختيارات أنيقة بأسعار مميزة
+      </h2>
+
+      <p>
+        تابعي العروض الجديدة واختاري ما يناسبك قبل نفاد الكمية.
+      </p>
+
     </div>
-    <div class="story-card"><span>SABIH</span><small>Beauty • Fashion</small></div>
+
+    <a
+      class="btn btn-light"
+      href="#products">
+
+      شوفي المنتجات
+
+    </a>
+
+  </div>
+
 </section>
+
+
+
+<section id="about" class="section about-section">
+
+  <div class="container about-grid">
+
+    <div class="about-image">
+
+      <img
+        src="images/bags-display.jpg"
+        alt="SABIH COLLECTION">
+
+    </div>
+
+
+    <div class="about-copy">
+
+      <p class="eyebrow">
+        THE SABIH EXPERIENCE
+      </p>
+
+      <h2>
+        أناقة بسيطة، حضور لا يُنسى.
+      </h2>
+
+      <p>
+        في SABIH نختار لك منتجات تجمع بين الجمال والجودة
+        والأناقة العصرية. هدفنا أن نجعل تجربة التسوق سهلة
+        وواضحة، مع تواصل مباشر وسريع عبر WhatsApp.
+      </p>
+
+      <a
+        class="text-link"
+        href="#contact">
+
+        تواصلي معنا ←
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section id="contact" class="contact-section">
+
+  <div class="container contact-grid">
+
+    <div>
+
+      <p class="eyebrow">
+        CONTACT US
+      </p>
+
+      <h2>
+        نحن هنا لمساعدتك
+      </h2>
+
+      <p>
+        للطلب أو السؤال عن المقاسات والألوان والتوفر،
+        تواصلي معنا مباشرة.
+      </p>
+
+    </div>
+
+
+    <div class="contact-cards">
+
+      <a
+        href="https://wa.me/212703166572"
+        target="_blank"
+        rel="noopener">
+
+        💬
+
+        <span>
+          <small>WhatsApp</small>
+          <strong>0703166572</strong>
+        </span>
+
+      </a>
+
+
+      <a href="tel:+212703166572">
+
+        📱
+
+        <span>
+          <small>الهاتف</small>
+          <strong>0703166572</strong>
+        </span>
+
+      </a>
+
+
+      <a href="mailto:sbahibtihal@gmail.com">
+
+        ✉️
+
+        <span>
+          <small>Email</small>
+          <strong>sbahibtihal@gmail.com</strong>
+        </span>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
 </main>
 
-<footer id="contact">
-    <div class="footer">
-        <div>
-            <div class="footer-logo">SABIH</div>
-            <p>Beauty • Fashion • Confidence</p>
-            <p>متجر يجمع الجمال والأناقة في تجربة تسوق واحدة.</p>
-        </div>
-        <div>
-            <h3>روابط سريعة</h3>
-            <a href="#home">الرئيسية</a>
-            <a href="#beauty">الجمال</a>
-            <a href="#fashion">الملابس</a>
-            <a href="#products">المنتجات</a>
-        </div>
-        <div>
-            <h3>تواصل معنا</h3>
-            <p>WhatsApp: 0703166572</p>
-            <p>Email: sbahibtihal@gmail.com</p>
-            <button class="footer-wa" onclick="openWhatsApp()">تواصلي معنا على WhatsApp</button>
-        </div>
+
+
+<footer>
+
+  <div class="container footer-inner">
+
+    <div>
+
+      <strong>SABIH</strong>
+
+      <p>
+        BEAUTY • FASHION • CONFIDENCE
+      </p>
+
     </div>
-    <div class="copyright">© 2026 SABIH. جميع الحقوق محفوظة.</div>
+
+    <div>
+      © 2026 SABIH STORE — جميع الحقوق محفوظة
+    </div>
+
+  </div>
+
 </footer>
 
-<a class="whatsapp" href="https://wa.me/212703166572" target="_blank" rel="noopener" aria-label="WhatsApp">☎</a>
 
-<div class="cart-overlay" id="cartOverlay">
-    <aside class="cart" aria-label="سلة المشتريات">
-        <button class="close-cart" onclick="closeCart()" aria-label="إغلاق">×</button>
-        <h2>سلة المشتريات</h2>
-        <div id="cartItems"></div>
-        <div class="cart-total" id="cartTotal">المجموع: 0 MAD</div>
-        <button class="checkout" onclick="checkoutWhatsApp()">إتمام الطلب عبر WhatsApp</button>
-    </aside>
+
+<div
+  id="cart"
+  class="cart-overlay"
+  aria-hidden="true">
+
+  <div class="cart-panel">
+
+    <button
+      id="close-cart"
+      class="close-cart"
+      type="button">
+      ×
+    </button>
+
+    <p class="eyebrow">
+      YOUR BAG
+    </p>
+
+    <h2>
+      سلة المشتريات
+    </h2>
+
+    <div id="cart-items"></div>
+
+    <div class="cart-total">
+
+      <span>
+        المجموع
+      </span>
+
+      <strong id="cart-total">
+        0 DH
+      </strong>
+
+    </div>
+
+    <button
+      id="checkout"
+      class="checkout"
+      type="button">
+
+      إتمام الطلب عبر WhatsApp
+
+    </button>
+
+  </div>
+
 </div>
 
-<div class="toast" id="toast"></div>
+
 
 <script src="script.js"></script>
+
 </body>
 </html>
